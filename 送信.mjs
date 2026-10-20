@@ -116,14 +116,16 @@ async function clickOnce(frame, sel) {
 }
 
 // 1社分。戻り値：{ id, name, result, status, note, log }
-export async function sendOne(id, mode = 'dry', { browser: shared, headed = false, retry = false } = {}) {
+// retryIds：送り直してよい会社IDの一覧（本人が送り直しを指示し、送れていないと分かっている会社だけ）。渡した時はこの一覧で判定する
+export async function sendOne(id, mode = 'dry', { browser: shared, headed = false, retry = false, retryIds = null } = {}) {
+  const canRetry = (c) => retryIds ? !!c && c.status === '送付失敗' && retryIds.has(c.id) : recaptchaRetryable(c);
   const log = []; const say = (...a) => { log.push(a.join(' ')); };
   fs.mkdirSync(REC, { recursive: true });
   const d = await getJSON(`${API}/${id}/send-data`);
   const out = { id, name: d.name, mode, form_url: d.form_url, status: null, note: '', log };
   const wantStatus = retry ? '送付失敗' : '確認中';
   if (d.status !== wantStatus) { out.result = 'skip'; out.note = `ステータスが「${d.status}」なので触らない`; return out; }
-  if (retry && !recaptchaRetryable(await companyFromList(id))) { out.result = 'skip'; out.note = 'reCAPTCHAの失敗で送れていない会社ではないので、送り直さない'; return out; }
+  if (retry && !canRetry(await companyFromList(id))) { out.result = 'skip'; out.note = '送り直してよい会社ではないので、送り直さない'; return out; }
   const tag = (retry ? '再試行・' : '') + (headed ? '画面あり' : '');
   if (mode === 'send' && !retry && MANUAL_NOTE.test(d.form_note || '')) {
     out.status = '送付失敗'; out.note = `人の操作が要る認証のため手で送る（${d.form_note}） ${d.form_url}`; out.result = 'manual';
@@ -193,7 +195,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
 
     // 送信の直前に、ほかの送り手が先に送っていないかを確かめる
     const now = retry ? await companyFromList(id) : await getJSON(`${API}/${id}/send-data`);
-    if (!now || now.status !== wantStatus || (retry && !recaptchaRetryable(now))) { out.result = 'skip'; out.note = `送信直前にステータスが「${now && now.status}」に変わっていたので送らない`; return; }
+    if (!now || now.status !== wantStatus || (retry && !canRetry(now))) { out.result = 'skip'; out.note = `送信直前にステータスが「${now && now.status}」に変わっていたので送らない`; return; }
     const pre = await readAll(page);
     const url0 = page.url();
     clickedSubmit = true;

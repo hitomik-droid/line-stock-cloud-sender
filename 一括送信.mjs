@@ -2,7 +2,9 @@
 // 使い方：node 一括送信.mjs [--mode=dry|confirm|send] [--limit=100] [--industry=業種] [--ids=ID1,ID2] [--part=1/4]
 // --part=k/n は、確認中の会社をID順に n 組へ分けた k 組目だけを送る（同時に複数のタスクで流す時に重ならないようにする）。
 // --headed は画面を出してインストール済みのChromeで動かす。--retry-recaptcha は reCAPTCHA の失敗で送付失敗になった会社だけを1回送り直す。
+// --retry-list=ファイル は、ファイル（会社IDのJSON配列）にある送付失敗の会社だけを送り直す。送れたか不明の会社は一覧に入れない。
 // 既定は dry（入力だけ）。実際に送るのは --mode=send を付けた時だけ。
+import fs from 'node:fs';
 import { API, getJSON, sendOne, launchBrowser, recaptchaRetryable } from './送信.mjs';
 
 const arg = (k, def) => (process.argv.find((a) => a.startsWith(`--${k}=`)) || `--${k}=${def}`).split('=').slice(1).join('=');
@@ -12,24 +14,26 @@ const industry = arg('industry', '');
 const ids = arg('ids', '').split(',').filter(Boolean);
 const [partK, partN] = arg('part', '1/1').split('/').map(Number);
 const headed = process.argv.includes('--headed');
-const retry = process.argv.includes('--retry-recaptcha');
+const retryList = arg('retry-list', '');
+const retryIds = retryList ? new Set(JSON.parse(fs.readFileSync(retryList, 'utf8'))) : null;
+const retry = process.argv.includes('--retry-recaptcha') || !!retryIds;
 if (!['dry', 'confirm', 'send'].includes(mode)) { console.error('--mode は dry / confirm / send'); process.exit(2); }
 
 const data = await getJSON(API);
-let targets = retry ? data.companies.filter(recaptchaRetryable) : data.companies.filter((c) => c.status === '確認中');
+let targets = retryIds ? data.companies.filter((c) => c.status === '送付失敗' && retryIds.has(c.id)) : retry ? data.companies.filter(recaptchaRetryable) : data.companies.filter((c) => c.status === '確認中');
 if (industry) targets = targets.filter((c) => c.industry === industry);
 if (ids.length) targets = targets.filter((c) => ids.includes(c.id));
 targets.sort((a, b) => a.id.localeCompare(b.id));
 if (partN > 1) targets = targets.filter((_, i) => i % partN === partK - 1);
 targets = targets.slice(0, limit);
-console.log(`モード ${mode}${headed ? '／画面あり' : ''}${retry ? '／reCAPTCHA失敗の送り直し' : ''}／組 ${partK}/${partN}／対象 ${targets.length} 社`);
+console.log(`モード ${mode}${headed ? '／画面あり' : ''}${retryIds ? '／一覧の送り直し' : retry ? '／reCAPTCHA失敗の送り直し' : ''}／組 ${partK}/${partN}／対象 ${targets.length} 社`);
 
 const browser = await launchBrowser(headed);
 const results = [];
 for (const [i, c] of targets.entries()) {
   let r;
   try {
-    r = await sendOne(c.id, mode, { browser, headed, retry });
+    r = await sendOne(c.id, mode, { browser, headed, retry, retryIds });
   } catch (e) {
     r = { id: c.id, name: c.name, result: 'error', status: null, note: String(e.message).slice(0, 200) };
   }
