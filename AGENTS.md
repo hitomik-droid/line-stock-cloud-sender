@@ -18,8 +18,11 @@
 ```bash
 npm ci || npm install
 npx playwright install --with-deps chromium   # セットアップで入っていれば不要
-node 一括送信.mjs --mode=send --limit=100
+NODE_USE_ENV_PROXY=1 node 一括送信.mjs --mode=send --limit=100
 ```
+
+- クラウドでは、通信がプロキシを通るため、`node` の前に `NODE_USE_ENV_PROXY=1` を付ける（2026-10-20の確認で必要だった）。
+- 「対象 0 社」と出た時は、ダッシュボードに「確認中」の会社が無い。新しい会社が入るまで送るものは無い。
 
 ## 終わった時の報告
 
