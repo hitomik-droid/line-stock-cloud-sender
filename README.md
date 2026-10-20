@@ -65,7 +65,9 @@ node 一括送信.mjs --mode=send --headed --retry-recaptcha
 
 ## Codexのクラウドで動かす
 
-### 1. GitHubに置く（本人のGOが要る）
+### 1. GitHubに置く（2026-10-20 済み）
+
+非公開のリポジトリ `hitomik-droid/line-stock-cloud-sender`（https://github.com/hitomik-droid/line-stock-cloud-sender ）に置いた。このフォルダがリポジトリの直下になるので、下のセットアップの `cd クラウド送信` の行は要らない。以下は、別の置き場所を選ぶ場合の説明。
 
 CodexのクラウドはGitHubのリポジトリを読み込んで動きます。このフォルダを次のどちらかに置きます。
 
