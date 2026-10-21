@@ -19,13 +19,26 @@ const TODAY = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10).repla
 const REC = path.join(HERE, '記録', TODAY);
 const LIMIT_MS = 10 * 60e3; // 1社10分まで
 
+// ダッシュボードが一時的に 5xx を返す・つながらない時は、間をあけて最大6回まで試す
+async function fetchRetry(url, opt = {}) {
+  let last;
+  for (const wait of [0, 3000, 6000, 12000, 24000, 48000]) {
+    if (wait) await new Promise((r) => setTimeout(r, wait));
+    try {
+      const r = await fetch(url, opt);
+      if (r.status < 500) return r;
+      last = new Error(`${url} → ${r.status}`);
+    } catch (e) { last = e; }
+  }
+  throw last;
+}
 export async function getJSON(url) {
-  const r = await fetch(url, { headers: { 'User-Agent': UA } });
+  const r = await fetchRetry(url, { headers: { 'User-Agent': UA } });
   if (!r.ok) throw new Error(`${url} → ${r.status}`);
   return r.json();
 }
 export async function setStatus(id, status, note) {
-  const r = await fetch(`${API}/${id}/status`, {
+  const r = await fetchRetry(`${API}/${id}/status`, {
     method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/json' },
     body: JSON.stringify({ status, note: note.slice(0, 500) }),
   });
@@ -205,7 +218,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
     const fin = await readAll(page);
     await shot('3_送信後');
     const thanksLine = (fin.text.match(/[^\n]*(ありがとう|完了|受け付け|送信(いた)?しました|thank)[^\n]*/i) || [''])[0].trim().slice(0, 80);
-    if ((fin.thanks && !pre.thanks) || (fin.thanks && page.url() !== url0) || /thanks|complete|finish|done|kanryo/i.test(page.url()) && page.url() !== url0) {
+    if ((fin.thanks && !pre.thanks) || (fin.thanks && page.url() !== url0) || /thank|complete|finish|done|kanryo|formResponse/i.test(page.url()) && page.url() !== url0) {
       return decide('送付完了', `クラウド送信（Playwright）が送信。完了画面「${thanksLine || page.url()}」`, 'sent');
     }
     if (fin.captcha.length) return decide('送付失敗', `送信時に認証（${fin.captcha.join('・')}）が出た。送れていない見込み。再送せず、相手の受信を確かめてから手で送る ${d.form_url}`, 'unknown');
@@ -228,7 +241,17 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
     if (!shared) await browser.close().catch(() => {});
   }
   if (tag && out.note) out.note = `（${tag}）${out.note}`;
-  if (mode === 'send' && out.status) await setStatus(id, out.status, out.note);
+  if (mode === 'send' && out.status) {
+    try {
+      await setStatus(id, out.status, out.note);
+    } catch (e) {
+      // 送った後にステータスを書けなかった会社は「確認中」のまま残るので、次の実行で二重に送らないよう記録して知らせる
+      out.statusFailed = true;
+      out.result = 'status-failed';
+      out.note = `ダッシュボードに書けなかった（${String(e.message).slice(0, 80)}）。本来のステータス「${out.status}」：${out.note}`;
+    }
+  }
+  fs.mkdirSync(path.join(HERE, '記録'), { recursive: true });
   fs.appendFileSync(path.join(HERE, '記録', '送信ログ.jsonl'), JSON.stringify({ at: new Date().toISOString(), ...out, log: undefined }) + '\n');
   return out;
 }

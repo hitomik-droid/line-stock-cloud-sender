@@ -39,6 +39,7 @@ for (const [i, c] of targets.entries()) {
   }
   results.push(r);
   console.log(`[${i + 1}/${targets.length}] ${c.id} ${c.name} → ${r.status || r.result}：${r.note}`);
+  if (r.result === 'status-failed') { console.log('ダッシュボードに書けないので、ここで止める。'); break; }
   await new Promise((res) => setTimeout(res, 3000));
 }
 await browser.close();
@@ -50,6 +51,11 @@ const manual = results.filter((r) => r.status === '送付失敗' && r.result !==
 if (manual.length) {
   console.log('\n手で送る候補（送っていない会社）：');
   for (const r of manual) console.log(`- ${r.name}（${r.id}） ${r.form_url || ''}：${r.note}`);
+}
+const stuck = results.filter((r) => r.result === 'status-failed');
+if (stuck.length) {
+  console.log('\n【要対応】送信の結果をダッシュボードに書けなかった（「確認中」のまま。次の実行の前に手でステータスを直す）：');
+  for (const r of stuck) console.log(`- ${r.name}（${r.id}）：${r.note}`);
 }
 const unknown = results.filter((r) => r.result === 'unknown');
 if (unknown.length) {

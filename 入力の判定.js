@@ -136,7 +136,7 @@ export function readPage() {
     if (!tok || !tok.value) captcha.push('Turnstile');
   }
   if (shown('img[src*="captcha" i],input[name*="captcha" i]') || /画像の文字|表示されている文字|画像に表示|計算(の答え|結果)|\d\s*[+＋]\s*\d\s*[=＝]/.test(text)) captcha.push('画像・計算の認証');
-  const thanks = /ありがとうございま|送信(が)?完了|送信いたしました|送信しました|受け付けました|受付(が)?完了|送信されました|thank you|お問い合わせを受け付け/i.test(text);
+  const thanks = /ありがとうございま|送信(が)?完了|送信いたしました|送信しました|受け付けました|受け付けいたしました|受付(が)?完了|送信されました|回答を記録しました|thank you|お問い合わせを受け付け/i.test(text);
   const errors = text.match(/[^\n]{0,20}((入力|選択|チェック)(して|され)?(下さい|ください)|必須項目です|正しく入力|入力内容に誤り|エラーが発生|送信に失敗|失敗しました)[^\n]{0,10}/g) || [];
   return { url: location.href, refuse, captcha: [...new Set(captcha)], thanks, errors: [...new Set(errors)].slice(0, 5), text: text.slice(0, 4000) };
 }
