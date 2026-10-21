@@ -20,7 +20,7 @@ const retry = process.argv.includes('--retry-recaptcha') || !!retryIds;
 if (!['dry', 'confirm', 'send'].includes(mode)) { console.error('--mode は dry / confirm / send'); process.exit(2); }
 
 const data = await getJSON(API);
-let targets = retryIds ? data.companies.filter((c) => c.status === '送付失敗' && retryIds.has(c.id)) : retry ? data.companies.filter(recaptchaRetryable) : data.companies.filter((c) => c.status === '確認中');
+let targets = retryIds ? data.companies.filter((c) => c.status === '送付失敗' && retryIds.has(c.id) && !(c.history || []).some((x) => /再試行/.test(x.note || ''))) : retry ? data.companies.filter(recaptchaRetryable) : data.companies.filter((c) => c.status === '確認中');
 if (industry) targets = targets.filter((c) => c.industry === industry);
 if (ids.length) targets = targets.filter((c) => ids.includes(c.id));
 targets.sort((a, b) => a.id.localeCompare(b.id));
