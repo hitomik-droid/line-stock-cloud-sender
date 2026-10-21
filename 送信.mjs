@@ -195,10 +195,17 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
       if (errs.length) return decide('送付失敗', `確認に進めない：${errs.join(' / ').slice(0, 200)} ${d.form_url}`, 'stop');
       if (state.refuse.length) return decide('除外', `確認画面に営業お断りの表記：「${state.refuse[0].trim()}」`, 'stop');
       if (state.captcha.length) return decide('送付失敗', `人の操作が要る認証（${state.captcha.join('・')}）のため手で送る ${d.form_url}`, 'manual');
-      frame = await pickFrame(page);
-      const p2 = await frame.evaluate(planForm, { body: d.body, fields: d.fields }).catch(() => ({ buttons: [] }));
-      submitBtn = (p2.buttons || []).find((b) => b.kind === 'submit');
-      if (!submitBtn) return decide('送付失敗', `確認画面で送信ボタンが見つからない ${d.form_url}`, 'stop');
+      // 確認画面の表示を待つ（最大15秒、送信ボタンが出るまで）
+      for (let t = 0; t < 10 && !submitBtn; t++) {
+        frame = await pickFrame(page);
+        const p2 = await frame.evaluate(planForm, { body: d.body, fields: d.fields }).catch(() => ({ buttons: [] }));
+        submitBtn = (p2.buttons || []).find((b) => b.kind === 'submit');
+        if (!submitBtn) await pause(1500);
+      }
+      if (!submitBtn) {
+        const stillInput = await frame.evaluate((body) => [...document.querySelectorAll('textarea')].some((t) => t.offsetWidth && t.value === body), d.body).catch(() => false);
+        return decide('送付失敗', stillInput ? `確認ボタンを押しても入力画面のまま（確認画面に進めない） ${d.form_url}` : `確認画面で送信ボタンが見つからない ${d.form_url}`, 'stop');
+      }
       if (!state.text.includes('hitomi.k@lincle-dreams.com')) say('注意：確認画面にメールアドレスの表示が見当たらない');
       if (mode === 'confirm') return decide(null, `確認画面まで（送信ボタン「${submitBtn.text}」は押していない）`, 'confirm-ok');
     } else if (mode === 'confirm') {
@@ -214,9 +221,26 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
     clickedSubmit = true;
     await clickOnce(frame, submitBtn.sel);
     await settle(page);
-    await pause(3000);
-    const fin = await readAll(page);
+    // 完了・失敗の表示を最大25秒待つ（画面が切り替わらないフォームは、表示が出るまで時間がかかる）
+    const formState = () => frame.evaluate(() => {
+      const f = document.querySelector('form.wpcf7-form');
+      const ok = document.querySelector('.elementor-message-success,.wpforms-confirmation-container,.wpforms-confirmation-container-full,.mw_wp_form_complete,.smf-complete-content,.snow-monkey-form--complete,.formrun-system-show[data-formrun-show-if-success]');
+      return { cf7: f ? (f.getAttribute('data-status') || f.className) : '', ok: !!(ok && ok.offsetHeight) };
+    }).catch(() => ({ cf7: '', ok: false }));
+    let fin, fs;
+    for (let t = 0; t < 17; t++) {
+      fin = await readAll(page);
+      fs = await formState();
+      if ((fin.thanks && !pre.thanks) || page.url() !== url0 || fs.ok || /\b(sent|failed|spam|aborted|invalid)\b/.test(fs.cf7) || fin.captcha.length || newOnes(fin.errors, pre.errors).length) break;
+      await pause(1500);
+    }
     await shot('3_送信後');
+    if (/\bsent\b/.test(fs.cf7) || fs.ok) {
+      return decide('送付完了', `クラウド送信（Playwright）が送信。完了の表示を確認（${/\bsent\b/.test(fs.cf7) ? 'Contact Form 7：送信済み' : '送信完了の表示'}）`, 'sent');
+    }
+    if (/\b(failed|spam|aborted)\b/.test(fs.cf7)) {
+      return decide('送付失敗', `送信時にエラー表示：メッセージの送信に失敗（Contact Form 7：${(fs.cf7.match(/\b(failed|spam|aborted)\b/) || [''])[0]}）。送れていない見込み。再送しない ${d.form_url}`, 'unknown');
+    }
     const thanksLine = (fin.text.match(/[^\n]*(ありがとう|完了|受け付け|送信(いた)?しました|thank)[^\n]*/i) || [''])[0].trim().slice(0, 80);
     if ((fin.thanks && !pre.thanks) || (fin.thanks && page.url() !== url0) || /thank|complete|finish|done|kanryo|formResponse/i.test(page.url()) && page.url() !== url0) {
       return decide('送付完了', `クラウド送信（Playwright）が送信。完了画面「${thanksLine || page.url()}」`, 'sent');
