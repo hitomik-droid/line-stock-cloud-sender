@@ -5,6 +5,16 @@
 - 送信データとステータスの置き場所：ダッシュボード（https://line-stock-product-plan.hitomi-k.workers.dev/#sales ）
 - 入力の決まり：今夜Claudeが内蔵ブラウザで送った時と同じ（氏名・メール・電話・社名・件名・同意・止まる条件）
 
+## 送り方の決まり（2026-10-22 勝良さん指示）
+
+LINEストックのフォーム営業は、必ずGitHub Actions（このリポジトリの「フォーム営業の送信」、`.github/workflows/send.yml`）で送る。Macで画面を出して送る（`--headed`）方法や、Macで `一括送信.mjs` を直接動かす方法は使わない。Chromeの窓が開いて、勝良さんがほかの仕事をできなくなるため。
+
+1. 送る会社のID（カンマ区切り）を `送付便/<日付>_<名前>.txt` に置いてpushする
+2. 先に `mode=dry`（入力だけして送らない）で数社試す
+3. 本番：`gh workflow run send.yml -R hitomik-droid/line-stock-cloud-sender -f ids_file=送付便/xxx.txt -f mode=send`
+4. 4組に分けて同時に送る。ログはActionsの成果物（記録-1〜4）に30日残る
+5. 送信は勝良さんの「送って」の後だけ
+
 ## ファイル
 
 - `送信.mjs`：会社ID 1つ分を、入力→確認画面→送信→完了画面の判定まで行い、結果でステータスを変える
