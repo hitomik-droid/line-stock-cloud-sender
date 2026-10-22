@@ -65,6 +65,7 @@ export function planForm(d) {
     const L = lab(e); const t = e.type;
     if (t === 'radio') continue;
     if (t === 'checkbox') {
+      if (/営業|セールス|勧誘/.test(L)) { if (e.required) unknown.push('checkbox ' + L.slice(0, 40)); continue; } // 「営業目的ではありません」などにはチェックしない
       const same = els.filter((x) => x.type === 'checkbox' && x.name && x.name === e.name);
       if (same.length > 1) continue; // 選択肢の並び（下でまとめて扱う）
       if (/同意|プライバシー|個人情報|規約|間違い|承諾|了承|内容を確認|確認しました|確認の上|確認して|確認後|スパム|ロボット|agree|privacy|accept/i.test(L)) plan.push({ sel: mark(e), act: 'check', what: '同意' });
@@ -105,7 +106,8 @@ export function planForm(d) {
     else if (/名前|氏名|お名前|担当者|NAME|Name|name/.test(L)) v = ME.name;
     // 見出しの無い欄が氏名の欄のすぐ後ろにある時は、姓と名に分かれた欄とみなす
     const prevP = plan.length && plan[plan.length - 1].el === els[els.indexOf(e) - 1] ? plan[plan.length - 1] : null;
-    if (v === null && prevP) for (const [full, a, b] of [[ME.name, ME.sei, ME.mei], [ME.kana, ME.kanaSei, ME.kanaMei], [ME.hira, ME.hiraSei, ME.hiraMei]]) if (prevP.value === full) { prevP.value = a; v = b; }
+    const nameLike = !/年齢|歳|age|zip|郵便|〒|部署|役職|会社|電話|tel|住所|addr|mail|url|番号/i.test(L) && (/^例?[）)：:]?\s*[一-龥ァ-ヶぁ-ん]{1,5}$/.test(ph.trim()) || /name|mei|first|kana/i.test(e.name || ''));
+    if (v === null && prevP && nameLike) for (const [full, a, b] of [[ME.name, ME.sei, ME.mei], [ME.kana, ME.kanaSei, ME.kanaMei], [ME.hira, ME.hiraSei, ME.hiraMei]]) if (prevP.value === full) { prevP.value = a; v = b; }
     if (v !== null) plan.push({ sel: mark(e), act: 'fill', value: v, what: L.slice(0, 20), el: e });
     else if (e.required || e.getAttribute('aria-required') === 'true') unknown.push('input ' + L.slice(0, 40));
   }
