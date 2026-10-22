@@ -12,7 +12,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { planForm, readPage } from './入力の判定.js';
 
-export const API = 'https://line-stock-product-plan.hitomi-k.workers.dev/api/sales';
+// LS_API は手元の試験用（偽のダッシュボードに向ける）。ふだんは付けない
+export const API = process.env.LS_API || 'https://line-stock-product-plan.hitomi-k.workers.dev/api/sales';
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const TODAY = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10).replace(/-/g, '');
@@ -82,6 +83,9 @@ async function readAll(page) {
     refuse: [...new Set(parts.flatMap((p) => p.refuse))],
     captcha: [...new Set(parts.flatMap((p) => p.captcha))],
     thanks: parts.some((p) => p.thanks),
+    thanksLines: [...new Set(parts.flatMap((p) => p.thanksLines || []))],
+    confirmPage: parts.some((p) => p.confirmPage),
+    sending: parts.some((p) => p.sending),
     errors: [...new Set(parts.flatMap((p) => p.errors))],
     text: main.text,
   };
@@ -93,6 +97,23 @@ async function settle(page) {
   await page.waitForLoadState('domcontentloaded', { timeout: 15000 }).catch(() => {});
   await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {});
   await pause(2500);
+}
+
+    // 確認画面の送信ボタンを探す。確認画面は入力欄が無いことがあり planForm では見つからないので、ボタンだけを見る
+async function findSubmit(page) {
+  for (const fr of page.frames()) {
+    const b = await fr.evaluate(() => {
+      const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+      const el = [...document.querySelectorAll('input[type=submit],input[type=button],input[type=image],button,[role=button]')]
+        .filter((e) => vis(e) && e.type !== 'reset')
+        .find((e) => { const t = ((e.value || '') + ' ' + (e.innerText || '') + ' ' + (e.alt || '')).trim(); return /送信|送る|submit|send|申し?込|問い?合わ?せ|同意して/i.test(t) && !/確認|修正|戻る/.test(t); });
+      if (!el) return null;
+      el.dataset.lsFinal = '1';
+      return { sel: '[data-ls-final="1"]', text: ((el.value || '') + ' ' + (el.innerText || '')).trim() };
+    }).catch(() => null);
+    if (b) return { frame: fr, btn: b };
+  }
+  return null;
 }
 
 async function applyPlan(frame, plan) {
@@ -200,6 +221,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
         frame = await pickFrame(page);
         const p2 = await frame.evaluate(planForm, { body: d.body, fields: d.fields }).catch(() => ({ buttons: [] }));
         submitBtn = (p2.buttons || []).find((b) => b.kind === 'submit');
+        if (!submitBtn && (await readAll(page)).confirmPage) { const f2 = await findSubmit(page); if (f2) { frame = f2.frame; submitBtn = f2.btn; } }
         if (!submitBtn) await pause(1500);
       }
       if (!submitBtn) {
@@ -221,18 +243,61 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
     clickedSubmit = true;
     await clickOnce(frame, submitBtn.sel);
     await settle(page);
-    // 完了・失敗の表示を最大25秒待つ（画面が切り替わらないフォームは、表示が出るまで時間がかかる）
-    const formState = () => frame.evaluate(() => {
-      const f = document.querySelector('form.wpcf7-form');
-      const ok = document.querySelector('.elementor-message-success,.wpforms-confirmation-container,.wpforms-confirmation-container-full,.mw_wp_form_complete,.smf-complete-content,.snow-monkey-form--complete,.formrun-system-show[data-formrun-show-if-success]');
-      return { cf7: f ? (f.getAttribute('data-status') || f.className) : '', ok: !!(ok && ok.offsetHeight) };
-    }).catch(() => ({ cf7: '', ok: false }));
-    let fin, fs;
-    for (let t = 0; t < 17; t++) {
-      fin = await readAll(page);
-      fs = await formState();
-      if ((fin.thanks && !pre.thanks) || page.url() !== url0 || fs.ok || /\b(sent|failed|spam|aborted|invalid)\b/.test(fs.cf7) || fin.captcha.length || newOnes(fin.errors, pre.errors).length) break;
-      await pause(1500);
+    // フォームの部品が出す完了・失敗の印（画面が切り替わらないフォーム用）。iframe の中のフォームもあるので全フレームを見る
+    const formState = async () => {
+      let cf7 = ''; let ok = false;
+      for (const fr of page.frames()) {
+        const s = await fr.evaluate(() => {
+          const f = document.querySelector('form.wpcf7-form');
+          const ok = document.querySelector('.elementor-message-success,.wpforms-confirmation-container,.wpforms-confirmation-container-full,.mw_wp_form_complete,.smf-complete-content,.snow-monkey-form--complete,.formrun-system-show[data-formrun-show-if-success]');
+          return { cf7: f ? (f.getAttribute('data-status') || f.className) : '', ok: !!(ok && ok.offsetHeight) };
+        }).catch(() => null);
+        if (s) { cf7 = cf7 || s.cf7; ok = ok || s.ok; }
+      }
+      return { cf7, ok };
+    };
+    const DONE_URL = /thank|complete|cmp|finish|done|kanryo|success|formResponse/i;
+    // 送信ボタンを押した後の画面が、まだ確認画面で送信ボタンが残っているか
+    const submitLeft = () => findSubmit(page);
+    // 送れた印があるか。完了の文言は、送信前の画面に無かった行だけを数える（「ご覧いただきありがとうございます」等の常設の文言で誤らないため）
+    const isDone = async (fin, fs, before, u0) => {
+      if (/\bsent\b/.test(fs.cf7) || fs.ok) return true;
+      const moved = page.url() !== u0;
+      const newThanks = newOnes(fin.thanksLines, before.thanksLines).length > 0 || (fin.thanks && !before.thanks);
+      if (newThanks && !(fin.confirmPage && await submitLeft())) return true;
+      if (moved && !fin.confirmPage && (fin.thanks || DONE_URL.test(page.url()))) return true;
+      return false;
+    };
+    // 完了・失敗の表示を待つ（最大25秒。「送信中です」と出ている間は最大45秒）。URLが変わった直後は中身がまだ出ていないので、待ってから読み直す
+    const waitResult = async (before, u0) => {
+      let fin, fs;
+      for (let t = 0; t < 30; t++) {
+        fin = await readAll(page);
+        fs = await formState();
+        const changed = newOnes(fin.thanksLines, before.thanksLines).length || (fin.thanks && !before.thanks) || page.url() !== u0 || fs.ok || /\b(sent|failed|spam|aborted|invalid)\b/.test(fs.cf7) || fin.captcha.length || newOnes(fin.errors, before.errors).length;
+        if ((changed && !fin.sending) || (t >= 16 && !fin.sending)) break;
+        await pause(1500);
+      }
+      await settle(page);
+      return { fin: await readAll(page), fs: await formState() };
+    };
+    let { fin, fs } = await waitResult(pre, url0);
+    let base = pre; let baseUrl = url0;
+    // 押したボタンが「送信内容を確認」のようなボタンで、確認画面に進んだだけの時は、確認画面の送信ボタンを1回だけ押す（まだ送っていないので二重送信にならない）
+    if (!(await isDone(fin, fs, pre, url0)) && fin.confirmPage && !fin.captcha.length && !newOnes(fin.errors, pre.errors).length) {
+      const left = await submitLeft();
+      if (left) {
+        await shot('2_確認画面');
+        if (fin.refuse.length) return decide('除外', `確認画面に営業お断りの表記：「${fin.refuse[0].trim()}」`, 'stop');
+        const again = retry ? await companyFromList(id) : await getJSON(`${API}/${id}/send-data`);
+        if (!again || again.status !== wantStatus) { out.result = 'skip'; out.note = `確認画面で送信直前にステータスが「${again && again.status}」に変わっていたので送らない`; return; }
+        say('送信ボタンの後に確認画面が出たので、確認画面の送信ボタン「' + left.btn.text + '」を押す');
+        base = fin; baseUrl = page.url();
+        frame = left.frame;
+        await clickOnce(frame, left.btn.sel);
+        await settle(page);
+        ({ fin, fs } = await waitResult(base, baseUrl));
+      }
     }
     await shot('3_送信後');
     if (/\bsent\b/.test(fs.cf7) || fs.ok) {
@@ -241,13 +306,14 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
     if (/\b(failed|spam|aborted)\b/.test(fs.cf7)) {
       return decide('送付失敗', `送信時にエラー表示：メッセージの送信に失敗（Contact Form 7：${(fs.cf7.match(/\b(failed|spam|aborted)\b/) || [''])[0]}）。送れていない見込み。再送しない ${d.form_url}`, 'unknown');
     }
-    const thanksLine = (fin.text.match(/[^\n]*(ありがとう|完了|受け付け|送信(いた)?しました|thank)[^\n]*/i) || [''])[0].trim().slice(0, 80);
-    if ((fin.thanks && !pre.thanks) || (fin.thanks && page.url() !== url0) || /thank|complete|finish|done|kanryo|formResponse/i.test(page.url()) && page.url() !== url0) {
+    const thanksLine = (newOnes(fin.thanksLines, base.thanksLines)[0] || (fin.text.match(/[^\n]*(ありがとう|完了|受け付け|送信(いた)?しました|thank|submission)[^\n]*/i) || [''])[0]).trim().slice(0, 80);
+    if (await isDone(fin, fs, base, baseUrl)) {
       return decide('送付完了', `クラウド送信（Playwright）が送信。完了画面「${thanksLine || page.url()}」`, 'sent');
     }
     if (fin.captcha.length) return decide('送付失敗', `送信時に認証（${fin.captcha.join('・')}）が出た。送れていない見込み。再送せず、相手の受信を確かめてから手で送る ${d.form_url}`, 'unknown');
-    const errs = newOnes(fin.errors, pre.errors);
+    const errs = newOnes(fin.errors, base.errors);
     if (errs.length) return decide('送付失敗', `送信時にエラー表示：${errs.join(' / ').slice(0, 150)}。送れていない見込み。再送しない ${d.form_url}`, 'unknown');
+    if (fin.confirmPage && await submitLeft()) return decide('送付失敗', `確認画面で止まった（最後の送信ボタンが効かない）。送れていない見込み。再送しない（送信後の画面：${page.url()}） ${d.form_url}`, 'unknown');
     return decide('送付失敗', `送れたか不明。再送しない（送信後の画面：${page.url()}） ${d.form_url}`, 'unknown');
   })();
 
