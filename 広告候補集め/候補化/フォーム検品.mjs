@@ -126,7 +126,7 @@ async function inspectOne(browser, c) {
       if (p.what === '本文') bodyOk = (await loc.inputValue().catch(() => '')) === p.value;
     }
     r.bodyOk = bodyOk;
-    r.invalid = await frame.evaluate(() => [...document.querySelectorAll('input,textarea,select')]
+    r.invalid = await frame.evaluate(() => [...(([...document.querySelectorAll('form')].sort((a, b) => b.querySelectorAll('input,textarea,select').length - a.querySelectorAll('input,textarea,select').length)[0]) || document).querySelectorAll('input,textarea,select')]
       .filter((e) => e.willValidate && !e.checkValidity() && (e.offsetWidth || e.type === 'checkbox' || e.type === 'radio'))
       .filter((e) => (e.type === 'checkbox' || e.type === 'radio') ? !document.querySelector(`input[name="${CSS.escape(e.name)}"]:checked`) : true)
       .map((e) => (e.name || e.id || e.type) + '：' + e.validationMessage)).catch(() => []);

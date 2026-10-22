@@ -129,6 +129,8 @@ export function planForm(d) {
   for (const [k, rs] of Object.entries(groups)) {
     const L = lab(rs[0]); const i = pickChoice(rs.map(optText));
     const req = rs.some((r) => r.required);
+    const tm = rs.findIndex((r) => /メール/.test(optText(r)));
+    if (tm >= 0 && rs.some((r) => r.checked && /電話/.test(optText(r)))) { plan.push({ sel: mark(rs[tm]), act: 'check', what: '選択 ' + optText(rs[tm]).slice(0, 20) }); continue; } // 返信方法の初期値が電話の時はメールにする
     if (i >= 0 && (req || /種別|項目|内容|カテゴリ|用件|区分|目的|ご相談|方法|連絡|返答|返信|回答|お問い?合わ?せ/.test(L))) plan.push({ sel: mark(rs[i]), act: 'check', what: '選択 ' + optText(rs[i]).slice(0, 20) });
     else if (req && !rs.some((r) => r.checked)) unknown.push(k + ' ' + L.slice(0, 40));
   }
