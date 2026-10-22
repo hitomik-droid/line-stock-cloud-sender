@@ -1,0 +1,45 @@
+# Metaの広告ライブラリ（ログイン不要）を検索語ごとに読み、公式サイトと問い合わせフォームを確かめて候補TSVにする。画面なし。2026-10-22 勝良さん指示「全部クラウドでやる」。
+# 読むだけ。フォームには入力・送信しない。ログイン要求・ロボット確認・利用制限が出たら止めて 止まった記録.tsv に書く。
+# 除外は 広告候補集め/meta/除外.json（Macの 作業/営業リスト20261022_広告経路/除外リスト作成.py で作り直してpushする）。
+name: Metaの広告主から候補を集める
+on:
+  workflow_dispatch:
+    inputs:
+      q:
+        description: '検索語（業種:語|語;業種:語 の形。業種は パーソナルジム・美容クリニック・オンラインスクール・住宅・リフォーム・太陽光・自動車学校）'
+        required: true
+      scroll:
+        description: 1語あたり下へ送る回数
+        required: false
+        default: '6'
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: 広告主を集める
+        env:
+          Q: ${{ inputs.q }}
+          SCROLL: ${{ inputs.scroll }}
+        run: node 広告候補集め/meta/meta.mjs --scroll="$SCROLL" "--q=$Q" --out=記録/Meta集め/出力/meta_候補.json
+      - name: 公式サイトと問い合わせフォームを確かめる（4組に分けて同時に）
+        run: |
+          for i in 0 1 2 3; do
+            node 広告候補集め/meta/公式サイト確定.mjs --skiplogged --per=999 --in=記録/Meta集め/出力/meta_候補.json --shard=$i/4 --out=記録/Meta集め/出力/広告候補_$i.tsv > 記録/Meta集め/出力/確定ログ_$i.txt 2>&1 &
+          done
+          wait
+          head -1 記録/Meta集め/出力/広告候補_0.tsv > 記録/Meta集め/出力/広告候補.tsv
+          for i in 0 1 2 3; do tail -n +2 記録/Meta集め/出力/広告候補_$i.tsv >> 記録/Meta集め/出力/広告候補.tsv; done
+          wc -l 記録/Meta集め/出力/広告候補.tsv
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Meta集め
+          path: 記録/Meta集め/
+          retention-days: 14
