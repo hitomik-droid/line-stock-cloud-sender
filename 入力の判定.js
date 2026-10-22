@@ -85,7 +85,7 @@ export function planForm(d) {
     let v = null;
     const ph = e.placeholder || '';
     if (/メール|mail|Mail|MAIL/.test(L + t)) v = ME.mail;
-    else if (ME.pref && /^(都道府県|pref|prefecture)$/i.test((e.name || '').replace(/^.*[\[_-]/, '').replace(/\]$/, '')) || /^ ?都道府県/.test(L)) v = ME.pref;
+    else if (ME.pref && (/^(都道府県|pref|prefecture)$/i.test((e.name || '').replace(/^.*[\[_-]/, '').replace(/\]$/, '')) || /^ ?都道府県/.test(L))) v = ME.pref;
     else if (/kana|furigana|ruby/i.test(e.name || '') && /[ぁ-ん]/.test(ph) && !/[ァ-ヶ]/.test(ph)) v = /(01|_1|sei|last|family)\b|kana1|sei/i.test(e.name) ? ME.hiraSei : (/(02|_2|mei|first|given)\b|kana2|mei/i.test(e.name) ? ME.hiraMei : ME.hira);
     else if (/kana|furigana|ruby/i.test(e.name || '') && /[ァ-ヶ]/.test(ph)) v = /(01|_1|sei|last|family)\b|kana1|sei/i.test(e.name) ? ME.kanaSei : (/(02|_2|mei|first|given)\b|kana2|mei/i.test(e.name) ? ME.kanaMei : ME.kana);
     else if (tels.includes(e)) v = tels.length === 3 ? ME.tel3[tels.indexOf(e)] : ME.tel;
