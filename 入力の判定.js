@@ -7,9 +7,9 @@ export function planForm(d) {
     kana: 'カツラ ヒトミ', kanaSei: 'カツラ', kanaMei: 'ヒトミ',
     hira: 'かつら ひとみ', hiraSei: 'かつら', hiraMei: 'ひとみ',
     mail: 'hitomi.k@lincle-dreams.com', tel: '07089803196', tel3: ['070', '8980', '3196'],
-    company: 'ADNEXT', subject: '公式LINE活用のご相談', pref: '東京都',
+    company: 'ADNEXT', subject: '公式LINE活用のご相談', pref: '',
   };
-  // 10/22夜 勝良さん指示（落ちた会社を拾う）：都道府県は東京都。住所・郵便番号は正本に無いので入れない（止まる）
+  // 都道府県・住所・郵便番号は正本に値が無いので入れない（止まる）。勝良さんの答えが来たら pref に入れる（10/22夜）
   const forms = [...document.querySelectorAll('form')];
   const count = (x) => x.querySelectorAll('input,textarea,select').length;
   const f = forms.sort((a, b) => count(b) - count(a))[0] || document;
@@ -75,7 +75,7 @@ export function planForm(d) {
     if (e.tagName === 'SELECT') {
       const o = [...e.options]; const i = pickChoice(o.map((x) => x.text));
       const pi = o.findIndex((x) => x.text.trim() === ME.pref);
-      if (pi >= 0 && /都道府県|pref/i.test(L)) { plan.push({ sel: mark(e), act: 'select', value: o[pi].value, what: '選択 ' + ME.pref }); continue; }
+      if (ME.pref && pi >= 0 && /都道府県|pref/i.test(L)) { plan.push({ sel: mark(e), act: 'select', value: o[pi].value, what: '選択 ' + ME.pref }); continue; }
       if (i >= 0 && /種別|項目|内容|カテゴリ|用件|区分|件名|目的|ご相談|お問い?合わ?せ|方法|連絡|返答|返信|回答/.test(L)) plan.push({ sel: mark(e), act: 'select', value: o[i].value, what: '選択 ' + o[i].text });
       else if (i >= 0 && /その他/.test(o[i].text) && (e.required || /必須|\*|※/.test(L)) && !/店|校|院|教室|クリニック|地域|エリア|学年|性別|年齢|予算|時期|日|時間|免許|車種|コース|プラン|カタログ|資料/.test(L)) plan.push({ sel: mark(e), act: 'select', value: o[i].value, what: '選択 ' + o[i].text });
       else if (e.required && !e.value) unknown.push('select ' + L.slice(0, 40));
@@ -85,7 +85,7 @@ export function planForm(d) {
     let v = null;
     const ph = e.placeholder || '';
     if (/メール|mail|Mail|MAIL/.test(L + t)) v = ME.mail;
-    else if (/^(都道府県|pref|prefecture)$/i.test((e.name || '').replace(/^.*[\[_-]/, '').replace(/\]$/, '')) || /^ ?都道府県/.test(L)) v = ME.pref;
+    else if (ME.pref && /^(都道府県|pref|prefecture)$/i.test((e.name || '').replace(/^.*[\[_-]/, '').replace(/\]$/, '')) || /^ ?都道府県/.test(L)) v = ME.pref;
     else if (/kana|furigana|ruby/i.test(e.name || '') && /[ぁ-ん]/.test(ph) && !/[ァ-ヶ]/.test(ph)) v = /(01|_1|sei|last|family)\b|kana1|sei/i.test(e.name) ? ME.hiraSei : (/(02|_2|mei|first|given)\b|kana2|mei/i.test(e.name) ? ME.hiraMei : ME.hira);
     else if (/kana|furigana|ruby/i.test(e.name || '') && /[ァ-ヶ]/.test(ph)) v = /(01|_1|sei|last|family)\b|kana1|sei/i.test(e.name) ? ME.kanaSei : (/(02|_2|mei|first|given)\b|kana2|mei/i.test(e.name) ? ME.kanaMei : ME.kana);
     else if (tels.includes(e)) v = tels.length === 3 ? ME.tel3[tels.indexOf(e)] : ME.tel;
