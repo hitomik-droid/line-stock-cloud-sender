@@ -53,6 +53,9 @@ for (const o of OBJS) for (const w of WORDS) {
   const keys = last && !Array.isArray(last) ? Object.keys(last) : [];
   summary.push({ w, o, responses: mine.length, items: n, allItems, total: last?.total_count ?? null, api: mine[0]?.url?.slice(0, 400) });
   console.log(o, w, '応答', mine.length, '読めた広告', allItems, 'total', summary.at(-1).total, (mine[0]?.url || '').slice(40, 400));
+  // 1語ごとに保存する（時間切れで止まっても、読めた分は残る。2026-10-22 直した）
+  fs.writeFileSync(`${OUT}/まとめ.json`, JSON.stringify(summary, null, 1));
+  fs.writeFileSync(`${OUT}/広告一覧データ.json`, JSON.stringify(got));
 }
 fs.writeFileSync(`${OUT}/まとめ.json`, JSON.stringify(summary, null, 1));
 fs.writeFileSync(`${OUT}/広告一覧データ.json`, JSON.stringify(got));
