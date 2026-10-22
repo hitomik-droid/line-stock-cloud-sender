@@ -1,0 +1,52 @@
+# 動画広告Proの候補（JSON）から、公式サイトと問い合わせフォームを探し（kakutei）、フォームを検品する（kenpin）。画面なし。
+# フォームには値を入れて確かめるだけで、最後の送信ボタンは押さない。2026-10-22 勝良さん指示「全部クラウドでやる」。
+name: 営業候補の公式サイト探しと検品
+on:
+  workflow_dispatch:
+    inputs:
+      step:
+        description: kakutei（公式サイト探し）または kenpin（フォーム検品）
+        required: true
+        default: kakutei
+      in_file:
+        description: 入力のJSON（リポジトリ内のパス）
+        required: true
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [1, 2, 3, 4, 5, 6, 7, 8]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: 公式サイト探し
+        if: inputs.step == 'kakutei'
+        timeout-minutes: 80
+        env:
+          IN: ${{ inputs.in_file }}
+        run: |
+          mkdir -p 記録/候補化
+          N=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.env.IN)).length)")
+          PER=$(( (N + 7) / 8 )); FROM=$(( (${{ matrix.part }} - 1) * PER )); TO=$(( FROM + PER ))
+          node 広告候補集め/候補化/公式サイト確定.mjs --in="$IN" --from=$FROM --to=$TO --per=9999 --log=記録/候補化/ログ_${{ matrix.part }}.jsonl --out=記録/候補化/候補_${{ matrix.part }}.tsv
+      - name: フォーム検品
+        if: inputs.step == 'kenpin'
+        timeout-minutes: 80
+        env:
+          IN: ${{ inputs.in_file }}
+        run: |
+          mkdir -p 記録/候補化
+          node 広告候補集め/候補化/フォーム検品.mjs "$IN" 記録/候補化/検品_${{ matrix.part }}.jsonl 3 ${{ matrix.part }}/8
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: 候補化_${{ inputs.step }}_${{ matrix.part }}
+          path: 記録/候補化/
+          retention-days: 14
