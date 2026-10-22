@@ -23,6 +23,7 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - name: 読む
+        timeout-minutes: 50
         env:
           DOUGA_PRO_ID: ${{ secrets.DOUGA_PRO_ID }}
           DOUGA_PRO_PASSWORD: ${{ secrets.DOUGA_PRO_PASSWORD }}

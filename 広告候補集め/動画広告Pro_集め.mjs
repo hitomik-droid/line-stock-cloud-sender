@@ -27,19 +27,32 @@ const today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
 const summary = [];
 for (const o of OBJS) for (const w of WORDS) {
   cur = { w, o }; const before = got.length;
-  const kw = encodeURIComponent(encodeURIComponent('in:' + w));
-  const u = `https://dpro.kashika-20mile.com/search?to_date=${today}&interval=2&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=${o}&keyword=${kw}`;
+  const u = `https://dpro.kashika-20mile.com/search?to_date=${today}&interval=2&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=${o}`;
   await p.goto(u, { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
   await p.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
-  await sleep(6000 + Math.random() * 4000);
+  await sleep(3000);
+  const start = got.length;
+  const box = p.locator('input[placeholder*="キーワード"]').first();
+  await box.fill(w); await box.press('Enter'); await sleep(1500);
+  await p.locator('button[type=submit]').last().click().catch(() => {});
+  await p.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
+  await sleep(5000 + Math.random() * 3000);
+  // 表を下へ送って続きのページを読む（最大 PAGES 回）
+  for (let i = 0; i < +(process.env.PAGES || 5); i++) {
+    const n0 = got.length;
+    await p.evaluate(() => { const v = document.querySelector('.ag-body-viewport'); if (v) v.scrollTop = v.scrollHeight; else window.scrollTo(0, document.body.scrollHeight); });
+    await sleep(4000 + Math.random() * 2000);
+    if (got.length === n0) break;
+  }
+  got.splice(before, start - before);
   const txt = await p.evaluate(() => document.body.innerText.slice(0, 3000)).catch(() => '');
   if (/login/.test(p.url()) || /ロボット|captcha|アクセスが制限|利用を制限|しばらくしてから/i.test(txt)) { console.log('止まった：', w, o, p.url()); summary.push({ w, o, stop: true }); break; }
   const mine = got.slice(before);
-  const last = mine[mine.length - 1]?.data;
+  const last = mine[0]?.data; const allItems = mine.reduce((a, x) => a + (x.data?.items?.length || 0), 0);
   const n = Array.isArray(last) ? last.length : Array.isArray(last?.items) ? last.items.length : Array.isArray(last?.data) ? last.data.length : null;
   const keys = last && !Array.isArray(last) ? Object.keys(last) : [];
-  summary.push({ w, o, responses: mine.length, items: n, keys, total: last?.total ?? last?.total_count ?? last?.meta?.total ?? last?.count ?? null });
-  console.log(o, w, '応答', mine.length, '件数', n, 'total', summary.at(-1).total, 'キー', keys.join('/'));
+  summary.push({ w, o, responses: mine.length, items: n, allItems, total: last?.total_count ?? null, api: mine[0]?.url?.slice(0, 400) });
+  console.log(o, w, '応答', mine.length, '読めた広告', allItems, 'total', summary.at(-1).total, (mine[0]?.url || '').slice(40, 400));
 }
 fs.writeFileSync(`${OUT}/まとめ.json`, JSON.stringify(summary, null, 1));
 fs.writeFileSync(`${OUT}/広告一覧データ.json`, JSON.stringify(got));
