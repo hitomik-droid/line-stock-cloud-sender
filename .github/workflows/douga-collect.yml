@@ -11,6 +11,10 @@ on:
         description: 広告の目的（ACQUISITION＝獲得、AWARENESS＝認知。カンマ区切り）
         required: false
         default: ACQUISITION,AWARENESS
+      pages:
+        description: 1語あたり、表を下へ送って読む回数（1回で約100件）
+        required: false
+        default: '15'
 jobs:
   collect:
     runs-on: ubuntu-latest
@@ -29,6 +33,7 @@ jobs:
           DOUGA_PRO_PASSWORD: ${{ secrets.DOUGA_PRO_PASSWORD }}
           WORDS: ${{ inputs.words }}
           OBJS: ${{ inputs.objs }}
+          PAGES: ${{ inputs.pages }}
         run: |
           if [ -z "$WORDS" ]; then unset WORDS; fi
           node 広告候補集め/動画広告Pro_集め.mjs
