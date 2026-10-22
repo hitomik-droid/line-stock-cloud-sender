@@ -27,6 +27,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          check-latest: true
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - name: 送る（4組のうち1組）
