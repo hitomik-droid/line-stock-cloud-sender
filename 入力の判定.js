@@ -103,6 +103,7 @@ export function planForm(d) {
     else if (/（姓）|\(姓\)/.test(L)) v = ME.sei;
     else if (/^(last_?name|family_?name|lname|sei|name_?sei|name1|name_1|name01)$/i.test(e.name || '')) v = ME.sei;
     else if (/^(first_?name|given_?name|fname|mei|name_?mei|name2|name_2|name02)$/i.test(e.name || '')) v = ME.mei;
+    else if (/部署|役職|所属/.test(L)) v = null;
     else if (/名前|氏名|お名前|担当者|NAME|Name|name/.test(L)) v = ME.name;
     // 見出しの無い欄が氏名の欄のすぐ後ろにある時は、姓と名に分かれた欄とみなす
     const prevP = plan.length && plan[plan.length - 1].el === els[els.indexOf(e) - 1] ? plan[plan.length - 1] : null;
@@ -115,7 +116,7 @@ export function planForm(d) {
   // 姓と名に分かれた欄：同じ氏名（漢字・カナ・かな）が続けて2つの欄に入る時は、前を姓・後ろを名にする
   for (const [full, a, b] of [[ME.name, ME.sei, ME.mei], [ME.kana, ME.kanaSei, ME.kanaMei], [ME.hira, ME.hiraSei, ME.hiraMei]]) {
     const ps = plan.filter((p) => p.act === 'fill' && p.value === full);
-    if (ps.length === 2) { ps[0].value = a; ps[1].value = b; }
+    if (ps.length === 2 && !/部署|役職|会社|所属|担当者/.test(ps[1].what)) { ps[0].value = a; ps[1].value = b; }
   }
 
   // ラジオと、同じ name のチェックボックスの並び
