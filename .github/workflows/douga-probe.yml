@@ -1,0 +1,25 @@
+# 動画広告Proにログインして、中の画面の作りを調べるだけ（下見）。検索・ダウンロードはしない。
+name: 動画広告Proの下見
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: 下見
+        env:
+          DOUGA_PRO_ID: ${{ secrets.DOUGA_PRO_ID }}
+          DOUGA_PRO_PASSWORD: ${{ secrets.DOUGA_PRO_PASSWORD }}
+        run: node 広告候補集め/動画広告Pro_下見.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: 動画広告Pro_下見
+          path: 記録/動画広告Pro_下見/
+          retention-days: 7
