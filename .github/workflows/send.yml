@@ -1,0 +1,45 @@
+# LINEストックのフォーム営業を、GitHubのサーバー（画面を出さないChromium）で送る。
+# 手で起動する：Actions の「フォーム営業の送信」→ Run workflow、または gh workflow run send.yml -f ids_file=送付便/xxx.txt
+# 送るのは ids_file に書いた会社のうち、ダッシュボードで「確認中」の会社だけ（一括送信.mjs が確かめる）。
+name: フォーム営業の送信
+on:
+  workflow_dispatch:
+    inputs:
+      ids_file:
+        description: 送る会社IDの一覧（カンマ区切り）のファイル。例：送付便/20261022_残り.txt
+        required: true
+      mode:
+        description: send＝送信まで行う／dry＝入力だけして止める
+        required: true
+        default: dry
+        type: choice
+        options: [dry, send]
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: 送る（4組のうち1組）
+        env:
+          IDS_FILE: ${{ inputs.ids_file }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          mkdir -p 記録
+          IDS=$(tr -d '\n ' < "$IDS_FILE")
+          node 一括送信.mjs --mode="$MODE" --ids="$IDS" --part=${{ matrix.part }}/4 --limit=1000 2>&1 | tee "記録/actions_${{ matrix.part }}.log"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: 記録-${{ matrix.part }}
+          path: 記録/
+          retention-days: 30
