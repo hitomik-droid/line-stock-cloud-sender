@@ -91,18 +91,18 @@ export function planForm(d) {
     else if (tels.includes(e)) v = tels.length === 3 ? ME.tel3[tels.indexOf(e)] : ME.tel;
     else if (/フリガナ|カナ|ｶﾅ/.test(L)) v = /セイ|姓/.test(L) && !/メイ/.test(L) ? ME.kanaSei : (/メイ/.test(L) && !/セイ/.test(L) ? ME.kanaMei : ME.kana);
     else if (/ふりがな|かな|フリ/.test(L)) v = /せい|姓/.test(L) && !/めい/.test(L) ? ME.hiraSei : (/めい/.test(L) && !/せい/.test(L) ? ME.hiraMei : ME.hira);
-    else if (/^ ?せい\b|せい（|せい\(/.test(L) && !/めい/.test(L)) v = ME.hiraSei;
-    else if (/^ ?めい\b|めい（|めい\(/.test(L) && !/せい/.test(L)) v = ME.hiraMei;
+    else if (/^ ?せい(?=[\s（(例＊*]|$)/.test(L) && !/めい/.test(L)) v = ME.hiraSei;
+    else if (/^ ?めい(?=[\s（(例＊*]|$)/.test(L) && !/せい/.test(L)) v = ME.hiraMei;
     else if (/セイ/.test(L) && !/メイ/.test(L)) v = ME.kanaSei;
     else if (/メイ/.test(L) && !/セイ/.test(L)) v = ME.kanaMei;
     else if (/会社|社名|法人|御社|貴社|団体|企業|店舗名|屋号/.test(L)) v = ME.company;
     else if (/件名|題名|タイトル|subject|Subject/.test(L)) v = ME.subject;
     else if (/姓/.test(L) && !/名前|氏名/.test(L)) v = ME.sei;
-    else if (/^ ?名 |名（|名\(| 名$/.test(L) && !/氏名|名前/.test(L)) v = ME.mei;
+    else if (/^ ?名[*＊]?(\s|$)|名（|名\(| 名$/.test(L) && !/氏名|名前/.test(L)) v = ME.mei;
     else if (/（名）|\(名\)/.test(L)) v = ME.mei;
     else if (/（姓）|\(姓\)/.test(L)) v = ME.sei;
-    else if (/^(last_?name|family_?name|lname|sei|name_?sei|name1|name_1|name01)$/i.test(e.name || '')) v = ME.sei;
-    else if (/^(first_?name|given_?name|fname|mei|name_?mei|name2|name_2|name02)$/i.test(e.name || '')) v = ME.mei;
+    else if (/^(last_?name|family_?name|lname|sei|name_?sei|name1|name_1|name01)$/i.test((e.name || '').replace(/^.*\[/, '').replace(/\]$/, ''))) v = ME.sei;
+    else if (/^(first_?name|given_?name|fname|mei|name_?mei|name2|name_2|name02)$/i.test((e.name || '').replace(/^.*\[/, '').replace(/\]$/, ''))) v = ME.mei;
     else if (/部署|役職|所属/.test(L)) v = null;
     else if (/名前|氏名|お名前|担当者|NAME|Name|name/.test(L)) v = ME.name;
     // 見出しの無い欄が氏名の欄のすぐ後ろにある時は、姓と名に分かれた欄とみなす
@@ -131,6 +131,7 @@ export function planForm(d) {
     const L = lab(rs[0]); const i = pickChoice(rs.map(optText));
     const req = rs.some((r) => r.required);
     const tm = rs.findIndex((r) => /メール/.test(optText(r)));
+    if (rs.length === 1 && rs[0].type === 'radio' && /同意|プライバシー|個人情報|規約|承諾|了承|agree|privacy/i.test(L + optText(rs[0]))) { plan.push({ sel: mark(rs[0]), act: 'check', what: '同意' }); continue; } // 同意が1つだけのラジオボタンの時
     if (tm >= 0 && rs.some((r) => r.checked && /電話/.test(optText(r)))) { plan.push({ sel: mark(rs[tm]), act: 'check', what: '選択 ' + optText(rs[tm]).slice(0, 20) }); continue; } // 返信方法の初期値が電話の時はメールにする
     if (i >= 0 && (req || /種別|項目|内容|カテゴリ|用件|区分|目的|ご相談|方法|連絡|返答|返信|回答|お問い?合わ?せ/.test(L))) plan.push({ sel: mark(rs[i]), act: 'check', what: '選択 ' + optText(rs[i]).slice(0, 20) });
     else if (req && !rs.some((r) => r.checked)) unknown.push(k + ' ' + L.slice(0, 40));
