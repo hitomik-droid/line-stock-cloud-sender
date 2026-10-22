@@ -24,7 +24,8 @@ let targets = retryIds ? data.companies.filter((c) => c.status === '送付失敗
 if (industry) targets = targets.filter((c) => c.industry === industry);
 if (ids.length) targets = targets.filter((c) => ids.includes(c.id));
 targets.sort((a, b) => a.id.localeCompare(b.id));
-if (partN > 1) targets = targets.filter((_, i) => i % partN === partK - 1);
+// --ids がある時は、IDの一覧の並びで組を分ける（組ごとに読む時刻がずれても、確認中の数の変化で組が重ならない。2026-10-22 直した）
+if (partN > 1) targets = ids.length ? targets.filter((c) => ids.indexOf(c.id) % partN === partK - 1) : targets.filter((_, i) => i % partN === partK - 1);
 targets = targets.slice(0, limit);
 console.log(`モード ${mode}${headed ? '／画面あり' : ''}${retryIds ? '／一覧の送り直し' : retry ? '／reCAPTCHA失敗の送り直し' : ''}／組 ${partK}/${partN}／対象 ${targets.length} 社`);
 
