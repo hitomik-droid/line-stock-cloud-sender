@@ -1,0 +1,39 @@
+# 動画広告Proにログインし、業種の言葉ごとの広告一覧データを読む（件数の把握と候補集め）。2026-10-22 勝良さん指示「全部クラウドでやる」。
+name: 動画広告Proの広告一覧を読む
+on:
+  workflow_dispatch:
+    inputs:
+      words:
+        description: 検索する言葉（カンマ区切り。空なら既定の17語）
+        required: false
+        default: ''
+      objs:
+        description: 広告の目的（ACQUISITION＝獲得、AWARENESS＝認知。カンマ区切り）
+        required: false
+        default: ACQUISITION,AWARENESS
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: 読む
+        env:
+          DOUGA_PRO_ID: ${{ secrets.DOUGA_PRO_ID }}
+          DOUGA_PRO_PASSWORD: ${{ secrets.DOUGA_PRO_PASSWORD }}
+          WORDS: ${{ inputs.words }}
+          OBJS: ${{ inputs.objs }}
+        run: |
+          if [ -z "$WORDS" ]; then unset WORDS; fi
+          node 広告候補集め/動画広告Pro_集め.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: 動画広告Pro_集め
+          path: 記録/動画広告Pro_集め/
+          retention-days: 14
