@@ -7,8 +7,9 @@ export function planForm(d) {
     kana: 'カツラ ヒトミ', kanaSei: 'カツラ', kanaMei: 'ヒトミ',
     hira: 'かつら ひとみ', hiraSei: 'かつら', hiraMei: 'ひとみ',
     mail: 'hitomi.k@lincle-dreams.com', tel: '07089803196', tel3: ['070', '8980', '3196'],
-    company: 'ADNEXT', subject: '公式LINE活用のご相談',
+    company: 'ADNEXT', subject: '公式LINE活用のご相談', pref: '東京都',
   };
+  // 10/22夜 勝良さん指示（落ちた会社を拾う）：都道府県は東京都。住所・郵便番号は正本に無いので入れない（止まる）
   const forms = [...document.querySelectorAll('form')];
   const count = (x) => x.querySelectorAll('input,textarea,select').length;
   const f = forms.sort((a, b) => count(b) - count(a))[0] || document;
@@ -66,22 +67,31 @@ export function planForm(d) {
     if (t === 'checkbox') {
       const same = els.filter((x) => x.type === 'checkbox' && x.name && x.name === e.name);
       if (same.length > 1) continue; // 選択肢の並び（下でまとめて扱う）
-      if (/同意|プライバシー|個人情報|規約|間違い|承諾/.test(L)) plan.push({ sel: mark(e), act: 'check', what: '同意' });
+      if (/同意|プライバシー|個人情報|規約|間違い|承諾|了承|内容を確認|確認しました|確認の上|確認して|確認後|スパム|ロボット|agree|privacy|accept/i.test(L)) plan.push({ sel: mark(e), act: 'check', what: '同意' });
       else if (e.required) unknown.push('checkbox ' + L.slice(0, 40));
       continue;
     }
     if (e.tagName === 'SELECT') {
       const o = [...e.options]; const i = pickChoice(o.map((x) => x.text));
-      if (i >= 0 && /種別|項目|内容|カテゴリ|用件|区分|件名|目的|ご相談|お問い?合わ?せ|方法|連絡|返答|回答/.test(L)) plan.push({ sel: mark(e), act: 'select', value: o[i].value, what: '選択 ' + o[i].text });
+      const pi = o.findIndex((x) => x.text.trim() === ME.pref);
+      if (pi >= 0 && /都道府県|pref/i.test(L)) { plan.push({ sel: mark(e), act: 'select', value: o[pi].value, what: '選択 ' + ME.pref }); continue; }
+      if (i >= 0 && /種別|項目|内容|カテゴリ|用件|区分|件名|目的|ご相談|お問い?合わ?せ|方法|連絡|返答|返信|回答/.test(L)) plan.push({ sel: mark(e), act: 'select', value: o[i].value, what: '選択 ' + o[i].text });
+      else if (i >= 0 && /その他/.test(o[i].text) && (e.required || /必須|\*|※/.test(L)) && !/店|校|院|教室|クリニック|地域|エリア|学年|性別|年齢|予算|時期|日|時間|免許|車種|コース|プラン|カタログ|資料/.test(L)) plan.push({ sel: mark(e), act: 'select', value: o[i].value, what: '選択 ' + o[i].text });
       else if (e.required && !e.value) unknown.push('select ' + L.slice(0, 40));
       else if (e.value && o[e.selectedIndex] && !/選択|--|―|未選択/.test(o[e.selectedIndex].text)) notes.push('選択欄に初期値あり：' + L.slice(0, 30) + ' = ' + o[e.selectedIndex].text);
       continue;
     }
     let v = null;
+    const ph = e.placeholder || '';
     if (/メール|mail|Mail|MAIL/.test(L + t)) v = ME.mail;
+    else if (/^(都道府県|pref|prefecture)$/i.test((e.name || '').replace(/^.*[\[_-]/, '').replace(/\]$/, '')) || /^ ?都道府県/.test(L)) v = ME.pref;
+    else if (/kana|furigana|ruby/i.test(e.name || '') && /[ぁ-ん]/.test(ph) && !/[ァ-ヶ]/.test(ph)) v = /(01|_1|sei|last|family)\b|kana1|sei/i.test(e.name) ? ME.hiraSei : (/(02|_2|mei|first|given)\b|kana2|mei/i.test(e.name) ? ME.hiraMei : ME.hira);
+    else if (/kana|furigana|ruby/i.test(e.name || '') && /[ァ-ヶ]/.test(ph)) v = /(01|_1|sei|last|family)\b|kana1|sei/i.test(e.name) ? ME.kanaSei : (/(02|_2|mei|first|given)\b|kana2|mei/i.test(e.name) ? ME.kanaMei : ME.kana);
     else if (tels.includes(e)) v = tels.length === 3 ? ME.tel3[tels.indexOf(e)] : ME.tel;
     else if (/フリガナ|カナ|ｶﾅ/.test(L)) v = /セイ|姓/.test(L) && !/メイ/.test(L) ? ME.kanaSei : (/メイ/.test(L) && !/セイ/.test(L) ? ME.kanaMei : ME.kana);
     else if (/ふりがな|かな|フリ/.test(L)) v = /せい|姓/.test(L) && !/めい/.test(L) ? ME.hiraSei : (/めい/.test(L) && !/せい/.test(L) ? ME.hiraMei : ME.hira);
+    else if (/^ ?せい\b|せい（|せい\(/.test(L) && !/めい/.test(L)) v = ME.hiraSei;
+    else if (/^ ?めい\b|めい（|めい\(/.test(L) && !/せい/.test(L)) v = ME.hiraMei;
     else if (/セイ/.test(L) && !/メイ/.test(L)) v = ME.kanaSei;
     else if (/メイ/.test(L) && !/セイ/.test(L)) v = ME.kanaMei;
     else if (/会社|社名|法人|御社|貴社|団体|企業|店舗名|屋号/.test(L)) v = ME.company;
@@ -90,9 +100,20 @@ export function planForm(d) {
     else if (/^ ?名 |名（|名\(| 名$/.test(L) && !/氏名|名前/.test(L)) v = ME.mei;
     else if (/（名）|\(名\)/.test(L)) v = ME.mei;
     else if (/（姓）|\(姓\)/.test(L)) v = ME.sei;
+    else if (/^(last_?name|family_?name|lname|sei|name_?sei|name1|name_1|name01)$/i.test(e.name || '')) v = ME.sei;
+    else if (/^(first_?name|given_?name|fname|mei|name_?mei|name2|name_2|name02)$/i.test(e.name || '')) v = ME.mei;
     else if (/名前|氏名|お名前|担当者|NAME|Name|name/.test(L)) v = ME.name;
-    if (v !== null) plan.push({ sel: mark(e), act: 'fill', value: v, what: L.slice(0, 20) });
+    // 見出しの無い欄が氏名の欄のすぐ後ろにある時は、姓と名に分かれた欄とみなす
+    const prevP = plan.length && plan[plan.length - 1].el === els[els.indexOf(e) - 1] ? plan[plan.length - 1] : null;
+    if (v === null && prevP) for (const [full, a, b] of [[ME.name, ME.sei, ME.mei], [ME.kana, ME.kanaSei, ME.kanaMei], [ME.hira, ME.hiraSei, ME.hiraMei]]) if (prevP.value === full) { prevP.value = a; v = b; }
+    if (v !== null) plan.push({ sel: mark(e), act: 'fill', value: v, what: L.slice(0, 20), el: e });
     else if (e.required || e.getAttribute('aria-required') === 'true') unknown.push('input ' + L.slice(0, 40));
+  }
+
+  // 姓と名に分かれた欄：同じ氏名（漢字・カナ・かな）が続けて2つの欄に入る時は、前を姓・後ろを名にする
+  for (const [full, a, b] of [[ME.name, ME.sei, ME.mei], [ME.kana, ME.kanaSei, ME.kanaMei], [ME.hira, ME.hiraSei, ME.hiraMei]]) {
+    const ps = plan.filter((p) => p.act === 'fill' && p.value === full);
+    if (ps.length === 2) { ps[0].value = a; ps[1].value = b; }
   }
 
   // ラジオと、同じ name のチェックボックスの並び
@@ -106,7 +127,7 @@ export function planForm(d) {
   for (const [k, rs] of Object.entries(groups)) {
     const L = lab(rs[0]); const i = pickChoice(rs.map(optText));
     const req = rs.some((r) => r.required);
-    if (i >= 0 && (req || /種別|項目|内容|カテゴリ|用件|区分|目的|ご相談|方法|連絡|返答|回答|お問い?合わ?せ/.test(L))) plan.push({ sel: mark(rs[i]), act: 'check', what: '選択 ' + optText(rs[i]).slice(0, 20) });
+    if (i >= 0 && (req || /種別|項目|内容|カテゴリ|用件|区分|目的|ご相談|方法|連絡|返答|返信|回答|お問い?合わ?せ/.test(L))) plan.push({ sel: mark(rs[i]), act: 'check', what: '選択 ' + optText(rs[i]).slice(0, 20) });
     else if (req && !rs.some((r) => r.checked)) unknown.push(k + ' ' + L.slice(0, 40));
   }
 
@@ -116,7 +137,7 @@ export function planForm(d) {
     .map((b) => ({ sel: mark(b), text: ((b.value || '') + ' ' + (b.innerText || '') + ' ' + (b.alt || '')).trim() }));
   const kind = (t) => /確認/.test(t) && !/送信|送る/.test(t) ? 'confirm' : (/送信|送る|submit|send|申し?込|問い?合わ?せ|同意して/i.test(t) ? 'submit' : '');
   for (const b of btns) b.kind = kind(b.text);
-  return { fieldCount: count(root), plan, unknown, notes, buttons: btns.filter((b) => b.kind) };
+  return { fieldCount: count(root), plan: plan.map(({ el, ...x }) => x), unknown, notes, buttons: btns.filter((b) => b.kind) };
 }
 
 // ページ全体の文字から読む材料（営業お断り・認証・完了・エラー）
