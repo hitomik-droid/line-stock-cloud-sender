@@ -1,0 +1,8 @@
+// 「全部.yml」がD1（line-stock-sales）へ登録する時だけ使う。認証は GitHub の Secrets（CLOUDFLARE_API_TOKEN・CLOUDFLARE_ACCOUNT_ID）。
+{
+  "name": "line-stock-register",
+  "compatibility_date": "2026-10-01",
+  "d1_databases": [
+    { "binding": "DB", "database_name": "line-stock-sales", "database_id": "124e7e6f-9d86-454d-ac92-4c6caabef497" }
+  ]
+}

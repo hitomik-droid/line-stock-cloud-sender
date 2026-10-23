@@ -1,0 +1,141 @@
+# 候補集め → 公式サイト探し → フォーム検品 → 判定 → D1へ登録 → 送付 を、成果物を取り出さずにGitHub Actionsの中だけで1本で行う（2026-10-24）。
+# 使い方は README の「全部.yml」。mode=dry は登録も送付もしない（判定の結果と、D1に入れるSQLの件数・D1の鍵が通るかだけ確かめる）。
+# 文面は全部 堀田さんの版（v8）。外す会社の決まりは 登録/判定.py と 登録/流れ.py（README に一覧）。
+name: 候補集めから送付まで（全部）
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: 候補の集め方（meta＝Metaの広告ライブラリ／douga＝動画広告Pro／file＝リポジトリにある候補ファイル）
+        required: true
+        default: meta
+        type: choice
+        options: [meta, douga, file]
+      q:
+        description: meta の検索語（業種:語|語;業種:語 の形）。douga の検索語（カンマ区切り）。file の時は候補ファイルのパス（.tsv＝公式サイトとフォームが分かった候補、.json＝候補の元）
+        required: true
+      douga_objs:
+        description: douga の広告の目的（ACQUISITION＝獲得、AWARENESS＝認知）
+        required: false
+        default: ACQUISITION
+      depth:
+        description: 読む深さ（meta は1語あたり下へ送る回数、douga は1語あたりのページ数）
+        required: false
+        default: '15'
+      mode:
+        description: dry＝判定まで（登録・送付しない）／send＝D1に登録して送付まで
+        required: true
+        default: dry
+        type: choice
+        options: [dry, send]
+concurrency:
+  group: line-stock-register   # 番号が重ならないよう、登録は1本ずつ
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    outputs:
+      ids: ${{ steps.reg.outputs.ids }}
+    env:
+      W: 記録/全部
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          check-latest: true
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: 候補を集める（meta）
+        if: inputs.source == 'meta'
+        env:
+          Q: ${{ inputs.q }}
+          SCROLL: ${{ inputs.depth }}
+        run: |
+          mkdir -p "$W/tsv" 記録/Meta集め/出力
+          node 広告候補集め/meta/meta.mjs --scroll="$SCROLL" "--q=$Q" --out=記録/Meta集め/出力/meta_候補.json
+          for i in 0 1 2 3; do
+            node 広告候補集め/meta/公式サイト確定.mjs --skiplogged --per=999 --in=記録/Meta集め/出力/meta_候補.json --shard=$i/4 --out="$W/tsv/meta_$i.tsv" > "$W/確定ログ_meta_$i.txt" 2>&1 &
+          done
+          wait
+      - name: 候補を集める（douga：動画広告Proを読む）
+        if: inputs.source == 'douga'
+        timeout-minutes: 60
+        env:
+          DOUGA_PRO_ID: ${{ secrets.DOUGA_PRO_ID }}
+          DOUGA_PRO_PASSWORD: ${{ secrets.DOUGA_PRO_PASSWORD }}
+          WORDS: ${{ inputs.q }}
+          OBJS: ${{ inputs.douga_objs }}
+          PAGES: ${{ inputs.depth }}
+        run: |
+          mkdir -p "$W"
+          node 広告候補集め/動画広告Pro_集め.mjs
+          curl -s -A "Mozilla/5.0" https://line-stock-product-plan.hitomi-k.workers.dev/api/sales -o "$W/sales.json"
+          python3 登録/候補の元を作る.py 記録/動画広告Pro_集め/広告一覧データ.json "$W/sales.json" "$W/候補の元.json"
+      - name: 候補ファイルを使う（file）
+        if: inputs.source == 'file'
+        env:
+          F: ${{ inputs.q }}
+        run: |
+          mkdir -p "$W/tsv"
+          case "$F" in *.tsv) cp "$F" "$W/tsv/file.tsv" ;; *.json) cp "$F" "$W/候補の元.json" ;; *) echo "候補ファイルは .tsv か .json"; exit 1 ;; esac
+      - name: 公式サイトと問い合わせフォームを探す（douga・file の .json。8つ同時に）
+        timeout-minutes: 90
+        run: |
+          [ -f "$W/候補の元.json" ] || exit 0
+          mkdir -p "$W/tsv"
+          N=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.env.W+'/候補の元.json')).length)")
+          echo "公式サイトを探す会社 $N"
+          PER=$(( (N + 7) / 8 ))
+          for p in 1 2 3 4 5 6 7 8; do
+            FROM=$(( (p - 1) * PER )); TO=$(( FROM + PER ))
+            node 広告候補集め/候補化/公式サイト確定.mjs --in="$W/候補の元.json" --from=$FROM --to=$TO --per=9999 --log="$W/確定ログ_$p.jsonl" --out="$W/tsv/kakutei_$p.tsv" > "$W/確定_$p.txt" 2>&1 &
+          done
+          wait
+      - name: D1・調べ済みと重ならない候補だけにする
+        run: python3 登録/流れ.py cands "$W" "$W"/tsv/*.tsv
+      - name: フォームを検品する（送信ボタンは押さない。8つ同時に）
+        timeout-minutes: 80
+        run: |
+          N=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.env.W+'/cands.json')).length)")
+          if [ "$N" = 0 ]; then : > "$W/results.jsonl"; exit 0; fi
+          for p in 1 2 3 4 5 6 7 8; do
+            node 広告候補集め/候補化/フォーム検品.mjs "$W/cands.json" "$W/検品_$p.jsonl" 3 $p/8 > "$W/検品_$p.txt" 2>&1 &
+          done
+          wait
+          cat "$W"/検品_*.jsonl > "$W/results.jsonl"
+      - name: 判定して、番号・文面を決める
+        run: python3 登録/流れ.py plan "$W"
+      - name: D1に登録する（send）／D1の鍵だけ確かめる（dry）
+        id: reg
+        working-directory: 登録
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          IDS=$(cat "../$W/ids.txt")
+          if [ "$MODE" = send ] && [ -n "$IDS" ]; then
+            npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --file="../$W/投入.sql" > "../$W/登録ログ.txt" 2>&1 || { tail -5 "../$W/登録ログ.txt"; exit 1; }
+            python3 流れ.py check "../$W"
+            echo "ids=$IDS" >> "$GITHUB_OUTPUT"
+          else
+            npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --command="SELECT COUNT(*) AS n FROM companies" > "../$W/鍵の確認.txt" 2>&1 && echo "D1の鍵：通った（読むだけ）" || { echo "D1の鍵：通らない"; tail -5 "../$W/鍵の確認.txt"; exit 1; }
+            echo "dry：登録・送付はしない（合格 $(echo "$IDS" | tr ',' '\n' | grep -c . ) 社）"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: 全部の記録
+          path: 記録/全部/
+          retention-days: 14
+  send:
+    needs: prepare
+    if: inputs.mode == 'send' && needs.prepare.outputs.ids != ''
+    uses: ./.github/workflows/send.yml
+    with:
+      ids: ${{ needs.prepare.outputs.ids }}
+      mode: send

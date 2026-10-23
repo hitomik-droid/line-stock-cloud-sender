@@ -1,0 +1,267 @@
+[
+{
+"name": "STAR FIT 川口駅前店",
+"official_url": "https://starfit.jp/",
+"why": "全国チェーンのフィットネスジム（STAR FIT）のため外す"
+},
+{
+"name": "スマートフィット100【公式】",
+"official_url": "https://lp.smartfit100.com/",
+"why": "全国チェーンの24時間ジム（スマートフィット100）のため外す"
+},
+{
+"name": "一般社団法人防災住宅研究所",
+"official_url": "https://bousai-jyutaku.jp/",
+"why": "一般社団法人（研究所）のため外す"
+},
+{
+"name": "HDC - ハウジング・デザイン・センター",
+"official_url": "https://hdc.asahi.co.jp/",
+"why": "大手の住まいの総合施設（ハウジング・デザイン・センター）のため外す"
+},
+{
+"name": "コンサルティエ株式会社",
+"official_url": "https://consultie-home.jp/",
+"why": "家づくりの無料相談窓口（仲介）のため外す"
+},
+{
+"name": "株式会社札促社",
+"official_url": "https://www.replan.ne.jp/",
+"why": "住まいのウェブマガジン（工務店ではない）のため外す"
+},
+{
+"name": "学校法人平野学園",
+"official_url": "https://necsus.jp/",
+"why": "学校法人（大学院）のため外す"
+},
+{
+"name": "株式会社AVANTIA",
+"official_url": "https://avantia-g.co.jp/",
+"why": "上場企業のグループ（AVANTIA）のため外す"
+},
+{
+"name": "北海道SHS会",
+"official_url": "https://hokkaido-shs.jp/",
+"why": "建築会社の集まり（会）のため外す"
+},
+{
+"name": "株式会社precog",
+"official_url": "https://theatreforall.net/",
+"why": "演劇の配信サービスで、スクールではないため外す"
+},
+{
+"name": "Byolux by Great medical",
+"official_url": "https://www.byoluxjp.com/ja",
+"why": "肌診断のアプリで、クリニックではないため外す"
+},
+{
+"name": "株式会社YsEssence",
+"official_url": "https://kankoku-seikei-navi.com/",
+"why": "韓国の美容整形の比較・仲介サイトのため外す"
+},
+{
+"name": "有限会社田辺自動車学校",
+"official_url": "https://wakayama-drone.com/",
+"why": "公式サイトがドローンスクールで、文面と合わないため外す"
+},
+{
+"name": "三井ホーム株式会社",
+"official_url": "https://housing-messe-ootakanomori.com/",
+"why": "住宅展示場（大手ハウスメーカーの集まり）のため外す"
+},
+{
+"name": "熊日八代住宅展",
+"official_url": "https://kumanichi-yatsushiro.com/",
+"why": "住宅展示場のため外す"
+},
+{
+"name": "ハウスセレクション長浜",
+"official_url": "https://e-a-site.com/",
+"why": "住宅展示場の検索サイトのため外す"
+},
+{
+"name": "株式会社さかえ畳店",
+"official_url": "https://sakaetatami.jp/",
+"why": "畳・襖の張替え店で、文面の業種と合わないため外す"
+},
+{
+"name": "株式会社ベストワン",
+"official_url": "https://bloomvolt.jp/",
+"why": "海外製ソーラーパネルの卸で、社名とサイトが合わないため外す"
+},
+{
+"name": "ステモン",
+"official_url": "https://www.stemon.net/",
+"why": "全国に教室を持つチェーン（ステモン）のため外す"
+},
+{
+"name": "薬日本堂株式会社",
+"official_url": "https://www.kampo-school.com/",
+"why": "大手企業（薬日本堂）のため外す"
+},
+{
+"name": "キャスクスピードトレーニングスクール福岡",
+"official_url": "https://casq.jp/",
+"why": "子ども向けの走り方の教室で、オンラインスクールの文面と合わないため外す"
+},
+{
+"name": "株式会社ヴォーグ学園",
+"official_url": "https://voguegakuen.com/",
+"why": "大手出版社のグループ（日本ヴォーグ社）のため外す"
+},
+{
+"name": "まなびの杜",
+"official_url": "https://manabimori.com/",
+"why": "学童保育で、オンラインスクールの文面と合わないため外す"
+},
+{
+"name": "東京都中小企業振興公社　デジタルマーケティングサポート事務局",
+"official_url": "https://digiport.tokyo/",
+"why": "公的機関（東京都中小企業振興公社）のため外す"
+},
+{
+"name": "MIMIMOMO株式会社",
+"official_url": "https://www.mimi-yoga.com/",
+"why": "スパのサロンで、スクールの文面と合わないため外す"
+},
+{
+"name": "トーシン不動産販売株式会社",
+"official_url": "https://toshin-f.co.jp/",
+"why": "不動産の仲介・販売で、住宅会社の文面と合わないため外す"
+},
+{
+"name": "NPO法人 相続アドバイザー協議会",
+"official_url": "https://souzoku-adv.com/",
+"why": "NPO法人のため外す"
+},
+{
+"name": "湘南DIVE.com",
+"official_url": "https://shonandive.com/",
+"why": "ダイビングサービスで、スクールの文面と合わないため外す"
+},
+{
+"name": "株式会社永大ハウス工業",
+"official_url": "https://eidaihouse.com/",
+"why": "不動産情報サイトのため外す"
+},
+{
+"name": "株式会社不動産情報センター",
+"official_url": "https://apaman-shop.co.jp/",
+"why": "全国チェーン（アパマンショップ）の加盟店のため外す"
+},
+{
+"name": "株式会社プロズジャパン",
+"official_url": "https://proz.co.jp/sanjose/",
+"why": "分譲地の販売サイトのため外す"
+},
+{
+"name": "合同会社カルペディエム・セレクト",
+"official_url": "https://www.carpediem-sendai.com/",
+"why": "柔術の道場で、パーソナルジムの文面と合わないため外す"
+},
+{
+"name": "豊橋スイミングスクール",
+"official_url": "https://www.t-swim.com/",
+"why": "子ども向けの水泳教室で、オンラインスクールの文面と合わないため外す"
+},
+{
+"name": "株式会社サワキタ不動産",
+"official_url": "https://sawakita.com/",
+"why": "不動産の仲介・物件紹介で、住宅会社の文面と合わないため外す"
+},
+{
+"name": "かしわ沼南住宅公園",
+"official_url": "https://housing-messe-kashiwashonan.com/",
+"why": "住宅展示場（モデルハウスの集まり。業種違いとして外す）"
+},
+{
+"name": "Tagle_住まい",
+"official_url": "https://tagle.jp/",
+"why": "住宅の写真検索サイト（ポータル。業種違い）"
+},
+{
+"name": "王子住宅公園",
+"official_url": "https://housing-messe-oji.com/",
+"why": "住宅展示場（業種違い）"
+},
+{
+"name": "株式会社Auks",
+"official_url": "https://auks.jp/",
+"why": "住宅相談窓口（仲介。業種違い）"
+},
+{
+"name": "Luz自由が丘",
+"official_url": "https://exercisecoach.co.jp/",
+"why": "エクササイズコーチのチェーン店舗（公式は本部サイト。チェーンとして外す）"
+},
+{
+"name": "株式会社松栄パナホーム熊本",
+"official_url": "https://www.kumamoto-panahome.co.jp/",
+"why": "パナソニックホームズ系の販売会社（大手グループとして外す）"
+},
+{
+"name": "ヴァンクールマキ",
+"official_url": "https://www.vmaki.net/",
+"why": "公式サイトに「ホームページの閲覧が出来ない」とあり、送り先として確かでない"
+},
+{
+"name": "tysハウジングプラザ山口 サエラ",
+"official_url": "https://www.tys-saela.ne.jp/",
+"why": "住宅展示場（業種違い）"
+},
+{
+"name": "千葉ニュータウン住宅公園",
+"official_url": "https://housing-messe-chibant.com/",
+"why": "住宅展示場（業種違い）"
+},
+{
+"name": "【総合住宅展示場】環八蒲田住宅公園",
+"official_url": "https://housing-messe-kamata.com/",
+"why": "住宅展示場（業種違い）"
+},
+{
+"name": "株式会社スマイシア不動産販売",
+"official_url": "https://sumaisia-estate.com/",
+"why": "不動産販売（仲介。業種違い）"
+},
+{
+"name": "Bloomfit24",
+"official_url": "https://bloomfit24.com/",
+"why": "フォームに「本お問合せは、売り込みなどの営業ではありません。」の確認欄（営業お断りと同じ扱い）"
+},
+{
+"name": "林工住宅株式会社",
+"official_url": "https://www.rinkohjyutaku.co.jp/",
+"why": "フォームの「このお問い合わせは営業目的ではありません」にチェックが入る（事実と違う）"
+},
+{
+"name": "豊木工舎",
+"official_url": "https://toyokikousha.jp/",
+"why": "問い合わせ項目が「その他（見学会・イベント）」しか合わず、事実と違う選択になる"
+},
+{
+"name": "Asami.nagamatsu スポンサー: ［下北沢］美肌/シワたるみ改善/フェイシャル専門エステサロンsuhada",
+"official_url": "https://suhada-salon.com/",
+"why": "エステサロンで、スクールではない（業種違い）"
+},
+{
+"name": "ボクシングフィットネスジムノア",
+"official_url": "https://www.noaboxing.com/",
+"why": "NOAダンスアカデミー（C182）と同じ会社とみて、1通にする"
+},
+{
+"name": "エトワール",
+"official_url": "https://etoile-care.co.jp/",
+"why": "介護付有料老人ホームで、住宅・リフォームではない（業種違い）"
+},
+{
+"name": "アサヒグローバルホーム建売",
+"official_url": "https://agh-tateuri.com/",
+"why": "「ご希望物件名」の欄に件名が入り、問い合わせ種別も物件の質問になる（事実と違う）"
+},
+{
+"name": "かごしま住まいnews",
+"official_url": "https://lovefamily.jp/",
+"why": "新築・リフォームの情報サイト（比較・ポータル）"
+}
+]
