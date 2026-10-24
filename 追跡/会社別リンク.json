@@ -2400,6 +2400,38 @@
     "LS-20261022-801": {
       "token": "dd78dfec0e09448191c7ec22b81bfd1b",
       "page": "personal-gym"
+    },
+    "LS-20261022-1096": {
+      "token": "c73af75bebe34723a8335391db06b6c8",
+      "page": "online-school"
+    },
+    "LS-20261022-1097": {
+      "token": "8e4674f991544140b543e97cda4badee",
+      "page": "online-school"
+    },
+    "LS-20261022-1098": {
+      "token": "491b7a2366a44c4c94b9cc21112d67f1",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1099": {
+      "token": "f4acc5dcb3e44bb3a3485dde48813971",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1100": {
+      "token": "e4e1c6e243fc48ef8d336a654241bc7a",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1101": {
+      "token": "71c6d84c35ba4fcea046cc6cd3e1b60a",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1102": {
+      "token": "7220fa712d83451da61b6349bfc1169d",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1103": {
+      "token": "8db54bec0cf643cba56529b06b26f22d",
+      "page": "solar-housing"
     }
   }
 }
