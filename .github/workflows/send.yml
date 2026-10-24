@@ -90,3 +90,34 @@ jobs:
           name: 記録-${{ matrix.part }}
           path: 記録/
           retention-days: 30
+  report:
+    needs: send
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: D1の送付完了累計を読む（更新しない）
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          mkdir -p 記録
+          npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT COUNT(*) AS sent, MAX(sent_at) AS last_sent_at, strftime('%Y-%m-%dT%H:%M:%fZ','now') AS checked_at FROM companies WHERE status='送付完了'" --json > 記録/送付累計.json
+          node - <<'JS'
+          const fs = require('fs');
+          const chunks = JSON.parse(fs.readFileSync('記録/送付累計.json'));
+          if (!chunks.length || !chunks.every(c => c.success)) throw new Error('D1累計の読取失敗');
+          const row = chunks[0].results[0];
+          if (!Number.isInteger(row.sent)) throw new Error('D1累計の形式が不正');
+          console.log(JSON.stringify(row));
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `D1送付完了累計：${row.sent}件（確認：${row.checked_at}）\n`);
+          JS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: 送付累計
+          path: 記録/送付累計.json
+          retention-days: 30
