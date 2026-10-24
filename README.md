@@ -44,6 +44,7 @@ gh workflow run 全部.yml -R hitomik-droid/line-stock-cloud-sender -f source=me
 
 - 検品済みの入力は `source=file` で `schema: line-stock-saved-inspection/1` のJSON（`cands`・`results`）を渡せる。保存した結果を既存の `登録/流れ.py plan` で判定し直し、同じフォームの検品は繰り返さない。再開入力はMetaを含めず1000番台を使う。
 - `mode=register` は既存の登録処理と読み戻しまで実行し、送付はしない。先に `mode=dry` のSummaryを確認し、登録後に会社別追跡リンクを準備してから、`send.yml` で数社のdryと本番を進める。判定・SQL生成・D1登録処理は既存のまま。
+- 候補照合・番号決定・登録後確認の会社情報は、既存のWrangler接続でD1を直接SELECTし、既存プログラムの `LS_API` で読み込む。公開APIの503で登録前に停止する問題への対応。番号決定直前と登録後に読み直し、古いデータへはフォールバックしない。判定条件とINSERT処理は変更していない。
 
 - 文面は全部、堀田さんの版（v8：MSG-ジム-v8・MSG-美容クリニック-v8・MSG-オンラインスクール-v8・MSG-太陽光住宅-v8・MSG-自動車学校-v8）。2026-10-22 20時と10/23の勝良さん指示
 - 番号は `LS-20261022-` の後ろに、Meta由来は3000番台、それ以外（動画広告Proなど）は1000番台の続き。D1の最大の次から付ける

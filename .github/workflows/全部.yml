@@ -116,6 +116,28 @@ jobs:
             node 広告候補集め/候補化/公式サイト確定.mjs --in="$W/候補の元.json" --from=$FROM --to=$TO --per=9999 --log="$W/確定ログ_$p.jsonl" --out="$W/tsv/kakutei_$p.tsv" > "$W/確定_$p.txt" 2>&1 &
           done
           wait
+      # 公開APIが503でも、既存のD1接続で同じ会社情報を読む。判定/SQL生成は既存のまま。
+      - &read_d1
+        name: D1の最新会社情報を読む
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          mkdir -p "$W"
+          npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,legal_name,official_url,form_url,status FROM companies" --json > "$W/D1読取.json"
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          w = Path(os.environ['W'])
+          chunks = json.loads((w / 'D1読取.json').read_text())
+          assert chunks and all(c.get('success') for c in chunks), 'D1読取に失敗'
+          rows = [r for c in chunks for r in c['results']]
+          assert rows and all('id' in r and 'status' in r for r in rows), 'D1会社情報が不正'
+          (w / 'sales.json').write_text(json.dumps({'companies': rows}, ensure_ascii=False))
+          with open(os.environ['GITHUB_ENV'], 'a') as f:
+              f.write('LS_API=' + (w / 'sales.json').resolve().as_uri() + '\n')
+          print(f'D1から最新の会社情報を読取：{len(rows)}社（読み取りのみ）')
+          PY
       - name: D1・調べ済みと重ならない候補だけにする
         if: hashFiles('記録/全部/results.jsonl') == ''
         run: python3 登録/流れ.py cands "$W" "$W"/tsv/*.tsv
@@ -130,6 +152,7 @@ jobs:
           done
           wait
           cat "$W"/検品_*.jsonl > "$W/results.jsonl"
+      - *read_d1
       - name: 判定して、番号・文面を決める
         run: python3 登録/流れ.py plan "$W"
       - name: D1に登録する（send）／D1の鍵だけ確かめる（dry）
@@ -143,6 +166,8 @@ jobs:
           IDS=$(cat "../$W/ids.txt")
           if [ "$MODE" != dry ] && [ -n "$IDS" ]; then
             npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --file="../$W/投入.sql" > "../$W/登録ログ.txt" 2>&1 || { tail -5 "../$W/登録ログ.txt"; exit 1; }
+            npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --command="SELECT id,name,legal_name,official_url,form_url,status FROM companies" --json > "../$W/D1読取.json"
+            python3 -c 'import json,sys; from pathlib import Path; w=Path(sys.argv[1]); chunks=json.loads((w/"D1読取.json").read_text()); assert chunks and all(c.get("success") for c in chunks); rows=[r for c in chunks for r in c["results"]]; assert rows; (w/"sales.json").write_text(json.dumps({"companies":rows},ensure_ascii=False))' "../$W"
             python3 流れ.py check "../$W"
             echo "ids=$IDS" >> "$GITHUB_OUTPUT"
           else
