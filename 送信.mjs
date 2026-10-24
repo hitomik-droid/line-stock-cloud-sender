@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { planForm, readPage } from './入力の判定.js';
+import { prepareCompanyTracking } from './追跡/会社別URL.mjs';
 
 // LS_API は手元の試験用（偽のダッシュボードに向ける）。ふだんは付けない
 export const API = process.env.LS_API || 'https://line-stock-product-plan.hitomi-k.workers.dev/api/sales';
@@ -160,6 +161,11 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
   const wantStatus = retry ? '送付失敗' : '確認中';
   if (d.status !== wantStatus) { out.result = 'skip'; out.note = `ステータスが「${d.status}」なので触らない`; return out; }
   if (retry && !canRetry(await companyFromList(id))) { out.result = 'skip'; out.note = '送り直してよい会社ではないので、送り直さない'; return out; }
+  // 2026-10-24 依頼：設計図URLだけ会社別にする。本文の文章・入力値・送信判定は変えない。
+  const tracking = prepareCompanyTracking(d.body, id);
+  d.body = tracking.body;
+  out.tracking_urls = tracking.urls;
+  if (tracking.urls.length) say('会社別追跡URL：', JSON.stringify(tracking.urls));
   const tag = (retry ? '再試行・' : '') + (headed ? '画面あり' : '');
   if (mode === 'send' && !retry && MANUAL_NOTE.test(d.form_note || '')) {
     out.status = '送付失敗'; out.note = `人の操作が要る認証のため手で送る（${d.form_note}） ${d.form_url}`; out.result = 'manual';
