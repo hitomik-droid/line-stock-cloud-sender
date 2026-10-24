@@ -14,6 +14,12 @@ on:
         default: dry
         type: choice
         options: [dry, send]
+      execution:
+        description: batch＝従来の一括／single＝全社一覧APIを使わず既存の1社送信プログラムを呼ぶ
+        required: false
+        default: batch
+        type: choice
+        options: [batch, single]
   # 10/24 「全部.yml」から呼べるようにした。ids に会社IDを直接渡す（ids_file は使わない）
   workflow_call:
     inputs:
@@ -25,6 +31,10 @@ on:
         description: send または dry
         required: true
         type: string
+      execution:
+        required: false
+        type: string
+        default: batch
 jobs:
   send:
     runs-on: ubuntu-latest
@@ -46,10 +56,34 @@ jobs:
           IDS_FILE: ${{ inputs.ids_file }}
           IDS_IN: ${{ inputs.ids }}
           MODE: ${{ inputs.mode }}
+          EXECUTION: ${{ inputs.execution }}
+          PART: ${{ matrix.part }}
         run: |
+          set -euo pipefail
           mkdir -p 記録
           if [ -n "$IDS_IN" ]; then IDS=$(echo "$IDS_IN" | tr -d '\n '); else IDS=$(tr -d '\n ' < "$IDS_FILE"); fi
-          node 一括送信.mjs --mode="$MODE" --ids="$IDS" --part=${{ matrix.part }}/4 --limit=1000 2>&1 | tee "記録/actions_${{ matrix.part }}.log"
+          if [ "$EXECUTION" = single ]; then
+            printf '%s' "$IDS" | tr ',' '\n' | awk -v p="$PART" '(NR-1)%4==p-1' > "記録/ids_$PART.txt"
+            while IFS= read -r id || [ -n "$id" ]; do
+              [ -n "$id" ] || continue
+              result="記録/single_${PART}_${id}.json"
+              node 送信.mjs "$id" --mode="$MODE" > "$result"
+              cat "$result"
+              # 既存の一括送信と同じく、ステータスを書けなかったらこの組を止める。
+              node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1])); if(r.result==="status-failed")process.exit(1)' "$result"
+              node -e 'setTimeout(() => {}, 3000)'
+            done < "記録/ids_$PART.txt"
+            node - <<'JS' | tee "記録/actions_${PART}.log"
+            const fs = require('fs');
+            const rows = fs.readdirSync('記録').filter(n => n.startsWith('single_' + process.env.PART + '_') && n.endsWith('.json')).map(n => JSON.parse(fs.readFileSync('記録/' + n)));
+            for (const r of rows) console.log(`${r.id} ${r.name} → ${r.status || r.result}：${r.note}`);
+            const count = s => rows.filter(r => r.status === s).length;
+            console.log('\n===== まとめ =====');
+            console.log(`送付完了 ${count('送付完了')}／送付失敗 ${count('送付失敗')}／除外 ${count('除外')}／その他 ${rows.filter(r => !r.status).length}`);
+          JS
+          else
+            node 一括送信.mjs --mode="$MODE" --ids="$IDS" --part=${{ matrix.part }}/4 --limit=1000 2>&1 | tee "記録/actions_${{ matrix.part }}.log"
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
