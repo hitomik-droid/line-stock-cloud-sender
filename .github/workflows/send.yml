@@ -22,6 +22,11 @@ on:
         options: [batch, single]
   # 10/24 「全部.yml」から呼べるようにした。ids に会社IDを直接渡す（ids_file は使わない）
   workflow_call:
+    secrets:
+      CLOUDFLARE_API_TOKEN:
+        required: false
+      CLOUDFLARE_ACCOUNT_ID:
+        required: false
     inputs:
       ids:
         description: 送る会社ID（カンマ区切り）

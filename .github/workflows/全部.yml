@@ -184,6 +184,9 @@ jobs:
     needs: prepare
     if: inputs.mode == 'send' && needs.prepare.outputs.ids != ''
     uses: ./.github/workflows/send.yml
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     with:
       ids: ${{ needs.prepare.outputs.ids }}
       mode: send
