@@ -1,0 +1,1051 @@
+{
+ "schema": "line-stock-saved-inspection/1",
+ "source_run": 40063956106,
+ "technical_template": "v5（登録はv8・送付前dryで検証）",
+ "cands": [
+  {
+   "key": "C003",
+   "base": "palkids.co.jp",
+   "industry": "オンラインスクール",
+   "name": "株式会社児童英語研究所",
+   "official_url": "https://www.palkids.co.jp/",
+   "form_url": "https://www.palkids.co.jp/s/index.php?main_page=contact",
+   "memo": "パルキッズは幼児・小学生向け英語学習教材です。10万組の親子が実践した 超効率おうち英語教材",
+   "list_source": "動画広告Pro",
+   "source_url": "https://dpro.kashika-20mile.com/search?interval=2&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION&keyword=in%3A%E8%8B%B1%E6%A4%9C",
+   "ad_media": "Instagram",
+   "ad_purpose": "獲得",
+   "ad_evidence_url": "https://assets.douga-pro.com/instagram/DbUFw43MRwY/thumbnail.webp"
+  },
+  {
+   "key": "C011",
+   "base": "eikensuccess.com",
+   "industry": "オンラインスクール",
+   "name": "miyumiyu.english",
+   "official_url": "https://eikensuccess.com/",
+   "form_url": "https://eikensuccess.com/contact/",
+   "memo": "最短で英検合格を目指す小学生・中学生向けの英検オンラインスクール",
+   "list_source": "動画広告Pro",
+   "source_url": "https://dpro.kashika-20mile.com/search?interval=2&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION&keyword=in%3A%E8%8B%B1%E6%A4%9C",
+   "ad_media": "Facebook",
+   "ad_purpose": "獲得",
+   "ad_evidence_url": "https://assets.douga-pro.com/facebook/1031405829592985/video.mp4"
+  },
+  {
+   "key": "C022",
+   "base": "morinoie-k.jp",
+   "industry": "住宅・リフォーム",
+   "name": "杜ノ家建築工房",
+   "official_url": "https://morinoie-k.jp/",
+   "form_url": "https://morinoie-k.jp/lp/form/",
+   "memo": "所在地は山形県山形市。山形県を拠点に家づくりをしている設計事務所＋工務店の杜ノ家建築工房",
+   "list_source": "動画広告Pro",
+   "source_url": "https://dpro.kashika-20mile.com/search?interval=2&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION&keyword=in%3A%E9%AB%98%E6%B0%97%E5%AF%86",
+   "ad_media": "Instagram",
+   "ad_purpose": "獲得",
+   "ad_evidence_url": "https://assets.douga-pro.com/instagram/DO5NQT_gEY7/video.mp4"
+  },
+  {
+   "key": "C031",
+   "base": "akaikoubou.com",
+   "industry": "住宅・リフォーム",
+   "name": "有限会社あかい工房 | session　ー「場」の建築ー",
+   "official_url": "https://akaikoubou.com/",
+   "form_url": "https://akaikoubou.com/contact/",
+   "memo": "所在地は兵庫県神戸市北区。あかい工房は、神戸市北区にある小さな工務店です",
+   "list_source": "動画広告Pro",
+   "source_url": "https://dpro.kashika-20mile.com/search?interval=2&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION&keyword=in%3A%E8%87%AA%E7%84%B6%E7%B4%A0%E6%9D%90",
+   "ad_media": "Instagram",
+   "ad_purpose": "獲得",
+   "ad_evidence_url": "https://assets.douga-pro.com/instagram/DXY3Y70ANGN/thumbnail.webp"
+  },
+  {
+   "key": "C035",
+   "base": "yokotsuka-construction.com",
+   "industry": "住宅・リフォーム",
+   "name": "合同会社横塚建設",
+   "official_url": "https://yokotsuka-construction.com/",
+   "form_url": "https://yokotsuka-construction.com/contact/",
+   "memo": "所在地は山口県山口市。横塚建設は、山口県内全域を対象に屋根修理・外壁塗装・内装リフォームなど住まいのトラブルにワンスト…",
+   "list_source": "動画広告Pro",
+   "source_url": "https://dpro.kashika-20mile.com/search?interval=2&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION&keyword=in%3A%E5%B1%8B%E6%A0%B9%E5%A1%97%E8%A3%85",
+   "ad_media": "Instagram",
+   "ad_purpose": "獲得",
+   "ad_evidence_url": "https://assets.douga-pro.com/instagram/DQo8TZ-jGhS/thumbnail.webp"
+  }
+ ],
+ "results": [
+  {
+   "key": "C003",
+   "industry": "オンラインスクール",
+   "name": "株式会社児童英語研究所",
+   "official_url": "https://www.palkids.co.jp/",
+   "form_url": "https://www.palkids.co.jp/s/index.php?main_page=contact",
+   "top": {
+    "title": "幼児・小学生のおうち英語教材 パルキッズ｜0歳から小学生の英語環境づくり",
+    "desc": "パルキッズは幼児・小学生向け英語学習教材です。10万組以上の親子が実践した「かけ流し」メソッドで、1日90分＋数分のオンラインレッスンにより小学生で英検合格者を多数輩出。無料資料請求（7日間体験付き）受付中。",
+    "h": [
+     "10万組の親子が実践した 超効率おうち英語教材",
+     "ことばの習得と学びの理論 をもとに設計された プログラムです",
+     "ただいま、パルキッズに取り組み中",
+     "はじめての方へ",
+     "パルキッズ人気教材",
+     "おすすめ書籍",
+     "パルキッズ通信最新号",
+     "最新のお知らせ"
+    ],
+    "text": "10万組の親子が実践した幼児・小学生向け「超効率」おうち英語教材のパルキッズです。 ログイン カート メニュー ✕ ホーム パルキッズとは？ 教材一覧 体験談 おすすめ書籍 パルキッズ通信 よくある質問 お知らせ お問い合わせ 無料資料請求（7日間体験付き） 10万組の親子が実践した 超効率おうち英語教材 無料資料請求（7日間体験付き） 40年以上 の実績 言語学者 が制作 10万組の 親子が実践 小学生で 英検準２級 Welcome to PALKIDS ことばの習得と学びの理論 をもとに設計された プログラムです なぜこの方法なのか。 パルキッズの考え方を4つの視点から解説します。 01 パルキッズとは？ 言語学の知見を結集した、パルキッズメソッドの全体像 詳しく見る → 02 おうち英語とは？ 家庭での英語環境が子どもの英語習得を決める理由 詳しく見る → 03 ことばが身につく方法とは？ 第一言語習得のメカニズムから学ぶ、英語が身につく秘密 詳しく見る → 04 かしこい子を育てるには？ ことば・思考・認知を『地頭力』という切り口で解説 詳しく見る → ただいま、パルキッズに取り組み中 ‹ 英語を英語のまま理解することを身につけた中学生が英検１級に合格！ 中学3年生 続きを読む 日本語のおしゃべりもまだまだですが 英語の単語が少し出てきました。 2歳 続きを読む 本人も英語に自信がついたようです。 小学2年生 続きを読む 「インプットのないところにアウトプットはない」英語教育とはこれに尽きるのだなと感じています。 中学3年生 続きを読む 合格できたのは、パルキッズ教材のおかげです。 小学２年生 続きを読む › 体験談・合格レポートをもっと見る はじめての方へ まずはお子さまにピッタリの教材を探してみましょう。 お子さまにぴったりの教材を診断する 質問に答えるだけで、最適な教材をご提案します（約1分） 教材選びでまだお迷いの方は、専門スタッフにお気軽にご相談ください。 教材えらびご相談掲示板へ パルキッズ人気教材 見たい教材ジャンルをクリックしてください 英語メイン教材 英語読解教材 英検対策教材 国語教材 多言語教材 地頭力教材 人気 パルキッズコンプリートパック 定価 ¥437,415 会員価格 ¥393,674 詳細を見る 人気 パルキッズプリスクーラーYEAR1リーディングセット 定価 ¥104,500 会員価格 ¥99,275 詳細を見る パルキッズキンダーJUNIOR 定価 ¥71,500 会員価格 ¥67,925 詳細を見る 人気 パルキッズジュニア 定価 ¥74,415 会員価格 ¥70,693 詳細を見る 英語メイン教材をさらに詳しく おすすめ書籍 「地頭力」を鍛える子育て（大和出版） 船津洋 著 ¥1,870 子どもの英語「超効率」勉強法（かんき出版） 船津洋 著 ¥1,530 たった「80単語」! 読むだけで「英語脳」になる本（三笠書房） 船津洋 著 ¥1,760 子どもの「英語脳」の育て方（現代書林） 船津洋 著 ¥1,430 書籍一覧を見る パルキッズ通信最新号 2026.10.01 特集 Vol.343 | “おうち英語あるある” をスッキリ解決 Part.2 記事を読む 2026.10.01 ハワイアンジャーナル Vol.184 | 英語を強みにする方法 記事を読む 2026.10.01 パルキッズ塾 Vol.162 | 友だちは英語やってないのになぜ私だけ？ 記事を読む パルキッズ通信をもっと読む 最新のお知",
+    "line": [],
+    "url": "https://www.palkids.co.jp/"
+   },
+   "final_url": "https://www.palkids.co.jp/s/index.php?main_page=contact",
+   "frame": "main",
+   "ex": {
+    "fields": [
+     {
+      "kind": "text",
+      "name": "url_confirm",
+      "label": "ウェブサイト（入力しないでください）",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "firstname",
+      "label": "保護者氏名（漢字）姓 * 〔姓〕",
+      "required": true,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "lastname",
+      "label": "保護者氏名（漢字）名 * 〔名〕",
+      "required": true,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "firstkana",
+      "label": "保護者氏名（ふりがな）せい * 〔せい〕",
+      "required": true,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "lastkana",
+      "label": "保護者氏名（ふりがな）めい * 〔めい〕",
+      "required": true,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "tel",
+      "name": "telephone",
+      "label": "電話番号（半角／ハイフンなし） * 〔例：0333526125〕",
+      "required": true,
+      "disabled": false,
+      "maxlength": 15,
+      "value": ""
+     },
+     {
+      "kind": "email",
+      "name": "email_address",
+      "label": "Eメールアドレス * 〔例：palkids@example.com〕",
+      "required": true,
+      "disabled": false,
+      "maxlength": 256,
+      "value": ""
+     },
+     {
+      "kind": "textarea",
+      "name": "contents",
+      "label": "お問い合わせ内容 * 〔入力してください。〕",
+      "required": true,
+      "disabled": false,
+      "maxlength": 1000,
+      "value": ""
+     },
+     {
+      "kind": "checkbox",
+      "name": "privacy_conditions",
+      "label": "個人情報保護方針 * 個人情報保護方針に同意します。 ※個人情報保護方針はこちら",
+      "required": true,
+      "disabled": false,
+      "checked": false,
+      "optText": "個人情報保護方針に同意します。"
+     }
+    ],
+    "captcha": [],
+    "eigyo": [],
+    "limits": [],
+    "line": [],
+    "btns": [
+     "内容を送信する"
+    ],
+    "formAction": "https://www.palkids.co.jp/s/index.php?main_page=contact",
+    "title": "お問い合わせ - 幼児・小学生のおうち英語教材パルキッズ｜0歳から小学生の英語環境づくり",
+    "nForms": 1
+   },
+   "refuse": [],
+   "capVisible": [],
+   "bodyLen": 984,
+   "plan": {
+    "fieldCount": 16,
+    "plan": [
+     {
+      "what": "本文",
+      "act": "fill",
+      "value": "本文"
+     },
+     {
+      "what": "保護者氏名（漢字）姓 * 保護者氏名（漢",
+      "act": "fill",
+      "value": "仁海"
+     },
+     {
+      "what": "保護者氏名（漢字）名 * 保護者氏名（漢",
+      "act": "fill",
+      "value": "勝良"
+     },
+     {
+      "what": "保護者氏名（ふりがな）せい * 保護者氏",
+      "act": "fill",
+      "value": "かつら"
+     },
+     {
+      "what": "保護者氏名（ふりがな）めい * 保護者氏",
+      "act": "fill",
+      "value": "ひとみ"
+     },
+     {
+      "what": "電話番号（半角／ハイフンなし） * 電話",
+      "act": "fill",
+      "value": "07089803196"
+     },
+     {
+      "what": "Eメールアドレス * Eメールアドレス ",
+      "act": "fill",
+      "value": "hitomi.k@lincle-dreams.com"
+     },
+     {
+      "what": "同意",
+      "act": "check"
+     }
+    ],
+    "unknown": [],
+    "notes": [],
+    "buttons": [
+     "submit:内容を送信する"
+    ]
+   },
+   "bodyOk": true,
+   "invalid": [],
+   "capAfter": [],
+   "after": [
+    {
+     "kind": "text",
+     "name": "url_confirm",
+     "label": "ウェブサイト（入力しないでください）",
+     "required": false,
+     "disabled": false,
+     "value": ""
+    },
+    {
+     "kind": "text",
+     "name": "firstname",
+     "label": "保護者氏名（漢字）姓 * 〔姓〕",
+     "required": true,
+     "disabled": false,
+     "value": "仁海"
+    },
+    {
+     "kind": "text",
+     "name": "lastname",
+     "label": "保護者氏名（漢字）名 * 〔名〕",
+     "required": true,
+     "disabled": false,
+     "value": "勝良"
+    },
+    {
+     "kind": "text",
+     "name": "firstkana",
+     "label": "保護者氏名（ふりがな）せい * 〔せい〕",
+     "required": true,
+     "disabled": false,
+     "value": "かつら"
+    },
+    {
+     "kind": "text",
+     "name": "lastkana",
+     "label": "保護者氏名（ふりがな）めい * 〔めい〕",
+     "required": true,
+     "disabled": false,
+     "value": "ひとみ"
+    },
+    {
+     "kind": "tel",
+     "name": "telephone",
+     "label": "電話番号（半角／ハイフンなし） * 〔例：0333526125〕",
+     "required": true,
+     "disabled": false,
+     "maxlength": 15,
+     "value": "07089803196"
+    },
+    {
+     "kind": "email",
+     "name": "email_address",
+     "label": "Eメールアドレス * 〔例：palkids@example.com〕",
+     "required": true,
+     "disabled": false,
+     "maxlength": 256,
+     "value": "hitomi.k@lincle-dreams.com"
+    },
+    {
+     "kind": "textarea",
+     "name": "contents",
+     "label": "お問い合わせ内容 * 〔入力してください。〕",
+     "required": true,
+     "disabled": false,
+     "maxlength": 1000,
+     "value": "〈本文 984字〉"
+    },
+    {
+     "kind": "checkbox",
+     "name": "privacy_conditions",
+     "label": "個人情報保護方針 * 個人情報保護方針に同意します。 ※個人情報保護方針はこちら",
+     "required": true,
+     "disabled": false,
+     "checked": true,
+     "optText": "個人情報保護方針に同意します。"
+    }
+   ]
+  },
+  {
+   "key": "C011",
+   "industry": "オンラインスクール",
+   "name": "miyumiyu.english",
+   "official_url": "https://eikensuccess.com/",
+   "form_url": "https://eikensuccess.com/contact/",
+   "top": {
+    "title": "英検サクセス | ライティングに強くなる！小・中学生のための英検オンラインスクール",
+    "desc": "最短で英検合格を目指す小学生・中学生向けの英検オンラインスクール。英検に特化して、合格点を取りに行くためのノウハウを指導しています。合格率98%、指導歴20年の実績。",
+    "h": [
+     "選べる4つの 英検対策コース",
+     "合格者の声",
+     "M・Kさん (中３)",
+     "N・Tさん (小５)",
+     "S・Kさん (中2)",
+     "講師ブログ",
+     "2025年度第1回 英検一次試験 合格速報｜わずか2か月で多数の小中高生が“最短合格”を実現！",
+     "英検二級の面接に２回落ちた高校生を“１発合格”させたプロの対策法",
+     "中学生でも最短1カ月半で英検2級に合格！保護者が知っておきたい成功の秘訣"
+    ],
+    "text": "ライティングに強くなる！小・中学生のための英検オンラインスクール ホーム 英検サクセスについて コースについて 合格者の声 お問い合わせ 無料体験・個別相談 Scroll こんなことにお悩みの 小中学生の保護者の方へ そのお悩み 英検合格オンラインスクール 『英検サクセス』が解決します！ 英検合格オンラインスクール『英検サクセス』は、英検に特化した英語講師が多数の指導経験と実績、自身の受験経験をもとに、その子にあった必要な対策をピンポイントで指導する、オンラインスクールです。 独学で合格しようと思うと、情報に振り回されてしまい、自分に必要な対策がわからなくなってしまいます。 英会話学校でも学校の授業でも、学習塾でもカバーできない、「英検」に特化している英検プロコーチがそばについてサポートする だから 最短ルートでお子さんを合格に導きます。 英検サクセスについて ▶︎ 選べる4つの 英検対策コース course 「英検サクセス」では、目標や学年に合わせたコースに沿って学習を進められます。 総合英検対策コース （個別・グループ） 小学生から社会人まで、英検の４技能の英検対策全般をサポートしてほしい方へ。 何から手をつけたらいいかわからず、遠回りしてしまう英検の勉強。一人一人の習熟度に合わせて、本当に必要な箇所をピンポイントで指導するので最短で合格できます。 総合英検対策コース 中学生のための ライティング添削コース 中学生を対象としたライティングの添削集中講座。 何となく答えは書けるけど、支離滅裂な文になってしまったり、何を書いていいのかが分からない…そんな中学生のために、アイデア出しの方法や書き方のノウハウを指導。 ライティングで高得点を取り、合格へ導きます。 中学生ライティング添削コース 小学生のための ライティング添削コース 小学生を対象としたライティングの添削集中講座。 英会話は出来るけど、文法力や単語力が足りず苦戦してしまうことが多い小学生。丁寧に単語、文法、書き方の指導をしていきます。 小学生ライティング添削コース ▶︎ 英検 面接練習コース 面接対策をしたい方のための、試験直前コースです。 苦手な人でも、コツを抑えれば必ず合格できます。 答え方のコツ、合格の為のノウハウ、発音矯正など、一人では学習が難しい面接対策の集中トレーニングを行います。 英検面接練習コース ▶︎ 合格者の声 voice M・Kさん (中３) 娘の英検2級をお願いしました。 S-CBTで英検を受検することになったので、2カ月集中でお願いしました。受験生で忙しい娘ですが、オンラインで都合のよい時間に授業をしてもらえたので助かりました。無事に合格することができました。本当に感謝しております。ありがとうございました。 N・Tさん (小５) 文法がわかるようになり小５で３級に合格しました！ 娘は4級まではスムーズに合格してきたのですが、3級から文法が難しくなり、スムーズに独学の勉強が出来なくなりました。そこでみゆき先生にお願いしたところ説明がとてもわかりやすく、いままでつまづいていた英文法も分かるようになりました。問題の解き方も非常に分かり易くてすらすら解… S・Kさん (中2) 本人も親も満足です! 中学2年の娘がズームにて英検2級授業をして頂き2級に合格しました。細かな部分がズームで伝えてもらえるのか不安ではありましたが、娘に尋ねると、気さくに話し易く、とてもわかりやすく、また要点をコンパクトに教えてもらえるので内容はとても充実した物になっているので助かった。と喜んでお",
+    "line": [
+     "https://line.me/R/ti/p/@910kdomh"
+    ],
+    "url": "https://eikensuccess.com/"
+   },
+   "final_url": "https://eikensuccess.com/contact/",
+   "frame": "main",
+   "ex": {
+    "fields": [
+     {
+      "kind": "text",
+      "name": "text-180",
+      "label": "必須名前",
+      "required": true,
+      "disabled": false,
+      "maxlength": 400,
+      "value": ""
+     },
+     {
+      "kind": "email",
+      "name": "email-601",
+      "label": "必須メールアドレス",
+      "required": true,
+      "disabled": false,
+      "maxlength": 400,
+      "value": ""
+     },
+     {
+      "kind": "tel",
+      "name": "tel-79",
+      "label": "任意電話番号",
+      "required": false,
+      "disabled": false,
+      "maxlength": 400,
+      "value": ""
+     },
+     {
+      "kind": "textarea",
+      "name": "textarea-328",
+      "label": "必須メッセージ本文",
+      "required": true,
+      "disabled": false,
+      "maxlength": 2000,
+      "value": ""
+     }
+    ],
+    "captcha": [],
+    "eigyo": [],
+    "limits": [],
+    "line": [
+     "https://line.me/R/ti/p/@910kdomh"
+    ],
+    "btns": [
+     "送信"
+    ],
+    "formAction": "/contact/#wpcf7-f10-p23-o1",
+    "title": "お問い合わせ | 英検サクセス",
+    "nForms": 4
+   },
+   "refuse": [],
+   "capVisible": [],
+   "bodyLen": 989,
+   "plan": {
+    "fieldCount": 11,
+    "plan": [
+     {
+      "what": "本文",
+      "act": "fill",
+      "value": "本文"
+     },
+     {
+      "what": " 必須名前 text-180",
+      "act": "fill",
+      "value": "勝良仁海"
+     },
+     {
+      "what": " 必須メールアドレス email-601",
+      "act": "fill",
+      "value": "hitomi.k@lincle-dreams.com"
+     },
+     {
+      "what": " 任意電話番号 tel-79",
+      "act": "fill",
+      "value": "07089803196"
+     }
+    ],
+    "unknown": [],
+    "notes": [],
+    "buttons": [
+     "submit:送信"
+    ]
+   },
+   "bodyOk": true,
+   "invalid": [],
+   "capAfter": [],
+   "after": [
+    {
+     "kind": "text",
+     "name": "text-180",
+     "label": "必須名前",
+     "required": true,
+     "disabled": false,
+     "maxlength": 400,
+     "value": "勝良仁海"
+    },
+    {
+     "kind": "email",
+     "name": "email-601",
+     "label": "必須メールアドレス",
+     "required": true,
+     "disabled": false,
+     "maxlength": 400,
+     "value": "hitomi.k@lincle-dreams.com"
+    },
+    {
+     "kind": "tel",
+     "name": "tel-79",
+     "label": "任意電話番号",
+     "required": false,
+     "disabled": false,
+     "maxlength": 400,
+     "value": "07089803196"
+    },
+    {
+     "kind": "textarea",
+     "name": "textarea-328",
+     "label": "必須メッセージ本文",
+     "required": true,
+     "disabled": false,
+     "maxlength": 2000,
+     "value": "〈本文 989字〉"
+    }
+   ]
+  },
+  {
+   "key": "C022",
+   "industry": "住宅・リフォーム",
+   "name": "杜ノ家建築工房",
+   "official_url": "https://morinoie-k.jp/",
+   "form_url": "https://morinoie-k.jp/lp/form/",
+   "top": {
+    "title": "杜ノ家建築工房｜山形県",
+    "desc": "山形県を拠点に家づくりをしている設計事務所＋工務店の「杜ノ家建築工房」。山形をデザインする地産地消の家づくり。山形で月々２万円台から建てられる家づくり。山形で一番電気代が安く一番温かく一番安い家。",
+    "h": [],
+    "text": "6%",
+    "line": [],
+    "url": "https://morinoie-k.jp/"
+   },
+   "final_url": "https://morinoie-k.jp/lp/form/",
+   "frame": "main",
+   "ex": {
+    "fields": [
+     {
+      "kind": "text",
+      "name": "name",
+      "label": "STEP.1 ご連絡先をご入力ください【※必須】 お名前 〔杜ノ家 太郎〕",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "email",
+      "label": "メールアドレス 〔mail@morinoie-k.jp（半角）〕",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "tel",
+      "label": "電話番号 〔0123-45-6789（半角）〕",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "radiogroup",
+      "name": "type",
+      "label": "STEP.2 種別を選択してください【※必須】 ご相談（無料） その他",
+      "required": false,
+      "options": [
+       "ご相談（無料）",
+       "その他"
+      ],
+      "checked": []
+     },
+     {
+      "kind": "textarea",
+      "name": "memo",
+      "label": "〔お問い合わせ内容を入力してください（任意）〕",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "checkbox",
+      "name": "privacy[]",
+      "label": "STEP.3 入力した内容をご確認ください 個人情報保護方針 杜ノ家建築工房（以下「当社」といいます。）は、お客様からの信頼を第一と考え、お客様個人に関わる情報",
+      "required": false,
+      "disabled": false,
+      "checked": false,
+      "optText": "個人情報保護方針に同意"
+     }
+    ],
+    "captcha": [],
+    "eigyo": [],
+    "limits": [],
+    "line": [],
+    "btns": [
+     "入力内容を確認"
+    ],
+    "formAction": "./confirm.php",
+    "title": "お問い合わせ｜杜ノ家建築工房",
+    "nForms": 1
+   },
+   "refuse": [],
+   "capVisible": [],
+   "bodyLen": 988,
+   "plan": {
+    "fieldCount": 9,
+    "plan": [
+     {
+      "what": "本文",
+      "act": "fill",
+      "value": "本文"
+     },
+     {
+      "what": " STEP.1 ご連絡先をご入力ください",
+      "act": "fill",
+      "value": "勝良仁海"
+     },
+     {
+      "what": " メールアドレス mail@morino",
+      "act": "fill",
+      "value": "hitomi.k@lincle-dreams.com"
+     },
+     {
+      "what": " 電話番号 0123-45-6789（半",
+      "act": "fill",
+      "value": "07089803196"
+     },
+     {
+      "what": "同意",
+      "act": "check"
+     },
+     {
+      "what": "選択 その他 その他",
+      "act": "check"
+     }
+    ],
+    "unknown": [],
+    "notes": [],
+    "buttons": [
+     "confirm:入力内容を確認"
+    ]
+   },
+   "bodyOk": true,
+   "invalid": [],
+   "capAfter": [],
+   "after": [
+    {
+     "kind": "text",
+     "name": "name",
+     "label": "STEP.1 ご連絡先をご入力ください【※必須】 お名前 〔杜ノ家 太郎〕",
+     "required": false,
+     "disabled": false,
+     "value": "勝良仁海"
+    },
+    {
+     "kind": "text",
+     "name": "email",
+     "label": "メールアドレス 〔mail@morinoie-k.jp（半角）〕",
+     "required": false,
+     "disabled": false,
+     "value": "hitomi.k@lincle-dreams.com"
+    },
+    {
+     "kind": "text",
+     "name": "tel",
+     "label": "電話番号 〔0123-45-6789（半角）〕",
+     "required": false,
+     "disabled": false,
+     "value": "07089803196"
+    },
+    {
+     "kind": "radiogroup",
+     "name": "type",
+     "label": "STEP.2 種別を選択してください【※必須】 ご相談（無料） その他",
+     "required": false,
+     "options": [
+      "ご相談（無料）",
+      "その他"
+     ],
+     "checked": [
+      "その他"
+     ]
+    },
+    {
+     "kind": "textarea",
+     "name": "memo",
+     "label": "〔お問い合わせ内容を入力してください（任意）〕",
+     "required": false,
+     "disabled": false,
+     "value": "〈本文 988字〉"
+    },
+    {
+     "kind": "checkbox",
+     "name": "privacy[]",
+     "label": "STEP.3 入力した内容をご確認ください 個人情報保護方針 杜ノ家建築工房（以下「当社」といいます。）は、お客様からの信頼を第一と考え、お客様個人に関わる情報",
+     "required": false,
+     "disabled": false,
+     "checked": true,
+     "optText": "個人情報保護方針に同意"
+    }
+   ]
+  },
+  {
+   "key": "C031",
+   "industry": "住宅・リフォーム",
+   "name": "有限会社あかい工房 | session　ー「場」の建築ー",
+   "official_url": "https://akaikoubou.com/",
+   "form_url": "https://akaikoubou.com/contact/",
+   "top": {
+    "title": "あかい工房 | session ー「場」の建築 ー",
+    "desc": "",
+    "h": [],
+    "text": "お問い合わせ INSTAGRAM あかい⼯房のこと ABOUT ・あかいの考え ・チームあかい neo yoriai EVENT SPACE / MODEL HOUSE あかい⼯房の建築 AKAI ARCHITECTURE ・あかい工房の店舗 施工事例 CONSTRUCTION EXAMPLES ・新築 ・改築 ・古民家 ・店舗 モデルハウス MODELHOUSE ・DOMALIV HOUSE ・neo yoriai ・⾥⼭の家 最新のコンテンツ LATEST CONTENT 問い合わせ CONTACT 会社概要 COMPANY 採用情報 RECRUITMENT あかい工房のこと あかい工房のこと あかい工房が大切にしているのは、施主様と対話することです。会って対話を重ねることが「あなたの家」を建てる秘訣だと考えています。 詳しくはこちら → neo yoriai neo yoriai 住まいであり、カフェであり、コミュニティでもある「neo yoriai」。たくさんの人が寄り合い、これからの暮らしを語り合い、訪れる方の未来に必要な場所になります。 詳しくはこちら → あかい工房の建築 あかい工房の建築 新築、改築、古⺠家再生、店舗など、さまざまな施工事例があります。そのどれもが時間をかけて育まれた建材と確かな技術で生まれた建築です。 詳しくはこちら → 最新コンテンツ 2026.10.19 公園に、みんなの菜園をつくろう！つちとき菜園 ワークショップ 2026.10.12 インドネシアを巡る旅 ― 人、コーヒー、そして学び― ③ 学び編 ― Green School Bali 2026.10.5 インドネシアを巡る旅 ― 人、コーヒー、そして学び― ②コーヒー編 一杯の向こう側へ もっと見る 対話でできる家？ 家の数だけ施主様がいて、 その数だけ想いと暮らしがあります。 さまざまなコンテンツをご覧いただき、 その一端を感じてみてください。 あかいの考え 2026.10.19 公園に、みんなの菜園をつくろう！... 10月22日（木）10:00〜15:00 参加無料公園の中に、自分たちで菜園をつくる。 これって、実はすごいことだと思いませんか？ 好きな野菜を育ててもいい。好きな花を咲かせてもいい。ハーブを育てて、香りを楽しむのもいい。 それ… 詳しくはこちら あかいの考え 2026.10.12 インドネシアを巡る旅 ― 人、コ... 今回の旅の最後に訪れたのが、Green School Bali。 竹を使った建築でも世界的に知られている学校です。 建築に携わる私たちとしては、もちろん一度見てみたい場所でした。 実際に訪れてみると、まず目に飛び込んでくるの… 詳しくはこちら あかいの考え 2026.10.5 インドネシアを巡る旅 ― 人、コ... 今回のコーヒーの旅は、ただ有名な店を回ったり、おいしいコーヒーを飲むためのものではありませんでした。 私たちは普段、建築でも農業でも、 どこで、誰が、どんなふうにつくっているのかを、できるだけ現地で見るようにしています。 … 詳しくはこちら あかいの考え 2026.9.28 インドネシアを巡る旅 ― 人、コ... 今回、インドネシアを訪れた一番の目的は、来年からあかい工房で一緒に働く技能実習生の面接でした。 現地で面接したの… 詳しくはこちら あかいの考え 2026.9.21 有馬温泉に、子どもたちの居場所が... 9月12日、無事にオープニングセレモニーを迎えました。 このプロジェクトは、",
+    "line": [],
+    "url": "https://akaikoubou.com/"
+   },
+   "final_url": "https://akaikoubou.com/contact/",
+   "frame": "main",
+   "ex": {
+    "fields": [
+     {
+      "kind": "text",
+      "name": "name",
+      "label": "お名前（必須）",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "kana",
+      "label": "ふりがな（必須）",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "email",
+      "name": "mail",
+      "label": "メールアドレス（必須）",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "email",
+      "name": "mail-confirm",
+      "label": "メールアドレス（確認用）",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "tel",
+      "label": "お電話番号（必須）",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "address-ken",
+      "label": "都道府県",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "address-shi",
+      "label": "市区町村",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "address-banchi",
+      "label": "番地・建物名",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "textarea",
+      "name": "contents",
+      "label": "お問い合わせ内容（必須）",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     }
+    ],
+    "captcha": [],
+    "eigyo": [],
+    "limits": [],
+    "line": [],
+    "btns": [
+     "確認画面へ"
+    ],
+    "formAction": "",
+    "title": "お問い合わせ | あかい工房",
+    "nForms": 1
+   },
+   "refuse": [],
+   "capVisible": [],
+   "bodyLen": 1009,
+   "plan": {
+    "fieldCount": 12,
+    "plan": [
+     {
+      "what": "本文",
+      "act": "fill",
+      "value": "本文"
+     },
+     {
+      "what": " お名前（必須） name",
+      "act": "fill",
+      "value": "勝良仁海"
+     },
+     {
+      "what": " ふりがな（必須） kana",
+      "act": "fill",
+      "value": "かつら ひとみ"
+     },
+     {
+      "what": " メールアドレス（必須） mail",
+      "act": "fill",
+      "value": "hitomi.k@lincle-dreams.com"
+     },
+     {
+      "what": " メールアドレス（確認用） mail-c",
+      "act": "fill",
+      "value": "hitomi.k@lincle-dreams.com"
+     },
+     {
+      "what": " お電話番号（必須） tel",
+      "act": "fill",
+      "value": "07089803196"
+     }
+    ],
+    "unknown": [],
+    "notes": [],
+    "buttons": [
+     "confirm:確認画面へ"
+    ]
+   },
+   "bodyOk": true,
+   "invalid": [],
+   "capAfter": [],
+   "after": [
+    {
+     "kind": "text",
+     "name": "name",
+     "label": "お名前（必須）",
+     "required": false,
+     "disabled": false,
+     "value": "勝良仁海"
+    },
+    {
+     "kind": "text",
+     "name": "kana",
+     "label": "ふりがな（必須）",
+     "required": false,
+     "disabled": false,
+     "value": "かつら ひとみ"
+    },
+    {
+     "kind": "email",
+     "name": "mail",
+     "label": "メールアドレス（必須）",
+     "required": false,
+     "disabled": false,
+     "value": "hitomi.k@lincle-dreams.com"
+    },
+    {
+     "kind": "email",
+     "name": "mail-confirm",
+     "label": "メールアドレス（確認用）",
+     "required": false,
+     "disabled": false,
+     "value": "hitomi.k@lincle-dreams.com"
+    },
+    {
+     "kind": "text",
+     "name": "tel",
+     "label": "お電話番号（必須）",
+     "required": false,
+     "disabled": false,
+     "value": "07089803196"
+    },
+    {
+     "kind": "text",
+     "name": "address-ken",
+     "label": "都道府県",
+     "required": false,
+     "disabled": false,
+     "value": ""
+    },
+    {
+     "kind": "text",
+     "name": "address-shi",
+     "label": "市区町村",
+     "required": false,
+     "disabled": false,
+     "value": ""
+    },
+    {
+     "kind": "text",
+     "name": "address-banchi",
+     "label": "番地・建物名",
+     "required": false,
+     "disabled": false,
+     "value": ""
+    },
+    {
+     "kind": "textarea",
+     "name": "contents",
+     "label": "お問い合わせ内容（必須）",
+     "required": false,
+     "disabled": false,
+     "value": "〈本文 1009字〉"
+    }
+   ]
+  },
+  {
+   "key": "C035",
+   "industry": "住宅・リフォーム",
+   "name": "合同会社横塚建設",
+   "official_url": "https://yokotsuka-construction.com/",
+   "form_url": "https://yokotsuka-construction.com/contact/",
+   "top": {
+    "title": "合同会社横塚建設／リフォーム・塗装 - 山口県でリフォーム・塗装の専門建設会社です",
+    "desc": "「横塚建設」は、山口県内全域を対象に屋根修理・外壁塗装・内装リフォームなど住まいのトラブルにワンストップで対応。地域密着のホームドクターとして、小さな修理から大規模改修まで、お客様に寄り添った丁寧な施工を心がけています。安心して任せられる地元のリフォーム・修繕会社をお探しならぜひご相談ください。",
+    "h": [
+     "地域密着型 山口県の住まい・リフォーム",
+     "合同会社 横塚建設 YOKOTSUKA CONSTRUCTION",
+     "合同会社 横塚建設 YOKOTSUKA CONSTRUCTION",
+     "横塚建設について Corporate Philosophy",
+     "事業内容 Service",
+     "施工事例 Our performance",
+     "お問い合わせ"
+    ],
+    "text": "地域密着型 山口県の住まい・リフォーム 横塚建設について 屋根修理について 外壁塗装について 内装・その他付帯工事 施工実績 ブログ 採用情報 お問い合わせ 合同会社 横塚建設 YOKOTSUKA CONSTRUCTION 横塚建設について 屋根修理について 外壁塗装について 内装・その他付帯工事 施工実績 ブログ 採用情報 お問い合わせ 家族がもっと好きになる、 快適な空間づくり 合同会社 横塚建設 YOKOTSUKA CONSTRUCTION 横塚建設について Corporate Philosophy お客様の大切な家のホームドクターのような存在でありたい。 お客様のご希望に寄り添い、 常にお客様ファーストの精神でサービスを提供します。 住んでいると小さな修理から大きなリフォームまで、 様々な悩みが出てくるかと思います。 弊社はよりお客様に近い存在で頼れる身近な会社として、 末永いお付き合いを目指しております。 もっと見る 事業内容 Service 外壁工事 Exterior Construction 外壁塗装工事 付帯塗装工事 もっと見る 屋根修理 Roof repair 葺き替え工事 葺き直し工事 塗装工事 漆喰工事 棟積み替え工事 もっと見る 内装・その他付帯工事 Interior & Other Related Works 水回り フローリング張り替え コーキング工事 雨樋工事 軒天工事 防水工事 もっと見る 施工事例 Our performance 弊社はよりお客様に近い存在の頼れる身近な会社として末永いお付き合いを目指しております。 困ったときの頼りになる会社であり続けたいと思っております。 もっと見る お問い合わせ ご相談・お問い合わせはこちらまで 電話でのお問い合わせ メールでのお問い合わせ 合同会社 横塚建設 YOKOTSUKA CONSTRUCTION 〒753-0801 山口県山口市中尾703-6 TEL 083-929-3979 e-mail info@yokotuka.com Google Map ©2024 合同会社 横塚建設",
+    "line": [],
+    "url": "https://yokotsuka-construction.com/"
+   },
+   "final_url": "https://yokotsuka-construction.com/contact/",
+   "frame": "main",
+   "ex": {
+    "fields": [
+     {
+      "kind": "text",
+      "name": "name",
+      "label": "お名前 ※必須",
+      "required": true,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "furigana",
+      "label": "お名前（フリガナ）",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "email",
+      "name": "email",
+      "label": "メールアドレス ※必須",
+      "required": true,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "tel",
+      "name": "phone",
+      "label": "電話番号",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "textarea",
+      "name": "message",
+      "label": "お問い合わせ内容 ※必須 〔メッセージを入力してください〕",
+      "required": true,
+      "disabled": false,
+      "value": ""
+     }
+    ],
+    "captcha": [],
+    "eigyo": [],
+    "limits": [],
+    "line": [],
+    "btns": [
+     "送信する"
+    ],
+    "formAction": "https://yokotsuka-construction.com/contact/",
+    "title": "contact - 合同会社横塚建設／リフォーム・塗装",
+    "nForms": 1
+   },
+   "refuse": [],
+   "capVisible": [],
+   "bodyLen": 989,
+   "plan": {
+    "fieldCount": 7,
+    "plan": [
+     {
+      "what": "本文",
+      "act": "fill",
+      "value": "本文"
+     },
+     {
+      "what": "お名前 ※必須 お名前 ※必須 name",
+      "act": "fill",
+      "value": "勝良仁海"
+     },
+     {
+      "what": "お名前（フリガナ） お名前（フリガナ） ",
+      "act": "fill",
+      "value": "カツラ ヒトミ"
+     },
+     {
+      "what": "メールアドレス ※必須 メールアドレス ",
+      "act": "fill",
+      "value": "hitomi.k@lincle-dreams.com"
+     },
+     {
+      "what": "電話番号 電話番号 phone",
+      "act": "fill",
+      "value": "07089803196"
+     }
+    ],
+    "unknown": [],
+    "notes": [],
+    "buttons": [
+     "submit:送信する"
+    ]
+   },
+   "bodyOk": true,
+   "invalid": [],
+   "capAfter": [],
+   "after": [
+    {
+     "kind": "text",
+     "name": "name",
+     "label": "お名前 ※必須",
+     "required": true,
+     "disabled": false,
+     "value": "勝良仁海"
+    },
+    {
+     "kind": "text",
+     "name": "furigana",
+     "label": "お名前（フリガナ）",
+     "required": false,
+     "disabled": false,
+     "value": "カツラ ヒトミ"
+    },
+    {
+     "kind": "email",
+     "name": "email",
+     "label": "メールアドレス ※必須",
+     "required": true,
+     "disabled": false,
+     "value": "hitomi.k@lincle-dreams.com"
+    },
+    {
+     "kind": "tel",
+     "name": "phone",
+     "label": "電話番号",
+     "required": false,
+     "disabled": false,
+     "value": "07089803196"
+    },
+    {
+     "kind": "textarea",
+     "name": "message",
+     "label": "お問い合わせ内容 ※必須 〔メッセージを入力してください〕",
+     "required": true,
+     "disabled": false,
+     "value": "〈本文 989字〉"
+    }
+   ]
+  }
+ ]
+}
