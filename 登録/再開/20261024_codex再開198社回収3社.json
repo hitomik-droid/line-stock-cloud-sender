@@ -1,0 +1,612 @@
+{
+ "schema": "line-stock-saved-inspection/1",
+ "source_run": 40068294638,
+ "technical_template": "v5（登録はv8、送付前dryで確認）",
+ "cands": [
+  {
+   "key": "C019",
+   "base": "tapi.school",
+   "industry": "オンラインスクール",
+   "name": "Tapi台湾華語教室",
+   "official_url": "https://www.tapi.school/",
+   "form_url": "https://www.tapi.school/contact",
+   "memo": "Tapiは東京・飯田橋の台湾華語専門スクール。もっと身近に 本当に話せる台湾華語",
+   "list_source": "動画広告Pro",
+   "source_url": "https://dpro.kashika-20mile.com/search?interval=2&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION&keyword=in%3A%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E3%83%AC%E3%83%83%E3%82%B9%E3%83%B3",
+   "ad_media": "X",
+   "ad_purpose": "獲得",
+   "ad_evidence_url": "https://assets.douga-pro.com/x/2063226019142934990/thumbnail.webp"
+  },
+  {
+   "key": "C006",
+   "base": "showa-j.jp",
+   "industry": "住宅・リフォーム",
+   "name": "昭和住宅株式会社",
+   "official_url": "https://showa-j.jp/",
+   "form_url": "https://showa-j.jp/reserve/",
+   "memo": "所在地は福岡県北九州市八幡西区。北九州市の一戸建て木造住宅、注文住宅：昭和住宅株式会社 - 自然素材を使った健康な木の…",
+   "list_source": "動画広告Pro",
+   "source_url": "https://dpro.kashika-20mile.com/search?interval=2&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION&keyword=in%3A%E7%84%A1%E5%9E%A2%E6%9D%90",
+   "ad_media": "Yahoo",
+   "ad_purpose": "獲得",
+   "ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/yahoo/image/5HfK3FEnG6A.webp"
+  },
+  {
+   "key": "C023",
+   "base": "kakuyama.jp",
+   "industry": "住宅・リフォーム",
+   "name": "カク山木材建設有限会社",
+   "official_url": "https://kakuyama.jp/",
+   "form_url": "https://kakuyama.jp/contact/",
+   "memo": "所在地は長野県岡谷市。長野県岡谷市で創業100年のカク山木材建設",
+   "list_source": "動画広告Pro",
+   "source_url": "https://dpro.kashika-20mile.com/search?interval=2&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION&keyword=in%3A%E7%84%A1%E5%9E%A2%E6%9D%90",
+   "ad_media": "Instagram",
+   "ad_purpose": "獲得",
+   "ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/instagram/image/NCzG4WTFt53.webp"
+  }
+ ],
+ "results": [
+  {
+   "key": "C019",
+   "industry": "オンラインスクール",
+   "name": "Tapi台湾華語教室",
+   "official_url": "https://www.tapi.school/",
+   "form_url": "https://www.tapi.school/contact",
+   "top": {
+    "title": "Tapi台湾華語教室｜オンライン・対面マンツーマンレッスン｜東京・飯田橋",
+    "desc": "Tapiは東京・飯田橋の台湾華語専門スクール。飯田橋校での通学レッスンとオンラインレッスンに対応し、台湾人講師とのマンツーマンはオンライン25分980円から、通学50分3,800円から。講師は日本語対応で、無料体験レッスンあり。少人数のオンライングループレッスン（50分1,200円）や、TOCFL対策・台湾語のレッスンもあります。",
+    "h": [
+     "もっと身近に 本当に話せる台湾華語",
+     "Tapiが選ばれる理由",
+     "受講スタイル",
+     "料金プラン",
+     "自分に合った講師に出会える",
+     "受講生の声",
+     "よくあるご質問",
+     "台湾華語学習コラム",
+     "台湾華語・台湾語を学ぶためのおすすめテキスト",
+     "春節・旧正月によく使う吉祥話（縁起の良い挨拶）",
+     "否定の「不」と「沒」の違い - 台湾生活で実感する微妙なニュアンス"
+    ],
+    "text": "初めての方へ 料金プラン 講師一覧 レッスン予約 アクセス ヘルプ もっと身近に 本当に話せる台湾華語 無料体験レッスン Tapiが選ばれる理由 台湾華語（台湾中国語）の対面・オンラインレッスンを通じて、学習者一人ひとりの目標やニーズに合わせた丁寧な指導を行っています。 厳選された講師陣 講師の90%以上が中国語教育の専門資格（TCSOL等）を保有。 日系企業での指導経験や日本国内での教育実績を持つ、厳選されたプロ講師が揃っています。日本語能力試験（JLPT）N1レベルの講師が多数在籍しており、文法やニュアンスも日本語で的確に理解できます。 もっと詳しく あらゆるニーズに対応 TOCFL・HSK試験対策、ビジネス会話、留学対策をはじめ、お子様と一緒に受講できるジュニアレッスンまで、目的に応じたカリキュラムをご用意。目的に合わせて最適な講師をご案内いたします。月謝制・チケット制の両方に対応しているため、無理なく続けられます。 もっと詳しく カスタマイズ教材 「當代中文」「時代華語」「來！學華語」など、台湾の大学付属語学センターでも採用されている標準教材を使用。台湾音楽・映画・生活文化・閩南語など、興味に合わせたテーマも取り入れます。文法と実践表現をバランスよく学び、着実な語学力を身につけましょう。 もっと詳しく 受講スタイル 通学・オンラインの両方に対応した、自由な受講スタイル レッスンは通学・オンラインの両方に対応。通学コースは飯田橋校から、オンラインコースはご自宅などお好きな場所から受講いただけます。 通学コース オンラインコース 通学コース 飯田橋校での通学レッスンとオンラインレッスンを自由に切替可能！自然なコミュニケーション学習を、台湾語ネイティブの講師と一緒にじっくり学びたい方に。 2,200 円～/名 月謝・チケット 3,800 円～ 月謝・チケット 料金 家族‧友人と一緒に楽しく学びたい方 対面でのリアルな雰囲気で学びたい方 おすすめ 50 分/回 50 分/回 ペアレッスン マンツーマン レッスン時間 料金プラン あなたにぴったりのレッスンスタイルが見つかる Tapi台湾華語教室なら、好きな時間に質の高い講師と、自分のペースで台湾華語学習ができます。 オンラインコース いつでもどこでも受講可能なオンラインコース。忙しい日常でも続けやすい、1回25分からの短期集中型レッスンです。 780 円～/名 月謝・チケット 980 円～ 月謝・チケット 料金 家族‧友人と一緒に楽しく学びたい方 効率よく上達したい方 おすすめ 25 分/回 25 分/回 ペアレッスン マンツーマン レッスン時間 ※ご予約時間が連続する場合、連続しての受講が可能です グループレッスン おすすめ 料金 レッスン時間 50 分/回 少人数制・最大6名 1,200 円 費用を抑えながら、しっかり会話力を伸ばしたい方 自分に合った講師に出会える 教育資格・指導実績を持つ台湾人ネイティブ講師が多数在籍。日本語対応で、毎回自由に講師を選択できます。 フリートーク 旅行 発音 文法 ビジネス 検定・試験対策 留学 台湾語 ジュニア 講師一覧へ 受講生の声 TAPI台湾華語教室は、さまざまな目的・レベルの受講生にご利用いただいております。 実際に使える表現をたくさん練習できました 会話の中で新しい単語も丁寧に教えてくださり、とても勉強になりました。またぜひお願いしたいです！ あちゃっこさま（20代 / 会社員 / 留学準備 / Tina先生 ） グループレッスンを受講しています ",
+    "line": [],
+    "url": "https://www.tapi.school/"
+   },
+   "final_url": "https://www.tapi.school/contact",
+   "frame": "main",
+   "ex": {
+    "fields": [
+     {
+      "kind": "text",
+      "name": "form-field-input-97fb7caf-a37d-402f-3c74-c58ed753ff72-comp-mfe6u8nq-",
+      "label": "姓",
+      "required": true,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "form-field-input-111d6578-5a5b-4db9-531e-bc9752804111-comp-mfe6u8nq-",
+      "label": "名",
+      "required": true,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "email",
+      "name": "form-field-input-647a3ee5-7b90-4160-b1c2-ff72092d2c19-comp-mfe6u8nq-",
+      "label": "メールアドレス",
+      "required": true,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "textarea",
+      "name": "form-field-input-09a451af-b211-4f43-9c97-d61a70b079f5-comp-mfe6u8nq-",
+      "label": "お問い合わせ内容",
+      "required": true,
+      "disabled": false,
+      "value": ""
+     }
+    ],
+    "captcha": [],
+    "eigyo": [],
+    "limits": [],
+    "line": [],
+    "btns": [
+     "アップロード",
+     "送信"
+    ],
+    "formAction": null,
+    "title": "お問い合わせ | Tapi台湾華語教室",
+    "nForms": 1
+   },
+   "refuse": [],
+   "capVisible": [],
+   "bodyLen": 983,
+   "plan": {
+    "fieldCount": 5,
+    "plan": [
+     {
+      "what": "本文",
+      "act": "fill",
+      "value": "本文"
+     },
+     {
+      "what": "姓 姓 姓 ",
+      "act": "fill",
+      "value": "勝良"
+     },
+     {
+      "what": "名 名 名 ",
+      "act": "fill",
+      "value": "仁海"
+     },
+     {
+      "what": "メールアドレス メールアドレス メールア",
+      "act": "fill",
+      "value": "hitomi.k@lincle-dreams.com"
+     }
+    ],
+    "unknown": [],
+    "notes": [],
+    "buttons": [
+     "submit:送信"
+    ]
+   },
+   "bodyOk": true,
+   "invalid": [],
+   "capAfter": [],
+   "after": [
+    {
+     "kind": "text",
+     "name": "form-field-input-97fb7caf-a37d-402f-3c74-c58ed753ff72-comp-mfe6u8nq-",
+     "label": "姓",
+     "required": true,
+     "disabled": false,
+     "value": "勝良"
+    },
+    {
+     "kind": "text",
+     "name": "form-field-input-111d6578-5a5b-4db9-531e-bc9752804111-comp-mfe6u8nq-",
+     "label": "名",
+     "required": true,
+     "disabled": false,
+     "value": "仁海"
+    },
+    {
+     "kind": "email",
+     "name": "form-field-input-647a3ee5-7b90-4160-b1c2-ff72092d2c19-comp-mfe6u8nq-",
+     "label": "メールアドレス",
+     "required": true,
+     "disabled": false,
+     "value": "hitomi.k@lincle-dreams.com"
+    },
+    {
+     "kind": "textarea",
+     "name": "form-field-input-09a451af-b211-4f43-9c97-d61a70b079f5-comp-mfe6u8nq-",
+     "label": "お問い合わせ内容",
+     "required": true,
+     "disabled": false,
+     "value": "〈本文 983字〉"
+    }
+   ]
+  },
+  {
+   "key": "C006",
+   "industry": "住宅・リフォーム",
+   "name": "昭和住宅株式会社",
+   "official_url": "https://showa-j.jp/",
+   "form_url": "https://showa-j.jp/reserve/",
+   "top": {
+    "title": "北九州市の一戸建て木造住宅、注文住宅：昭和住宅株式会社 - 自然素材を使った健康な木の家（北九州・福岡）",
+    "desc": "",
+    "h": [],
+    "text": "トップ 施工ギャラリー コンセプトハウス 商品ラインナップ 会社概要 社有林 60年長期保証 ZEH セルロース吹付断熱 抗酸化工法の家 抗菌処理エアガードAg＋ お問合せ 見学予約 資料 カタログ GX志向型住宅基準 UA値0.46以下 C値平均0.7以下 耐震等級3相当 お知らせ 建築中のお家やイベント他、最新の情報を掲載します。 2026/10/08その他 【八幡西区上の原】南面で陽当たりの良い土地販売中！ 2026/09/01建設中のお家 八幡西区中の原 N様邸新築工事 2026/06/07建設中のお家 戸畑区菅原 S様邸新築工事 お知らせ一覧へ 施工ギャラリー 昭和住宅の施工事例をご紹介しています。 施工ギャラリーへ 子どもたちが ノビノビ育つ空間づくり 現代の木の家、大公開 自然と木と西洋漆喰のコンセプトハウス （国土交通省推進「地域材活用木のいえ普及促進事業」先導モデル） コンセプトハウスへ 最長60年保証 アニメーション クリックしてご覧ください。（音が出ますのでご注意ください。） 今話題の抗菌対策に朗報！ 高品質な光触媒（改良型銀系）で、 自宅・事務所など室内まるごと抗菌処理！ ｢エアガードAg＋｣は、接触分解によるウイルス分解で、自宅・室内抗菌に優れた商品です。 当サイトでは、光触媒、施工前後の数値分析、料金、施工事例をご案内しています。 抗菌処理｢エアガードAg＋｣へ お問合せ・見学予約 資料カタログ請求 福岡県北九州市八幡西区町上津役西4-2-16 TEL 093-612-0228 Copyright© 2026 SHOWA JYUTAKU. All rights reserved.",
+    "line": [],
+    "url": "https://showa-j.jp/"
+   },
+   "final_url": "https://showa-j.jp/reserve/",
+   "frame": "main",
+   "ex": {
+    "fields": [
+     {
+      "kind": "text",
+      "name": "system_name",
+      "label": "お名前",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "input_tel",
+      "label": "お電話番号",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "system_mail",
+      "label": "メールアドレス",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "select",
+      "name": "input_ref",
+      "label": "お問い合わせ内容 お選びください 来場予約の希望 土地について 注文住宅について リフォームのご相談 不動産売却や土地活用のご相談",
+      "required": false,
+      "disabled": false,
+      "options": [
+       "お選びください",
+       "来場予約の希望",
+       "土地について",
+       "注文住宅について",
+       "リフォームのご相談",
+       "不動産売却や土地活用のご相談"
+      ],
+      "selected": "お選びください"
+     },
+     {
+      "kind": "radiogroup",
+      "name": "input_ken",
+      "label": "コンセプトハウス（本社／八幡展示場）",
+      "required": false,
+      "options": [
+       "コンセプトハウス（本社／八幡展示場）",
+       "建築中のお家"
+      ],
+      "checked": []
+     },
+     {
+      "kind": "select",
+      "name": "input_ref",
+      "label": "何を見て当社HPを知りましたか？ お選びください SUUMOネット（ポータルサイト） アットホーム（ポータルサイト） Facebook Instagram 北す",
+      "required": false,
+      "disabled": false,
+      "options": [
+       "お選びください",
+       "SUUMOネット（ポータルサイト）",
+       "アットホーム（ポータルサイト）",
+       "Facebook",
+       "Instagram",
+       "北すま（北住協ポータルサイト）",
+       "チラシ",
+       "建設現場",
+       "紹介",
+       "その他"
+      ],
+      "selected": "お選びください"
+     },
+     {
+      "kind": "textarea",
+      "name": "input_txt",
+      "label": "ご連絡内容",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     }
+    ],
+    "captcha": [],
+    "eigyo": [],
+    "limits": [],
+    "line": [],
+    "btns": [
+     "内容確認"
+    ],
+    "formAction": "mail.cgi",
+    "title": "お問合せ・見学予約｜北九州市の一戸建て木造住宅、注文住宅：昭和住宅株式会社 - 自然素材を使った健康な木の家（北九州・福岡）",
+    "nForms": 1
+   },
+   "refuse": [],
+   "capVisible": [],
+   "bodyLen": 989,
+   "plan": {
+    "fieldCount": 23,
+    "plan": [
+     {
+      "what": "本文",
+      "act": "fill",
+      "value": "本文"
+     },
+     {
+      "what": " お名前 system_name",
+      "act": "fill",
+      "value": "勝良仁海"
+     },
+     {
+      "what": " お電話番号 input_tel",
+      "act": "fill",
+      "value": "07089803196"
+     },
+     {
+      "what": " メールアドレス system_mail",
+      "act": "fill",
+      "value": "hitomi.k@lincle-dreams.com"
+     }
+    ],
+    "unknown": [],
+    "notes": [],
+    "buttons": [
+     "confirm:内容確認"
+    ]
+   },
+   "bodyOk": true,
+   "invalid": [],
+   "capAfter": [],
+   "after": [
+    {
+     "kind": "text",
+     "name": "system_name",
+     "label": "お名前",
+     "required": false,
+     "disabled": false,
+     "value": "勝良仁海"
+    },
+    {
+     "kind": "text",
+     "name": "input_tel",
+     "label": "お電話番号",
+     "required": false,
+     "disabled": false,
+     "value": "07089803196"
+    },
+    {
+     "kind": "text",
+     "name": "system_mail",
+     "label": "メールアドレス",
+     "required": false,
+     "disabled": false,
+     "value": "hitomi.k@lincle-dreams.com"
+    },
+    {
+     "kind": "select",
+     "name": "input_ref",
+     "label": "お問い合わせ内容 お選びください 来場予約の希望 土地について 注文住宅について リフォームのご相談 不動産売却や土地活用のご相談",
+     "required": false,
+     "disabled": false,
+     "options": [
+      "お選びください",
+      "来場予約の希望",
+      "土地について",
+      "注文住宅について",
+      "リフォームのご相談",
+      "不動産売却や土地活用のご相談"
+     ],
+     "selected": "お選びください"
+    },
+    {
+     "kind": "radiogroup",
+     "name": "input_ken",
+     "label": "コンセプトハウス（本社／八幡展示場）",
+     "required": false,
+     "options": [
+      "コンセプトハウス（本社／八幡展示場）",
+      "建築中のお家"
+     ],
+     "checked": []
+    },
+    {
+     "kind": "select",
+     "name": "input_ref",
+     "label": "何を見て当社HPを知りましたか？ お選びください SUUMOネット（ポータルサイト） アットホーム（ポータルサイト） Facebook Instagram 北す",
+     "required": false,
+     "disabled": false,
+     "options": [
+      "お選びください",
+      "SUUMOネット（ポータルサイト）",
+      "アットホーム（ポータルサイト）",
+      "Facebook",
+      "Instagram",
+      "北すま（北住協ポータルサイト）",
+      "チラシ",
+      "建設現場",
+      "紹介",
+      "その他"
+     ],
+     "selected": "お選びください"
+    },
+    {
+     "kind": "textarea",
+     "name": "input_txt",
+     "label": "ご連絡内容",
+     "required": false,
+     "disabled": false,
+     "value": "〈本文 989字〉"
+    }
+   ]
+  },
+  {
+   "key": "C023",
+   "industry": "住宅・リフォーム",
+   "name": "カク山木材建設有限会社",
+   "official_url": "https://kakuyama.jp/",
+   "form_url": "https://kakuyama.jp/contact/",
+   "top": {
+    "title": "カク山 KAKUYAMA | 住まいから地域の未来をつくる。",
+    "desc": "長野県岡谷市で創業100年のカク山木材建設。​自然素材を活かした「帰りたくなる家」を提供し、ZEH水準の断熱性能や耐震等級3など、8つの性能で快適な住まいを実現。​家づくりの無料相談会も実施中。​地域に根ざした安心の家づくりをお届けします。",
+    "h": [
+     "住まいから 地域の未来をつくる。",
+     "KAKUYAMAの時々BLOG",
+     "性能で8つの約束",
+     "建てた後の4つの約束",
+     "カク山の仕事について",
+     "KAKUYAMAの家のご紹介",
+     "カク山の職人のチカラ",
+     "いい家を ご提供するための取り組み",
+     "失敗しないための 「家づくりの無料相談会」"
+    ],
+    "text": "住まいから 地域の未来をつくる。 お電話でのお問合せ 0266-22-3074 お問い合わせ 資料請求 初めての方へ 帰りたくなる家 施工事例 リフォーム スタッフ紹介 会社概要 KAKUYAMAの時々BLOG 創業100年、623組のご家族に家をご提供してきました。 ■2026/09/08 新社屋が無事に上棟！感謝を込めてOB様限定「餅投げイベント」を開催しました ■2026/03/12 構造の検査 ■2026/02/22 帰りたくなる家上棟 ■2025/08/25 社屋建替えのお知らせ ブログ一覧 性能で8つの約束 住宅性能でお客様に安心という約束を 01 ZEH水準 02 耐震等級3 許容応援計算 03 制震装置採用 04 長期優良住宅 05 C値0.5以下 06 第一種換気 澄家ECO採用 07 樹脂サッシ採用 08 冷暖房設備の 省エネ提案 建てた後の4つの約束 カクヤマ木材のお付き合いは家を建ててから 01 年間アフター 300件の実績 02 年間2回の 定期訪問 03 建物20年保証 （オプション） 04 住設あんしん サポート10年 カク山の仕事について 当社の仕事の姿勢や、これまでの歴史などをご紹介します。 精度への こだわり more この街で 100年 more リフォーム ・リノベ more スタッフ 紹介 more KAKUYAMAの家のご紹介 創業100年、623組のご家族に家をご提供してきました。 小上がりとキャットウォークのある帰りたくなる家 この家の詳細を見る 国産材と県産材で仕上げるかえりたくなる家 この家の詳細を見る 終の棲家の帰りたくなる家 この家の詳細を見る 広いリビングがある 帰りたくなる家 この家の詳細を見る その他の実例を見る もっと詳しく知る カク山の職人のチカラ 家づくりには沢山の工程があり、 それぞれに「職人」が携わります。 細部にまでこだわり 永く住み続ける住まいを 作り続けています。 いい家を ご提供するための取り組み 当社にはモデルハウスがありません。 専門の営業スタッフがいません。 派手な広告を打ちません。 お客様とまずは話すことから はじめたいと思います。 失敗しないための 「家づくりの無料相談会」 少人数のため、事前にお電話での ご予約をお願いしております。 ご希望の日時をスタッフにお知らせ下さい。 ショールームを動画で見る お電話でご予約の方 0266-22-3074 電話受付／8時〜17時 webでご予約の方 ご予約はコチラ 〒394-0047 長野県岡谷市川岸中2-12-24 TEL.0266-22-3074 営業時間/8:00〜17:00 定休日/第二土曜日・日曜日・祝日 © 2020 カク山木材建設有限会社",
+    "line": [],
+    "url": "https://kakuyama.jp/"
+   },
+   "final_url": "https://kakuyama.jp/contact/",
+   "frame": "main",
+   "ex": {
+    "fields": [
+     {
+      "kind": "text",
+      "name": "お名前",
+      "label": "必須 お名前",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "フリガナ",
+      "label": "必須 フリガナ",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "text",
+      "name": "電話番号",
+      "label": "必須 お電話番号",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "email",
+      "name": "メールアドレス",
+      "label": "必須 メールアドレス",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "textarea",
+      "name": "お問い合わせ内容",
+      "label": "必須 お問い合わせ内容",
+      "required": false,
+      "disabled": false,
+      "value": ""
+     },
+     {
+      "kind": "checkbox",
+      "name": "個人情報保護法[data][]",
+      "label": "お問合せ頂く前に、個人情報保護方針をご確認の上、 「同意する」にチェックを入れて、確認ボタンを押してください。 個人情報保護方針 必須 同意する",
+      "required": false,
+      "disabled": false,
+      "checked": false,
+      "optText": "同意する"
+     }
+    ],
+    "captcha": [],
+    "eigyo": [
+     "営業時間/8:00〜17:00"
+    ],
+    "limits": [],
+    "line": [],
+    "btns": [
+     "確認画面へ＞"
+    ],
+    "formAction": "",
+    "title": "お問い合わせ | KAKUYAMA カク山 | 住まいから地域の未来をつくる。",
+    "nForms": 1
+   },
+   "refuse": [],
+   "capVisible": [],
+   "bodyLen": 992,
+   "plan": {
+    "fieldCount": 11,
+    "plan": [
+     {
+      "what": "本文",
+      "act": "fill",
+      "value": "本文"
+     },
+     {
+      "what": " 必須 お名前 お名前",
+      "act": "fill",
+      "value": "勝良仁海"
+     },
+     {
+      "what": " 必須 フリガナ フリガナ",
+      "act": "fill",
+      "value": "カツラ ヒトミ"
+     },
+     {
+      "what": " 必須 お電話番号 電話番号",
+      "act": "fill",
+      "value": "07089803196"
+     },
+     {
+      "what": " 必須 メールアドレス メールアドレス",
+      "act": "fill",
+      "value": "hitomi.k@lincle-dreams.com"
+     },
+     {
+      "what": "同意",
+      "act": "check"
+     }
+    ],
+    "unknown": [],
+    "notes": [],
+    "buttons": [
+     "confirm:確認画面へ＞"
+    ]
+   },
+   "bodyOk": true,
+   "invalid": [],
+   "capAfter": [],
+   "after": [
+    {
+     "kind": "text",
+     "name": "お名前",
+     "label": "必須 お名前",
+     "required": false,
+     "disabled": false,
+     "value": "勝良仁海"
+    },
+    {
+     "kind": "text",
+     "name": "フリガナ",
+     "label": "必須 フリガナ",
+     "required": false,
+     "disabled": false,
+     "value": "カツラ ヒトミ"
+    },
+    {
+     "kind": "text",
+     "name": "電話番号",
+     "label": "必須 お電話番号",
+     "required": false,
+     "disabled": false,
+     "value": "07089803196"
+    },
+    {
+     "kind": "email",
+     "name": "メールアドレス",
+     "label": "必須 メールアドレス",
+     "required": false,
+     "disabled": false,
+     "value": "hitomi.k@lincle-dreams.com"
+    },
+    {
+     "kind": "textarea",
+     "name": "お問い合わせ内容",
+     "label": "必須 お問い合わせ内容",
+     "required": false,
+     "disabled": false,
+     "value": "〈本文 992字〉"
+    },
+    {
+     "kind": "checkbox",
+     "name": "個人情報保護法[data][]",
+     "label": "お問合せ頂く前に、個人情報保護方針をご確認の上、 「同意する」にチェックを入れて、確認ボタンを押してください。 個人情報保護方針 必須 同意する",
+     "required": false,
+     "disabled": false,
+     "checked": true,
+     "optText": "同意する"
+    }
+   ]
+  }
+ ]
+}
