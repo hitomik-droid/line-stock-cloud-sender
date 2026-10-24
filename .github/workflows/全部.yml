@@ -23,11 +23,11 @@ on:
         required: false
         default: '15'
       mode:
-        description: dry＝判定まで（登録・送付しない）／send＝D1に登録して送付まで
+        description: dry＝判定まで／register＝D1登録のみ／send＝D1に登録して送付まで
         required: true
         default: dry
         type: choice
-        options: [dry, send]
+        options: [dry, register, send]
 concurrency:
   group: line-stock-register   # 番号が重ならないよう、登録は1本ずつ
   cancel-in-progress: false
@@ -81,7 +81,28 @@ jobs:
           F: ${{ inputs.q }}
         run: |
           mkdir -p "$W/tsv"
-          case "$F" in *.tsv) cp "$F" "$W/tsv/file.tsv" ;; *.json) cp "$F" "$W/候補の元.json" ;; *) echo "候補ファイルは .tsv か .json"; exit 1 ;; esac
+          case "$F" in
+            *.tsv) cp "$F" "$W/tsv/file.tsv" ;;
+            *.json)
+              python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          data = json.loads(Path(os.environ['F']).read_text())
+          work = Path(os.environ['W'])
+          if isinstance(data, dict) and data.get('schema') == 'line-stock-saved-inspection/1':
+              cands, results = data['cands'], data['results']
+              assert len({c['key'] for c in cands}) == len(cands), '候補keyの重複'
+              assert {r['key'] for r in results} == {c['key'] for c in cands}, '候補と検品結果の不一致'
+              assert all(not (c.get('list_source') or '').startswith('Meta') for c in cands), 'この再開入力は1000番台のみ'
+              (work / 'cands.json').write_text(json.dumps(cands, ensure_ascii=False))
+              (work / 'results.jsonl').write_text('\n'.join(json.dumps(r, ensure_ascii=False) for r in results) + '\n')
+              print(f'保存済み検品結果を使用：{len(cands)}社。再検品しない')
+          else:
+              (work / '候補の元.json').write_text(json.dumps(data, ensure_ascii=False))
+          PY
+              ;;
+            *) echo "候補ファイルは .tsv か .json"; exit 1 ;;
+          esac
       - name: 公式サイトと問い合わせフォームを探す（douga・file の .json。8つ同時に）
         timeout-minutes: 90
         run: |
@@ -96,8 +117,10 @@ jobs:
           done
           wait
       - name: D1・調べ済みと重ならない候補だけにする
+        if: hashFiles('記録/全部/results.jsonl') == ''
         run: python3 登録/流れ.py cands "$W" "$W"/tsv/*.tsv
       - name: フォームを検品する（送信ボタンは押さない。8つ同時に）
+        if: hashFiles('記録/全部/results.jsonl') == ''
         timeout-minutes: 80
         run: |
           N=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.env.W+'/cands.json')).length)")
@@ -118,7 +141,7 @@ jobs:
           MODE: ${{ inputs.mode }}
         run: |
           IDS=$(cat "../$W/ids.txt")
-          if [ "$MODE" = send ] && [ -n "$IDS" ]; then
+          if [ "$MODE" != dry ] && [ -n "$IDS" ]; then
             npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --file="../$W/投入.sql" > "../$W/登録ログ.txt" 2>&1 || { tail -5 "../$W/登録ログ.txt"; exit 1; }
             python3 流れ.py check "../$W"
             echo "ids=$IDS" >> "$GITHUB_OUTPUT"
