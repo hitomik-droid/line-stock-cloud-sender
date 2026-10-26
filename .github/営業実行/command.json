@@ -1,0 +1,10 @@
+{
+  "command_id": "google5-register-20261026",
+  "workflow": "全部.yml",
+  "ref": "google-leads-20261026",
+  "inputs": {
+    "source": "file",
+    "q": "登録/再開/20261026_Google追加5社.json",
+    "mode": "register"
+  }
+}
