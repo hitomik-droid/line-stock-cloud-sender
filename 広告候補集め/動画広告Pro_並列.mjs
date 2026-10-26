@@ -7,7 +7,7 @@ import fs from 'node:fs';
 import { chromium } from 'playwright';
 const ID = process.env.DOUGA_PRO_ID, PW = process.env.DOUGA_PRO_PASSWORD;
 const WORDS = (process.env.WORDS || '').split(',').map((s) => s.trim()).filter(Boolean);
-const TABS = Math.min(+(process.env.TABS || 2), 5), PAGES = +(process.env.PAGES || 15);
+const TABS = Math.min(+(process.env.TABS || 2), 4), PAGES = +(process.env.PAGES || 15);
 const INTERVALS = (process.env.INTERVALS || '30,90').split(','), OBJ = 'ACQUISITION%2CAWARENESS';
 const OUT = '記録/動画広告Pro_並列'; fs.mkdirSync(OUT, { recursive: true });
 const KEEP = ['advertiser_name', 'account_name', 'product_name', 'genre_name', 'transition_url', 'thumbnail_url', 'production_url', 'ad_objective'];
@@ -25,7 +25,9 @@ await login.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
 await sleep(5000);
 if (/login/.test(login.url())) { console.log('ログインできていない。止める'); stop = 'ログインできない'; save(); await b.close(); process.exit(1); }
 const today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
-const tasks = WORDS.flatMap((w) => INTERVALS.map((iv) => ({ w, iv })));
+// COMBOS：「言葉|期間|並べ替え」を ; で区切る。無ければ WORDS×INTERVALS（並べ替えは増加額順）
+const tasks = process.env.COMBOS ? process.env.COMBOS.split(';').filter(Boolean).map((c) => { const [w, iv, so] = c.split('|'); return { w, iv, so: so || 'cost_difference-desc' }; })
+  : WORDS.flatMap((w) => INTERVALS.map((iv) => ({ w, iv, so: 'cost_difference-desc' })));
 async function tab(k) {
   const p = k === 0 ? login : await ctx.newPage();
   let cur = null;
@@ -37,8 +39,8 @@ async function tab(k) {
   });
   await sleep(k * 7000);
   for (let t = k; t < tasks.length && !stop; t += TABS) {
-    const { w, iv } = tasks[t]; cur = null;
-    const u = `https://dpro.kashika-20mile.com/search?to_date=${today}&interval=${iv}&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=${OBJ}`;
+    const { w, iv, so } = tasks[t]; cur = null;
+    const u = `https://dpro.kashika-20mile.com/search?to_date=${today}&interval=${iv}&sort=${so}&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=${OBJ}`;
     await p.goto(u, { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
     await p.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
     await sleep(3000 + Math.random() * 2000);
@@ -59,7 +61,7 @@ async function tab(k) {
     if (/login/.test(p.url()) || /ロボット|captcha|アクセスが制限|利用を制限|しばらくしてから|アカウントが停止/i.test(txt)) stop = stop || `画面の表示（${w}・${iv}日・タブ${k + 1}）`;
     empty = cur.n ? 0 : empty + 1;
     if (empty >= 4) stop = stop || `検索結果が4回続けて返らない（最後：${w}・${iv}日）`;
-    summary.push({ tab: k + 1, w, iv, items: cur.n, pages, at: new Date().toISOString() });
+    summary.push({ tab: k + 1, w, iv, so, items: cur.n, pages, at: new Date().toISOString() });
     console.log(`タブ${k + 1}`, w, `${iv}日`, '読めた広告', cur.n, 'ページ', pages);
     save();
     await sleep(4000 + Math.random() * 4000);

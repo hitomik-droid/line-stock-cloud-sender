@@ -8,7 +8,12 @@ on:
     inputs:
       words:
         description: 検索する言葉（カンマ区切り）
-        required: true
+        required: false
+        default: ''
+      combos:
+        description: 「言葉|期間|並べ替え」を ; で区切った組み合わせ（あれば words より優先）
+        required: false
+        default: ''
       tabs:
         description: 並べるタブの数（最初は2〜3）
         required: false
@@ -69,6 +74,7 @@ jobs:
         timeout-minutes: 85
         env:
           WORDS: ${{ inputs.words }}
+          COMBOS: ${{ inputs.combos }}
           TABS: ${{ inputs.tabs }}
           INTERVALS: ${{ inputs.intervals }}
           PAGES: ${{ inputs.pages }}
