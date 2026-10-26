@@ -81,7 +81,7 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
-          git rebase --abort 2>/dev/null; git pull -q --rebase origin main || true
+          git rebase --abort 2>/dev/null || true; git pull -q --rebase origin main || true
           npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,industry,status,list_source,message_id FROM companies WHERE status='確認中'" --json > "$W/kakunin.json" || { echo "D1が読めないので追跡リンクの確認は次の回に回す" | tee "$W/追跡.txt"; exit 0; }
           npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,body FROM messages" --json > "$W/msgs.json"
           python3 追跡/追跡リンク登録.py "$W/kakunin.json" "$W/msgs.json" | tee "$W/追跡.txt"

@@ -34,7 +34,7 @@ for a in $(seq 1 20); do
     ( flock 9
       echo "$DRY $TAG $(date -u +%Y-%m-%dT%H:%MZ)" >> 登録/登録待ち.txt
       git add 登録/登録待ち.txt; git commit -q -m "登録待ち：dry $DRY（$TAG）" || true
-      for i in 1 2 3 4 5; do git rebase --abort 2>/dev/null; git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+      for i in 1 2 3 4 5; do git rebase --abort 2>/dev/null || true; git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
     ) 9>/tmp/在庫づくり_git.lock
     echo "register $REG：$c。dry $DRY を 登録/登録待ち.txt に残した" | tee -a "$OUT"; exit 0
   fi
@@ -42,5 +42,5 @@ for a in $(seq 1 20); do
   echo "register $REG：$c 登録ID=$(cat "$T2/ids.txt" 2>/dev/null)" | tee -a "$OUT"; exit 0
 done
 ( flock 9; echo "$DRY $TAG $(date -u +%Y-%m-%dT%H:%MZ)" >> 登録/登録待ち.txt; git add 登録/登録待ち.txt; git commit -q -m "登録待ち：dry $DRY（$TAG、起動できず）" || true
-  for i in 1 2 3 4 5; do git rebase --abort 2>/dev/null; git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done ) 9>/tmp/在庫づくり_git.lock
+  for i in 1 2 3 4 5; do git rebase --abort 2>/dev/null || true; git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done ) 9>/tmp/在庫づくり_git.lock
 echo "register を起動できなかった。dry $DRY を 登録/登録待ち.txt に残した" | tee -a "$OUT"; exit 1
