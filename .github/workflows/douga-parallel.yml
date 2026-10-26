@@ -1,7 +1,7 @@
 # 動画広告Proに1回だけログインし、タブを何枚か並べて業種の言葉ごとの広告一覧データを読む。2026-10-26 勝良さん決定「サーバーで何本も並べて集める」。
 # ログインは1つだけ（同時に2つ動かさない）。止まる表示が出たら終了コード2で終わる。
 # ID・パスワードは1Passwordの項目（保管庫 GitHub用・項目 dpro.kashika-20mile.com）から読む（2026-10-26 勝良さん指示「ワンパスワードのやつでやってほしい」）。値は伏せ字になりログに出ない。
-# GitHubに置くのは、読み取り専用のサービスアカウントのトークン（Secrets の OP_SERVICE_ACCOUNT_TOKEN）だけ。DOUGA_PRO_ID・PASSWORD は使わない。
+# GitHubに置くのは、読み取り専用のサービスアカウントのトークン（Secrets の OP_SERVICE_ACCOUNT_TOKEN）だけ。DOUGA_PRO_ID・PASSWORD は、1Passwordから読めない時だけ使う。
 name: 動画広告Proを並べて読む
 on:
   workflow_dispatch:
@@ -35,6 +35,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: 1PasswordからID・パスワードを読む
+        id: op
+        continue-on-error: true
         uses: 1password/load-secrets-action@v2
         with:
           export-env: true
@@ -43,11 +45,16 @@ jobs:
           DOUGA_PRO_ID: op://GitHub用/dpro.kashika-20mile.com/username
           DOUGA_PRO_PASSWORD: op://GitHub用/dpro.kashika-20mile.com/password
       - name: 読めたかを確かめる（値は出さない）
+        env:
+          OLD_ID: ${{ secrets.DOUGA_PRO_ID }}
+          OLD_PW: ${{ secrets.DOUGA_PRO_PASSWORD }}
         run: |
-          for v in DOUGA_PRO_ID DOUGA_PRO_PASSWORD; do
-            if [ -n "${!v}" ]; then echo "$v：読めた"; else echo "$v：空"; fail=1; fi
-          done
-          [ -z "$fail" ]
+          if [ -n "$DOUGA_PRO_ID" ] && [ -n "$DOUGA_PRO_PASSWORD" ]; then echo "1Passwordから読めた"; exit 0; fi
+          echo "1Passwordから読めなかった"
+          [ "${{ inputs.only_1password }}" = "true" ] && exit 1
+          # 10/26 22:15 勝良さん「全部並行して進めろよ」：1Passwordが読めるまでは、今のSecretsで回す
+          echo "今のSecrets（DOUGA_PRO_ID・PASSWORD）で回す"
+          echo "DOUGA_PRO_ID=$OLD_ID" >> "$GITHUB_ENV"; echo "DOUGA_PRO_PASSWORD=$OLD_PW" >> "$GITHUB_ENV"
       - uses: actions/setup-node@v4
         if: inputs.only_1password != 'true'
         with:
