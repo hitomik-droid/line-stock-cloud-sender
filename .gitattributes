@@ -1,0 +1,5 @@
+# 10/27 在庫づくりが同時に足していく一覧は、両方の行を残して合わせる（rebase のぶつかりで push できず、候補ファイルが届かなかったため）
+登録/調べた広告主.txt merge=union
+登録/調べた遷移先ドメイン.txt merge=union
+登録/登録待ち.txt merge=union
+登録/追跡リンク待ち.txt merge=union

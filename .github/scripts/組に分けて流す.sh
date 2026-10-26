@@ -23,7 +23,8 @@ set -- $LIST; echo "組の数：$#"
 if [ $# -le 1 ]; then rm -f $LIST; exec bash .github/scripts/全部を流す.sh "$Q" "$TAG"; fi
 git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 git add $LIST; git commit -q -m "在庫づくり：$B を $# 組に分ける" || true
-for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+for i in $(seq 1 12); do git rebase --abort 2>/dev/null || true; git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+git fetch -q origin main; for f in $LIST; do git cat-file -e "origin/main:$f" || { echo "組のファイルを push できなかった：$f" | tee "$W/流した結果.txt"; exit 1; }; done
 OUT0="$W/流した結果.txt"; : > "$OUT0"; k=0
 for f in $LIST; do
   k=$((k+1)); mkdir -p "$W/組$k"

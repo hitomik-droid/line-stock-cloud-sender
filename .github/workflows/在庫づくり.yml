@@ -66,7 +66,9 @@ jobs:
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add 登録/調べた広告主.txt 登録/調べた遷移先ドメイン.txt; [ "$N" != 0 ] && git add "$NAME"
           git commit -q -m "在庫づくり：動画広告Pro $RUN の新しい広告主 $N 社" || true
-          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+          for i in $(seq 1 12); do git rebase --abort 2>/dev/null || true; git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+          # 届いたかを確かめる（届いていないと、この後の dry が候補ファイルを読めずに全部落ちる）
+          git fetch -q origin main; [ "$N" = 0 ] || git cat-file -e "origin/main:$NAME" || { echo "候補ファイルを push できなかった"; exit 1; }
       - name: 公式サイト探し・点検（全部.yml を dry）→ 登録（register を1本ずつ）
         if: steps.got.outputs.skip != '1' && steps.cand.outputs.n != '0'
         id: reg
