@@ -159,7 +159,7 @@ export function inSendHours(now = new Date()) {
 }
 
 export async function sendOne(id, mode = 'dry', { browser: shared, headed = false, retry = false, retryIds = null } = {}) {
-  if (mode === 'send' && !inSendHours()) return { id, mode, result: 'skip', status: null, note: '送付時間外（日本時間8:00〜20:00だけ送る）なので送らない', log: [] };
+  if (mode !== 'dry' && !inSendHours()) return { id, mode, result: 'skip', status: null, note: '送付時間外（日本時間8:00〜20:00だけ送る）なので送らない', log: [] };
   const canRetry = (c) => retryIds ? !!c && c.status === '送付失敗' && retryIds.has(c.id) && !(c.history || []).some((x) => /再試行/.test(x.note || '')) : recaptchaRetryable(c);
   const log = []; const say = (...a) => { log.push(a.join(' ')); };
   fs.mkdirSync(REC, { recursive: true });
@@ -188,6 +188,11 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
   let clickedSubmit = false;
 
   const decide = (status, note, result) => { out.status = status; out.note = note; out.result = result; };
+  const deferOutsideHours = () => {
+    if (inSendHours()) return false;
+    decide(null, '送付時間外（日本時間8:00〜20:00だけ送る）。ボタンを押さず翌朝へ保留', 'deferred');
+    return true;
+  };
   const work = (async () => {
     await page.goto(d.form_url, { waitUntil: 'domcontentloaded', timeout: 45000 });
     await settle(page);
@@ -216,6 +221,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
     let submitBtn = plan.buttons.find((b) => b.kind === 'submit');
     let state = afterFill;
     if (confirmBtn) {
+      if (deferOutsideHours()) return;
       await clickOnce(frame, confirmBtn.sel);
       await settle(page);
       state = await readAll(page);
@@ -253,6 +259,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
     if (!now || now.status !== wantStatus || (retry && !canRetry(now))) { out.result = 'skip'; out.note = `送信直前にステータスが「${now && now.status}」に変わっていたので送らない`; return; }
     const pre = await readAll(page);
     const url0 = page.url();
+    if (deferOutsideHours()) return;
     clickedSubmit = true;
     await clickOnce(frame, submitBtn.sel);
     await settle(page);
@@ -307,6 +314,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
         say('送信ボタンの後に確認画面が出たので、確認画面の送信ボタン「' + left.btn.text + '」を押す');
         base = fin; baseUrl = page.url();
         frame = left.frame;
+        if (deferOutsideHours()) return;
         await clickOnce(frame, left.btn.sel);
         await settle(page);
         ({ fin, fs } = await waitResult(base, baseUrl));
