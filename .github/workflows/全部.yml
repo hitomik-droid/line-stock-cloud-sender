@@ -141,6 +141,26 @@ jobs:
               ;;
             *) echo "候補ファイルは .tsv か .json"; exit 1 ;;
           esac
+      # 10/27 勝良さん「1 作る」：広告の行き先がSNS等で公式サイトが分からない会社だけ、社名で Brave Search API を引く（無料の範囲：1日30回まで、同じ社名は引かない）
+      - name: Brave Search API の鍵を1Passwordから読む（値は出さない）
+        id: brave
+        if: inputs.from_run == ''
+        continue-on-error: true
+        uses: 1password/load-secrets-action@v2
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          BRAVE_API_KEY: op://GitHub/Brave Search API/credential
+      - name: 公式サイトが分からない会社を社名で探す
+        if: inputs.from_run == ''
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          [ -f "$W/候補の元.json" ] || exit 0
+          [ -n "${BRAVE_API_KEY:-}" ] && echo "Braveの鍵：読めた" || echo "Braveの鍵：読めない（社名検索はしない）"
+          python3 登録/公式サイトを名前で探す.py "$W/候補の元.json" | tee "$W/社名検索.txt"
       - name: 公式サイトと問い合わせフォームを探す（douga・file の .json。16に分けて同時に）
         timeout-minutes: 90
         run: |
