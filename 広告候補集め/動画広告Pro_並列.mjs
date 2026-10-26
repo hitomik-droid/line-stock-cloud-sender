@@ -26,7 +26,7 @@ await sleep(5000);
 if (/login/.test(login.url())) { console.log('ログインできていない。止める'); stop = 'ログインできない'; save(); await b.close(); process.exit(1); }
 const today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
 // COMBOS：「言葉|期間|並べ替え」を ; で区切る。無ければ WORDS×INTERVALS（並べ替えは増加額順）
-const tasks = process.env.COMBOS ? process.env.COMBOS.split(';').filter(Boolean).map((c) => { const [w, iv, so] = c.split('|'); return { w, iv, so: so || 'cost_difference-desc' }; })
+const tasks = process.env.COMBOS ? process.env.COMBOS.split(';').filter(Boolean).map((c) => { const [w, iv, so, ind] = c.split('|'); return { w, iv, so: so || 'cost_difference-desc', ind: ind || '' }; })
   : WORDS.flatMap((w) => INTERVALS.map((iv) => ({ w, iv, so: 'cost_difference-desc' })));
 async function tab(k) {
   const p = k === 0 ? login : await ctx.newPage();
@@ -35,16 +35,16 @@ async function tab(k) {
     if (!cur || !r.url().startsWith('https://api.kashika-20mile.com/api/v1/items')) return;
     let j = null; try { j = await r.json(); } catch { return; }
     const items = (j?.items || []).map((i) => Object.fromEntries(KEEP.map((f) => [f, i[f]])));
-    cur.n += items.length; got.push({ word: cur.w, interval: cur.iv, url: r.url(), data: { items, total_count: j?.total_count } });
+    cur.n += items.length; got.push({ word: cur.w, interval: cur.iv, industry: cur.ind || undefined, url: r.url(), data: { items, total_count: j?.total_count } });
   });
   await sleep(k * 7000);
   for (let t = k; t < tasks.length && !stop; t += TABS) {
-    const { w, iv, so } = tasks[t]; cur = null;
+    const { w, iv, so, ind } = tasks[t]; cur = null;
     const u = `https://dpro.kashika-20mile.com/search?to_date=${today}&interval=${iv}&sort=${so}&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=${OBJ}`;
     await p.goto(u, { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
     await p.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
     await sleep(3000 + Math.random() * 2000);
-    cur = { w, iv, n: 0 };
+    cur = { w, iv, ind, n: 0 };
     const box = p.locator('input[placeholder*="キーワード"]').first();
     await box.fill(w).catch(() => {}); await box.press('Enter').catch(() => {}); await sleep(1500);
     await p.locator('button[type=submit]').last().click().catch(() => {});

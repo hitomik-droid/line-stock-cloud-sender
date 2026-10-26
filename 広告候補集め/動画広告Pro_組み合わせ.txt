@@ -58,6 +58,64 @@ Webデザイン|30|cost_difference-desc
 女性専用ジム|30|cost_difference-desc
 婚活|30|cost_difference-desc
 婚活パーティー|30|cost_difference-desc
+整体|30|cost_difference-desc|整体・整骨院
+整骨院|30|cost_difference-desc|整体・整骨院
+骨盤矯正|30|cost_difference-desc|整体・整骨院
+鍼灸|30|cost_difference-desc|整体・整骨院
+エステ|30|cost_difference-desc|エステ・脱毛
+脱毛サロン|30|cost_difference-desc|エステ・脱毛
+フェイシャル|30|cost_difference-desc|エステ・脱毛
+痩身エステ|30|cost_difference-desc|エステ・脱毛
+学習塾|30|cost_difference-desc|学習塾・英会話
+個別指導|30|cost_difference-desc|学習塾・英会話
+英会話教室|30|cost_difference-desc|学習塾・英会話
+子ども英会話|30|cost_difference-desc|学習塾・英会話
+税理士|30|cost_difference-desc|税理士・士業
+社労士|30|cost_difference-desc|税理士・士業
+行政書士|30|cost_difference-desc|税理士・士業
+司法書士|30|cost_difference-desc|税理士・士業
+弁護士 相談|30|cost_difference-desc|税理士・士業
+飲食店 予約|30|cost_difference-desc|予約制の飲食店
+焼肉|30|cost_difference-desc|予約制の飲食店
+居酒屋 予約|30|cost_difference-desc|予約制の飲食店
+ペットサロン|30|cost_difference-desc|ペット関連
+トリミング|30|cost_difference-desc|ペット関連
+動物病院|30|cost_difference-desc|ペット関連
+ペットホテル|30|cost_difference-desc|ペット関連
+美容室|30|cost_difference-desc|美容室
+ヘアサロン|30|cost_difference-desc|美容室
+ホテル|30|cost_difference-desc|ホテル・旅館
+旅館|30|cost_difference-desc|ホテル・旅館
+温泉旅館|30|cost_difference-desc|ホテル・旅館
+整体|7|cost_difference-desc|整体・整骨院
+整骨院|7|cost_difference-desc|整体・整骨院
+骨盤矯正|7|cost_difference-desc|整体・整骨院
+鍼灸|7|cost_difference-desc|整体・整骨院
+エステ|7|cost_difference-desc|エステ・脱毛
+脱毛サロン|7|cost_difference-desc|エステ・脱毛
+フェイシャル|7|cost_difference-desc|エステ・脱毛
+痩身エステ|7|cost_difference-desc|エステ・脱毛
+学習塾|7|cost_difference-desc|学習塾・英会話
+個別指導|7|cost_difference-desc|学習塾・英会話
+英会話教室|7|cost_difference-desc|学習塾・英会話
+子ども英会話|7|cost_difference-desc|学習塾・英会話
+税理士|7|cost_difference-desc|税理士・士業
+社労士|7|cost_difference-desc|税理士・士業
+行政書士|7|cost_difference-desc|税理士・士業
+司法書士|7|cost_difference-desc|税理士・士業
+弁護士 相談|7|cost_difference-desc|税理士・士業
+飲食店 予約|7|cost_difference-desc|予約制の飲食店
+焼肉|7|cost_difference-desc|予約制の飲食店
+居酒屋 予約|7|cost_difference-desc|予約制の飲食店
+ペットサロン|7|cost_difference-desc|ペット関連
+トリミング|7|cost_difference-desc|ペット関連
+動物病院|7|cost_difference-desc|ペット関連
+ペットホテル|7|cost_difference-desc|ペット関連
+美容室|7|cost_difference-desc|美容室
+ヘアサロン|7|cost_difference-desc|美容室
+ホテル|7|cost_difference-desc|ホテル・旅館
+旅館|7|cost_difference-desc|ホテル・旅館
+温泉旅館|7|cost_difference-desc|ホテル・旅館
 宅建 講座|30|cost_difference-desc
 審美歯科|30|cost_difference-desc
 小児矯正|30|cost_difference-desc
@@ -202,66 +260,64 @@ Webデザイン|7|cost_difference-desc
 起業 講座|7|cost_difference-desc
 運転免許|7|cost_difference-desc
 雨漏り|7|cost_difference-desc
-24時間ジム|30|cost-desc
-AGA|30|cost-desc
-AI スクール|30|cost-desc
-V2H|30|cost-desc
-Webデザイン|30|cost-desc
-お見合い|30|cost-desc
-インプラント|30|cost-desc
-ウェビナー|30|cost-desc
-エコキュート|30|cost-desc
-オンラインスクール|30|cost-desc
-オンライン講座|30|cost-desc
-キックボクシング|30|cost-desc
-コーチング|30|cost-desc
-シミ取り|30|cost-desc
-ダイエット ジム|30|cost-desc
-ダーマペン|30|cost-desc
-ハイフ|30|cost-desc
-ハウスメーカー|30|cost-desc
-パーソナルジム|30|cost-desc
-パーソナルトレーニング|30|cost-desc
-ヒアルロン酸|30|cost-desc
-ピラティス|30|cost-desc
-プログラミングスクール|30|cost-desc
-ホワイトニング|30|cost-desc
-ボディメイク|30|cost-desc
-ボトックス|30|cost-desc
-マウスピース矯正|30|cost-desc
-マシンピラティス|30|cost-desc
-マンション 売却|30|cost-desc
-メンズ脱毛|30|cost-desc
-モデルハウス|30|cost-desc
-ヨガ|30|cost-desc
-リノベーション|30|cost-desc
-リフォーム|30|cost-desc
-不動産 売却|30|cost-desc
-不動産 査定|30|cost-desc
-不動産投資|30|cost-desc
-中古住宅|30|cost-desc
-二重整形|30|cost-desc
-仲人|30|cost-desc
-住宅展示場|30|cost-desc
-体験レッスン|30|cost-desc
-個別相談|30|cost-desc
-分譲住宅|30|cost-desc
-副業|30|cost-desc
-加圧トレーニング|30|cost-desc
-動画編集|30|cost-desc
-包茎|30|cost-desc
-医療ダイエット|30|cost-desc
-医療痩身|30|cost-desc
-医療脱毛|30|cost-desc
-合宿免許|30|cost-desc
-土地活用|30|cost-desc
-外壁塗装|30|cost-desc
-外構|30|cost-desc
-太陽光 見積|30|cost-desc
-太陽光発電|30|cost-desc
-女性専用ジム|30|cost-desc
-婚活|30|cost-desc
-婚活パーティー|30|cost-desc
+整体|30|cost-desc|整体・整骨院
+整骨院|30|cost-desc|整体・整骨院
+骨盤矯正|30|cost-desc|整体・整骨院
+鍼灸|30|cost-desc|整体・整骨院
+エステ|30|cost-desc|エステ・脱毛
+脱毛サロン|30|cost-desc|エステ・脱毛
+フェイシャル|30|cost-desc|エステ・脱毛
+痩身エステ|30|cost-desc|エステ・脱毛
+学習塾|30|cost-desc|学習塾・英会話
+個別指導|30|cost-desc|学習塾・英会話
+英会話教室|30|cost-desc|学習塾・英会話
+子ども英会話|30|cost-desc|学習塾・英会話
+税理士|30|cost-desc|税理士・士業
+社労士|30|cost-desc|税理士・士業
+行政書士|30|cost-desc|税理士・士業
+司法書士|30|cost-desc|税理士・士業
+弁護士 相談|30|cost-desc|税理士・士業
+飲食店 予約|30|cost-desc|予約制の飲食店
+焼肉|30|cost-desc|予約制の飲食店
+居酒屋 予約|30|cost-desc|予約制の飲食店
+ペットサロン|30|cost-desc|ペット関連
+トリミング|30|cost-desc|ペット関連
+動物病院|30|cost-desc|ペット関連
+ペットホテル|30|cost-desc|ペット関連
+美容室|30|cost-desc|美容室
+ヘアサロン|30|cost-desc|美容室
+ホテル|30|cost-desc|ホテル・旅館
+旅館|30|cost-desc|ホテル・旅館
+温泉旅館|30|cost-desc|ホテル・旅館
+整体|7|cost-desc|整体・整骨院
+整骨院|7|cost-desc|整体・整骨院
+骨盤矯正|7|cost-desc|整体・整骨院
+鍼灸|7|cost-desc|整体・整骨院
+エステ|7|cost-desc|エステ・脱毛
+脱毛サロン|7|cost-desc|エステ・脱毛
+フェイシャル|7|cost-desc|エステ・脱毛
+痩身エステ|7|cost-desc|エステ・脱毛
+学習塾|7|cost-desc|学習塾・英会話
+個別指導|7|cost-desc|学習塾・英会話
+英会話教室|7|cost-desc|学習塾・英会話
+子ども英会話|7|cost-desc|学習塾・英会話
+税理士|7|cost-desc|税理士・士業
+社労士|7|cost-desc|税理士・士業
+行政書士|7|cost-desc|税理士・士業
+司法書士|7|cost-desc|税理士・士業
+弁護士 相談|7|cost-desc|税理士・士業
+飲食店 予約|7|cost-desc|予約制の飲食店
+焼肉|7|cost-desc|予約制の飲食店
+居酒屋 予約|7|cost-desc|予約制の飲食店
+ペットサロン|7|cost-desc|ペット関連
+トリミング|7|cost-desc|ペット関連
+動物病院|7|cost-desc|ペット関連
+ペットホテル|7|cost-desc|ペット関連
+美容室|7|cost-desc|美容室
+ヘアサロン|7|cost-desc|美容室
+ホテル|7|cost-desc|ホテル・旅館
+旅館|7|cost-desc|ホテル・旅館
+温泉旅館|7|cost-desc|ホテル・旅館
 宅建 講座|30|cost-desc
 審美歯科|30|cost-desc
 小児矯正|30|cost-desc
@@ -406,3 +462,63 @@ Webデザイン|7|cost-desc
 起業 講座|7|cost-desc
 運転免許|7|cost-desc
 雨漏り|7|cost-desc
+24時間ジム|30|cost-desc
+AGA|30|cost-desc
+AI スクール|30|cost-desc
+V2H|30|cost-desc
+Webデザイン|30|cost-desc
+お見合い|30|cost-desc
+インプラント|30|cost-desc
+ウェビナー|30|cost-desc
+エコキュート|30|cost-desc
+オンラインスクール|30|cost-desc
+オンライン講座|30|cost-desc
+キックボクシング|30|cost-desc
+コーチング|30|cost-desc
+シミ取り|30|cost-desc
+ダイエット ジム|30|cost-desc
+ダーマペン|30|cost-desc
+ハイフ|30|cost-desc
+ハウスメーカー|30|cost-desc
+パーソナルジム|30|cost-desc
+パーソナルトレーニング|30|cost-desc
+ヒアルロン酸|30|cost-desc
+ピラティス|30|cost-desc
+プログラミングスクール|30|cost-desc
+ホワイトニング|30|cost-desc
+ボディメイク|30|cost-desc
+ボトックス|30|cost-desc
+マウスピース矯正|30|cost-desc
+マシンピラティス|30|cost-desc
+マンション 売却|30|cost-desc
+メンズ脱毛|30|cost-desc
+モデルハウス|30|cost-desc
+ヨガ|30|cost-desc
+リノベーション|30|cost-desc
+リフォーム|30|cost-desc
+不動産 売却|30|cost-desc
+不動産 査定|30|cost-desc
+不動産投資|30|cost-desc
+中古住宅|30|cost-desc
+二重整形|30|cost-desc
+仲人|30|cost-desc
+住宅展示場|30|cost-desc
+体験レッスン|30|cost-desc
+個別相談|30|cost-desc
+分譲住宅|30|cost-desc
+副業|30|cost-desc
+加圧トレーニング|30|cost-desc
+動画編集|30|cost-desc
+包茎|30|cost-desc
+医療ダイエット|30|cost-desc
+医療痩身|30|cost-desc
+医療脱毛|30|cost-desc
+合宿免許|30|cost-desc
+土地活用|30|cost-desc
+外壁塗装|30|cost-desc
+外構|30|cost-desc
+太陽光 見積|30|cost-desc
+太陽光発電|30|cost-desc
+女性専用ジム|30|cost-desc
+婚活|30|cost-desc
+婚活パーティー|30|cost-desc
