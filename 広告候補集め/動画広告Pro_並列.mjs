@@ -68,21 +68,17 @@ async function tab(k) {
   }
 }
 await Promise.all([...Array(TABS).keys()].map(tab));
-// まだD1に無い広告主の割合（言葉ごと）。報告と、新しい広告主が出ない言葉を外すのに使う
-try {
+// 広告主の数（言葉ごと）。D1は読まない（10/27 D1の1日の読み取り上限を超えたため。新しいかどうかは在庫づくりが照らす）
+{
   const norm = (x) => (x || '').replace(/[\s\W_]+/gu, '').toLowerCase();
-  const S = await (await fetch('https://line-stock-product-plan.hitomi-k.workers.dev/api/sales', { headers: { 'User-Agent': 'Mozilla/5.0' } })).json();
-  const known = new Set((S.companies || []).map((c) => norm(c.name)));
-  const byW = {}; const all = new Set(), fresh = new Set();
+  const byW = {}; const all = new Set();
   for (const x of got) for (const i of x.data.items) {
     const n = norm(i.advertiser_name && i.advertiser_name !== 'None' ? i.advertiser_name : i.account_name); if (!n) continue;
-    const k = `${x.word}|${x.interval}`; byW[k] ||= { all: new Set(), fresh: new Set() };
-    byW[k].all.add(n); all.add(n); if (!known.has(n)) { byW[k].fresh.add(n); fresh.add(n); }
+    const k = `${x.word}|${x.interval}`; (byW[k] ||= new Set()).add(n); all.add(n);
   }
-  const words = Object.fromEntries(Object.entries(byW).map(([k, v]) => [k, { advertisers: v.all.size, new: v.fresh.size }]));
-  Object.assign(summary, { advertisers: all.size, new_vs_d1: fresh.size, words });
-  console.log('広告主', all.size, 'うちD1に無い', fresh.size, `（${all.size ? Math.round(fresh.size / all.size * 100) : 0}%）`);
-} catch (e) { console.log('D1との照合はできなかった', String(e).slice(0, 100)); }
+  Object.assign(summary, { advertisers: all.size, words: Object.fromEntries(Object.entries(byW).map(([k, v]) => [k, { advertisers: v.size }])) });
+  console.log('広告主', all.size);
+}
 save();
 console.log(stop ? `止めた：${stop}` : '全部読み終えた', '広告', got.reduce((a, x) => a + x.data.items.length, 0));
 await b.close();
