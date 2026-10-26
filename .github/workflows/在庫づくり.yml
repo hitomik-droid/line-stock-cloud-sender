@@ -1,0 +1,97 @@
+# 動画広告Proを並べて読み終わったら、Macを通さずに GitHub の中だけで在庫（確認中）まで流す（2026-10-26 23時台 勝良さん「ローカルで作業しないで」）。
+# 1. 次の読み込みを起動する（止まる表示で終わった回は起動せず、動画広告Pro回し.yml が30分あけて起動する）
+# 2. 結果からまだ調べていない広告主だけを候補の元にする（登録/取り込み.py。Macの 取り込み.py・照合.py・流す.py と同じ判定）
+# 3. 全部.yml を dry で起動（公式サイト探し・点検。組ごとに同時に動く）→ 合格があれば register を from_run で1本ずつ（取り消されたら起動し直す）
+# 4. 追跡リンク（追跡/追跡リンク登録.py。SupabaseのSecretsがある時だけ発行。無ければ待ちの会社を出す）
+# 送らない。決まり（重複の照合・ロボット確認は解かない・承認済みの本文だけ）は全部.yml・登録/流れ.py のまま。送付は 朝の自動送付.yml（8〜19時）が行う。
+name: 在庫づくり（読み込みの後、登録まで）
+run-name: 在庫づくり ${{ github.event.workflow_run.id || inputs.run_id }}
+on:
+  workflow_run:
+    workflows: [動画広告Proを並べて読む]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 取り込む「動画広告Proを並べて読む」の実行番号
+        required: true
+      next:
+        description: 次の読み込みを起動するか（true/false）
+        required: false
+        default: 'false'
+permissions:
+  contents: write
+  actions: write
+jobs:
+  zaiko:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      GH_TOKEN: ${{ github.token }}
+      R: ${{ github.repository }}
+      RUN: ${{ github.event.workflow_run.id || inputs.run_id }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      W: 記録/在庫づくり
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 読み込みの結果を取る
+        id: got
+        run: |
+          # 切り替え（10/26 23:40 JST）より前の自動の起動は、Macの在庫づくりと重ならないよう何もしない
+          if [ "${{ github.event_name }}" = workflow_run ] && [ $(date -u +%s) -lt $(date -u -d 2026-10-26T14:40:00Z +%s) ]; then echo "切り替え前なので何もしない"; echo "skip=1" >> "$GITHUB_OUTPUT"; exit 0; fi
+          mkdir -p "$W/dp"
+          gh run download "$RUN" -R "$R" -n 動画広告Pro_並列 -D "$W/dp" || { echo "結果が無い（1Passwordの確認だけの回など）"; echo "skip=1" >> "$GITHUB_OUTPUT"; }
+          STOP=$(python3 -c "import json,glob;f=glob.glob('$W/dp/**/まとめ.json',recursive=True);print((json.load(open(f[0])).get('stop') or '') if f else '')")
+          echo "stop=$STOP" >> "$GITHUB_OUTPUT"
+          echo "止まり：[$STOP]"
+      - name: 次の読み込みを起動する（止まりの無い回だけ）
+        if: (github.event_name == 'workflow_run' || inputs.next == 'true') && steps.got.outputs.skip != '1' && steps.got.outputs.stop == ''
+        run: bash .github/scripts/次の読み込み.sh 3
+      - name: まだ調べていない広告主を候補の元にする
+        if: steps.got.outputs.skip != '1'
+        id: cand
+        run: |
+          npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,official_url FROM companies" --json > "$W/d1.json"
+          NAME="広告候補集め/候補化/入力/$(TZ=Asia/Tokyo date +%Y%m%d_%H%M)_GitHub_$RUN.json"
+          python3 登録/取り込み.py "$W/dp" "$NAME" "$W/d1.json" | tee "$W/取り込み.txt"
+          N=$(python3 -c "import json;print(len(json.load(open('$NAME'))))")
+          echo "n=$N" >> "$GITHUB_OUTPUT"; echo "name=$NAME" >> "$GITHUB_OUTPUT"
+          [ "$N" = 0 ] && rm -f "$NAME"
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 登録/調べた広告主.txt 登録/調べた遷移先ドメイン.txt; [ "$N" != 0 ] && git add "$NAME"
+          git commit -q -m "在庫づくり：動画広告Pro $RUN の新しい広告主 $N 社" || true
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+      - name: 公式サイト探し・点検（全部.yml を dry）→ 登録（register を1本ずつ）
+        if: steps.got.outputs.skip != '1' && steps.cand.outputs.n != '0'
+        id: reg
+        env:
+          Q: ${{ steps.cand.outputs.name }}
+        run: bash .github/scripts/全部を流す.sh "$Q" "z$RUN"
+      - name: 追跡リンクを発行して対応表に足す
+        if: always() && steps.got.outputs.skip != '1'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          git pull -q --rebase origin main || true
+          npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,industry,status,list_source,message_id FROM companies WHERE status='確認中'" --json > "$W/kakunin.json"
+          npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,body FROM messages" --json > "$W/msgs.json"
+          python3 追跡/追跡リンク登録.py "$W/kakunin.json" "$W/msgs.json" | tee "$W/追跡.txt"
+          git add 追跡/会社別リンク.json
+          git commit -q -m "在庫づくり：追跡リンクの対応表（$RUN）" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+      - name: まとめ
+        if: always()
+        run: |
+          { echo "### 在庫づくり（動画広告Pro $RUN）"; cat "$W/取り込み.txt" 2>/dev/null; cat "$W/流した結果.txt" 2>/dev/null; cat "$W/追跡.txt" 2>/dev/null; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: 在庫づくりの記録
+          path: |
+            記録/在庫づくり/*.txt
+          retention-days: 14

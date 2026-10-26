@@ -2,6 +2,8 @@
 # 使い方は README の「全部.yml」。mode=dry は登録も送付もしない（判定の結果と、D1に入れるSQLの件数・D1の鍵が通るかだけ確かめる）。
 # 文面は全部 堀田さんの版（v8）。外す会社の決まりは 登録/判定.py と 登録/流れ.py（README に一覧）。
 name: 候補集めから送付まで（全部）
+# tag：呼んだ側（在庫づくり.yml）が自分の起動した実行を見分けるための印
+run-name: 全部 ${{ inputs.mode }} ${{ inputs.tag }}
 on:
   workflow_dispatch:
     inputs:
@@ -38,6 +40,10 @@ on:
         default: ''
       from_run:
         description: register・send の時、この dry の実行番号の検品結果をそのまま使う（検品をやり直さない）。q・source は使わない
+        required: false
+        default: ''
+      tag:
+        description: 実行の名前に付ける印（在庫づくり.yml が使う）
         required: false
         default: ''
 # 2026-10-26 22時：dry（読むだけ）は組ごとに同時に動かす。D1に書く register・send だけ1本ずつ（番号が重ならないよう）

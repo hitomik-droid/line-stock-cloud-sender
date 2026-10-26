@@ -1,0 +1,38 @@
+# 動画広告Proの読み込みを、Macを通さずに続けて回す見張り（2026-10-26 23時台 勝良さん「ローカルで作業しないで」。Macの サーバー回し.sh の代わり）。
+# ふだんは 在庫づくり.yml が読み込みの終わりに次を起動する。これは途切れた時の予備：20分ごとに、読み込みが動いていなければ次を起動する。
+# 止まる表示で終わった回の後は、30分あけてタブ2枚で再開する（Macと同じ）。
+name: 動画広告Proを回し続ける
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: douga-mawashi
+  cancel-in-progress: false
+jobs:
+  next:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      R: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 前の回を見て、次を起動する
+        run: |
+          [ $(date -u +%s) -lt $(date -u -d 2026-10-26T14:40:00Z +%s) ] && { echo "切り替え（10/26 23:40 JST）より前なので起動しない"; exit 0; }
+          [ -f 広告候補集め/動画広告Pro_止める ] && { echo "止める印（広告候補集め/動画広告Pro_止める）があるので起動しない"; exit 0; }
+          last=$(gh run list -R "$R" --workflow douga-parallel.yml -L 10 --json databaseId,status,updatedAt,displayTitle --jq '[.[]|select(.status=="completed")][0]')
+          id=$(echo "$last" | jq -r .databaseId); at=$(echo "$last" | jq -r .updatedAt)
+          T=$(mktemp -d); STOP=""
+          if gh run download "$id" -R "$R" -n 動画広告Pro_並列 -D "$T" >/dev/null 2>&1; then STOP=$(jq -r '.stop // ""' "$T/まとめ.json" 2>/dev/null); fi
+          TABS=3
+          if [ -n "$STOP" ]; then
+            age=$(( $(date +%s) - $(date -d "$at" +%s) ))
+            [ $age -lt 1800 ] && { echo "前の回（$id）が止まりで終わってから $((age/60)) 分。30分たつまで待つ"; exit 0; }
+            TABS=2
+          fi
+          bash .github/scripts/次の読み込み.sh $TABS
