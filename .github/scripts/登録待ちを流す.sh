@@ -7,12 +7,12 @@ while read -r DRY TAG _; do
   [ -z "$DRY" ] && continue
   done_=""
   for a in $(seq 1 10); do
-    while [ -n "$(gh run list -R "$R" --workflow 全部.yml -L 20 --json status,displayTitle --jq '.[]|select((.status=="queued" or .status=="pending" or .status=="waiting") and (.displayTitle|startswith("全部 register") or startswith("全部 send")))|.status' | head -1)" ]; do sleep 20; done
+    while [ -n "$(gh run list -R "$R" --workflow 全部.yml -L 20 --json status,displayTitle --jq '.[]|select((.status=="queued" or .status=="pending" or .status=="waiting") and (.displayTitle|startswith("全部 register") or startswith("全部 send")))|.status' | head -1)" ]; do sleep 90; done
     T2="$TAG-後$a"
     gh workflow run 全部.yml -R "$R" -f mode=register -f source=file -f q=- -f from_run="$DRY" -f tag="$T2" -f id_band=5000 -f sender=自動の在庫づくり >/dev/null || continue
-    id=""; for t in $(seq 1 30); do sleep 10; id=$(gh run list -R "$R" --workflow 全部.yml -L 50 --json databaseId,displayTitle --jq ".[]|select(.displayTitle==\"全部 register $T2\")|.databaseId" | head -1); [ -n "$id" ] && break; done
+    id=""; for t in $(seq 1 20); do sleep 20; id=$(gh run list -R "$R" --workflow 全部.yml -L 50 --json databaseId,displayTitle --jq ".[]|select(.displayTitle==\"全部 register $T2\")|.databaseId" | head -1); [ -n "$id" ] && break; done
     [ -z "$id" ] && continue
-    gh run watch "$id" -R "$R" --interval 20 >/dev/null 2>&1
+    gh run watch "$id" -R "$R" --interval 120 >/dev/null 2>&1
     c=$(gh run view "$id" -R "$R" --json conclusion --jq .conclusion)
     [ "$c" = cancelled ] && continue
     if [ "$c" = success ]; then
