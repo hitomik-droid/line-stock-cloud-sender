@@ -6,6 +6,10 @@ on:
     - cron: '2 0 * * *'
     # 10/27 定時が飛んだ時の控え（登録できた分は登録待ち.txt から消えるので、重ねても二重にならない）
     - cron: '17,47 0-2 * * *'
+  # 10/27 定時が当てにならないので、待ち数えが終わるたびにも起動する（D1が読めない時・登録待ちが空の時は何もせず終わる）
+  workflow_run:
+    workflows: [在庫づくりの待ちを数える]
+    types: [completed]
   workflow_dispatch:
 permissions:
   contents: write
@@ -22,7 +26,15 @@ jobs:
       R: ${{ github.repository }}
     steps:
       - uses: actions/checkout@v4
+      - id: gate
+        name: D1が読めて、登録待ちがある時だけ進む
+        run: |
+          c=$(curl -s -A Mozilla -o /dev/null -w "%{http_code}" https://line-stock-product-plan.hitomi-k.workers.dev/api/hourly || echo 0)
+          n=$(grep -c . 登録/登録待ち.txt 2>/dev/null || echo 0)
+          echo "D1 $c ／ 登録待ち $n 本" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$c" = "200" ] && [ "$n" -gt 0 ]; then echo "go=1" >> "$GITHUB_OUTPUT"; fi
       - name: 登録待ちを1本ずつ登録する
+        if: steps.gate.outputs.go == '1'
         run: bash .github/scripts/登録待ちを流す.sh | tee 登録待ちの結果.txt
       - name: まとめ
         if: always()
