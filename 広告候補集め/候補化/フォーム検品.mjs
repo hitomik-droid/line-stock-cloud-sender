@@ -121,12 +121,13 @@ async function inspectOne(browser, c) {
       try {
         if (p.act === 'fill') await loc.fill(p.value, { timeout: 5000 });
         else if (p.act === 'select') await loc.selectOption(p.value, { timeout: 5000 });
-        else if (p.act === 'check') await loc.check({ timeout: 5000, force: true }).catch(() => loc.evaluate((e) => { if (!e.checked) e.click(); }));
+        else if (p.act === 'check') // 10/26 見た目を作り替えた同意欄で、押しても付かない時はラベルを押し、それでも付かなければ印を付ける（点検で同意が空のまま落ちた分）
+        { await loc.check({ timeout: 5000, force: true }).catch(() => loc.evaluate((e) => { if (!e.checked) e.click(); })); await loc.evaluate((e) => { if (e.checked) return; const l = (e.id && document.querySelector('label[for="' + CSS.escape(e.id) + '"]')) || e.closest('label'); if (l) l.click(); if (!e.checked) { e.checked = true; e.dispatchEvent(new Event('input', { bubbles: true })); e.dispatchEvent(new Event('change', { bubbles: true })); } }).catch(() => {}); }
       } catch (e) { (r.fillErr = r.fillErr || []).push(p.what + '：' + String(e.message).split('\n')[0].slice(0, 80)); }
       if (p.what === '本文') bodyOk = (await loc.inputValue().catch(() => '')) === p.value;
     }
     r.bodyOk = bodyOk;
-    r.invalid = await frame.evaluate(() => [...document.querySelectorAll('input,textarea,select')]
+    r.invalid = await frame.evaluate(() => [...((document.querySelector('textarea[data-ls]') || {}).form || document).querySelectorAll('input,textarea,select')]
       .filter((e) => e.willValidate && !e.checkValidity() && (e.offsetWidth || e.type === 'checkbox' || e.type === 'radio'))
       .filter((e) => (e.type === 'checkbox' || e.type === 'radio') ? !document.querySelector(`input[name="${CSS.escape(e.name)}"]:checked`) : true)
       .map((e) => (e.name || e.id || e.type) + '：' + e.validationMessage)).catch(() => []);

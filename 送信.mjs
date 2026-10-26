@@ -127,7 +127,7 @@ async function applyPlan(frame, plan) {
     try {
       if (p.act === 'fill') await loc.fill(p.value, { timeout: 5000 });
       else if (p.act === 'select') await loc.selectOption(p.value, { timeout: 5000 });
-      else if (p.act === 'check') await loc.check({ timeout: 5000, force: true }).catch(() => loc.evaluate((e) => { if (!e.checked) e.click(); }));
+      else if (p.act === 'check') { await loc.check({ timeout: 5000, force: true }).catch(() => loc.evaluate((e) => { if (!e.checked) e.click(); })); await loc.evaluate((e) => { if (e.checked) return; const l = (e.id && document.querySelector('label[for="' + CSS.escape(e.id) + '"]')) || e.closest('label'); if (l) l.click(); if (!e.checked) { e.checked = true; e.dispatchEvent(new Event('input', { bubbles: true })); e.dispatchEvent(new Event('change', { bubbles: true })); } }).catch(() => {}); }
       done.push([p.what, p.act === 'fill' && p.what === '本文' ? `本文 ${p.value.length}字` : (p.value ?? 'ON')]);
     } catch (e) {
       done.push([p.what, '入力できず：' + String(e.message).split('\n')[0]]);
@@ -140,7 +140,7 @@ async function applyPlan(frame, plan) {
 }
 
 async function invalidFields(frame) {
-  return frame.evaluate(() => [...document.querySelectorAll('input,textarea,select')]
+  return frame.evaluate(() => [...((document.querySelector('textarea[data-ls]') || {}).form || document).querySelectorAll('input,textarea,select')]
     .filter((e) => e.willValidate && !e.checkValidity() && (e.offsetWidth || e.type === 'checkbox' || e.type === 'radio'))
     // 入力前に付いた古いエラー表示は数えない（空のまま・未選択のものだけ）
     .filter((e) => (e.type === 'checkbox' || e.type === 'radio') ? !document.querySelector(`input[name="${CSS.escape(e.name)}"]:checked`) : !e.value)

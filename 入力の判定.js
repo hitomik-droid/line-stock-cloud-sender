@@ -71,7 +71,9 @@ export function planForm(d) {
   if (tas[0]) plan.push({ sel: mark(tas[0]), act: 'fill', value: d.body, what: '本文' });
   else notes.push('本文を貼る欄（textarea）が見つからない');
 
-  const tels = els.filter((e) => e.tagName === 'INPUT' && /電話|tel|TEL|Tel|phone/.test(lab(e) + e.type) && !['checkbox', 'radio'].includes(e.type));
+  // 10/26 郵便番号・FAX・住所・国の欄は電話番号の欄にしない（見出しの囲みに「電話」が混ざり、〒やFAXに電話番号が入っていた。点検1,993件中46件）
+  const notTel = (e) => /郵便|〒|zip|postal|post_?code|FAX|ファ[ック]?[クス]|住所|addr|国|country/i.test((e.name || '') + ' ' + (e.placeholder || '') + ' ' + ((e.id && document.querySelector('label[for="' + CSS.escape(e.id) + '"]')) || {}).innerText) && !/^tel/i.test(e.name || '');
+  const tels = els.filter((e) => e.tagName === 'INPUT' && /電話|tel|TEL|Tel|phone/.test(lab(e) + e.type) && !['checkbox', 'radio'].includes(e.type) && !notTel(e));
   for (const e of els) {
     if (e.tagName === 'TEXTAREA') { if (e !== tas[0] && e.required) unknown.push('textarea ' + lab(e).slice(0, 40)); continue; }
     const L = lab(e); const t = e.type;
