@@ -1,6 +1,10 @@
 {
   "base_url": "https://lxxzvbggxoroxayiupfj.supabase.co/functions/v1/ls-flow",
   "links": {
+    "LS-20261020-050": {
+      "token": "d4c2278b2b354c03a5f832f071aa6ae0",
+      "page": "beauty-clinic"
+    },
     "LS-20261022-002": {
       "token": "2089323bd3b84a809e703a534113e0fa",
       "page": "driving-school"
@@ -305,6 +309,10 @@
       "token": "0b6b8794be244dd893329fe3cd916588",
       "page": "solar-housing"
     },
+    "LS-20261022-1023": {
+      "token": "80fb1db42ae54c44905c1bc238c0668d",
+      "page": "solar-housing"
+    },
     "LS-20261022-1025": {
       "token": "f6af6c1eea4d4753869c4d0394053de3",
       "page": "beauty-clinic"
@@ -581,13 +589,117 @@
       "token": "70a6d5e28d2f487c91058cd9f2b5a1a4",
       "page": "solar-housing"
     },
+    "LS-20261022-1096": {
+      "token": "c73af75bebe34723a8335391db06b6c8",
+      "page": "online-school"
+    },
+    "LS-20261022-1097": {
+      "token": "8e4674f991544140b543e97cda4badee",
+      "page": "online-school"
+    },
+    "LS-20261022-1098": {
+      "token": "491b7a2366a44c4c94b9cc21112d67f1",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1099": {
+      "token": "f4acc5dcb3e44bb3a3485dde48813971",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1100": {
+      "token": "e4e1c6e243fc48ef8d336a654241bc7a",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1101": {
+      "token": "71c6d84c35ba4fcea046cc6cd3e1b60a",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1102": {
+      "token": "7220fa712d83451da61b6349bfc1169d",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1103": {
+      "token": "8db54bec0cf643cba56529b06b26f22d",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1104": {
+      "token": "468d5f5040864be89eb635a8acb04c16",
+      "page": "online-school"
+    },
+    "LS-20261022-1105": {
+      "token": "019043dee38c4258b44c8339222d2bdc",
+      "page": "online-school"
+    },
+    "LS-20261022-1106": {
+      "token": "237f812199c6419f8fc69f1c6d0f0180",
+      "page": "online-school"
+    },
+    "LS-20261022-1107": {
+      "token": "10563f0af0db4c3da10a15dd31e996f6",
+      "page": "online-school"
+    },
+    "LS-20261022-1108": {
+      "token": "d2c8756f560d458980bc1e3e73bb0648",
+      "page": "online-school"
+    },
+    "LS-20261022-1109": {
+      "token": "2fc774b43b654b9ba68ce2aea79d7406",
+      "page": "solar-housing"
+    },
     "LS-20261022-111": {
       "token": "7be2a5ea83414cd58dd0cb4af12716ed",
       "page": "personal-gym"
     },
+    "LS-20261022-1110": {
+      "token": "a9c887cee79741e0a288c17d0733fb91",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1111": {
+      "token": "4bc4ff4a318d44acac66cb4664603575",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1112": {
+      "token": "6357b9098ab24ca9b8962911e51d3d3c",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1113": {
+      "token": "d017028961244ffabe801f5f256690fd",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1114": {
+      "token": "0393c5cb8f9c4ba887e206ef3b12d7aa",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1115": {
+      "token": "b66a6302b4b7456db5ec3d58414a0fd9",
+      "page": "online-school"
+    },
+    "LS-20261022-1116": {
+      "token": "0480956e276145298e3a908f20e17c88",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1117": {
+      "token": "f27963b5b6434e559955ceab4acb2005",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1118": {
+      "token": "6ec5bf12ea0249caa73746b094518b65",
+      "page": "online-school"
+    },
+    "LS-20261022-1119": {
+      "token": "28c8ca4b991a448490e17c0bb5c66345",
+      "page": "online-school"
+    },
     "LS-20261022-112": {
       "token": "188b8410b7864754bcad2bbfb23254a0",
       "page": "personal-gym"
+    },
+    "LS-20261022-1120": {
+      "token": "4815ace66c09409c9bd06b98f8ca6d8f",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1121": {
+      "token": "710bbc293dc14fbfb66af17b8ec16432",
+      "page": "solar-housing"
     },
     "LS-20261022-114": {
       "token": "894e0a78403745ed930944bf452a708a",
@@ -1247,6 +1359,22 @@
     },
     "LS-20261022-302": {
       "token": "de1e067ee6324987a54969e7397b328a",
+      "page": "solar-housing"
+    },
+    "LS-20261022-3020": {
+      "token": "cd4a6f96109841618fb0720ad934cb3c",
+      "page": "online-school"
+    },
+    "LS-20261022-3021": {
+      "token": "1e28a0474f4144fb985223a1bc0163f2",
+      "page": "solar-housing"
+    },
+    "LS-20261022-3022": {
+      "token": "e413cb4f66ad4ab99d7a8df27b784cb2",
+      "page": "solar-housing"
+    },
+    "LS-20261022-3023": {
+      "token": "d960ddaf090842818de48a7d716ae1de",
       "page": "solar-housing"
     },
     "LS-20261022-303": {
@@ -1921,6 +2049,10 @@
       "token": "ce1871f5a84d413aa5cf8127d7d529fe",
       "page": "solar-housing"
     },
+    "LS-20261022-574": {
+      "token": "edb4881f034f4742969a5654d304da7a",
+      "page": "online-school"
+    },
     "LS-20261022-575": {
       "token": "d5f52b64e3e541c08ddb5fedd67bcaf3",
       "page": "online-school"
@@ -2113,6 +2245,10 @@
       "token": "ef926a4127b547e6a47f6e75597115af",
       "page": "solar-housing"
     },
+    "LS-20261022-658": {
+      "token": "a2dbd320f2294c1fa138f55c5c65313f",
+      "page": "solar-housing"
+    },
     "LS-20261022-659": {
       "token": "2002856bfe4641bca113e2bff082ac32",
       "page": "solar-housing"
@@ -2123,6 +2259,10 @@
     },
     "LS-20261022-662": {
       "token": "77e61af7f94c40a4bdcba850e2b7b27f",
+      "page": "personal-gym"
+    },
+    "LS-20261022-663": {
+      "token": "01281fe0302b4d4e85c1f0887e75f691",
       "page": "personal-gym"
     },
     "LS-20261022-664": {
@@ -2153,6 +2293,10 @@
       "token": "c7e18630a8e04891b5898c2cdd76ec13",
       "page": "personal-gym"
     },
+    "LS-20261022-701": {
+      "token": "0c966376a7c74d90af280cc1463450bb",
+      "page": "personal-gym"
+    },
     "LS-20261022-702": {
       "token": "8117d81f858c44e5b00c3543d2034397",
       "page": "personal-gym"
@@ -2163,6 +2307,10 @@
     },
     "LS-20261022-705": {
       "token": "f3b9fcc24c78447b99b55e101ad83d45",
+      "page": "personal-gym"
+    },
+    "LS-20261022-706": {
+      "token": "d60184484da34f3db9c64d1ad168d407",
       "page": "personal-gym"
     },
     "LS-20261022-708": {
@@ -2203,6 +2351,10 @@
     },
     "LS-20261022-722": {
       "token": "dd84490ebcb5487e8efcf4fa43f451c5",
+      "page": "solar-housing"
+    },
+    "LS-20261022-723": {
+      "token": "8db62bd2beee41d5a3b02de21dab9898",
       "page": "solar-housing"
     },
     "LS-20261022-724": {
@@ -2309,12 +2461,20 @@
       "token": "4df0e265a33c4eebaa2c7a46019dd8a1",
       "page": "solar-housing"
     },
+    "LS-20261022-763": {
+      "token": "720e9fea3eb1463d96a1e46d54cf3823",
+      "page": "solar-housing"
+    },
     "LS-20261022-764": {
       "token": "a3bfc920bb2244479e468685442ea148",
       "page": "solar-housing"
     },
     "LS-20261022-765": {
       "token": "f0d9a8c57c90400397fa8530196f75b3",
+      "page": "solar-housing"
+    },
+    "LS-20261022-766": {
+      "token": "ca90fe658e924dd5943c746529cea14b",
       "page": "solar-housing"
     },
     "LS-20261022-767": {
@@ -2361,6 +2521,10 @@
       "token": "be69f4970ed54288902dbf4764f2306e",
       "page": "solar-housing"
     },
+    "LS-20261022-786": {
+      "token": "c37a71145e5d412aaa6c5fc0a6c03f7f",
+      "page": "solar-housing"
+    },
     "LS-20261022-787": {
       "token": "f84f23cb661f4e3fbf31bf096b5b0ad9",
       "page": "solar-housing"
@@ -2400,106 +2564,6 @@
     "LS-20261022-801": {
       "token": "dd78dfec0e09448191c7ec22b81bfd1b",
       "page": "personal-gym"
-    },
-    "LS-20261022-1096": {
-      "token": "c73af75bebe34723a8335391db06b6c8",
-      "page": "online-school"
-    },
-    "LS-20261022-1097": {
-      "token": "8e4674f991544140b543e97cda4badee",
-      "page": "online-school"
-    },
-    "LS-20261022-1098": {
-      "token": "491b7a2366a44c4c94b9cc21112d67f1",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1099": {
-      "token": "f4acc5dcb3e44bb3a3485dde48813971",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1100": {
-      "token": "e4e1c6e243fc48ef8d336a654241bc7a",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1101": {
-      "token": "71c6d84c35ba4fcea046cc6cd3e1b60a",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1102": {
-      "token": "7220fa712d83451da61b6349bfc1169d",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1103": {
-      "token": "8db54bec0cf643cba56529b06b26f22d",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1104": {
-      "token": "468d5f5040864be89eb635a8acb04c16",
-      "page": "online-school"
-    },
-    "LS-20261022-1105": {
-      "token": "019043dee38c4258b44c8339222d2bdc",
-      "page": "online-school"
-    },
-    "LS-20261022-1106": {
-      "token": "237f812199c6419f8fc69f1c6d0f0180",
-      "page": "online-school"
-    },
-    "LS-20261022-1107": {
-      "token": "10563f0af0db4c3da10a15dd31e996f6",
-      "page": "online-school"
-    },
-    "LS-20261022-1108": {
-      "token": "d2c8756f560d458980bc1e3e73bb0648",
-      "page": "online-school"
-    },
-    "LS-20261022-1109": {
-      "token": "2fc774b43b654b9ba68ce2aea79d7406",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1110": {
-      "token": "a9c887cee79741e0a288c17d0733fb91",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1111": {
-      "token": "4bc4ff4a318d44acac66cb4664603575",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1112": {
-      "token": "6357b9098ab24ca9b8962911e51d3d3c",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1113": {
-      "token": "d017028961244ffabe801f5f256690fd",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1114": {
-      "token": "0393c5cb8f9c4ba887e206ef3b12d7aa",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1115": {
-      "token": "b66a6302b4b7456db5ec3d58414a0fd9",
-      "page": "online-school"
-    },
-    "LS-20261022-1116": {
-      "token": "0480956e276145298e3a908f20e17c88",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1117": {
-      "token": "f27963b5b6434e559955ceab4acb2005",
-      "page": "solar-housing"
-    },
-    "LS-20261022-1118": {
-      "token": "6ec5bf12ea0249caa73746b094518b65",
-      "page": "online-school"
-    },
-    "LS-20261022-1119": {
-      "token": "28c8ca4b991a448490e17c0bb5c66345",
-      "page": "online-school"
-    },
-    "LS-20261022-1120": {
-      "token": "4815ace66c09409c9bd06b98f8ca6d8f",
-      "page": "solar-housing"
     }
   }
 }
