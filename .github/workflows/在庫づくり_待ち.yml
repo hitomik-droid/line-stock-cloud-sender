@@ -1,0 +1,28 @@
+# 在庫づくりの段ごとの待ちの数を30分ごとに数え、記録/在庫づくり_待ち.json に出してpushする（2026-10-27 指揮の割り当て）。読むだけで、在庫づくりは起動しない。
+name: 在庫づくりの待ちを数える
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: zaiko-wait
+  cancel-in-progress: true
+jobs:
+  count:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      R: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 300
+      - run: git fetch -q origin main && python3 登録/在庫づくりの待ち.py | tee -a "$GITHUB_STEP_SUMMARY"
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 記録/在庫づくり_待ち.json; git commit -q -m "在庫づくりの待ち（$(TZ=Asia/Tokyo date +%H:%M)）" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
