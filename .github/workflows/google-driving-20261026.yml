@@ -1,0 +1,62 @@
+name: Google自動車学校7社の掲載照合と検品
+on:
+  push:
+    branches: [google-leads-20261026]
+    paths: [.github/workflows/google-driving-20261026.yml]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      W: 記録/Google自動車学校7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Google公開画面で掲載ドメインと広告主名を照合
+        run: |
+          mkdir -p "$W"
+          node --check 広告候補集め/Googleドメイン照合_20261026.mjs
+          node 広告候補集め/Googleドメイン照合_20261026.mjs 広告候補集め/候補化/入力/20261026_Google自動車学校7件.json "$W/掲載確認済み.json"
+      - name: 公式サイトとフォームを4組で並列確認
+        run: |
+          for p in 0 1 2 3; do
+            mkdir -p "$W/part$p/出力"
+            cp "$W/掲載確認済み.json" "$W/part$p/出力/google_候補.json"
+            OUT_DIR="$W/part$p" node 広告候補集め/meta/公式サイト確定.mjs --per=999 "--shard=$p/4" "--out=$W/part$p/候補.tsv" > "$W/part$p/確認.log" 2>&1 &
+          done
+          wait
+      - name: D1をSELECTだけで読む
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,legal_name,official_url,form_url,status FROM companies" --json > "$W/D1読取.json"
+          python3 - <<'PY'
+          import json,os,pathlib
+          p=pathlib.Path(os.environ['W']);d=json.load(open(p/'D1読取.json'))
+          assert d and all(x.get('success') for x in d)
+          (p/'sales.json').write_text(json.dumps({'companies':[r for x in d for r in x['results']]},ensure_ascii=False))
+          with open(os.environ['GITHUB_ENV'],'a') as f:f.write('LS_API='+(p/'sales.json').resolve().as_uri()+'\n')
+          PY
+      - name: 既存処理で重複除外・入力検品・判定（登録送信なし）
+        run: |
+          python3 登録/流れ.py cands "$W" "$W"/part*/候補.tsv
+          N=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.env.W+'/cands.json')).length)")
+          if [ "$N" = 0 ]; then
+            : > "$W/results.jsonl"
+          else
+            node 広告候補集め/候補化/フォーム検品.mjs "$W/cands.json" "$W/results.jsonl" 4 1/1
+          fi
+          python3 登録/流れ.py plan "$W"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Google自動車学校7社検品
+          path: ${{ env.W }}/
+          retention-days: 14
