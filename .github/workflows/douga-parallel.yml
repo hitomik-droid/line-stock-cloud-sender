@@ -138,8 +138,8 @@ jobs:
             t=4
             gh workflow run $W -R $GITHUB_REPOSITORY -f lane=$LANE -f start=$NEXT -f tabs=$t -f chain=true
             echo "次：${LANE}本目 タブ$t 組み合わせ$((NEXT+1))〜"
-          elif [ "$OUTCOME" = cancelled ]; then
-            echo "取り消された回。次は起動しない"
+          elif [ "$OUTCOME" != failure ]; then
+            echo "取り消された回・読む前に終わった回（$OUTCOME）。次は起動しない"
           else
             echo "止まった（$OUTCOME）。2本とも止めて、30分後に1本・タブ2枚で再開する"
             for id in $(gh run list -R $GITHUB_REPOSITORY --workflow $W --json databaseId,status -q '.[]|select(.status!="completed")|.databaseId'); do
