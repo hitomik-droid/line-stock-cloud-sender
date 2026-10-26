@@ -119,7 +119,9 @@ for (const c of pool) {
   try {
     // 公式トップ：リンク先のホストの / を開き、リダイレクト後を正とする
     let top;
-    try { top = await readPage(page, `https://${h}/`); }
+    // 10/27 時間切れ・403・429・5xx・証明書切れは、少し間を空けてもう一度、www の有り無し・http でも開き直す
+    const tryOpen = async (u) => { try { const x = await readPage(page, u); if ([403, 429].includes(x.status) || x.status >= 500) { await sleep(5000); return await readPage(page, u); } return x; } catch (e) { if (/Timeout|ERR_|CERT|SSL/.test(e.message)) { await sleep(5000); return readPage(page, u); } throw e; } };
+    try { top = await tryOpen(`https://${h}/`); if (top.status >= 400) { const alt2 = await tryOpen(h.startsWith('www.') ? `https://${h.slice(4)}/` : `https://www.${h}/`).catch(() => null); if (alt2 && alt2.status < 400) top = alt2; } }
     catch (e) { if (!h.startsWith('www.') && /NAME_NOT_RESOLVED|CONNECTION_REFUSED|CERT/.test(e.message)) top = await readPage(page, `https://www.${h}/`).catch(() => null); if (!top && /CERT|SSL/.test(e.message)) top = await readPage(page, `http://${h}/`).catch(() => null); if (!top) top = { status: 0, err: e }; }
     // 10/27 通る率の改善：広告用のサブドメイン（lp.・ad.・sub. など）のトップが開けない時は、本体のドメインのトップを見る（22:47の回で74社中6社）
     if ((top.status >= 400 || top.err) && b && b !== h.replace(/^www\./, '')) {
@@ -138,7 +140,10 @@ for (const c of pool) {
     if (!/[ぁ-んァ-ヶ]/.test(head0 + top.text.slice(0, 3000))) throw new Error('日本語のサイトでない：' + head0.slice(0, 40));
     // 見出しに業種の語が無くても、本文の先頭に業種の語が4回以上あれば業種どおりとみる（10/26 通る率の改善）
     const bodyHits = (top.text.slice(0, 5000).match(new RegExp(STRICT[c.industry].source, 'gi')) || []).length;
-    if (!STRICT[c.industry].test(head0) && bodyHits < 4) throw new Error('トップのタイトル・説明に業種の語が無い：' + head0.slice(0, 40));
+    // 10/27 作業管理（勝良さんの全振り）：動画広告Proのジャンル・検索の業種で業種が決まっている会社は、トップに業種の語が無くても業種外とはしない（大手・比較サイト・チェーンの除外はそのまま）
+    const genreKnown = c.list_source === '動画広告Pro' && !!c.industry;
+    if (!STRICT[c.industry]?.test(head0) && bodyHits < 4 && !genreKnown) throw new Error('トップのタイトル・説明に業種の語が無い：' + head0.slice(0, 40));
+    if (!STRICT[c.industry]?.test(head0) && bodyHits < 4) log.industry_unverified = true;
     if (AGG.test(top.title)) throw new Error('比較・予約サイトの恐れ：' + top.title.slice(0, 40));
     // 広告主名の手がかり（比較サイト・別会社のサイトへの誘導を外すため、後でトップ・問い合わせ・会社概要のどこかに出ているかを見る）
     const probes = nameProbes(c.name);
