@@ -51,7 +51,7 @@ jobs:
         if: steps.got.outputs.skip != '1'
         id: cand
         run: |
-          if [ -n "${{ inputs.cand_file }}" ]; then F="${{ inputs.cand_file }}"; echo "name=$F" >> "$GITHUB_OUTPUT"; echo "n=$(python3 -c "import json;print(len(json.load(open('$F'))))")" >> "$GITHUB_OUTPUT"; mkdir -p "$W"; echo "候補の元 $F を使う" > "$W/取り込み.txt"; exit 0; fi
+          if [ -n "${{ inputs.cand_file }}" ]; then F="${{ inputs.cand_file }}"; echo "name=$F" >> "$GITHUB_OUTPUT"; echo "n=$(python3 -c "import json,sys;f='$F';print(len(open(f).read().splitlines())-1 if f.endswith('.tsv') else len(json.load(open(f))))")" >> "$GITHUB_OUTPUT"; mkdir -p "$W"; echo "候補の元 $F を使う" > "$W/取り込み.txt"; exit 0; fi
           npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,official_url FROM companies" --json > "$W/d1.json"
           NAME="広告候補集め/候補化/入力/$(TZ=Asia/Tokyo date +%Y%m%d_%H%M)_GitHub_$RUN.json"
           python3 登録/取り込み.py "$W/dp" "$NAME" "$W/d1.json" | tee "$W/取り込み.txt"

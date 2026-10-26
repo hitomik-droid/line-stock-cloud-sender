@@ -10,6 +10,12 @@ export function planForm(d) {
     company: 'ADNEXT', subject: '公式LINE活用のご相談', pref: '',
   };
   // 都道府県・住所・郵便番号は正本に値が無いので入れない（止まる）。勝良さんの答えが来たら pref に入れる（10/22夜）
+  // 10/27 0:1x 勝良さん「1」：こちらの希望を聞く必須欄（予算・希望日・時間・人数・希望校・店舗など）は「未定」、住所の必須欄（自由記述）は「ご相談時にお伝えします」を入れる。
+  // 選択肢は「未定」「その他」「相談したい」に当たる物だけを選び、無ければ送らない。郵便番号・日付の欄や、「その他」の無い都道府県の選択は埋めない（事実を作らない）
+  const MITEI = '未定（ご相談のうえ決めたいです）', ADDR_TXT = 'ご相談時にお伝えします';
+  const WISH = /予算|希望|日時|日程|時間|時期|人数|名様|校舎|教室|店舗|来店|来場|見学|体験日|曜日|コース|プラン|ご要望|お悩み/;
+  const ADDR = /住所|番地|市区町村|所在地|address|addr/i, NOT_ADDR = /郵便|〒|zip|post|メール|mail/i;
+  const UNDECIDED = /未定|その他|相談|検討中|決まっていない|決めていない|指定なし|特になし/;
   const forms = [...document.querySelectorAll('form')];
   const count = (x) => x.querySelectorAll('input,textarea,select').length;
   const f = forms.sort((a, b) => count(b) - count(a))[0] || document;
@@ -75,7 +81,15 @@ export function planForm(d) {
   const notTel = (e) => /郵便|〒|zip|postal|post_?code|FAX|ファ[ック]?[クス]|住所|addr|国|country/i.test((e.name || '') + ' ' + (e.placeholder || '') + ' ' + ((e.id && document.querySelector('label[for="' + CSS.escape(e.id) + '"]')) || {}).innerText) && !/^tel/i.test(e.name || '');
   const tels = els.filter((e) => e.tagName === 'INPUT' && /電話|tel|TEL|Tel|phone/.test(lab(e) + e.type) && !['checkbox', 'radio'].includes(e.type) && !notTel(e));
   for (const e of els) {
-    if (e.tagName === 'TEXTAREA') { if (e !== tas[0] && e.required) unknown.push('textarea ' + lab(e).slice(0, 40)); continue; }
+    if (e.tagName === 'TEXTAREA') {
+      if (e !== tas[0] && isReq(e)) {
+        const LT = lab(e);
+        if (ADDR.test(LT) && !NOT_ADDR.test(LT)) plan.push({ sel: mark(e), act: 'fill', value: ADDR_TXT, what: LT.slice(0, 20), el: e });
+        else if (WISH.test(LT)) plan.push({ sel: mark(e), act: 'fill', value: MITEI, what: LT.slice(0, 20), el: e });
+        else unknown.push('textarea ' + LT.slice(0, 40));
+      }
+      continue;
+    }
     const L = lab(e); const t = e.type;
     if (t === 'radio') continue;
     if (t === 'checkbox') {
@@ -92,6 +106,7 @@ export function planForm(d) {
       if (ME.pref && pi >= 0 && /都道府県|pref/i.test(L)) { plan.push({ sel: mark(e), act: 'select', value: o[pi].value, what: '選択 ' + ME.pref }); continue; }
       if (i >= 0 && /種別|項目|内容|カテゴリ|用件|区分|件名|目的|ご相談|お問い?合わ?せ|方法|連絡|返答|返信|回答/.test(L)) plan.push({ sel: mark(e), act: 'select', value: o[i].value, what: '選択 ' + o[i].text });
       else if (i >= 0 && /その他/.test(o[i].text) && (isReq(e) || /必須|\*|※/.test(L)) && !/店|校|院|教室|クリニック|地域|エリア|学年|性別|年齢|予算|時期|日|時間|免許|車種|コース|プラン|カタログ|資料/.test(L)) plan.push({ sel: mark(e), act: 'select', value: o[i].value, what: '選択 ' + o[i].text });
+      else if ((isReq(e) || /必須|\*|※/.test(L)) && (WISH.test(L) || /都道府県|pref/i.test(L)) && (() => { const k = o.findIndex((x) => /都道府県|pref/i.test(L) ? /その他/.test(x.text) : UNDECIDED.test(x.text)); if (k < 0) return false; plan.push({ sel: mark(e), act: 'select', value: o[k].value, what: '選択 ' + o[k].text }); return true; })()) { /* 未定・その他を選んだ */ }
       else if (isReq(e) && !e.value) unknown.push('select ' + L.slice(0, 40));
       else if (e.value && o[e.selectedIndex] && !/選択|--|―|未選択/.test(o[e.selectedIndex].text)) notes.push('選択欄に初期値あり：' + L.slice(0, 30) + ' = ' + o[e.selectedIndex].text);
       continue;
@@ -123,6 +138,12 @@ export function planForm(d) {
     const prevP = plan.length && plan[plan.length - 1].el === els[els.indexOf(e) - 1] ? plan[plan.length - 1] : null;
     const nameLike = !/年齢|歳|age|zip|郵便|〒|部署|役職|会社|電話|tel|住所|addr|mail|url|番号/i.test(L) && (/^例?[）)：:]?\s*[一-龥ァ-ヶぁ-ん]{1,5}$/.test(ph.trim()) || /name|mei|first|kana/i.test(e.name || ''));
     if (v === null && prevP && nameLike) for (const [full, a, b] of [[ME.name, ME.sei, ME.mei], [ME.kana, ME.kanaSei, ME.kanaMei], [ME.hira, ME.hiraSei, ME.hiraMei]]) if (prevP.value === full) { prevP.value = a; v = b; }
+    // 必須は、required 属性のほか、見出しの印（必須・*・※）でも見る。住所の自由記述は「任意」と書かれていなければ入れる（送信時の必須で止まらないため）
+    const reqMark = isReq(e) || /必須|[*＊※]/.test(L);
+    if (v === null && ['text', 'search', ''].includes(t) && (reqMark || (ADDR.test(L) && !/任意/.test(L)))) {
+      if (ADDR.test(L) && !NOT_ADDR.test(L)) v = ADDR_TXT;
+      else if (WISH.test(L) && !NOT_ADDR.test(L) && !/電話|tel|名前|氏名|会社/i.test(L)) v = MITEI;
+    }
     if (v !== null) plan.push({ sel: mark(e), act: 'fill', value: v, what: L.slice(0, 20), el: e });
     else if (isReq(e)) unknown.push('input ' + L.slice(0, 40));
   }
@@ -150,6 +171,7 @@ export function planForm(d) {
     if (i >= 0 && (req || /種別|項目|内容|カテゴリ|用件|区分|目的|ご相談|方法|連絡|返答|返信|回答|お問い?合わ?せ/.test(L))) plan.push({ sel: mark(rs[i]), act: 'check', what: '選択 ' + optText(rs[i]).slice(0, 20) });
     // 10/26 必須の印が無くても、何も選ばれていない選択肢の並びで「業務提携」「その他」など事実どおりの選択肢があれば選ぶ（必須の印を出さずに送信時に弾くフォームがあるため）
     else if (i >= 0 && !rs.some((r) => r.checked) && /業務提携|ビジネス|お取引|取引の|事業提案|営業提案|営業窓口|その他/.test(optText(rs[i]))) plan.push({ sel: mark(rs[i]), act: 'check', what: '選択 ' + optText(rs[i]).slice(0, 20) });
+    else if (req && !rs.some((r) => r.checked) && WISH.test(L) && rs.findIndex((r) => UNDECIDED.test(optText(r))) >= 0) { const r0 = rs[rs.findIndex((r) => UNDECIDED.test(optText(r)))]; plan.push({ sel: mark(r0), act: 'check', what: '選択 ' + optText(r0).slice(0, 20) }); }
     else if (req && !rs.some((r) => r.checked)) unknown.push(k + ' ' + L.slice(0, 40));
   }
 

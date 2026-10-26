@@ -14,7 +14,7 @@ def business_choice(value):
   return bool(BUSINESS.fullmatch(re.sub(r'\s+', '', value or '')))
 def wrong_choice(value):
   return bool(WRONG.search(value or '')) and not business_choice(value)
-NEUTRAL=re.compile(r'その他|お問い?合わ?せ|ご?質問|一般|メール|Eメール|E-mail|指定なし|特になし|どちらでも|ご意見|お知らせ|同意|承諾|プライバシー|個人情報|規約|法人|企業')
+NEUTRAL=re.compile(r'未定|相談|検討中|決まっていない|決めていない|その他|お問い?合わ?せ|ご?質問|一般|メール|Eメール|E-mail|指定なし|特になし|どちらでも|ご意見|お知らせ|同意|承諾|プライバシー|個人情報|規約|法人|企業')
 PERSONAL=re.compile(r'男|女|性別|歳|代$|店|校|院|希望|予算|時期|年齢|生年|都道府県|県|市|区|車種|免許|コース|プラン')
 def clean(lbl,name):
   t=re.sub(r'〔[^〕]*〕','',lbl or '')
@@ -59,7 +59,9 @@ def judge(r):
   # 10/23 17:20 勝良さん決定「1（緩める）」：必須の印が無い空欄だけが残るフォームも送る（送信時に「必須です」で止まれば送付失敗になる）
   # if emp2: why.append('空欄が残る（必須の印なし）：'+' / '.join(emp2)[:80])
   # 10/22夜 勝良さんの決定：送信者の住所・郵便番号は入れない。住所・郵便番号が必須のフォームは外す
-  adr=[clean(f.get('label'),f.get('name'))[:12] for f in r.get('after') or [] if f.get('required') and re.search(r'住所|郵便|〒|番地|zip|postal|address|pref|都道府県',(f.get('label') or '')+' '+(f.get('name') or ''),re.I) and not re.search(r'メール|mail',(f.get('label') or '')+' '+(f.get('name') or ''),re.I)]
+  # 10/27 0:1x 勝良さん「1」：住所の自由記述に「ご相談時にお伝えします」、都道府県の選択で「その他」を入れた欄は、外す理由にしない（郵便番号の必須は今までどおり外す）
+  ADDR_OK=lambda f: (f.get('value') or '').strip()=='ご相談時にお伝えします' or (f['kind']=='select' and 'その他' in (f.get('selected') or ''))
+  adr=[clean(f.get('label'),f.get('name'))[:12] for f in r.get('after') or [] if f.get('required') and not ADDR_OK(f) and re.search(r'住所|郵便|〒|番地|zip|postal|address|pref|都道府県',(f.get('label') or '')+' '+(f.get('name') or ''),re.I) and not re.search(r'メール|mail',(f.get('label') or '')+' '+(f.get('name') or ''),re.I)]
   if adr: why.append('住所・郵便番号が必須：'+' / '.join(adr)[:60])
   if any(f['kind'] in ('checkbox','checkboxgroup') and re.search(r'営業|セールス|勧誘',f.get('label') or '') for f in r.get('after') or []): why.append('「営業目的ではない」等の確認欄がある')
   if any('初期値' in n for n in p.get('notes') or []): why.append('選択欄に初期値：'+' / '.join(p['notes'])[:80])
@@ -69,7 +71,7 @@ def judge(r):
         if (not NEUTRAL.search(c) and not business_choice(c)) or wrong_choice(c): why.append(f'選択欄に事実と違う値が入る「{c}」（{clean(f["label"],"")[:20]}）')
     if f['kind']=='file' and f.get('required'): why.append('添付ファイルが必須')
     if f['kind']=='select' and f.get('selected') and wrong_choice(f['selected']): why.append(f'選択欄に事実と違う値が入る「{f["selected"]}」')
-    if f['kind'] not in ('select','textarea','checkbox','radio','radiogroup','checkboxgroup') and (f.get('value') or '') and re.search(r'〒|郵便|FAX|ファックス|ファクス|住所|番地|生年|年齢|会員番号|教習生番号',clean(f.get('label'),'')+' '+(f.get('name') or '')) and not re.search(r'メール|mail',clean(f.get('label'),'')): why.append(f'住所・郵便番号などの欄に値が入ってしまう（{clean(f.get("label"),"")[:15]}＝{f["value"][:15]}）')
+    if f['kind'] not in ('select','textarea','checkbox','radio','radiogroup','checkboxgroup') and (f.get('value') or '') and (f.get('value') or '').strip() not in ('ご相談時にお伝えします','未定（ご相談のうえ決めたいです）') and re.search(r'〒|郵便|FAX|ファックス|ファクス|住所|番地|生年|年齢|会員番号|教習生番号',clean(f.get('label'),'')+' '+(f.get('name') or '')) and not re.search(r'メール|mail',clean(f.get('label'),'')): why.append(f'住所・郵便番号などの欄に値が入ってしまう（{clean(f.get("label"),"")[:15]}＝{f["value"][:15]}）')
   af=r.get('after') or []
   vals=[(clean(f.get('label'),''),f.get('value') or '') for f in af if f['kind'] not in ('select','textarea','checkbox','radiogroup','checkboxgroup')]
   for (l1,v1),(l2,v2) in zip(vals,vals[1:]):
@@ -89,7 +91,7 @@ def judge(r):
   for l,q,v in fl:
     if q=='必須' and v.startswith('空欄'): w2.append(f'必須の欄が埋まらない（{l[:20]}）')
     if re.search(r'確認しました|確認いただき|送信確認|内容を確認',l) and v.startswith('空欄'): w2.append(f'確認のチェック欄が埋まらない（{l[:20]}）')
-    if re.search(r'所在地|住所|番地',l) and v not in ('空欄','空欄（選ばない）') and not re.search(r'メール',l): w2.append(f'住所の欄に値が入ってしまう（{l[:15]}＝{v[:10]}）')
+    if re.search(r'所在地|住所|番地',l) and v not in ('空欄','空欄（選ばない）','ご相談時にお伝えします') and 'その他' not in v and not re.search(r'メール',l): w2.append(f'住所の欄に値が入ってしまう（{l[:15]}＝{v[:10]}）')
     if re.fullmatch(r'0\d{1,4}',v) and v not in ('070',): w2.append(f'電話番号の分割欄に誤った値が入る（{v}）')
     if re.fullmatch(r'名[：:]?|お名前（名）|名（名）',l) and v=='勝良仁海': w2.append('名の欄に氏名がそのまま入る')
   vs=[v for _,_,v in fl]
