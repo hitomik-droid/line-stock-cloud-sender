@@ -170,6 +170,8 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
   const out = { id, name: d.name, mode, form_url: d.form_url, status: null, note: '', log };
   const wantStatus = retry ? '送付失敗' : '確認中';
   if (d.status !== wantStatus) { out.result = 'skip'; out.note = `ステータスが「${d.status}」なので触らない`; return out; }
+  // 10/27 承認待ちの本文（仮ID「-v3案」、追加8業種）は送らない（ボタンを押す confirm・send を止める。入力だけの dry は通す）。勝良さんの「送って」の後に本番のIDへ付け替えてから送る
+  if (mode !== 'dry' && /案$/.test(d.message_id || '')) { out.result = 'skip'; out.note = `本文が承認待ち（${d.message_id}）なので送らない`; return out; }
   if (retry && !canRetry(await companyFromList(id))) { out.result = 'skip'; out.note = '送り直してよい会社ではないので、送り直さない'; return out; }
   // 2026-10-24 依頼：設計図URLだけ会社別にする。本文の文章・入力値・送信判定は変えない。
   const tracking = prepareCompanyTracking(d.body, id);

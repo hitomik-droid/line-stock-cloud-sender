@@ -47,7 +47,8 @@ for f in files:
         for i in (x.get('data') or {}).get('items') or []:
             name = (i.get('advertiser_name') or '').strip()
             if not name or name in ('更新中', 'None', '-'): name = (i.get('account_name') or '').strip()
-            ind = industry(i)
+            # 10/27 集める担当が検索ごとに業種（industry）を付けた（追加8業種）。あればそれを使う
+            ind = x.get('industry') or industry(i)
             if not name or not ind or name == 'None' or not ok(name, i.get('transition_url')): continue
             r = by[(ind, name)]; r['n'] += 1
             if not r.get('landing') and (i.get('transition_url') or 'None') != 'None':

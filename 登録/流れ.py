@@ -14,6 +14,8 @@ ORDER = ['自動車学校', 'パーソナルジム', '美容クリニック', '�
 V8 = {'パーソナルジム': 'MSG-ジム-v8', '住宅・リフォーム': 'MSG-太陽光住宅-v8', '太陽光': 'MSG-太陽光住宅-v8', '美容クリニック': 'MSG-美容クリニック-v8', 'オンラインスクール': 'MSG-オンラインスクール-v8', '自動車学校': 'MSG-自動車学校-v8'}
 # 10/26 勝良さんOK：営業対象の業種表のうち3業種は、v8を業種に合わせた本文（v3）で送る
 V8.update({'結婚相談所': 'MSG-結婚相談所-v3', '自由診療歯科': 'MSG-自由診療歯科-v3', '不動産': 'MSG-不動産-v3'})
+# 10/27 勝良さんOKの追加8業種。本文は承認待ちの仮ID（-v3案）で登録する。送付（朝の送付対象.py・送信.mjs）は -v3案 を選ばない・送らない
+V8.update({"整体・整骨院": "MSG-整体-v3案", "エステ・脱毛": "MSG-エステ-v3案", "学習塾・英会話": "MSG-学習塾-v3案", "税理士・士業": "MSG-士業-v3案", "予約制の飲食店": "MSG-飲食-v3案", "ペット関連": "MSG-ペット-v3案", "美容室": "MSG-美容室-v3案", "ホテル・旅館": "MSG-ホテル-v3案"})
 IDP = 'LS-20261022-'  # 10/22から続けている番号の頭。動画広告Proなどは1000〜1999、Metaは3000〜3999
 FORMSVC = {'formrun.com', 'form.run', 'formzu.net', 'google.com', 'forms.gle', 'tayori.com', 'hubspot.com', 'jotform.com', 'formmailer.jp', 'ssl-form.com', 'form-mailer.jp', 'synergy-marketing.co.jp', 'cuenote.jp', 'typeform.com', 'wixsite.com', 'jimdofree.com', 'jimdosite.com', 'studio.site', 'fc2.com', 'blogspot.com', 'ameblo.jp', 'wpcomstaging.com'}
 # 10/22〜23に手で外した理由のうち、社名・説明・URLで分かるもの（住宅展示場、不動産の仲介・販売、写真検索・比較サイト、団体、大手グループ）
