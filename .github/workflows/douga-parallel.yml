@@ -1,6 +1,7 @@
 # 動画広告Proに1回だけログインし、タブを何枚か並べて業種の言葉ごとの広告一覧データを読む。2026-10-26 勝良さん決定「サーバーで何本も並べて集める」。
 # ログインは1つだけ（同時に2つ動かさない）。止まる表示が出たら終了コード2で終わる。
-# ID・パスワードは、1Passwordの準備ができたら1Passwordの項目から読む形に切り替える（2026-10-26 勝良さん指示「ワンパスワードのやつでやってほしい」）。
+# ID・パスワードは1Passwordの項目（保管庫 GitHub用・項目 dpro.kashika-20mile.com）から読む（2026-10-26 勝良さん指示「ワンパスワードのやつでやってほしい」）。値は伏せ字になりログに出ない。
+# GitHubに置くのは、読み取り専用のサービスアカウントのトークン（Secrets の OP_SERVICE_ACCOUNT_TOKEN）だけ。DOUGA_PRO_ID・PASSWORD は使わない。
 name: 動画広告Proを並べて読む
 on:
   workflow_dispatch:
@@ -35,13 +36,17 @@ jobs:
           check-latest: true
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      # 1Passwordの準備ができたら、下の2行を消し、1Password公式の読み込み（1password/load-secrets-action@v2、op://保管庫名/項目名/username・password）に切り替える。
-      # 10/26 22:15 勝良さん「全部並行して進めろよ」：それまでは今のSecretsで回す。
+      - name: 1PasswordからID・パスワードを読む
+        uses: 1password/load-secrets-action@v2
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          DOUGA_PRO_ID: op://GitHub用/dpro.kashika-20mile.com/username
+          DOUGA_PRO_PASSWORD: op://GitHub用/dpro.kashika-20mile.com/password
       - name: 読む
         timeout-minutes: 85
         env:
-          DOUGA_PRO_ID: ${{ secrets.DOUGA_PRO_ID }}
-          DOUGA_PRO_PASSWORD: ${{ secrets.DOUGA_PRO_PASSWORD }}
           WORDS: ${{ inputs.words }}
           TABS: ${{ inputs.tabs }}
           INTERVALS: ${{ inputs.intervals }}
