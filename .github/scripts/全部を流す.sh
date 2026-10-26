@@ -18,7 +18,7 @@ echo "dry $DRY" ; gh run watch "$DRY" -R "$R" --interval 30 >/dev/null 2>&1
 [ "$(gh run view "$DRY" -R "$R" --json conclusion --jq .conclusion)" = success ] || { echo "dry $DRY が失敗" | tee "$OUT"; exit 1; }
 T=$(mktemp -d); gh run download "$DRY" -R "$R" -n 全部の記録 -D "$T" >/dev/null 2>&1
 P=$(tr ',' '\n' < "$T/ids.txt" 2>/dev/null | grep -c . || true)
-echo "dry $DRY：点検 $(grep -c . "$T/results.jsonl" 2>/dev/null || echo 0) 件、合格 $P 社" | tee "$OUT"
+echo "dry $DRY：点検 $(cat "$T/results.jsonl" 2>/dev/null | grep -c . ) 件、合格 $P 社" | tee "$OUT"
 [ "$P" = 0 ] && exit 0
 for a in 1 2 3 4 5 6; do
   # 登録は1本ずつ：ほかの register・send が待っている間は起動しない
