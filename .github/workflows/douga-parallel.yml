@@ -26,19 +26,57 @@ on:
         description: 1検索あたり、表を下へ送る回数の上限（1回で約100件）
         required: false
         default: '15'
+      lane:
+        description: 何本目か（1か2。同時のログインは2つまで）
+        required: false
+        default: '1'
+      start:
+        description: 組み合わせの表（広告候補集め/動画広告Pro_組み合わせ.txt）の何行目から（空なら combos・words を使う）
+        required: false
+        default: ''
+      chain:
+        description: 終わったら次の回を自分で起動する
+        required: false
+        default: 'false'
+      delay:
+        description: 始める前に待つ秒数（止まった後の再開用）
+        required: false
+        default: '0'
       only_1password:
         description: 1Passwordから読めるかだけ確かめる（動画広告Proには触らない）
         required: false
         default: 'false'
 concurrency:
-  group: ${{ inputs.only_1password == 'true' && 'op-check' || 'douga-login' }}
+  group: ${{ inputs.only_1password == 'true' && 'op-check' || (inputs.lane == '2' && 'douga-login-2' || 'douga-login') }}
   cancel-in-progress: false
+permissions:
+  contents: read
+  actions: write
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 100
+    timeout-minutes: 140
     steps:
       - uses: actions/checkout@v4
+      - name: 待つ（止まった後の再開）
+        if: inputs.delay != '0'
+        run: sleep ${{ inputs.delay }}
+      - name: この回の組み合わせを決める
+        id: pick
+        env:
+          START: ${{ inputs.start }}
+          TABS: ${{ inputs.tabs }}
+          LANE: ${{ inputs.lane }}
+        run: |
+          F=広告候補集め/動画広告Pro_組み合わせ.txt; N=$(grep -c . $F); H=$((N/2))
+          if [ -z "$START" ]; then echo "combos=${{ inputs.combos }}" >> $GITHUB_OUTPUT; exit 0; fi
+          # 1本目は表の前半、2本目は後半を受け持ち、重ならないようにする
+          if [ "$LANE" = 2 ]; then lo=$H; hi=$N; else lo=0; hi=$H; fi
+          i=$START; [ $i -lt $lo -o $i -ge $hi ] && i=$lo
+          k=$((TABS*12)); j=$((i+k)); [ $j -gt $hi ] && j=$hi
+          echo "combos=$(sed -n "$((i+1)),${j}p" $F | paste -sd';' -)" >> $GITHUB_OUTPUT
+          nx=$j; [ $nx -ge $hi ] && nx=$lo; echo "next=$nx" >> $GITHUB_OUTPUT
+          echo "組み合わせ $((i+1))〜$j（${LANE}本目）"
       - name: 1PasswordからID・パスワードを読む
         id: op
         continue-on-error: true
@@ -70,11 +108,12 @@ jobs:
       - run: npx playwright install --with-deps chromium
         if: inputs.only_1password != 'true'
       - name: 読む
+        id: read
         if: inputs.only_1password != 'true'
         timeout-minutes: 85
         env:
           WORDS: ${{ inputs.words }}
-          COMBOS: ${{ inputs.combos }}
+          COMBOS: ${{ steps.pick.outputs.combos }}
           TABS: ${{ inputs.tabs }}
           INTERVALS: ${{ inputs.intervals }}
           PAGES: ${{ inputs.pages }}
@@ -85,3 +124,26 @@ jobs:
           name: 動画広告Pro_並列
           path: 記録/動画広告Pro_並列/
           retention-days: 14
+      - name: 次の回を起動する（止まった時は、2本とも止めて30分後に1本・タブ2枚で再開）
+        if: always() && inputs.chain == 'true' && inputs.only_1password != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LANE: ${{ inputs.lane }}
+          TABS: ${{ inputs.tabs }}
+          NEXT: ${{ steps.pick.outputs.next }}
+          OUTCOME: ${{ steps.read.outcome }}
+        run: |
+          W=douga-parallel.yml
+          if [ "$OUTCOME" = success ]; then
+            t=$((TABS<4 ? TABS+1 : 4))
+            gh workflow run $W -R $GITHUB_REPOSITORY -f lane=$LANE -f start=$NEXT -f tabs=$t -f chain=true
+            echo "次：${LANE}本目 タブ$t 組み合わせ$((NEXT+1))〜"
+          elif [ "$OUTCOME" = cancelled ]; then
+            echo "取り消された回。次は起動しない"
+          else
+            echo "止まった（$OUTCOME）。2本とも止めて、30分後に1本・タブ2枚で再開する"
+            for id in $(gh run list -R $GITHUB_REPOSITORY --workflow $W --json databaseId,status -q '.[]|select(.status!="completed")|.databaseId'); do
+              [ "$id" != "$GITHUB_RUN_ID" ] && gh run cancel $id -R $GITHUB_REPOSITORY || true
+            done
+            gh workflow run $W -R $GITHUB_REPOSITORY -f lane=1 -f start=$NEXT -f tabs=2 -f chain=true -f delay=1800
+          fi
