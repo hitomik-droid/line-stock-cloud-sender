@@ -2540,6 +2540,26 @@
     "LS-20261022-1131": {
       "token": "d3d539acb67c4de28d595fcb94fd34bf",
       "page": "solar-housing"
+    },
+    "LS-20261022-701": {
+      "token": "0c966376a7c74d90af280cc1463450bb",
+      "page": "personal-gym"
+    },
+    "LS-20261022-706": {
+      "token": "d60184484da34f3db9c64d1ad168d407",
+      "page": "personal-gym"
+    },
+    "LS-20261022-723": {
+      "token": "8db62bd2beee41d5a3b02de21dab9898",
+      "page": "solar-housing"
+    },
+    "LS-20261022-763": {
+      "token": "720e9fea3eb1463d96a1e46d54cf3823",
+      "page": "solar-housing"
+    },
+    "LS-20261022-766": {
+      "token": "ca90fe658e924dd5943c746529cea14b",
+      "page": "solar-housing"
     }
   }
 }
