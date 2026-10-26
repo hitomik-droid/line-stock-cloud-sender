@@ -36,11 +36,17 @@ on:
         description: 動画広告Pro等（Meta以外）の登録番号の帯の始まり。空なら1000番台（10/26 Claude担当は5000）
         required: false
         default: ''
+      from_run:
+        description: register・send の時、この dry の実行番号の検品結果をそのまま使う（検品をやり直さない）。q・source は使わない
+        required: false
+        default: ''
+# 2026-10-26 22時：dry（読むだけ）は組ごとに同時に動かす。D1に書く register・send だけ1本ずつ（番号が重ならないよう）
 concurrency:
-  group: line-stock-register   # 番号が重ならないよう、登録は1本ずつ
+  group: ${{ inputs.mode == 'dry' && format('line-stock-dry-{0}', github.run_id) || 'line-stock-register' }}
   cancel-in-progress: false
 permissions:
   contents: read
+  actions: read
 jobs:
   prepare:
     runs-on: ubuntu-latest
@@ -58,8 +64,20 @@ jobs:
           check-latest: true
       - run: npm ci
       - run: npx playwright install --with-deps chromium
+        if: inputs.from_run == ''
+      - name: dry の検品結果を使う（from_run）
+        if: inputs.from_run != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN: ${{ inputs.from_run }}
+        run: |
+          T=$(mktemp -d)
+          gh run download "$RUN" -R "$GITHUB_REPOSITORY" -n 全部の記録 -D "$T"
+          [ -f "$T/cands.json" ] && [ -f "$T/results.jsonl" ] || { echo "dry $RUN に cands.json・results.jsonl が無い"; exit 1; }
+          mkdir -p "$W"; cp "$T/cands.json" "$T/results.jsonl" "$W/"
+          echo "dry $RUN の検品結果を使う：$(wc -l < "$W/results.jsonl") 件。検品しない（判定・番号はD1を読み直して決める）"
       - name: 候補を集める（meta）
-        if: inputs.source == 'meta'
+        if: inputs.source == 'meta' && inputs.from_run == ''
         env:
           Q: ${{ inputs.q }}
           SCROLL: ${{ inputs.depth }}
@@ -71,7 +89,7 @@ jobs:
           done
           wait
       - name: 候補を集める（douga：動画広告Proを読む）
-        if: inputs.source == 'douga'
+        if: inputs.source == 'douga' && inputs.from_run == ''
         timeout-minutes: 60
         env:
           DOUGA_PRO_ID: ${{ secrets.DOUGA_PRO_ID }}
@@ -85,7 +103,7 @@ jobs:
           curl -s -A "Mozilla/5.0" https://line-stock-product-plan.hitomi-k.workers.dev/api/sales -o "$W/sales.json"
           python3 登録/候補の元を作る.py 記録/動画広告Pro_集め/広告一覧データ.json "$W/sales.json" "$W/候補の元.json"
       - name: 候補ファイルを使う（file）
-        if: inputs.source == 'file'
+        if: inputs.source == 'file' && inputs.from_run == ''
         env:
           F: ${{ inputs.q }}
         run: |
