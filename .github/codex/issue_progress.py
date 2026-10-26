@@ -81,6 +81,8 @@ def main():
         next_step = f'宛先付き新着{unread}件を確認待ち'
     elif row['total'] >= 700:
         next_step = '目標到達・追加送付を停止'
+    elif config.get('progress_mode') == 'hold':
+        next_step = '入力停止分を保留・追加割当を確認'
     elif row['pending']:
         next_step = '登録済み分を確認して送付'
     else:
