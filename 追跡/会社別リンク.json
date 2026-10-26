@@ -2972,6 +2972,14 @@
     "LS-20261022-755": {
       "token": "54a60656dc6a4eb0a83cef61a3d6d035",
       "page": "solar-housing"
+    },
+    "LS-20261022-5094": {
+      "token": "39f0d746c85e4941a0c22d4be43f4d19",
+      "page": "personal-gym"
+    },
+    "LS-20261022-5095": {
+      "token": "01bc5c9a28d143c4bd710ca8f6a4a838",
+      "page": "beauty-clinic"
     }
   }
 }
