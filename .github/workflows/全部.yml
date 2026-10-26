@@ -141,15 +141,16 @@ jobs:
               ;;
             *) echo "候補ファイルは .tsv か .json"; exit 1 ;;
           esac
-      - name: 公式サイトと問い合わせフォームを探す（douga・file の .json。8つ同時に）
+      - name: 公式サイトと問い合わせフォームを探す（douga・file の .json。16に分けて同時に）
         timeout-minutes: 90
         run: |
           [ -f "$W/候補の元.json" ] || exit 0
           mkdir -p "$W/tsv"
           N=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.env.W+'/候補の元.json')).length)")
           echo "公式サイトを探す会社 $N"
-          PER=$(( (N + 7) / 8 ))
-          for p in 1 2 3 4 5 6 7 8; do
+          # 10/27 GitHubの同時の枠が約6本しか取れないため、1本の中で16に分けて同時に探す
+          PER=$(( (N + 15) / 16 ))
+          for p in $(seq 1 16); do
             FROM=$(( (p - 1) * PER )); TO=$(( FROM + PER ))
             node 広告候補集め/候補化/公式サイト確定.mjs --in="$W/候補の元.json" --from=$FROM --to=$TO --per=9999 --log="$W/確定ログ_$p.jsonl" --out="$W/tsv/kakutei_$p.tsv" > "$W/確定_$p.txt" 2>&1 &
           done
@@ -179,14 +180,14 @@ jobs:
       - name: D1・調べ済みと重ならない候補だけにする
         if: hashFiles('記録/全部/results.jsonl') == ''
         run: python3 登録/流れ.py cands "$W" "$W"/tsv/*.tsv
-      - name: フォームを検品する（送信ボタンは押さない。8つ同時に）
+      - name: フォームを検品する（送信ボタンは押さない。12に分けて同時に）
         if: hashFiles('記録/全部/results.jsonl') == ''
         timeout-minutes: 80
         run: |
           N=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.env.W+'/cands.json')).length)")
           if [ "$N" = 0 ]; then : > "$W/results.jsonl"; exit 0; fi
-          for p in 1 2 3 4 5 6 7 8; do
-            node 広告候補集め/候補化/フォーム検品.mjs "$W/cands.json" "$W/検品_$p.jsonl" 3 $p/8 > "$W/検品_$p.txt" 2>&1 &
+          for p in $(seq 1 12); do
+            node 広告候補集め/候補化/フォーム検品.mjs "$W/cands.json" "$W/検品_$p.jsonl" 3 $p/12 > "$W/検品_$p.txt" 2>&1 &
           done
           wait
           cat "$W"/検品_*.jsonl > "$W/results.jsonl"
