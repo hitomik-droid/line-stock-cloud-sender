@@ -21,6 +21,10 @@ on:
         description: 1検索あたり、表を下へ送る回数の上限（1回で約100件）
         required: false
         default: '15'
+      only_1password:
+        description: 1Passwordから読めるかだけ確かめる（動画広告Proには触らない）
+        required: false
+        default: 'false'
 concurrency:
   group: douga-login
   cancel-in-progress: false
@@ -30,12 +34,6 @@ jobs:
     timeout-minutes: 100
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          check-latest: true
-      - run: npm ci
-      - run: npx playwright install --with-deps chromium
       - name: 1PasswordからID・パスワードを読む
         uses: 1password/load-secrets-action@v2
         with:
@@ -44,7 +42,23 @@ jobs:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
           DOUGA_PRO_ID: op://GitHub用/dpro.kashika-20mile.com/username
           DOUGA_PRO_PASSWORD: op://GitHub用/dpro.kashika-20mile.com/password
+      - name: 読めたかを確かめる（値は出さない）
+        run: |
+          for v in DOUGA_PRO_ID DOUGA_PRO_PASSWORD; do
+            if [ -n "${!v}" ]; then echo "$v：読めた"; else echo "$v：空"; fail=1; fi
+          done
+          [ -z "$fail" ]
+      - uses: actions/setup-node@v4
+        if: inputs.only_1password != 'true'
+        with:
+          node-version: 22
+          check-latest: true
+      - run: npm ci
+        if: inputs.only_1password != 'true'
+      - run: npx playwright install --with-deps chromium
+        if: inputs.only_1password != 'true'
       - name: 読む
+        if: inputs.only_1password != 'true'
         timeout-minutes: 85
         env:
           WORDS: ${{ inputs.words }}
@@ -53,7 +67,7 @@ jobs:
           PAGES: ${{ inputs.pages }}
         run: node 広告候補集め/動画広告Pro_並列.mjs
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && inputs.only_1password != 'true'
         with:
           name: 動画広告Pro_並列
           path: 記録/動画広告Pro_並列/
