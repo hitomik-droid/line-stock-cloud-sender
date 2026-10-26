@@ -7,7 +7,7 @@ import { chromium } from 'playwright';
 const { planForm, readPage } = await import(new URL('../../入力の判定.js', import.meta.url).href);
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36';
 const MSG = JSON.parse(fs.readFileSync(new URL('./messages.json', import.meta.url)));
-const MID = { '自動車学校': 'MSG-LINE導入-v2', 'パーソナルジム': 'MSG-ジム-v5', '美容クリニック': 'MSG-美容クリニック-v5', 'オンラインスクール': 'MSG-オンラインスクール-v5', '住宅・リフォーム': 'MSG-住宅リフォーム-v5', '太陽光': 'MSG-太陽光-v5' };
+const MID = { '自動車学校': 'MSG-LINE導入-v2', 'パーソナルジム': 'MSG-ジム-v5', '美容クリニック': 'MSG-美容クリニック-v5', 'オンラインスクール': 'MSG-オンラインスクール-v5', '住宅・リフォーム': 'MSG-住宅リフォーム-v5', '太陽光': 'MSG-太陽光-v5', '結婚相談所': 'MSG-結婚相談所-v3', '自由診療歯科': 'MSG-自由診療歯科-v3', '不動産': 'MSG-不動産-v3' };
 const [, , inFile, outFile, par = '6'] = process.argv;
 const cands = JSON.parse(fs.readFileSync(inFile));
 const done = new Set(fs.existsSync(outFile) ? fs.readFileSync(outFile, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l).key) : []);

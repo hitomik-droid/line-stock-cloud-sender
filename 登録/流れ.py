@@ -9,13 +9,20 @@ from urllib.parse import urlparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 API = os.environ.get('LS_API', 'https://line-stock-product-plan.hitomi-k.workers.dev/api/sales')
-ORDER = ['自動車学校', 'パーソナルジム', '美容クリニック', 'オンラインスクール', '住宅・リフォーム', '太陽光']
+ORDER = ['自動車学校', 'パーソナルジム', '美容クリニック', 'オンラインスクール', '住宅・リフォーム', '太陽光', '結婚相談所', '自由診療歯科', '不動産']
 # 10/22 20時 勝良さん指示・10/23 勝良さん指示「堀田さんのバージョンで全部送る」：文面は全部 v8
 V8 = {'パーソナルジム': 'MSG-ジム-v8', '住宅・リフォーム': 'MSG-太陽光住宅-v8', '太陽光': 'MSG-太陽光住宅-v8', '美容クリニック': 'MSG-美容クリニック-v8', 'オンラインスクール': 'MSG-オンラインスクール-v8', '自動車学校': 'MSG-自動車学校-v8'}
+# 10/26 勝良さんOK：営業対象の業種表のうち3業種は、v8を業種に合わせた本文（v3）で送る
+V8.update({'結婚相談所': 'MSG-結婚相談所-v3', '自由診療歯科': 'MSG-自由診療歯科-v3', '不動産': 'MSG-不動産-v3'})
 IDP = 'LS-20261022-'  # 10/22から続けている番号の頭。動画広告Proなどは1000〜1999、Metaは3000〜3999
 FORMSVC = {'formrun.com', 'form.run', 'formzu.net', 'google.com', 'forms.gle', 'tayori.com', 'hubspot.com', 'jotform.com', 'formmailer.jp', 'ssl-form.com', 'form-mailer.jp', 'synergy-marketing.co.jp', 'cuenote.jp', 'typeform.com', 'wixsite.com', 'jimdofree.com', 'jimdosite.com', 'studio.site', 'fc2.com', 'blogspot.com', 'ameblo.jp', 'wpcomstaging.com'}
 # 10/22〜23に手で外した理由のうち、社名・説明・URLで分かるもの（住宅展示場、不動産の仲介・販売、写真検索・比較サイト、団体、大手グループ）
 NG_TYPE = re.compile(r'住宅展示場|住宅公園|ハウジングプラザ|ハウジングステージ|住宅展示|総合展示場|モデルハウスが集|不動産(販売|仲介|売買)|仲介|写真検索|比較サイト|ポータル|ランキング|口コミサイト|協会|組合|一般社団|公益|NPO|商工会|市役所|町役場|パナホーム|積水ハウス|大和ハウス|住友林業|ミサワホーム|トヨタホーム|一条工務店|タマホーム|ヘーベル|ホームページの閲覧が出来ない|閲覧できません|エクササイズコーチ|chocoZAP|ライザップ|RIZAP|湘南美容|TCB|品川美容|聖心美容|共立美容', re.I)
+# 10/26 勝良さん決定：営業対象表の「不動産周辺」で動画広告Proに広告を出している会社だけ、不動産の仲介・販売を外す理由にしない（ほかの外す条件はそのまま）
+NG_TYPE_FUDOSAN = re.compile(NG_TYPE.pattern.replace('不動産(販売|仲介|売買)|仲介|', ''), re.I)
+def ng_type(c):
+    rx = NG_TYPE_FUDOSAN if c.get('industry') == '不動産' and (c.get('list_source') or '').startswith('動画広告Pro') else NG_TYPE
+    return rx.search(' '.join([c['name'], c.get('memo') or '', c['official_url']]))
 
 
 def clean_name(n):
@@ -79,7 +86,7 @@ def cmd_cands(W, files):
             if b in dom or (fb not in FORMSVC and fb in dom): skip['D1・調べ済みとドメインが重なる'] += 1; continue
             if n in nm: skip['D1・調べ済みと社名が重なる'] += 1; continue
             if 'menkira' in r['form_url']: skip['menkira'] += 1; continue
-            if NG_TYPE.search(' '.join([r['name'], r.get('memo') or '', r['official_url']])): skip['業種違い（展示場・仲介・団体・大手など）'] += 1; continue
+            if ng_type(r): skip['業種違い（展示場・仲介・団体・大手など）'] += 1; continue
             out.append({'key': 'C%03d' % (len(out) + 1), 'base': b, **{k: (r.get(k) or '').strip() for k in ('industry', 'name', 'official_url', 'form_url', 'memo', 'list_source', 'source_url', 'ad_media', 'ad_purpose', 'ad_evidence_url')}})
     json.dump(out, open(W + '/cands.json', 'w'), ensure_ascii=False, indent=0)
     print('検品へ', len(out), dict(skip))
@@ -118,9 +125,9 @@ def cmd_plan(W):
     ok.sort(key=lambda t: (ORDER.index(judge.cands[t[0]]['industry']) if judge.cands[t[0]]['industry'] in ORDER else 9, t[0]))
     for k, fields in ok:
         c = judge.cands[k]; r = judge.res[k]
-        if NG_TYPE.search(' '.join([c['name'], c.get('memo') or '', c['official_url']])): ng['業種違い（展示場・仲介・団体・大手など）'] += 1; continue
+        if ng_type(c): ng['業種違い（展示場・仲介・団体・大手など）'] += 1; continue
         c = {**c, 'name': clean_name(c['name'])}
-        if c['industry'] not in V8: ng['業種が6業種以外'] += 1; continue
+        if c['industry'] not in V8: ng['業種が対象外'] += 1; continue
         if base(host(c['official_url'])) in dom or norm(c['name']) in nm: dup.append(c['name']); continue
         ex = r['ex']; top = r.get('top') or {}
         tl = top.get('line') or []; fl = ex.get('line') or []; has = bool(tl or fl)
