@@ -9,7 +9,7 @@ start() {  # $1 mode、$2 tag、残りは -f。起動した実行の番号を返
   gh workflow run 全部.yml -R "$R" -f mode="$mode" -f tag="$tg" -f id_band=5000 -f sender=自動の在庫づくり "$@" >/dev/null || return 1
   for t in $(seq 1 30); do
     sleep 10
-    local id=$(gh run list -R "$R" --workflow 全部.yml -L 30 --json databaseId,displayTitle --jq ".[]|select(.displayTitle==\"全部 $mode $tg\")|.databaseId" | head -1)
+    local id=$(gh run list -R "$R" --workflow 全部.yml -L 100 --json databaseId,displayTitle --jq ".[]|select(.displayTitle==\"全部 $mode $tg\")|.databaseId" | head -1)
     [ -n "$id" ] && { echo "$id"; return 0; }
   done; return 1
 }
@@ -20,7 +20,8 @@ T=$(mktemp -d); gh run download "$DRY" -R "$R" -n 全部の記録 -D "$T" >/dev/
 P=$(tr ',' '\n' < "$T/ids.txt" 2>/dev/null | grep -c . || true)
 echo "dry $DRY：点検 $(cat "$T/results.jsonl" 2>/dev/null | grep -c . ) 件、合格 $P 社" | tee "$OUT"
 [ "$P" = 0 ] && exit 0
-for a in 1 2 3 4 5 6; do
+for a in $(seq 1 20); do
+  sleep $((RANDOM % 40))  # 組がいくつも同時に終わった時に、登録の起動がぶつからないよう少しずらす
   # 登録は1本ずつ：ほかの register・send が待っている間は起動しない
   while [ -n "$(gh run list -R "$R" --workflow 全部.yml -L 20 --json status,displayTitle --jq '.[]|select((.status=="queued" or .status=="pending" or .status=="waiting") and (.displayTitle|startswith("全部 register") or startswith("全部 send")))|.status' | head -1)" ]; do sleep 30; done
   REG=$(start register "$TAG-$a" -f source=file -f q=- -f from_run="$DRY") || continue

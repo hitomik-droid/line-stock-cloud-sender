@@ -72,7 +72,8 @@ jobs:
         env:
           Q: ${{ steps.cand.outputs.name }}
           RECHECK: ${{ inputs.recheck || 'false' }}
-        run: bash .github/scripts/全部を流す.sh "$Q" "z$RUN"
+        # 10/27 2時 勝良さん「在庫にするに全振り」：候補を80社ずつの組に分け、組ごとに全部.yml の dry を同時に動かす（GitHubの枠いっぱいまで）。登録は1本ずつ
+        run: bash .github/scripts/組に分けて流す.sh "$Q" "z$RUN" 80
       - name: 追跡リンクを発行して対応表に足す
         if: always() && steps.got.outputs.skip != '1'
         env:
