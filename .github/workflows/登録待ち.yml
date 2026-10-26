@@ -1,0 +1,27 @@
+# D1の無料枠の上限で登録できなかった dry（登録/登録待ち.txt）を、上限が戻る毎朝9:02（日本時間）に1本ずつ登録する（2026-10-27）。
+# 有料プランに上がった時などは、手で起動してよい（workflow_dispatch）。送らない。登録した会社のIDは 登録/追跡リンク待ち.txt に足す
+name: 登録待ちを登録する
+on:
+  schedule:
+    - cron: '2 0 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: touroku-machi
+  cancel-in-progress: false
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      GH_TOKEN: ${{ github.token }}
+      R: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 登録待ちを1本ずつ登録する
+        run: bash .github/scripts/登録待ちを流す.sh | tee 登録待ちの結果.txt
+      - name: まとめ
+        if: always()
+        run: cat 登録待ちの結果.txt >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
