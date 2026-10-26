@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 HERE = os.path.dirname(os.path.abspath(__file__))
 ME = 'hitomi.k@lincle-dreams.com'
 # 送り手のドメインだけでは会社が決まらない共用のドメイン（フォームの代行・無料メール・レンタルサーバー）
-SHARED = re.compile(r'(^|\.)(gmail\.com|yahoo\.co\.jp|icloud\.com|outlook\.(com|jp)|hotmail\.com|powerfulform\.com|form-mailer\.jp|formzu\.net|formrun\.com|form\.run|jimdo\.(jp|com)|wix\.com|wixsite\.com|sakura\.ne\.jp|xsrv\.jp|lolipop\.jp|heteml\.jp|secure\.ne\.jp|wpx\.jp|conoha\.jp|onamae\.com|hubspot\.com|tayori\.com|amazonses\.com|sendgrid\.net)$', re.I)
+SHARED = re.compile(r'(^|\.)(gmail\.com|yahoo\.co\.jp|icloud\.com|outlook\.(com|jp)|hotmail\.com|powerfulform\.com|form-mailer\.jp|crcn\.jp|formzu\.net|formrun\.com|form\.run|jimdo\.(jp|com)|wix\.com|wixsite\.com|sakura\.ne\.jp|xsrv\.jp|lolipop\.jp|heteml\.jp|secure\.ne\.jp|wpx\.jp|conoha\.jp|onamae\.com|hubspot\.com|tayori\.com|amazonses\.com|sendgrid\.net)$', re.I)
 SENT = ('送付完了', '送付失敗', '返信あり', 'アポ獲得', '除外')
 
 
