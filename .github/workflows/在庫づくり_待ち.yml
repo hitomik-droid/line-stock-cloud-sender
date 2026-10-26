@@ -1,8 +1,12 @@
 # 在庫づくりの段ごとの待ちの数を30分ごとに数え、記録/在庫づくり_待ち.json に出してpushする（2026-10-27 指揮の割り当て）。読むだけで、在庫づくりは起動しない。
 name: 在庫づくりの待ちを数える
 on:
+  # GitHubの30分ごとの起動は混むと飛ばされる（10/27 0:41から動かなかった）ので、関係する実行が終わるたびにも数える
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '7,37 * * * *'
+  workflow_run:
+    workflows: [動画広告Proを並べて読む, 在庫づくり（読み込みの後、登録まで）, 候補集めから送付まで（全部）]
+    types: [completed]
   workflow_dispatch:
 permissions:
   contents: write
