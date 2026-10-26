@@ -13,8 +13,12 @@ on:
   workflow_dispatch:
     inputs:
       run_id:
-        description: 取り込む「動画広告Proを並べて読む」の実行番号
+        description: 取り込む「動画広告Proを並べて読む」の実行番号（cand_file を使う時は 0）
         required: true
+      cand_file:
+        description: 取り込みを飛ばし、リポジトリにある候補の元（.json）をそのまま流す時のパス
+        required: false
+        default: ''
 permissions:
   contents: write
   actions: write
@@ -37,6 +41,7 @@ jobs:
       - name: 読み込みの結果を取る
         id: got
         run: |
+          if [ -n "${{ inputs.cand_file }}" ]; then echo "候補の元 ${{ inputs.cand_file }} を使う"; exit 0; fi
           # 切り替え（10/26 23:40 JST）より前の自動の起動は、Macの在庫づくりと重ならないよう何もしない
           if [ "${{ github.event_name }}" = workflow_run ] && [ $(date -u +%s) -lt $(date -u -d 2026-10-26T14:40:00Z +%s) ]; then echo "切り替え前なので何もしない"; echo "skip=1" >> "$GITHUB_OUTPUT"; exit 0; fi
           mkdir -p "$W/dp"
@@ -48,6 +53,7 @@ jobs:
         if: steps.got.outputs.skip != '1'
         id: cand
         run: |
+          if [ -n "${{ inputs.cand_file }}" ]; then F="${{ inputs.cand_file }}"; echo "name=$F" >> "$GITHUB_OUTPUT"; echo "n=$(python3 -c "import json;print(len(json.load(open('$F'))))")" >> "$GITHUB_OUTPUT"; mkdir -p "$W"; echo "候補の元 $F を使う" > "$W/取り込み.txt"; exit 0; fi
           npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,official_url FROM companies" --json > "$W/d1.json"
           NAME="広告候補集め/候補化/入力/$(TZ=Asia/Tokyo date +%Y%m%d_%H%M)_GitHub_$RUN.json"
           python3 登録/取り込み.py "$W/dp" "$NAME" "$W/d1.json" | tee "$W/取り込み.txt"
