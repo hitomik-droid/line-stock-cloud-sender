@@ -7,6 +7,10 @@ on:
   schedule:
     # 10/27 8時台の毎時0分の定時が起動しなかった（GitHubの定時は混むと遅れる・飛ぶ）。0分を避け、30分ごとに2回にした。同時は concurrency で1本ずつ、二重送付は送る直前の状態の読み直しで防ぐ
     - cron: '7,37 23,0-10 * * *'   # 日本時間 8:07〜19:37 の30分ごと
+  # 10/27 8:07・8:37の定時も起動しなかったため、定時に頼らない控え：ほかのワークフローが終わるたびに起動する（8〜19時以外は下の pick で何もせず終わる）
+  workflow_run:
+    workflows: [動画広告Proを並べて読む, 在庫づくり（読み込みの後、登録まで）, 登録待ちを登録する, 在庫づくりの待ちを数える]
+    types: [completed]
   workflow_dispatch:
     inputs:
       limit:
@@ -33,6 +37,8 @@ jobs:
         env:
           LIMIT: ${{ inputs.limit || '80' }}
         run: |
+          H=$(TZ=Asia/Tokyo date +%H)
+          if [ "$H" -lt 8 ] || [ "$H" -ge 20 ]; then echo "ids=" >> "$GITHUB_OUTPUT"; echo "送付時間外（日本時間 $H 時）なので選ばない" >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
           python3 登録/朝の送付対象.py 100000 > 記録_在庫.txt
           echo "READY=$(tr ',' '\n' < 記録_在庫.txt | grep -c .)" >> "$GITHUB_ENV"
           IDS=$(python3 登録/朝の送付対象.py "$LIMIT")
