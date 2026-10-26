@@ -17,8 +17,9 @@ jobs:
     timeout-minutes: 90
     strategy:
       fail-fast: false
+      max-parallel: 20
       matrix:
-        part: [1, 2, 3, 4, 5, 6, 7, 8]
+        part: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,7 +35,7 @@ jobs:
         run: |
           mkdir -p 記録/候補化
           N=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.env.IN)).length)")
-          PER=$(( (N + 7) / 8 )); FROM=$(( (${{ matrix.part }} - 1) * PER )); TO=$(( FROM + PER ))
+          PER=$(( (N + 19) / 20 )); FROM=$(( (${{ matrix.part }} - 1) * PER )); TO=$(( FROM + PER ))
           node 広告候補集め/候補化/公式サイト確定.mjs --in="$IN" --from=$FROM --to=$TO --per=9999 --log=記録/候補化/ログ_${{ matrix.part }}.jsonl --out=記録/候補化/候補_${{ matrix.part }}.tsv
       - name: フォーム検品
         if: inputs.step == 'kenpin'
@@ -43,7 +44,7 @@ jobs:
           IN: ${{ inputs.in_file }}
         run: |
           mkdir -p 記録/候補化
-          node 広告候補集め/候補化/フォーム検品.mjs "$IN" 記録/候補化/検品_${{ matrix.part }}.jsonl 3 ${{ matrix.part }}/8
+          node 広告候補集め/候補化/フォーム検品.mjs "$IN" 記録/候補化/検品_${{ matrix.part }}.jsonl 3 ${{ matrix.part }}/20
       - uses: actions/upload-artifact@v4
         if: always()
         with:
