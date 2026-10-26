@@ -58,8 +58,10 @@ def seen_sets(d1):
     dom = {base(host(x.get(f))) for x in d1 for f in ('official_url', 'form_url') if x.get(f)}
     nm = {norm(x.get(f)) for x in d1 for f in ('name', 'legal_name') if x.get(f)}
     dom |= {base(x) for x in json.load(open(HERE + '/used_domains.json'))}
-    dom |= {base(x.strip()) for x in open(HERE + '/調べ済みドメイン.txt') if x.strip()}
-    dom |= {x.strip() for x in open(HERE + '/検品済みドメイン.txt') if x.strip() and not x.startswith('#')}
+    # 10/27 点検し直し（LS_RECHECK=1）の時は、点検の履歴（調べ済み・検品済みドメイン）では外さない。D1・使用済み・既存社名・手で外した会社・除外は今までどおり
+    if not os.environ.get('LS_RECHECK'):
+        dom |= {base(x.strip()) for x in open(HERE + '/調べ済みドメイン.txt') if x.strip()}
+        dom |= {x.strip() for x in open(HERE + '/検品済みドメイン.txt') if x.strip() and not x.startswith('#')}
     nm |= {norm(x) for x in open(HERE + '/既存社名.txt').read().split('\n') if x}
     for x in json.load(open(HERE + '/手で外した会社.json')):
         dom.add(base(host(x['official_url']))); nm.add(norm(x['name']))

@@ -13,7 +13,7 @@ start() {  # $1 mode、$2 tag、残りは -f。起動した実行の番号を返
     [ -n "$id" ] && { echo "$id"; return 0; }
   done; return 1
 }
-DRY=$(start dry "$TAG" -f source=file -f q="$Q") || { echo "dry を起動できない" | tee "$OUT"; exit 1; }
+DRY=$(start dry "$TAG" -f source=file -f q="$Q" -f recheck="${RECHECK:-false}") || { echo "dry を起動できない" | tee "$OUT"; exit 1; }
 echo "dry $DRY" ; gh run watch "$DRY" -R "$R" --interval 30 >/dev/null 2>&1
 [ "$(gh run view "$DRY" -R "$R" --json conclusion --jq .conclusion)" = success ] || { echo "dry $DRY が失敗" | tee "$OUT"; exit 1; }
 T=$(mktemp -d); gh run download "$DRY" -R "$R" -n 全部の記録 -D "$T" >/dev/null 2>&1

@@ -19,6 +19,10 @@ on:
         description: 取り込みを飛ばし、リポジトリにある候補の元（.json）をそのまま流す時のパス
         required: false
         default: ''
+      recheck:
+        description: 点検し直し（調べ済み・検品済みドメインでは外さない）
+        required: false
+        default: 'false'
 permissions:
   contents: write
   actions: write
@@ -67,6 +71,7 @@ jobs:
         id: reg
         env:
           Q: ${{ steps.cand.outputs.name }}
+          RECHECK: ${{ inputs.recheck || 'false' }}
         run: bash .github/scripts/全部を流す.sh "$Q" "z$RUN"
       - name: 追跡リンクを発行して対応表に足す
         if: always() && steps.got.outputs.skip != '1'

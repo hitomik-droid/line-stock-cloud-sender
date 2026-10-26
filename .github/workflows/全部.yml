@@ -46,6 +46,10 @@ on:
         description: 実行の名前に付ける印（在庫づくり.yml が使う）
         required: false
         default: ''
+      recheck:
+        description: 点検し直し（true の時、調べ済み・検品済みドメインでは外さない。D1との重複は外す）
+        required: false
+        default: 'false'
 # 2026-10-26 22時：dry（読むだけ）は組ごとに同時に動かす。D1に書く register・send だけ1本ずつ（番号が重ならないよう）
 concurrency:
   group: ${{ inputs.mode == 'dry' && format('line-stock-dry-{0}', github.run_id) || 'line-stock-register' }}
@@ -62,6 +66,7 @@ jobs:
     env:
       W: 記録/全部
       LS_ID_BAND: ${{ inputs.id_band }}
+      LS_RECHECK: ${{ inputs.recheck == 'true' && '1' || '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
