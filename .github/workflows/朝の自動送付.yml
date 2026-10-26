@@ -1,15 +1,19 @@
-# 2026-10-26 勝良さん指示：フォーム営業の送信は日本時間8:00〜20:00だけ。前日に届かなかった分は、翌朝8:00から自動で送る。
+# 2026-10-26 勝良さん指示：フォーム営業の送信は日本時間8:00〜20:00だけ。在庫（登録済みで未送付）から、8〜19時の毎時0分に自動で送る（前日に届かなかった分も翌朝8:00から）。
+# 毎時、送る前に在庫の数を D1 の inventory_snapshots に残す（1時間ごとの図の在庫の線）。
 # 送るのは 登録/朝の送付対象.py が選んだ会社だけ（承認済みの本文・動画広告Pro経由・確認中）。新しい本文・新しい業種は対象にしない。
-name: 朝の自動送付
+name: 自動送付（8〜19時・毎時）
 on:
   schedule:
-    - cron: '0 23 * * *'   # 日本時間 8:00
+    - cron: '0 23,0-10 * * *'   # 日本時間 8:00〜19:00 の毎時0分
   workflow_dispatch:
     inputs:
       limit:
         description: 送る上限（社数）
         required: false
-        default: '1000'
+        default: '30'
+concurrency:
+  group: line-stock-auto-send   # 前の回が送っている間は次の回を待たせる
+  cancel-in-progress: false
 permissions:
   contents: read
 jobs:
@@ -19,14 +23,26 @@ jobs:
       ids: ${{ steps.pick.outputs.ids }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - id: pick
         name: 送る会社を選ぶ
         env:
-          LIMIT: ${{ inputs.limit || '1000' }}
+          LIMIT: ${{ inputs.limit || '30' }}
         run: |
+          python3 登録/朝の送付対象.py 100000 > 記録_在庫.txt
+          echo "READY=$(tr ',' '\n' < 記録_在庫.txt | grep -c .)" >> "$GITHUB_ENV"
           IDS=$(python3 登録/朝の送付対象.py "$LIMIT")
           echo "ids=$IDS" >> "$GITHUB_OUTPUT"
           echo "送る会社：$(echo "$IDS" | tr ',' '\n' | grep -c . ) 社" >> "$GITHUB_STEP_SUMMARY"
+      - name: 在庫の数を D1 に残す
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          cd 登録 && npx -y wrangler@4.150.0 d1 execute line-stock-sales --remote --command "INSERT INTO inventory_snapshots (at, ready, note) VALUES ('$(date -u +%Y-%m-%dT%H:%M:%S.000Z)', ${READY}, '自動送付の前')" > /dev/null
   send:
     needs: pick
     if: needs.pick.outputs.ids != ''
@@ -35,4 +51,4 @@ jobs:
     with:
       ids: ${{ needs.pick.outputs.ids }}
       mode: send
-      sender: 朝の自動送付
+      sender: 自動送付
