@@ -35,3 +35,4 @@ jobs:
     with:
       ids: ${{ needs.pick.outputs.ids }}
       mode: send
+      sender: 朝の自動送付

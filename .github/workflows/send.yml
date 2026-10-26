@@ -20,6 +20,10 @@ on:
         default: batch
         type: choice
         options: [batch, single]
+      sender:
+        description: 送った担当（Claude／Codex など）。状態の履歴に残る
+        required: false
+        default: ''
   # 10/24 「全部.yml」から呼べるようにした。ids に会社IDを直接渡す（ids_file は使わない）
   workflow_call:
     secrets:
@@ -40,6 +44,10 @@ on:
         required: false
         type: string
         default: batch
+      sender:
+        required: false
+        type: string
+        default: ''
 jobs:
   send:
     runs-on: ubuntu-latest
@@ -70,6 +78,7 @@ jobs:
           MODE: ${{ inputs.mode }}
           EXECUTION: ${{ inputs.execution }}
           PART: ${{ matrix.part }}
+          LS_SENDER: ${{ inputs.sender }}
         run: |
           set -euo pipefail
           mkdir -p 記録

@@ -42,7 +42,8 @@ export async function getJSON(url) {
 export async function setStatus(id, status, note) {
   const r = await fetchRetry(`${API}/${id}/status`, {
     method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ status, note: note.slice(0, 500) }),
+    // 10/26 担当の記録：LS_SENDER（Claude／Codex／朝の自動送付 など）を状態の履歴の source に残す
+    body: JSON.stringify({ status, note: note.slice(0, 500), source: process.env.LS_SENDER || 'Actions（担当の指定なし）' }),
   });
   if (!r.ok) throw new Error(`ステータス更新に失敗 ${id} → ${r.status} ${await r.text()}`);
 }

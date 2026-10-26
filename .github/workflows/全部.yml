@@ -28,6 +28,10 @@ on:
         default: dry
         type: choice
         options: [dry, register, send]
+      sender:
+        description: 送った担当（Claude／Codex など）。状態の履歴に残る
+        required: false
+        default: ''
       id_band:
         description: 動画広告Pro等（Meta以外）の登録番号の帯の始まり。空なら1000番台（10/26 Claude担当は5000）
         required: false
@@ -195,3 +199,4 @@ jobs:
     with:
       ids: ${{ needs.prepare.outputs.ids }}
       mode: send
+      sender: ${{ inputs.sender }}
