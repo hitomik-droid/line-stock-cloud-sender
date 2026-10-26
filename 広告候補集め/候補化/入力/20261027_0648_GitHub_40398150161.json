@@ -1,0 +1,57 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "菱田工務店(長野県)　～長野で新築住宅～",
+"landing": "https://hishidak.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-26&interval=30&sort=cost-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597&next=os%3AWzM1OTEzMCwgMTg4Njk0NF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DHVqmgIgept/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社イニハンス",
+"landing": "https://www.instagram.com/inihans_/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-26&interval=30&sort=cost-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597&next=os%3AWzE5MTAwMiwgMTg5NzYyNDNd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DYoDfxbAGUm/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "旭化成ホームズ株式会社",
+"landing": "https://www.atlas-web.jp/atlas/",
+"ads": 93,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-26&interval=30&sort=cost-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2596%25B0%25E7%25AF%2589%25E3%2583%259E%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/EubuuU6mjZH/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "ロビンスジャパン株式会社",
+"landing": "https://california-home.net/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-26&interval=30&sort=cost-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzE2MTk4MzQsIDE1NzQ5NTJd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DCySifsg44u/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "東北YKホーム株式会社",
+"landing": "https://tohoku-yk-home.co.jp/example/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-26&interval=30&sort=cost-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzEyMzM2NDksIDExOTc3Mjc4XQ%3D%3D",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/yahoo/image/EAb43KDyJ5r.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
