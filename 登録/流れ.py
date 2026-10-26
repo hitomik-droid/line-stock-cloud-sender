@@ -120,7 +120,9 @@ def cmd_plan(W):
     def nxt(lo, hi):
         ns = [int(x[len(IDP):]) for x in have if x.startswith(IDP) and x[len(IDP):].isdigit() and lo <= int(x[len(IDP):]) < hi]
         return (max(ns) + 1) if ns else lo
-    n1, n3 = nxt(1000, 2000), nxt(3000, 4000)
+    # 10/26 別の送付担当と番号が重ならないよう、Meta以外の帯を指定できる（例：LS_ID_BAND=5000 → 5000〜5999）
+    band = int(os.environ.get('LS_ID_BAND') or 1000)
+    n1, n3 = nxt(band, band + 1000), nxt(3000, 4000)
     adopt, dup = [], []
     ok.sort(key=lambda t: (ORDER.index(judge.cands[t[0]]['industry']) if judge.cands[t[0]]['industry'] in ORDER else 9, t[0]))
     for k, fields in ok:

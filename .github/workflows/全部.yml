@@ -28,6 +28,10 @@ on:
         default: dry
         type: choice
         options: [dry, register, send]
+      id_band:
+        description: 動画広告Pro等（Meta以外）の登録番号の帯の始まり。空なら1000番台（10/26 Claude担当は5000）
+        required: false
+        default: ''
 concurrency:
   group: line-stock-register   # 番号が重ならないよう、登録は1本ずつ
   cancel-in-progress: false
@@ -41,6 +45,7 @@ jobs:
       ids: ${{ steps.reg.outputs.ids }}
     env:
       W: 記録/全部
+      LS_ID_BAND: ${{ inputs.id_band }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
