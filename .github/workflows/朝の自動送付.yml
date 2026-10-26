@@ -1,4 +1,5 @@
 # 2026-10-26 勝良さん指示：フォーム営業の送信は日本時間8:00〜20:00だけ。在庫（登録済みで未送付）から、8〜19時の毎時0分に自動で送る（前日に届かなかった分も翌朝8:00から）。
+# 1回に送るのは最大70社（10/26 23:5x 勝良さん「明日、目標の累計件数分を必ず送付できる状態に」：8〜19時の12回で最大840社）。
 # 毎時、送る前に在庫の数を D1 の inventory_snapshots に残す（1時間ごとの図の在庫の線）。
 # 送るのは 登録/朝の送付対象.py が選んだ会社だけ（承認済みの本文・動画広告Pro経由・確認中）。新しい本文・新しい業種は対象にしない。
 name: 自動送付（8〜19時・毎時）
@@ -10,7 +11,7 @@ on:
       limit:
         description: 送る上限（社数）
         required: false
-        default: '30'
+        default: '70'
 concurrency:
   group: line-stock-auto-send   # 前の回が送っている間は次の回を待たせる
   cancel-in-progress: false
@@ -29,7 +30,7 @@ jobs:
       - id: pick
         name: 送る会社を選ぶ
         env:
-          LIMIT: ${{ inputs.limit || '30' }}
+          LIMIT: ${{ inputs.limit || '70' }}
         run: |
           python3 登録/朝の送付対象.py 100000 > 記録_在庫.txt
           echo "READY=$(tr ',' '\n' < 記録_在庫.txt | grep -c .)" >> "$GITHUB_ENV"
