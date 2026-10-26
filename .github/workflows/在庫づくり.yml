@@ -1,5 +1,5 @@
 # 動画広告Proを並べて読み終わったら、Macを通さずに GitHub の中だけで在庫（確認中）まで流す（2026-10-26 23時台 勝良さん「ローカルで作業しないで」）。
-# 1. 次の読み込みを起動する（止まる表示で終わった回は起動せず、動画広告Pro回し.yml が30分あけて起動する）
+# 1. 次の読み込みは、douga-parallel.yml 自身が起動する（chain、集める担当の 3914e60）。ここでは起動しない
 # 2. 結果からまだ調べていない広告主だけを候補の元にする（登録/取り込み.py。Macの 取り込み.py・照合.py・流す.py と同じ判定）
 # 3. 全部.yml を dry で起動（公式サイト探し・点検。組ごとに同時に動く）→ 合格があれば register を from_run で1本ずつ（取り消されたら起動し直す）
 # 4. 追跡リンク（追跡/追跡リンク登録.py。SupabaseのSecretsがある時だけ発行。無ければ待ちの会社を出す）
@@ -15,10 +15,6 @@ on:
       run_id:
         description: 取り込む「動画広告Proを並べて読む」の実行番号
         required: true
-      next:
-        description: 次の読み込みを起動するか（true/false）
-        required: false
-        default: 'false'
 permissions:
   contents: write
   actions: write
@@ -48,9 +44,6 @@ jobs:
           STOP=$(python3 -c "import json,glob;f=glob.glob('$W/dp/**/まとめ.json',recursive=True);print((json.load(open(f[0])).get('stop') or '') if f else '')")
           echo "stop=$STOP" >> "$GITHUB_OUTPUT"
           echo "止まり：[$STOP]"
-      - name: 次の読み込みを起動する（止まりの無い回だけ）
-        if: (github.event_name == 'workflow_run' || inputs.next == 'true') && steps.got.outputs.skip != '1' && steps.got.outputs.stop == ''
-        run: bash .github/scripts/次の読み込み.sh 3
       - name: まだ調べていない広告主を候補の元にする
         if: steps.got.outputs.skip != '1'
         id: cand
@@ -87,7 +80,7 @@ jobs:
       - name: まとめ
         if: always()
         run: |
-          { echo "### 在庫づくり（動画広告Pro $RUN）"; cat "$W/取り込み.txt" 2>/dev/null; cat "$W/流した結果.txt" 2>/dev/null; cat "$W/追跡.txt" 2>/dev/null; } >> "$GITHUB_STEP_SUMMARY"
+          { echo "### 在庫づくり（動画広告Pro $RUN）"; cat "$W"/取り込み.txt "$W"/流した結果.txt "$W"/追跡.txt 2>/dev/null || true; } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
