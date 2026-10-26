@@ -25,7 +25,7 @@ on:
       pages:
         description: 1検索あたり、表を下へ送る回数の上限（1回で約100件）
         required: false
-        default: '15'
+        default: '30'
       lane:
         description: 何本目か（1か2。同時のログインは2つまで）
         required: false
@@ -73,7 +73,7 @@ jobs:
           # 1本目は表の前半、2本目は後半を受け持ち、重ならないようにする
           if [ "$LANE" = 2 ]; then lo=$H; hi=$N; else lo=0; hi=$H; fi
           i=$START; [ $i -lt $lo -o $i -ge $hi ] && i=$lo
-          k=$((TABS*12)); j=$((i+k)); [ $j -gt $hi ] && j=$hi
+          k=$((TABS*15)); j=$((i+k)); [ $j -gt $hi ] && j=$hi
           echo "combos=$(sed -n "$((i+1)),${j}p" $F | paste -sd';' -)" >> $GITHUB_OUTPUT
           nx=$j; [ $nx -ge $hi ] && nx=$lo; echo "next=$nx" >> $GITHUB_OUTPUT
           echo "組み合わせ $((i+1))〜$j（${LANE}本目）"
@@ -135,7 +135,7 @@ jobs:
         run: |
           W=douga-parallel.yml
           if [ "$OUTCOME" = success ]; then
-            t=$((TABS<4 ? TABS+1 : 4))
+            t=4
             gh workflow run $W -R $GITHUB_REPOSITORY -f lane=$LANE -f start=$NEXT -f tabs=$t -f chain=true
             echo "次：${LANE}本目 タブ$t 組み合わせ$((NEXT+1))〜"
           elif [ "$OUTCOME" = cancelled ]; then

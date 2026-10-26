@@ -15,7 +15,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const b = await chromium.launch({ headless: true });
 const ctx = await b.newContext({ locale: 'ja-JP', viewport: { width: 1600, height: 1000 }, userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36' });
 let stop = null; const got = [], summary = [];
-const save = () => { fs.writeFileSync(`${OUT}/まとめ.json`, JSON.stringify({ stop, ban, summary }, null, 1)); fs.writeFileSync(`${OUT}/広告一覧データ.json`, JSON.stringify(got)); };
+const save = () => { fs.writeFileSync(`${OUT}/まとめ.json`, JSON.stringify({ stop, ban, summary: Array.isArray(summary) ? summary : summary, advertisers: summary.advertisers, new_vs_d1: summary.new_vs_d1, words: summary.words }, null, 1)); fs.writeFileSync(`${OUT}/広告一覧データ.json`, JSON.stringify(got)); };
 let ban = 0, empty = 0;
 ctx.on('request', (q) => { if (/user_logs\/ban/.test(q.url())) { ban++; console.log('user_logs/ban の送信（止めない）', ban); } });
 const login = await ctx.newPage();
@@ -68,6 +68,21 @@ async function tab(k) {
   }
 }
 await Promise.all([...Array(TABS).keys()].map(tab));
+// まだD1に無い広告主の割合（言葉ごと）。報告と、新しい広告主が出ない言葉を外すのに使う
+try {
+  const norm = (x) => (x || '').replace(/[\s\W_]+/gu, '').toLowerCase();
+  const S = await (await fetch('https://line-stock-product-plan.hitomi-k.workers.dev/api/sales', { headers: { 'User-Agent': 'Mozilla/5.0' } })).json();
+  const known = new Set((S.companies || []).map((c) => norm(c.name)));
+  const byW = {}; const all = new Set(), fresh = new Set();
+  for (const x of got) for (const i of x.data.items) {
+    const n = norm(i.advertiser_name && i.advertiser_name !== 'None' ? i.advertiser_name : i.account_name); if (!n) continue;
+    const k = `${x.word}|${x.interval}`; byW[k] ||= { all: new Set(), fresh: new Set() };
+    byW[k].all.add(n); all.add(n); if (!known.has(n)) { byW[k].fresh.add(n); fresh.add(n); }
+  }
+  const words = Object.fromEntries(Object.entries(byW).map(([k, v]) => [k, { advertisers: v.all.size, new: v.fresh.size }]));
+  Object.assign(summary, { advertisers: all.size, new_vs_d1: fresh.size, words });
+  console.log('広告主', all.size, 'うちD1に無い', fresh.size, `（${all.size ? Math.round(fresh.size / all.size * 100) : 0}%）`);
+} catch (e) { console.log('D1との照合はできなかった', String(e).slice(0, 100)); }
 save();
 console.log(stop ? `止めた：${stop}` : '全部読み終えた', '広告', got.reduce((a, x) => a + x.data.items.length, 0));
 await b.close();
