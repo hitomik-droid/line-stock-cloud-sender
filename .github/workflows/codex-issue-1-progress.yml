@@ -1,0 +1,32 @@
+name: Codexの集計連絡と宛先付き新着検出
+on:
+  schedule:
+    - cron: '1,31 * * * *'
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 集計コメントを投稿する
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: codex-issue-1-progress
+  cancel-in-progress: false
+jobs:
+  progress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: D1集計とIssueの新着を確認する
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PUBLISH: ${{ github.event_name == 'schedule' || inputs.publish }}
+        run: python3 .github/codex/issue_progress.py
