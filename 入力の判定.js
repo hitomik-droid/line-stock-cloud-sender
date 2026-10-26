@@ -44,9 +44,19 @@ export function planForm(d) {
   let n = 0;
   const mark = (e) => { if (!e.dataset.ls) e.dataset.ls = String(++n); return '[data-ls="' + e.dataset.ls + '"]'; };
   const pickChoice = (texts) => {
-    for (const h of hints) { const i = texts.findIndex((t) => t.includes(h)); if (i >= 0) return i; }
-    let i = texts.findIndex((t) => /その他/.test(t)); if (i >= 0) return i;
-    i = texts.findIndex((t) => /お問い?合わ?せ|ご質問|質問|一般|メール/.test(t)); return i;
+    const wrong = /工事前|工事中|施工|工事|無料診断|見積|資料請求|来場|見学|体験|カウンセリング|入校|入所|教習|受講|受験|購入|注文|アフターサービス|お断り|禁止|ご遠慮/;
+    const choices = texts.map((text, index) => ({ text, index })).filter((x) => !wrong.test(x.text));
+    for (const h of hints) {
+      if (wrong.test(h)) continue;
+      const match = choices.find((x) => x.text.includes(h));
+      if (match) return match.index;
+    }
+    let match = choices.find((x) => /業務提携|ビジネス|お取引|取引の|事業提案|営業提案|営業窓口/.test(x.text));
+    if (match) return match.index;
+    match = choices.find((x) => /その他/.test(x.text));
+    if (match) return match.index;
+    match = choices.find((x) => /お問い?合わ?せ|ご質問|質問|一般|メール/.test(x.text));
+    return match ? match.index : -1;
   };
 
   const plan = []; const unknown = []; const notes = [];
@@ -129,7 +139,7 @@ export function planForm(d) {
   }
   for (const [k, rs] of Object.entries(groups)) {
     const L = lab(rs[0]); const i = pickChoice(rs.map(optText));
-    const req = rs.some((r) => r.required);
+    const req = rs.some((r) => r.required) || /必須|required/i.test(L);
     const tm = rs.findIndex((r) => /メール/.test(optText(r)));
     if (rs.length === 1 && rs[0].type === 'radio' && /同意|プライバシー|個人情報|規約|承諾|了承|agree|privacy/i.test(L + optText(rs[0]))) { plan.push({ sel: mark(rs[0]), act: 'check', what: '同意' }); continue; } // 同意が1つだけのラジオボタンの時
     if (tm >= 0 && rs.some((r) => r.checked && /電話/.test(optText(r)))) { plan.push({ sel: mark(rs[tm]), act: 'check', what: '選択 ' + optText(rs[tm]).slice(0, 20) }); continue; } // 返信方法の初期値が電話の時はメールにする

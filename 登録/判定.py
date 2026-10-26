@@ -8,7 +8,12 @@ for l in open(S+'/results.jsonl'):
 cands={c['key']:c for c in json.load(open(S+'/cands.json'))}
 REF=re.compile(r'(営業|セールス|勧誘|売り込み|販売促進|業者)[^。\n]{0,30}(お断り|ご遠慮|禁止|控え|受け付けて|受付して|お受け(して|でき)|対応(いた)?しかね|お答え(でき|いた)|返信(は)?(いた)?しかね|ご返信(でき|いたしません)|回答(でき|いたしません|は致しかね)|お返事)|(お断り|ご遠慮)[^。\n]{0,15}(営業|セールス|勧誘)')
 BADCAP=('v2（チェック）','v2（見えない形式）','hCaptcha','Turnstile','画像の文字','計算問題','v2スクリプト')
-WRONG=re.compile(r'資料請求|見積|予約|申込|申し込み|体験|入会|入校|来店|来場|採用|応募|求人|購入|注文|キャンセル|在校生|教習生|会員の方')
+WRONG=re.compile(r'工事前|工事中|施工|工事|無料診断|資料請求|見積|予約|申込|申し込み|体験|入会|入校|来店|来場|採用|応募|求人|購入|注文|キャンセル|在校生|教習生|会員の方')
+BUSINESS=re.compile(r'(?:業務提携|ビジネス|お取引|事業提案|営業提案|営業窓口)(?:の)?(?:申込(?:み)?|申し込み|お問い合わせ|ご相談|相談)?')
+def business_choice(value):
+  return bool(BUSINESS.fullmatch(re.sub(r'\s+', '', value or '')))
+def wrong_choice(value):
+  return bool(WRONG.search(value or '')) and not business_choice(value)
 NEUTRAL=re.compile(r'その他|お問い?合わ?せ|ご?質問|一般|メール|Eメール|E-mail|指定なし|特になし|どちらでも|ご意見|お知らせ|同意|承諾|プライバシー|個人情報|規約|法人|企業')
 PERSONAL=re.compile(r'男|女|性別|歳|代$|店|校|院|希望|予算|時期|年齢|生年|都道府県|県|市|区|車種|免許|コース|プラン')
 def clean(lbl,name):
@@ -61,9 +66,9 @@ def judge(r):
   for f in r.get('after') or []:
     if f['kind'] in ('radiogroup','checkboxgroup') and f.get('checked'):
       for c in f['checked']:
-        if not NEUTRAL.search(c) or WRONG.search(c): why.append(f'選択欄に事実と違う値が入る「{c}」（{clean(f["label"],"")[:20]}）')
+        if (not NEUTRAL.search(c) and not business_choice(c)) or wrong_choice(c): why.append(f'選択欄に事実と違う値が入る「{c}」（{clean(f["label"],"")[:20]}）')
     if f['kind']=='file' and f.get('required'): why.append('添付ファイルが必須')
-    if f['kind']=='select' and f.get('selected') and WRONG.search(f['selected']): why.append(f'選択欄に事実と違う値が入る「{f["selected"]}」')
+    if f['kind']=='select' and f.get('selected') and wrong_choice(f['selected']): why.append(f'選択欄に事実と違う値が入る「{f["selected"]}」')
     if f['kind'] not in ('select','textarea','checkbox','radio','radiogroup','checkboxgroup') and (f.get('value') or '') and re.search(r'〒|郵便|FAX|ファックス|ファクス|住所|番地|生年|年齢|会員番号|教習生番号',clean(f.get('label'),'')+' '+(f.get('name') or '')) and not re.search(r'メール|mail',clean(f.get('label'),'')): why.append(f'住所・郵便番号などの欄に値が入ってしまう（{clean(f.get("label"),"")[:15]}＝{f["value"][:15]}）')
   af=r.get('after') or []
   vals=[(clean(f.get('label'),''),f.get('value') or '') for f in af if f['kind'] not in ('select','textarea','checkbox','radiogroup','checkboxgroup')]
