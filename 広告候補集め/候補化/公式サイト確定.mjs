@@ -111,7 +111,13 @@ for (const c of pool) {
     // 公式トップ：リンク先のホストの / を開き、リダイレクト後を正とする
     let top;
     try { top = await readPage(page, `https://${h}/`); }
-    catch (e) { if (!h.startsWith('www.') && /NAME_NOT_RESOLVED|CONNECTION_REFUSED|CERT/.test(e.message)) top = await readPage(page, `https://www.${h}/`); else throw e; }
+    catch (e) { if (!h.startsWith('www.') && /NAME_NOT_RESOLVED|CONNECTION_REFUSED|CERT/.test(e.message)) top = await readPage(page, `https://www.${h}/`).catch(() => null); if (!top && /CERT|SSL/.test(e.message)) top = await readPage(page, `http://${h}/`).catch(() => null); if (!top) top = { status: 0, err: e }; }
+    // 10/27 通る率の改善：広告用のサブドメイン（lp.・ad.・sub. など）のトップが開けない時は、本体のドメインのトップを見る（22:47の回で74社中6社）
+    if ((top.status >= 400 || top.err) && b && b !== h.replace(/^www\./, '')) {
+      const alt = await readPage(page, `https://www.${b}/`).catch(() => readPage(page, `https://${b}/`)).catch(() => null);
+      if (alt && alt.status < 400) top = alt;
+    }
+    if (top.err) throw top.err;
     const th = host(top.url);
     log.top = top.url;
     if (top.status >= 400) throw new Error(`トップが開けない（${top.status}）`);
@@ -158,6 +164,21 @@ for (const c of pool) {
       if (ONLY.test(head) && !/お問い?合わ?せ|問合せ|contact/i.test(head)) { seenWhy.push(`${u}：専用フォーム（${head.slice(0, 30)}）`); continue; }
       if (NG_SALES.test(pg.text)) { found = { bad: '営業お断りの表記（問い合わせページ）', u }; break; }
       found = { u: pg.url, pg }; break;
+    }
+    // 10/27 広告用のサブドメイン（LP）にフォームが無い時は、本体のドメインのトップから問い合わせを探す
+    if (!found && base(th) !== th.replace(/^www\./, '')) {
+      try {
+        await human(1500, 2500);
+        const bt = await readPage(page, `https://www.${base(th)}/`).catch(() => readPage(page, `https://${base(th)}/`));
+        const bl = [...new Set(bt.links.filter((l) => base(host(l.h)) === base(th) && (CONTACT.test(l.t) || CONTACT.test(l.h))).map((l) => l.h.split('#')[0]))].slice(0, 2);
+        for (const u of bl) {
+          await human(1500, 2500);
+          const pg = await readPage(page, u).catch(() => null);
+          if (!pg || pg.status >= 400 || !pg.textarea || new URL(pg.url).pathname === '/') { seenWhy.push(`${u}：本体のドメインでも無し`); continue; }
+          if (NG_SALES.test(pg.text)) { found = { bad: '営業お断りの表記（問い合わせページ）', u }; break; }
+          found = { u: pg.url, pg }; break;
+        }
+      } catch { seenWhy.push('本体のドメインが開けない'); }
     }
     if (!found && top.textarea) seenWhy.push('フォームはトップ埋め込みだけ');
     if (!found) throw new Error('問い合わせフォームなし：' + (seenWhy.join('／') || '問い合わせへのリンクなし'));
