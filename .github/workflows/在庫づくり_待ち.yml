@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
-  actions: read
+  actions: write
   issues: write
 concurrency:
   group: zaiko-wait
@@ -22,6 +22,7 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
       R: ${{ github.repository }}
+      KICK: '1'
     steps:
       - uses: actions/checkout@v4
         with:

@@ -20,7 +20,15 @@ for d in runs('douga-parallel.yml'):
     if d['status'] != 'completed': rows.append({'読み込み': i, '段': '読み込み中'}); continue
     z = Z.get(i)
     if not z:
-        if has_data(i): rows.append({'読み込み': i, '段': '取り込み待ち'}); tot['取り込み待ち'] += 1
+        if has_data(i):
+            # 取り込みが自動で動かなかった回は、終わって10分たったら在庫づくりをその番号で起動する（起動だけ。中身は変えない）
+            age = (datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(d['createdAt'].replace('Z', '+00:00'))).total_seconds()
+            ended = subprocess.run(['gh', 'api', f'repos/{R}/actions/runs/{i}', '-q', '.updated_at'], capture_output=True, text=True).stdout.strip()
+            late = ended and (datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(ended.replace('Z', '+00:00'))).total_seconds() > 600
+            r = {'読み込み': i, '段': '取り込み待ち'}
+            if late and os.environ.get('KICK') == '1':
+                subprocess.run(['gh', 'workflow', 'run', '在庫づくり.yml', '-R', R, '-f', f'run_id={i}'], capture_output=True); r['起動した'] = True
+            rows.append(r); tot['取り込み待ち'] += 1
         continue
     n = cand.get(i)
     dry = [a for a in A if a['displayTitle'] == f'全部 dry z{i}']
