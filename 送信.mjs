@@ -92,6 +92,8 @@ async function readAll(page) {
     text: main.text,
   };
 }
+// 認証の理由の文。画面に出ない reCAPTCHA v3 は、押しても相手が受け付けない（10/26 CF7のspam）ので押さずに止める（10/22の決まり）
+const capWhy = (c) => c.every((x) => /v3/.test(x)) ? `画面に出ない認証（${c.join('・')}）があるため送らない（押しても相手に弾かれる）` : `人の操作が要る認証（${c.join('・')}）のため手で送る`;
 const newOnes = (after, before) => after.filter((x) => !before.includes(x));
 const pause = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -212,7 +214,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
     const invalid = await invalidFields(frame);
     out.check = { unknown: plan.unknown, notes: plan.notes, invalid, captcha: afterFill.captcha, buttons: plan.buttons.map((b) => `${b.kind}:${b.text}`), bodyOk: filled.bodyOk };
     say('入力：', JSON.stringify(filled.done));
-    if (afterFill.captcha.length) return decide('送付失敗', `人の操作が要る認証（${afterFill.captcha.join('・')}）のため手で送る ${d.form_url}`, 'manual');
+    if (afterFill.captcha.length) return decide('送付失敗', `${capWhy(afterFill.captcha)} ${d.form_url}`, 'manual');
     if (!filled.bodyOk) return decide('送付失敗', `本文が一字一句入らなかった ${d.form_url}`, 'stop');
     if (plan.unknown.length || invalid.length) return decide('送付失敗', `自動で埋められない必須欄：${[...plan.unknown, ...invalid].join(' / ').slice(0, 200)} ${d.form_url}`, 'stop');
     if (plan.notes.some((x) => /初期値/.test(x))) return decide('送付失敗', `${plan.notes.join(' / ')}（事実と違う値か要確認） ${d.form_url}`, 'stop');
@@ -235,7 +237,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
       const errs = newOnes(state.errors, afterFill.errors);
       if (errs.length) return decide('送付失敗', `確認に進めない：${errs.join(' / ').slice(0, 200)} ${d.form_url}`, 'stop');
       if (state.refuse.length) return decide('除外', `確認画面に営業お断りの表記：「${state.refuse[0].trim()}」`, 'stop');
-      if (state.captcha.length) return decide('送付失敗', `人の操作が要る認証（${state.captcha.join('・')}）のため手で送る ${d.form_url}`, 'manual');
+      if (state.captcha.length) return decide('送付失敗', `${capWhy(state.captcha)} ${d.form_url}`, 'manual');
       // 確認画面の表示を待つ（最大15秒、送信ボタンが出るまで）
       for (let t = 0; t < 10 && !submitBtn; t++) {
         frame = await pickFrame(page);

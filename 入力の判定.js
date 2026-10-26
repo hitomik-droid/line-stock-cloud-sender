@@ -163,7 +163,8 @@ export function planForm(d) {
 // ページ全体の文字から読む材料（営業お断り・認証・完了・エラー）
 export function readPage() {
   const text = (document.body ? document.body.innerText : '').replace(/[ \t]+/g, ' ');
-  const refuse = text.match(/[^\n。]{0,30}((営業|セールス|勧誘|売り込み)[^\n。]{0,30}(お断り|ご遠慮|禁止|控え|受け付けて?(い)?ません|おりません|しかねます|お答えでき)|(お断り|ご遠慮)[^\n。]{0,10}(営業|セールス|勧誘))[^\n。]{0,20}/g) || [];
+  const refuse0 = text.match(/[^\n。]{0,20}営業(目的|活動|行為)?(の|での)?(お問い?合わ?せ|ご連絡|ご案内)?(で|では)(は)?(ありません|ない)[^\n。]{0,10}/g) || [];
+  const refuse = refuse0.concat(text.match(/[^\n。]{0,30}((営業|セールス|勧誘|売り込み)[^\n。]{0,30}(お断り|ご遠慮|禁止|控え|受け付けて?(い)?ません|おりません|しかねます|お答えでき)|(お断り|ご遠慮)[^\n。]{0,10}(営業|セールス|勧誘))[^\n。]{0,20}/g) || []);
   const shown = (s) => [...document.querySelectorAll(s)].some((e) => e.offsetWidth > 30 && e.offsetHeight > 30);
   const captcha = [];
   for (const fr of document.querySelectorAll('iframe')) {
@@ -172,6 +173,12 @@ export function readPage() {
     if (/recaptcha\/(api2|enterprise)\/bframe/.test(src) && fr.offsetHeight > 100) captcha.push('reCAPTCHA（画像選択）');
     if (/hcaptcha/.test(src) && fr.offsetWidth > 30) captcha.push('hCaptcha');
   }
+  // 画面に出ない reCAPTCHA v3（10/22の決まりで送らない）。10/26 18:30の送り直し41社の失敗のうち20社がこれで、CF7の「spam」9社のうち7社も含む。押す前に止める
+  const html = document.documentElement.innerHTML;
+  const v3 = [...document.querySelectorAll('script[src]')].some((s) => { const m = (s.src || '').match(/recaptcha\/(api|enterprise)\.js\?[^"']*render=([^&"']+)/); return m && m[2] !== 'explicit'; })
+    || !!document.querySelector('.grecaptcha-badge,iframe[src*="recaptcha"][src*="size=invisible"]')
+    || (/wpcf7/.test(html) && /wpcf7_recaptcha|recaptcha/.test(html));
+  if (v3) captcha.push('reCAPTCHA v3（画面に出ない）');
   if (shown('.cf-turnstile,iframe[src*="challenges.cloudflare.com"]')) {
     const tok = document.querySelector('input[name="cf-turnstile-response"]');
     if (!tok || !tok.value) captcha.push('Turnstile');
@@ -184,6 +191,6 @@ export function readPage() {
   // 送信後の画面で、まだ確認画面にいる（送信ボタンをもう一度押す必要がある）ことを示す文言
   const confirmPage = /以下の内容で|入力内容を(ご)?確認|内容をご確認|内容に間違いがなければ|よろしければ[^\n]{0,20}(送信|押して|クリック)|送信してよろしいですか|送信内容の確認|お問い合わせ（確認）|確認画面/.test(text);
   const sending = /送信中です|送信しています|Sending/i.test(text);
-  const errors = text.match(/[^\n]{0,20}((入力|選択|チェック)(して|され)?(下さい|ください)|必須項目です|正しく入力|入力内容に誤り|入力内容に問題|未入力です|間違いがあります|エラーが発生|送信に失敗|失敗しました)[^\n]{0,10}/g) || [];
+  const errors = text.match(/[^\n]{0,20}((入力|選択|チェック)(して|され)?(下さい|ください)|必須項目です|必須入力項目|入力必須|が?未選択です|エラーがあります|誤りがあります|正しく入力|入力内容に誤り|入力内容に問題|未入力です|間違いがあります|エラーが発生|送信に失敗|失敗しました)[^\n]{0,10}/g) || [];
   return { url: location.href, refuse, captcha: [...new Set(captcha)], thanks, thanksLines, confirmPage, sending, errors: [...new Set(errors)].slice(0, 5), text: text.slice(0, 4000) };
 }

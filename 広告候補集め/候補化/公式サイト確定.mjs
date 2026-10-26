@@ -22,17 +22,27 @@ const CONTACT = /お問い?合わ?せ|問合せ|問い合せ|ご相談|contact|i
 const PREFS = '北海道|青森県|岩手県|宮城県|秋田県|山形県|福島県|茨城県|栃木県|群馬県|埼玉県|千葉県|東京都|神奈川県|新潟県|富山県|石川県|福井県|山梨県|長野県|岐阜県|静岡県|愛知県|三重県|滋賀県|京都府|大阪府|兵庫県|奈良県|和歌山県|鳥取県|島根県|岡山県|広島県|山口県|徳島県|香川県|愛媛県|高知県|福岡県|佐賀県|長崎県|熊本県|大分県|宮崎県|鹿児島県|沖縄県';
 // 公式トップのタイトル・説明・見出しで業種を確かめる（広告文だけで決めない）
 const STRICT = {
-  '自動車学校': /自動車学校|教習所|ドライビングスクール/,
-  'パーソナルジム': /パーソナル(トレーニング|ジム)|ジム|ピラティス|フィットネス/,
-  '美容クリニック': /美容|脱毛|形成外科|整形|皮膚科/,
-  'オンラインスクール': /オンライン|講座|スクール|アカデミー|レッスン|養成|教室/,
-  '住宅・リフォーム': /リフォーム|リノベ|塗装|工務店|住宅|新築|注文住宅|家づくり|外壁|屋根|建設|ホーム/,
-  '太陽光': /太陽光|蓄電池|ソーラー|発電|エコキュート|省エネ/,
+  // 10/26 通る率の改善：10/26の候補化ログで「業種の語が無い」871社のうち、外構・アートメイク・教育などの語で落ちていた分を拾う（英字は大文字小文字を区別しない）
+  '自動車学校': /自動車学校|教習所|ドライビングスクール|運転免許|自動車教習/i,
+  'パーソナルジム': /パーソナル(トレーニング|ジム)|ジム|ピラティス|フィットネス|トレーニング|ボディメイク|ダイエット|ヨガ|gym|fitness|pilates|yoga/i,
+  '美容クリニック': /美容|脱毛|形成外科|整形|皮膚科|クリニック|スキン|アートメイク|ボトックス|ヒアルロン|エイジング|aesthetic|clinic|beauty/i,
+  'オンラインスクール': /オンライン|講座|スクール|アカデミー|レッスン|養成|教室|教育|学び|スキル|研修|資格|受験|コーチング|カレッジ|school|academy|college/i,
+  '住宅・リフォーム': /リフォーム|リノベ|塗装|工務店|住宅|新築|注文住宅|家づくり|外壁|屋根|建設|ホーム|外構|エクステリア|造園|建築|設計事務所|内窓|断熱|防水|解体|水回り|キッチン|浴室|内装|大工|住まい|ハウス/i,
+  '太陽光': /太陽光|蓄電池|ソーラー|発電|エコキュート|省エネ|オール電化|V2H|エネルギー|solar/i,
   // 10/26 勝良さんOKの3業種（本文v3あり）
   '結婚相談所': /結婚相談所|婚活|お見合い|成婚|マリッジ|ブライダル/,
   '自由診療歯科': /歯科|デンタル|矯正|インプラント|ホワイトニング|審美/,
   '不動産': /不動産|売却|査定|賃貸|マンション|物件|土地|住まい/,
 };
+// 広告主名から、サイトの文に出ているはずの手がかりを作る（会社の種類・業種だけの語・「スポンサー:」の前の投稿者名を除き、先頭4字）
+const GENERIC = /^(パーソナル(ジム|トレーニング)?|ジム|美容(クリニック|外科|皮膚科|院|室)?|クリニック|公式|オフィシャル|official|スクール|オンライン|リフォーム|工務店|住宅|塗装|結婚相談所|歯科|不動産|グループ|ホールディングス|本店|店|the|株式会社|有限会社|合同会社)$/i;
+const squash = t => String(t || '').normalize('NFKC').toLowerCase().replace(/[\s　・\-－‐]/g, '');
+function nameProbes(name) {
+  const n = String(name || '').replace(/^.*スポンサー[:：]\s*/, '');
+  const toks = n.split(/[\s　:：|｜\-－–・〜~～／\/（()）【】「」┊︎、,]+/).map(x => norm(x)).filter(x => x.length >= 2 && !GENERIC.test(x));
+  return [...new Set(toks.map(x => squash(x).slice(0, 4)).filter(x => x.length >= 2))].slice(0, 4);
+}
+const FORM_SVC = /form-mailer|formzu|formmailer|form\.run|formrun|tayori|hubspot|hsforms|typeform|google\.com|forms\.gle|jotform|wufoo|cognito/i;
 const AGG = /合宿免許|比較|ランキング|一括見積|検索・予約|ポータル|まとめ/;
 const ADDR = new RegExp(`(${PREFS})([^\\s　、。,\\d０-９〒（(]{1,8}?[市区町村郡])([^\\s　、。,\\d０-９（(]{0,8}?[区町村])?`);
 
@@ -47,6 +57,8 @@ async function readPage(page, url) {
       desc: (document.querySelector('meta[name=description]') || {}).content || (document.querySelector('meta[property="og:description"]') || {}).content || '',
       h1: [...document.querySelectorAll('h1,h2')].slice(0, 3).map(h => h.innerText.trim()).join(' / '),
       text: (document.body && document.body.innerText || '').slice(0, 30000),
+      tail: (document.body && document.body.innerText || '').slice(-4000),
+      site: [(document.querySelector('meta[property="og:site_name"]') || {}).content || '', ...[...document.querySelectorAll('header img[alt],footer img[alt],[class*=logo] img[alt]')].map(i => i.alt)].join(' ').slice(0, 300),
       textarea: forms.length, ifr,
       formText: forms.map(f => f.innerText.slice(0, 1500)).join('\n'),
       links: [...document.querySelectorAll('a[href]')].map(a => ({ h: a.href, t: (a.innerText || a.title || a.getAttribute('aria-label') || (a.querySelector('img[alt]') || {}).alt || '').trim().slice(0, 40) })).filter(l => /^https?:/.test(l.h)),
@@ -108,29 +120,38 @@ for (const c of pool) {
     if (NG_SALES.test(top.text)) throw new Error('営業お断りの表記（トップ）');
     if (FC.test(top.text)) throw new Error('フランチャイズ・チェーン・上場の表記');
     const head0 = `${top.title} ${top.desc} ${top.h1}`;
-    if (!STRICT[c.industry].test(head0)) throw new Error('トップのタイトル・説明に業種の語が無い：' + head0.slice(0, 40));
+    if (!/[ぁ-んァ-ヶ]/.test(head0 + top.text.slice(0, 3000))) throw new Error('日本語のサイトでない：' + head0.slice(0, 40));
+    // 見出しに業種の語が無くても、本文の先頭に業種の語が4回以上あれば業種どおりとみる（10/26 通る率の改善）
+    const bodyHits = (top.text.slice(0, 5000).match(new RegExp(STRICT[c.industry].source, 'gi')) || []).length;
+    if (!STRICT[c.industry].test(head0) && bodyHits < 4) throw new Error('トップのタイトル・説明に業種の語が無い：' + head0.slice(0, 40));
     if (AGG.test(top.title)) throw new Error('比較・予約サイトの恐れ：' + top.title.slice(0, 40));
-    // 広告主名がサイトに出ているか（比較サイト・別会社のサイトへの誘導を外す）
-    const core = norm(c.name).split(/[\s:：|｜\-－・〜~／\/（(【]/).filter(x => x.length >= 2)[0] || norm(c.name);
-    const probe = core.slice(0, Math.min(4, core.length));
-    if (probe && !(top.text + top.title).toLowerCase().includes(probe.toLowerCase())) throw new Error(`広告主名（${probe}）がトップに無い：別サイトの恐れ`);
+    // 広告主名の手がかり（比較サイト・別会社のサイトへの誘導を外すため、後でトップ・問い合わせ・会社概要のどこかに出ているかを見る）
+    const probes = nameProbes(c.name);
+    const hasName = t => { const x = squash(t); return !probes.length || probes.some(p => x.includes(p)); };
     // 問い合わせページを探す（同じサイト内のリンクで、文字かURLが問い合わせ）
-    const cands = [];
+    const cands = [], corp = [];
     for (const l of top.links) {
       const lh = host(l.h);
-      if (base(lh) !== base(th)) continue;
-      if (CONTACT.test(l.t) || CONTACT.test(l.h)) { const u = l.h.split('#')[0]; if (u.replace(/\/$/, '') !== top.url.replace(/\/$/, '') && !cands.includes(u)) cands.push(u); }
+      const isContact = CONTACT.test(l.t) || CONTACT.test(l.h);
+      if (base(lh) !== base(th)) {
+        // ブランドサイトから運営会社のサイトの問い合わせへ飛ぶ形（10/26 通る率の改善）。SNS・外部フォームの会社は除く
+        if (isContact && !NOT_OFFICIAL.test(lh) && !FORM_SVC.test(lh) && !ex.hitDomain(lh)) { const u = l.h.split('#')[0]; if (!corp.includes(u)) corp.push(u); }
+        continue;
+      }
+      if (isContact) { const u = l.h.split('#')[0]; if (u.replace(/\/$/, '') !== top.url.replace(/\/$/, '') && !cands.includes(u)) cands.push(u); }
     }
     cands.sort((p, q) => (/お問い?合わ?せ|contact/i.test(q) ? 1 : 0) - (/お問い?合わ?せ|contact/i.test(p) ? 1 : 0));
-    // リンクで見つからない時は、よくある場所を2つまで試す
-    if (!cands.length) for (const pth of ['/contact/', '/inquiry/']) cands.push(new URL(pth, top.url).href);
+    // リンクで見つからない時は、よくある場所を試す
+    if (!cands.length) for (const pth of ['/contact/', '/inquiry/', '/contact.html', '/otoiawase/']) cands.push(new URL(pth, top.url).href);
+    const corpBase = new Set(corp.map(u => base(host(u))));
     let found = null; const seenWhy = [];
-    for (const u of cands.slice(0, 4)) {
+    for (const u of [...cands.slice(0, 4), ...corp.slice(0, 2)]) {
       await human(2500, 4000);
       let pg; try { pg = await readPage(page, u); } catch (e) { seenWhy.push(`${u}：開けず`); continue; }
       if (pg.url.replace(/[#?].*$/, '').replace(/\/$/, '') === top.url.replace(/[#?].*$/, '').replace(/\/$/, '')) { seenWhy.push('トップ埋め込み'); continue; }
       if (/complete|thanks|thank-you|finish|confirm|kanryo|done/i.test(pg.url)) { seenWhy.push(`${u}：完了・確認ページ`); continue; }
-      if (base(host(pg.url)) !== base(th)) { seenWhy.push(`${u}：別ドメインのフォーム`); continue; }
+      if (base(host(pg.url)) !== base(th) && !corpBase.has(base(host(pg.url)))) { seenWhy.push(`${u}：別ドメインのフォーム`); continue; }
+      if (new URL(pg.url).pathname === '/' ) { seenWhy.push(`${u}：トップ埋め込み`); continue; }
       if (pg.status >= 400) { seenWhy.push(`${u}：${pg.status}`); continue; }
       if (!pg.textarea) { seenWhy.push(`${u}：textareaなし${pg.ifr.length ? '（外部フォーム埋め込み）' : ''}`); continue; }
       const head = pg.title + ' ' + pg.h1;
@@ -141,6 +162,13 @@ for (const c of pool) {
     if (!found && top.textarea) seenWhy.push('フォームはトップ埋め込みだけ');
     if (!found) throw new Error('問い合わせフォームなし：' + (seenWhy.join('／') || '問い合わせへのリンクなし'));
     if (found.bad) throw new Error(found.bad);
+    // 広告主名：トップ（末尾・サイト名を含む）→問い合わせページ→会社概要の順に探す（10/26 通る率の改善。前はトップの先頭30000字だけ）
+    let named = hasName([top.title, top.site, top.text, top.tail, found.pg.title, found.pg.text].join(' '));
+    if (!named) {
+      const co = top.links.find(l => base(host(l.h)) === base(th) && /会社概要|会社案内|運営会社|企業情報|医院概要|クリニック概要|院紹介|about|company|corporate|特定商取引|特商法|プライバシー/i.test(l.t + ' ' + l.h));
+      if (co) { try { await human(1500, 2500); const cp = await readPage(page, co.h.split('#')[0]); named = hasName([cp.title, cp.text, cp.tail].join(' ')); } catch { } }
+    }
+    if (!named) throw new Error(`広告主名（${probes.join('・')}）がサイトに無い：別サイトの恐れ`);
     const { memo, addr } = memoOf(top, found.pg, c.industry);
     const row = {
       industry: c.industry, name: c.name, official_url: top.url.replace(/[#?].*$/, ''), form_url: found.u, memo,
