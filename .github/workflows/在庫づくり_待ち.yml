@@ -24,5 +24,5 @@ jobs:
       - run: git fetch -q origin main && python3 登録/在庫づくりの待ち.py | tee -a "$GITHUB_STEP_SUMMARY"
       - run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add 記録/在庫づくり_待ち.json; git commit -q -m "在庫づくりの待ち（$(TZ=Asia/Tokyo date +%H:%M)）" || exit 0
+          git add -f 記録/在庫づくり_待ち.json; git commit -q -m "在庫づくりの待ち（$(TZ=Asia/Tokyo date +%H:%M)）" || exit 0
           for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
