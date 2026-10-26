@@ -2980,6 +2980,90 @@
     "LS-20261022-5095": {
       "token": "01bc5c9a28d143c4bd710ca8f6a4a838",
       "page": "beauty-clinic"
+    },
+    "LS-20261022-5096": {
+      "token": "b5e598e4ca7b43a8ac1e739a35460c31",
+      "page": "personal-gym"
+    },
+    "LS-20261022-5114": {
+      "token": "d9f8453a15c24a898d314ec7087134f5",
+      "page": "solar-housing"
+    },
+    "LS-20261022-5097": {
+      "token": "b246267800014abc9b78fe375974d61b",
+      "page": "personal-gym"
+    },
+    "LS-20261022-5115": {
+      "token": "8b27df75872d4842a38c24efca6f9907",
+      "page": "solar-housing"
+    },
+    "LS-20261022-5098": {
+      "token": "e6652a2e3aeb4ba4ae395d044efdfd13",
+      "page": "personal-gym"
+    },
+    "LS-20261022-5116": {
+      "token": "a98624ab85334b31ade9faf90d179848",
+      "page": "solar-housing"
+    },
+    "LS-20261022-5099": {
+      "token": "93dbb7dd8785405cb7aa43cbe749506a",
+      "page": "online-school"
+    },
+    "LS-20261022-5100": {
+      "token": "d677699802054cc2b814df4c28d77916",
+      "page": "online-school"
+    },
+    "LS-20261022-5101": {
+      "token": "c62a118b0c0d45038ea502ce3f0e1ae7",
+      "page": "online-school"
+    },
+    "LS-20261022-5102": {
+      "token": "8aefc92b500c41d5b9117dc4ca9eac7f",
+      "page": "online-school"
+    },
+    "LS-20261022-5103": {
+      "token": "1f77e7a436924a6e92609a297d2165f7",
+      "page": "online-school"
+    },
+    "LS-20261022-5104": {
+      "token": "bf9c4f08eb1f42729c8e9555641844a7",
+      "page": "online-school"
+    },
+    "LS-20261022-5105": {
+      "token": "4e67d7bb00954bec97339f7c29990efc",
+      "page": "online-school"
+    },
+    "LS-20261022-5106": {
+      "token": "bd7202390924418e95ab9ef53be7d2fb",
+      "page": "online-school"
+    },
+    "LS-20261022-5107": {
+      "token": "0b7bf443cad94c889727647330845862",
+      "page": "online-school"
+    },
+    "LS-20261022-5108": {
+      "token": "ecc52ad6ee514702a1ea95ee10298c88",
+      "page": "online-school"
+    },
+    "LS-20261022-5109": {
+      "token": "79083be717064ee6b0881077e2972b0b",
+      "page": "online-school"
+    },
+    "LS-20261022-5110": {
+      "token": "23ee8d32846149cdb63606e7b3a61158",
+      "page": "online-school"
+    },
+    "LS-20261022-5111": {
+      "token": "3efc97f9c7ec411e814a1af4380ba321",
+      "page": "online-school"
+    },
+    "LS-20261022-5112": {
+      "token": "5eb44b95b9e643fc8caf7e37ab4515db",
+      "page": "online-school"
+    },
+    "LS-20261022-5113": {
+      "token": "d85fae5dd2c940858b2174d4afad495c",
+      "page": "online-school"
     }
   }
 }
