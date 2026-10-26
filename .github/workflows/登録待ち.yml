@@ -4,6 +4,8 @@ name: 登録待ちを登録する
 on:
   schedule:
     - cron: '2 0 * * *'
+    # 10/27 定時が飛んだ時の控え（登録できた分は登録待ち.txt から消えるので、重ねても二重にならない）
+    - cron: '17,47 0-2 * * *'
   workflow_dispatch:
 permissions:
   contents: write
