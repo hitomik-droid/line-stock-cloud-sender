@@ -152,7 +152,14 @@ async function clickOnce(frame, sel) {
 
 // 1社分。戻り値：{ id, name, result, status, note, log }
 // retryIds：送り直してよい会社IDの一覧（本人が送り直しを指示し、送れていないと分かっている会社だけ）。渡した時はこの一覧で判定する
+// 2026-10-26 勝良さん指示：フォーム営業の送信はビジネスアワー（日本時間8:00〜20:00）だけ。時間外は送信まで進まない
+export function inSendHours(now = new Date()) {
+  const h = new Date(now.getTime() + 9 * 3600e3).getUTCHours();
+  return h >= 8 && h < 20;
+}
+
 export async function sendOne(id, mode = 'dry', { browser: shared, headed = false, retry = false, retryIds = null } = {}) {
+  if (mode === 'send' && !inSendHours()) return { id, mode, result: 'skip', status: null, note: '送付時間外（日本時間8:00〜20:00だけ送る）なので送らない', log: [] };
   const canRetry = (c) => retryIds ? !!c && c.status === '送付失敗' && retryIds.has(c.id) && !(c.history || []).some((x) => /再試行/.test(x.note || '')) : recaptchaRetryable(c);
   const log = []; const say = (...a) => { log.push(a.join(' ')); };
   fs.mkdirSync(REC, { recursive: true });

@@ -5,7 +5,7 @@
 // --retry-list=ファイル は、ファイル（会社IDのJSON配列）にある送付失敗の会社だけを送り直す。送れたか不明の会社は一覧に入れない。
 // 既定は dry（入力だけ）。実際に送るのは --mode=send を付けた時だけ。
 import fs from 'node:fs';
-import { API, getJSON, sendOne, launchBrowser, recaptchaRetryable } from './送信.mjs';
+import { API, getJSON, sendOne, launchBrowser, recaptchaRetryable, inSendHours } from './送信.mjs';
 
 const arg = (k, def) => (process.argv.find((a) => a.startsWith(`--${k}=`)) || `--${k}=${def}`).split('=').slice(1).join('=');
 const mode = arg('mode', 'dry');
@@ -32,6 +32,8 @@ console.log(`モード ${mode}${headed ? '／画面あり' : ''}${retryIds ? '�
 const browser = await launchBrowser(headed);
 const results = [];
 for (const [i, c] of targets.entries()) {
+  // 2026-10-26：20時を過ぎたら次の会社へ進まない（送信.mjs の inSendHours）
+  if (mode === 'send' && !inSendHours()) { console.log('送付時間外（日本時間8:00〜20:00だけ送る）になったので、ここで止める'); break; }
   let r;
   try {
     r = await sendOne(c.id, mode, { browser, headed, retry, retryIds });

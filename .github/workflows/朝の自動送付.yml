@@ -1,0 +1,37 @@
+# 2026-10-26 勝良さん指示：フォーム営業の送信は日本時間8:00〜20:00だけ。前日に届かなかった分は、翌朝8:00から自動で送る。
+# 送るのは 登録/朝の送付対象.py が選んだ会社だけ（承認済みの本文・動画広告Pro経由・確認中）。新しい本文・新しい業種は対象にしない。
+name: 朝の自動送付
+on:
+  schedule:
+    - cron: '0 23 * * *'   # 日本時間 8:00
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 送る上限（社数）
+        required: false
+        default: '1000'
+permissions:
+  contents: read
+jobs:
+  pick:
+    runs-on: ubuntu-latest
+    outputs:
+      ids: ${{ steps.pick.outputs.ids }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: pick
+        name: 送る会社を選ぶ
+        env:
+          LIMIT: ${{ inputs.limit || '1000' }}
+        run: |
+          IDS=$(python3 登録/朝の送付対象.py "$LIMIT")
+          echo "ids=$IDS" >> "$GITHUB_OUTPUT"
+          echo "送る会社：$(echo "$IDS" | tr ',' '\n' | grep -c . ) 社" >> "$GITHUB_STEP_SUMMARY"
+  send:
+    needs: pick
+    if: needs.pick.outputs.ids != ''
+    uses: ./.github/workflows/send.yml
+    secrets: inherit
+    with:
+      ids: ${{ needs.pick.outputs.ids }}
+      mode: send
