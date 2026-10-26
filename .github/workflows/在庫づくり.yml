@@ -42,8 +42,6 @@ jobs:
         id: got
         run: |
           if [ -n "${{ inputs.cand_file }}" ]; then echo "候補の元 ${{ inputs.cand_file }} を使う"; exit 0; fi
-          # 切り替え（10/26 23:40 JST）より前の自動の起動は、Macの在庫づくりと重ならないよう何もしない
-          if [ "${{ github.event_name }}" = workflow_run ] && [ $(date -u +%s) -lt $(date -u -d 2026-10-26T14:40:00Z +%s) ]; then echo "切り替え前なので何もしない"; echo "skip=1" >> "$GITHUB_OUTPUT"; exit 0; fi
           mkdir -p "$W/dp"
           gh run download "$RUN" -R "$R" -n 動画広告Pro_並列 -D "$W/dp" || { echo "結果が無い（1Passwordの確認だけの回など）"; echo "skip=1" >> "$GITHUB_OUTPUT"; }
           STOP=$(python3 -c "import json,glob;f=glob.glob('$W/dp/**/まとめ.json',recursive=True);print((json.load(open(f[0])).get('stop') or '') if f else '')")
