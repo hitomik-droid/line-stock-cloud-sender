@@ -10,11 +10,15 @@ req = urllib.request.Request(API, headers={'User-Agent': 'Mozilla/5.0'})
 d = json.load(urllib.request.urlopen(req, timeout=120))
 msgs = {m['id']: m['body'] for m in d['messages']}
 links = json.load(open(os.path.join(HERE, '..', '追跡', '会社別リンク.json')))['links']
+# 10/27 登録済みでも 手で外した会社.json にある会社（番号か社名が一致）は送らない
+manual = json.load(open(os.path.join(HERE, '手で外した会社.json')))
+man_ids = {x['id'] for x in manual if x.get('id')}; man_names = {x['name'] for x in manual if x.get('name')}
 ids, skip = [], {}
 for c in sorted(d['companies'], key=lambda c: c['id']):
     if c['status'] != '確認中': continue
     why = None
-    if not (c.get('list_source') or '').startswith('動画広告Pro'): why = '動画広告Pro経由ではない'
+    if c['id'] in man_ids or c.get('name') in man_names: why = '手で外した会社'
+    elif not (c.get('list_source') or '').startswith('動画広告Pro'): why = '動画広告Pro経由ではない'
     elif c.get('message_id') not in APPROVED: why = '承認済みの本文ではない'
     elif 'line-stock-flow.hitomi-k.workers.dev' in msgs.get(c['message_id'], '') and c['id'] not in links: why = '会社別追跡リンクが未登録'
     if why: skip[why] = skip.get(why, 0) + 1; continue
