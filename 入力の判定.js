@@ -103,8 +103,8 @@ export function planForm(d) {
     else if (/kana|furigana|ruby/i.test(e.name || '') && /[ぁ-ん]/.test(ph) && !/[ァ-ヶ]/.test(ph)) v = /(01|_1|sei|last|family)\b|kana1|sei/i.test(e.name) ? ME.hiraSei : (/(02|_2|mei|first|given)\b|kana2|mei/i.test(e.name) ? ME.hiraMei : ME.hira);
     else if (/kana|furigana|ruby/i.test(e.name || '') && /[ァ-ヶ]/.test(ph)) v = /(01|_1|sei|last|family)\b|kana1|sei/i.test(e.name) ? ME.kanaSei : (/(02|_2|mei|first|given)\b|kana2|mei/i.test(e.name) ? ME.kanaMei : ME.kana);
     else if (tels.includes(e)) v = tels.length === 3 ? ME.tel3[tels.indexOf(e)] : ME.tel;
-    else if (/フリガナ|カナ|ｶﾅ/.test(L)) v = /セイ|姓/.test(L) && !/メイ/.test(L) ? ME.kanaSei : (/メイ/.test(L) && !/セイ/.test(L) ? ME.kanaMei : ME.kana);
-    else if (/ふりがな|かな|フリ/.test(L)) v = /せい|姓/.test(L) && !/めい/.test(L) ? ME.hiraSei : (/めい/.test(L) && !/せい/.test(L) ? ME.hiraMei : ME.hira);
+    else if (/フリガナ|カナ|ｶﾅ|ヨミ/.test(L)) v = /セイ|姓/.test(L) && !/メイ/.test(L) ? ME.kanaSei : (/メイ/.test(L) && !/セイ/.test(L) ? ME.kanaMei : ME.kana);
+    else if (/ふりがな|かな|フリ|よみがな/.test(L)) v = /せい|姓/.test(L) && !/めい/.test(L) ? ME.hiraSei : (/めい/.test(L) && !/せい/.test(L) ? ME.hiraMei : ME.hira);
     else if (/^ ?せい(?=[\s（(例＊*]|$)/.test(L) && !/めい/.test(L)) v = ME.hiraSei;
     else if (/^ ?めい(?=[\s（(例＊*]|$)/.test(L) && !/せい/.test(L)) v = ME.hiraMei;
     else if (/セイ/.test(L) && !/メイ/.test(L)) v = ME.kanaSei;
