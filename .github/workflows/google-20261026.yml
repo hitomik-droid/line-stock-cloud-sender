@@ -16,5 +16,5 @@ jobs:
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     with:
       ids: LS-20261022-1122,LS-20261022-1123
-      mode: dry
+      mode: send
       execution: single
