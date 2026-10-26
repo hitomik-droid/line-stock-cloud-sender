@@ -7,6 +7,7 @@ on:
 permissions:
   contents: write
   actions: read
+  issues: write
 concurrency:
   group: zaiko-wait
   cancel-in-progress: true
@@ -21,7 +22,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 300
-      - run: git fetch -q origin main && python3 登録/在庫づくりの待ち.py | tee -a "$GITHUB_STEP_SUMMARY"
+      - run: |
+          git fetch -q origin main
+          B=$(git show origin/main:記録/在庫づくり_待ち.json 2>/dev/null | python3 -c "import json,sys;print(json.load(sys.stdin)['在庫づくり待ち（読み込みの回数）'])" 2>/dev/null || echo x)
+          python3 登録/在庫づくりの待ち.py | tee -a "$GITHUB_STEP_SUMMARY"
+          A=$(python3 -c "import json;d=json.load(open('記録/在庫づくり_待ち.json'));print(d['在庫づくり待ち（読み込みの回数）'] + sum(1 for r in d['読み込みごと'] if r['段']=='読み込み中'))")
+          # 待ちが0になった時だけ、Issue #1 に1行（集めるを再開する合図）
+          if [ "$A" = 0 ] && [ "$B" != 0 ]; then gh issue comment 1 -R "$R" --body "$(TZ=Asia/Tokyo date +%H:%M)｜在庫づくり待ちが0になった（読み込み中も0）。集めるを再開してよい合図"; fi
       - run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f 記録/在庫づくり_待ち.json; git commit -q -m "在庫づくりの待ち（$(TZ=Asia/Tokyo date +%H:%M)）" || exit 0
