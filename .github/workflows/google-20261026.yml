@@ -1,0 +1,20 @@
+name: Google新規2社の既存送付処理
+on:
+  push:
+    branches: [google-leads-20261026]
+    paths: [.github/workflows/google-20261026.yml]
+permissions:
+  contents: read
+concurrency:
+  group: google-20261026-two-companies
+  cancel-in-progress: false
+jobs:
+  existing_sender:
+    uses: ./.github/workflows/send.yml
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    with:
+      ids: LS-20261022-1122,LS-20261022-1123
+      mode: dry
+      execution: single
