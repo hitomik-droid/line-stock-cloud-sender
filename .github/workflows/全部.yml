@@ -160,7 +160,7 @@ jobs:
         run: |
           [ -f "$W/候補の元.json" ] || exit 0
           [ -n "${BRAVE_API_KEY:-}" ] && echo "Braveの鍵：読めた" || echo "Braveの鍵：読めない（社名検索はしない）"
-          python3 登録/公式サイトを名前で探す.py "$W/候補の元.json" | tee "$W/社名検索.txt"
+          python3 登録/公式サイトを名前で探す.py "$W/候補の元.json" | tee "$W/社名検索.txt" || echo "社名検索はできなかった（D1が読めない等）。そのまま進める"
       - name: 公式サイトと問い合わせフォームを探す（douga・file の .json。16に分けて同時に）
         timeout-minutes: 90
         run: |
@@ -183,7 +183,11 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           mkdir -p "$W"
-          npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,legal_name,official_url,form_url,status FROM companies" --json > "$W/D1読取.json"
+          # 10/27 D1の無料枠（1日に読める行数）を越えた時、dry は D1 なしで進める（重複は登録の直前にD1を読み直して外す）。register・send は今までどおり止まる
+          if ! npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,legal_name,official_url,form_url,status FROM companies" --json > "$W/D1読取.json"; then
+            if [ "${{ inputs.mode }}" = dry ]; then echo "D1が読めない。dry なので D1 なしで進める（重複は登録の時に外す）"; echo '{"companies":[]}' > "$W/sales.json"; echo "LS_API=file://$PWD/$W/sales.json" >> "$GITHUB_ENV"; exit 0; fi
+            echo "D1が読めない"; exit 1
+          fi
           python3 - <<'PY'
           import json, os
           from pathlib import Path
@@ -191,7 +195,7 @@ jobs:
           chunks = json.loads((w / 'D1読取.json').read_text())
           assert chunks and all(c.get('success') for c in chunks), 'D1読取に失敗'
           rows = [r for c in chunks for r in c['results']]
-          assert rows and all('id' in r and 'status' in r for r in rows), 'D1会社情報が不正'
+          assert all('id' in r and 'status' in r for r in rows), 'D1会社情報が不正'
           (w / 'sales.json').write_text(json.dumps({'companies': rows}, ensure_ascii=False))
           with open(os.environ['GITHUB_ENV'], 'a') as f:
               f.write('LS_API=' + (w / 'sales.json').resolve().as_uri() + '\n')
@@ -230,7 +234,7 @@ jobs:
             python3 流れ.py check "../$W"
             echo "ids=$IDS" >> "$GITHUB_OUTPUT"
           else
-            npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --command="SELECT COUNT(*) AS n FROM companies" > "../$W/鍵の確認.txt" 2>&1 && echo "D1の鍵：通った（読むだけ）" || { echo "D1の鍵：通らない"; tail -5 "../$W/鍵の確認.txt"; exit 1; }
+            # 10/27 全件を数える問い合わせはD1の読み取り行数を使うので、dry では鍵の確認をしない
             echo "dry：登録・送付はしない（合格 $(echo "$IDS" | tr ',' '\n' | grep -c . ) 社）"
           fi
       - uses: actions/upload-artifact@v4

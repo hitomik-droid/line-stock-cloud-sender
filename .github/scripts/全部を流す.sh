@@ -28,6 +28,13 @@ for a in $(seq 1 20); do
   gh run watch "$REG" -R "$R" --interval 20 >/dev/null 2>&1
   c=$(gh run view "$REG" -R "$R" --json conclusion --jq .conclusion)
   [ "$c" = cancelled ] && { echo "register $REG が取り消された。起動し直す"; continue; }
+  if [ "$c" != success ]; then
+    # 10/27 D1の無料枠の上限などで登録できない時は、dry の番号を残して後で登録する（bash .github/scripts/登録待ちを流す.sh）
+    echo "$DRY $TAG $(date -u +%Y-%m-%dT%H:%MZ)" >> 登録/登録待ち.txt
+    git add 登録/登録待ち.txt; git commit -q -m "登録待ち：dry $DRY（$TAG）" || true
+    for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+    echo "register $REG：$c。dry $DRY を 登録/登録待ち.txt に残した" | tee -a "$OUT"; exit 0
+  fi
   T2=$(mktemp -d); gh run download "$REG" -R "$R" -n 全部の記録 -D "$T2" >/dev/null 2>&1
   echo "register $REG：$c 登録ID=$(cat "$T2/ids.txt" 2>/dev/null)" | tee -a "$OUT"; exit 0
 done

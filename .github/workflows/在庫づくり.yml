@@ -56,7 +56,8 @@ jobs:
         id: cand
         run: |
           if [ -n "${{ inputs.cand_file }}" ]; then F="${{ inputs.cand_file }}"; echo "name=$F" >> "$GITHUB_OUTPUT"; echo "n=$(python3 -c "import json,sys;f='$F';print(len(open(f).read().splitlines())-1 if f.endswith('.tsv') else len(json.load(open(f))))")" >> "$GITHUB_OUTPUT"; mkdir -p "$W"; echo "候補の元 $F を使う" > "$W/取り込み.txt"; exit 0; fi
-          npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,official_url FROM companies" --json > "$W/d1.json"
+          # D1が読めない時（無料枠の上限など）は空のまま進める。D1との重複は登録の直前に外す
+          npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,official_url FROM companies" --json > "$W/d1.json" || { echo "D1が読めない。取り込みは調べた広告主の一覧だけで重複を外す"; echo '[{"results":[]}]' > "$W/d1.json"; }
           NAME="広告候補集め/候補化/入力/$(TZ=Asia/Tokyo date +%Y%m%d_%H%M)_GitHub_$RUN.json"
           python3 登録/取り込み.py "$W/dp" "$NAME" "$W/d1.json" | tee "$W/取り込み.txt"
           N=$(python3 -c "import json;print(len(json.load(open('$NAME'))))")
@@ -81,7 +82,7 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           git pull -q --rebase origin main || true
-          npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,industry,status,list_source,message_id FROM companies WHERE status='確認中'" --json > "$W/kakunin.json"
+          npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,industry,status,list_source,message_id FROM companies WHERE status='確認中'" --json > "$W/kakunin.json" || { echo "D1が読めないので追跡リンクの確認は次の回に回す" | tee "$W/追跡.txt"; exit 0; }
           npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,body FROM messages" --json > "$W/msgs.json"
           python3 追跡/追跡リンク登録.py "$W/kakunin.json" "$W/msgs.json" | tee "$W/追跡.txt"
           git add 追跡/会社別リンク.json
