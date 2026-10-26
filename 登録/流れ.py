@@ -67,6 +67,8 @@ def seen_sets(d1):
         dom.add(base(host(x['official_url']))); nm.add(norm(x['name']))
     ex = HERE + '/../広告候補集め/候補化/'
     for f, s in (('除外ドメイン.txt', dom), ('除外社名.txt', nm)):
+        # 10/27 除外ドメイン.txt は「調べたことのあるドメイン」の写し（5,057件）なので、点検し直し（LS_RECHECK）では使わない。送った会社は D1・used_domains で外れる
+        if os.environ.get('LS_RECHECK') and f == '除外ドメイン.txt': continue
         if os.path.exists(ex + f):
             for x in open(ex + f):
                 x = x.strip()
