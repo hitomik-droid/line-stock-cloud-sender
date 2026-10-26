@@ -1,6 +1,10 @@
 {
   "base_url": "https://lxxzvbggxoroxayiupfj.supabase.co/functions/v1/ls-flow",
   "links": {
+    "LS-20261020-049": {
+      "token": "bcc9ff65f0ca4a37addddff3337e3c19",
+      "page": "beauty-clinic"
+    },
     "LS-20261020-050": {
       "token": "d4c2278b2b354c03a5f832f071aa6ae0",
       "page": "beauty-clinic"
@@ -245,6 +249,10 @@
       "token": "79695becdeea4b37b139093ba0b53fcd",
       "page": "solar-housing"
     },
+    "LS-20261022-1002": {
+      "token": "3e6bb9ceedb6479f84864627c1e7cd40",
+      "page": "solar-housing"
+    },
     "LS-20261022-1003": {
       "token": "b6ce346a60f247018daf1525a785e8ad",
       "page": "solar-housing"
@@ -273,12 +281,20 @@
       "token": "c3fedac9a7d94a80956def77722718fc",
       "page": "personal-gym"
     },
+    "LS-20261022-1010": {
+      "token": "246adfeb83a6428ab0859d5db5baa509",
+      "page": "online-school"
+    },
     "LS-20261022-1011": {
       "token": "56903cfb7bca4d218e9fd45421b63d8b",
       "page": "online-school"
     },
     "LS-20261022-1012": {
       "token": "32d2093b5f4c43ca83275a058d7b87d9",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1013": {
+      "token": "eb2939b0118246ffb394c0cfe91a93de",
       "page": "solar-housing"
     },
     "LS-20261022-1014": {
@@ -339,6 +355,10 @@
     },
     "LS-20261022-1033": {
       "token": "ca75c9f7f79849a8be4f28d00384faec",
+      "page": "solar-housing"
+    },
+    "LS-20261022-1034": {
+      "token": "17dde1d0ceaf4656bd44559f82e668f9",
       "page": "solar-housing"
     },
     "LS-20261022-1035": {
@@ -2373,6 +2393,10 @@
       "token": "d60184484da34f3db9c64d1ad168d407",
       "page": "personal-gym"
     },
+    "LS-20261022-707": {
+      "token": "f80c7e6091284cbcbd80e2cd48e6e89a",
+      "page": "solar-housing"
+    },
     "LS-20261022-708": {
       "token": "84087020186a4d1b9234c718ac9fb92d",
       "page": "solar-housing"
@@ -2387,6 +2411,10 @@
     },
     "LS-20261022-712": {
       "token": "22c7427f8313487cb043bc6e0a7f300b",
+      "page": "solar-housing"
+    },
+    "LS-20261022-713": {
+      "token": "9f57e60f4de54b2081821011d17b9c11",
       "page": "solar-housing"
     },
     "LS-20261022-714": {
@@ -2407,6 +2435,10 @@
     },
     "LS-20261022-720": {
       "token": "15f1d4b8c4474308a0fad9354ed52c74",
+      "page": "solar-housing"
+    },
+    "LS-20261022-721": {
+      "token": "fae97ff43be04642a64474748a927464",
       "page": "solar-housing"
     },
     "LS-20261022-722": {
@@ -2461,6 +2493,10 @@
       "token": "f9c658c8d7af48638ec1c4d329c174c8",
       "page": "personal-gym"
     },
+    "LS-20261022-741": {
+      "token": "ea85f68d6b3c424f9423145e5e78fdd0",
+      "page": "beauty-clinic"
+    },
     "LS-20261022-742": {
       "token": "4800d8356bc04fc8970598dfe0cbd38a",
       "page": "beauty-clinic"
@@ -2495,6 +2531,10 @@
     },
     "LS-20261022-752": {
       "token": "e76099b5a8184c7c830cda75583297cf",
+      "page": "solar-housing"
+    },
+    "LS-20261022-753": {
+      "token": "edbf8e8a08ab4b409d8a96940fd5d244",
       "page": "solar-housing"
     },
     "LS-20261022-754": {
@@ -2573,6 +2613,10 @@
       "token": "1f4968bfe26c423a85182fdba1de00fe",
       "page": "beauty-clinic"
     },
+    "LS-20261022-782": {
+      "token": "8313fc4d61a34b6b82f07001c7c72580",
+      "page": "beauty-clinic"
+    },
     "LS-20261022-784": {
       "token": "67265e5292804ad8aba6109352a716d2",
       "page": "solar-housing"
@@ -2611,6 +2655,10 @@
     },
     "LS-20261022-796": {
       "token": "cdb02bfe126247e6a7dc6ad128d3f341",
+      "page": "solar-housing"
+    },
+    "LS-20261022-797": {
+      "token": "224326a6c811454bbbc2392a20bcccde",
       "page": "solar-housing"
     },
     "LS-20261022-798": {
