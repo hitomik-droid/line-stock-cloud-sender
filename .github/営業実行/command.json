@@ -1,10 +1,10 @@
 {
-  "command_id": "google5-send-dry-20261026",
+  "command_id": "google5-send-20261026",
   "workflow": "send.yml",
   "ref": "google-leads-20261026",
   "inputs": {
     "ids_file": "送付便/20261026_GoogleMeta_追加5社.txt",
-    "mode": "dry",
+    "mode": "send",
     "execution": "single"
   }
 }
