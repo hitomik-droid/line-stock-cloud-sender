@@ -29,6 +29,10 @@ on:
         required: false
         default: ''
   # 10/24 「全部.yml」から呼べるようにした。ids に会社IDを直接渡す（ids_file は使わない）
+      ledger:
+        description: 試し用。sb にすると、D1が読めても代わりの置き場（Supabase）で読み書きする（dry で確かめる時だけ）
+        required: false
+        default: ''
   workflow_call:
     secrets:
       CLOUDFLARE_API_TOKEN:
