@@ -84,6 +84,9 @@ jobs:
           PART: ${{ matrix.part }}
           LS_SENDER: ${{ inputs.sender }}
           RETRY_LIST: ${{ inputs.retry_list }}
+          # 10/27 D1が読めない時の代わりの置き場（台帳の代わり.mjs）
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           set -euo pipefail
           mkdir -p 記録

@@ -5,7 +5,7 @@
 // --retry-list=ファイル は、ファイル（会社IDのJSON配列）にある送付失敗の会社だけを送り直す。送れたか不明の会社は一覧に入れない。
 // 既定は dry（入力だけ）。実際に送るのは --mode=send を付けた時だけ。
 import fs from 'node:fs';
-import { API, getJSON, sendOne, launchBrowser, recaptchaRetryable, inSendHours } from './送信.mjs';
+import { API, getJSON, confirmList, sendOne, launchBrowser, recaptchaRetryable, inSendHours } from './送信.mjs';
 
 const arg = (k, def) => (process.argv.find((a) => a.startsWith(`--${k}=`)) || `--${k}=${def}`).split('=').slice(1).join('=');
 const mode = arg('mode', 'dry');
@@ -19,7 +19,8 @@ const retryIds = retryList ? new Set(JSON.parse(fs.readFileSync(retryList, 'utf8
 const retry = process.argv.includes('--retry-recaptcha') || !!retryIds;
 if (!['dry', 'confirm', 'send'].includes(mode)) { console.error('--mode は dry / confirm / send'); process.exit(2); }
 
-const data = await getJSON(API);
+// 10/27 送り直し以外は、確認中の会社だけの軽い一覧で選ぶ（D1の読み取りを減らす。D1が読めない時は代わりの置き場）
+const data = retry ? await getJSON(API) : await confirmList();
 let targets = retryIds ? data.companies.filter((c) => c.status === '送付失敗' && retryIds.has(c.id) && !(c.history || []).some((x) => /再試行/.test(x.note || ''))) : retry ? data.companies.filter(recaptchaRetryable) : data.companies.filter((c) => c.status === '確認中');
 if (industry) targets = targets.filter((c) => c.industry === industry);
 if (ids.length) targets = targets.filter((c) => ids.includes(c.id));

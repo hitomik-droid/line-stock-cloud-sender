@@ -12,6 +12,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { planForm, readPage } from './入力の判定.js';
 import { prepareCompanyTracking } from './追跡/会社別URL.mjs';
+import * as SB from './台帳の代わり.mjs';
 
 // LS_API は手元の試験用（偽のダッシュボードに向ける）。ふだんは付けない
 export const API = process.env.LS_API || 'https://line-stock-product-plan.hitomi-k.workers.dev/api/sales';
@@ -39,7 +40,35 @@ export async function getJSON(url) {
   if (!r.ok) throw new Error(`${url} → ${r.status}`);
   return r.json();
 }
+// 10/27 D1（Cloudflare）が無料枠の上限で読めない時は、代わりの置き場（Supabase、台帳の代わり.mjs）で読み書きする。
+// どちらを使うかは1回の起動の最初に1度だけ決める（途中で混ぜない）。D1で送る時も、代わりの置き場に書き戻し待ちがある会社は送らない。
+let useSB = null;
+const seen = new Map(); // 会社ごとに最後に読んだ状態（代わりの置き場で「この状態の時だけ変える」に使う）
+async function ledgerIsSB() {
+  if (useSB !== null) return useSB;
+  if (!SB.enabled()) return (useSB = false);
+  try { const r = await fetch(`${API}?lite=1`, { headers: { 'User-Agent': UA } }); useSB = r.status >= 500; } catch { useSB = true; }
+  if (useSB) console.error('D1が読めないので、代わりの置き場（Supabase）で送る');
+  return useSB;
+}
+// 10/27 一括送信の対象選び：確認中の会社だけの軽い一覧（D1の読み取りを減らす）。D1が読めない時は代わりの置き場から
+export async function confirmList() {
+  if (await ledgerIsSB()) return { companies: await SB.confirmCompanies() };
+  return getJSON(`${API}?lite=1`);
+}
+export async function sendData(id) {
+  if (await ledgerIsSB()) { const d = await SB.sendData(id); seen.set(id, d.status); return d; }
+  const d = await getJSON(`${API}/${id}/send-data`);
+  if (SB.enabled() && await SB.hasUnsynced(id)) d.status = '代わりの置き場で変更済み（D1への書き戻し待ち）';
+  seen.set(id, d.status);
+  return d;
+}
 export async function setStatus(id, status, note) {
+  if (await ledgerIsSB()) {
+    await SB.setStatus(id, seen.get(id) ?? '確認中', status, note.slice(0, 500), process.env.LS_SENDER || 'Actions（担当の指定なし）');
+    seen.set(id, status);
+    return;
+  }
   const r = await fetchRetry(`${API}/${id}/status`, {
     method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/json' },
     // 10/26 担当の記録：LS_SENDER（Claude／Codex／朝の自動送付 など）を状態の履歴の source に残す
@@ -60,6 +89,7 @@ export function recaptchaRetryable(c) {
   return !!last && last.to_status === '送付失敗' && /^送信時にエラー表示/.test(last.note || '') && /reCAPTCHA[^。]*(失敗|failed)/i.test(last.note || '');
 }
 async function companyFromList(id) {
+  if (await ledgerIsSB()) return SB.company(id);
   const all = await getJSON(API);
   return all.companies.find((c) => c.id === id);
 }
@@ -171,7 +201,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
   const canRetry = (c) => retryIds ? !!c && c.status === '送付失敗' && retryIds.has(c.id) && !(c.history || []).some((x) => /再試行/.test(x.note || '')) : recaptchaRetryable(c);
   const log = []; const say = (...a) => { log.push(a.join(' ')); };
   fs.mkdirSync(REC, { recursive: true });
-  const d = await getJSON(`${API}/${id}/send-data`);
+  const d = await sendData(id);
   const out = { id, name: d.name, mode, form_url: d.form_url, status: null, note: '', log };
   const wantStatus = retry ? '送付失敗' : '確認中';
   if (d.status !== wantStatus) { out.result = 'skip'; out.note = `ステータスが「${d.status}」なので触らない`; return out; }
@@ -265,7 +295,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
     if (!submitBtn) return decide('送付失敗', `送信ボタンが見つからない ${d.form_url}`, 'stop');
 
     // 送信の直前に、ほかの送り手が先に送っていないかを確かめる
-    const now = retry ? await companyFromList(id) : await getJSON(`${API}/${id}/send-data`);
+    const now = retry ? await companyFromList(id) : await sendData(id);
     if (!now || now.status !== wantStatus || (retry && !canRetry(now))) { out.result = 'skip'; out.note = `送信直前にステータスが「${now && now.status}」に変わっていたので送らない`; return; }
     const pre = await readAll(page);
     const url0 = page.url();
@@ -319,7 +349,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
       if (left) {
         await shot('2_確認画面');
         if (fin.refuse.length) return decide('除外', `確認画面に営業お断りの表記：「${fin.refuse[0].trim()}」`, 'stop');
-        const again = retry ? await companyFromList(id) : await getJSON(`${API}/${id}/send-data`);
+        const again = retry ? await companyFromList(id) : await sendData(id);
         if (!again || again.status !== wantStatus) { out.result = 'skip'; out.note = `確認画面で送信直前にステータスが「${again && again.status}」に変わっていたので送らない`; return; }
         say('送信ボタンの後に確認画面が出たので、確認画面の送信ボタン「' + left.btn.text + '」を押す');
         base = fin; baseUrl = page.url();
