@@ -58,7 +58,9 @@ async function tab(k) {
       if (cur.n === n0) break;
     }
     const txt = await p.evaluate(() => document.body.innerText.slice(0, 3000)).catch(() => '');
-    if (/login/.test(p.url()) || /ロボット|captcha|アクセスが制限|利用を制限|しばらくしてから|アカウントが停止/i.test(txt)) stop = stop || `画面の表示（${w}・${iv}日・タブ${k + 1}）`;
+    const hit = txt.match(/.{0,40}(ロボット|captcha|アクセスが制限|利用を制限|しばらくしてから|アカウントが停止).{0,40}/is);
+    // 10/27 何の文で止まったかを残す（広告の文に同じ語が入っているだけかを見分けるため。止める決まりは変えない）
+    if (/login/.test(p.url()) || hit) stop = stop || `画面の表示（${w}・${iv}日・タブ${k + 1}）：${/login/.test(p.url()) ? p.url() : hit[0].replace(/\s+/g, ' ')}`;
     empty = cur.n ? 0 : empty + 1;
     if (empty >= 4) stop = stop || `検索結果が4回続けて返らない（最後：${w}・${iv}日）`;
     summary.push({ tab: k + 1, w, iv, so, items: cur.n, pages, at: new Date().toISOString() });
