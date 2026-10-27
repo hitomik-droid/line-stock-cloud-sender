@@ -47,6 +47,7 @@ const seen = new Map(); // 会社ごとに最後に読んだ状態（代わり�
 async function ledgerIsSB() {
   if (useSB !== null) return useSB;
   if (!SB.enabled()) return (useSB = false);
+  if (process.env.LS_FORCE_SB === '1') { console.error('試し：代わりの置き場（Supabase）で読み書きする'); return (useSB = true); }
   try { const r = await fetch(`${API}?lite=1`, { headers: { 'User-Agent': UA } }); useSB = r.status >= 500; } catch { useSB = true; }
   if (useSB) console.error('D1が読めないので、代わりの置き場（Supabase）で送る');
   return useSB;

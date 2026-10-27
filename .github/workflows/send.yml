@@ -52,6 +52,11 @@ on:
         required: false
         type: string
         default: ''
+      ledger:
+        description: 試し用。sb にすると、D1が読めても代わりの置き場（Supabase）で読み書きする（dry で確かめる時だけ）
+        required: false
+        type: string
+        default: ''
 jobs:
   send:
     runs-on: ubuntu-latest
@@ -83,6 +88,7 @@ jobs:
           EXECUTION: ${{ inputs.execution }}
           PART: ${{ matrix.part }}
           LS_SENDER: ${{ inputs.sender }}
+          LS_FORCE_SB: ${{ inputs.ledger == 'sb' && '1' || '' }}
           RETRY_LIST: ${{ inputs.retry_list }}
           # 10/27 D1が読めない時の代わりの置き場（台帳の代わり.mjs）
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
