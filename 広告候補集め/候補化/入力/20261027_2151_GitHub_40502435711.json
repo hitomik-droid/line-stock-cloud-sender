@@ -1,0 +1,35 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "CF-LAB株式会社",
+"landing": "https://yoggy-institute.com/yoga/workshop-yoga/board_pilates_basic",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzQ4OTYsIDI2NzY4ODI1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De-wmvIgQep/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "結婚相談所",
+"name": "新潟婚活仲人×FP 紬｜結婚後のお金と暮らしに強いサポート",
+"landing": "https://www.instagram.com/shiawasenohana_tsumugi/",
+"ads": 39,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BB%25B2%25E4%25BA%25BA",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De58gzxMxvT/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "energySolutions | 求人サイト",
+"landing": "https://www.energy-sol.jp/renewable-energy",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A4%25AA%25E9%2599%25BD%25E5%2585%2589%25E7%2599%25BA%25E9%259B%25BB&next=os%3AWzQwMDAsIDI3MTMyOTM1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De8jS3HsxBx/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
