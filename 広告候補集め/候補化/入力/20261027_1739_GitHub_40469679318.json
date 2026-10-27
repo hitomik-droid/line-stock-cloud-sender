@@ -1,0 +1,35 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "山田建設  ✳︎横浜市戸塚区の工務店✳︎高性能×デザイン✳︎",
+"landing": "https://docs.google.com/forms/d/e/1FAIpQLScJAzDVIC6KA2q7ysrUicSsmZB5gPhyRiZKb8kkgwoGs0lZig/viewform",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B9%25B3%25E5%25B1%258B&next=os%3AWzAsIDI3MTc4MTgxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dex0ZIJATDp/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "Smiles: | スマイルズ",
+"landing": "https://smiles.co.jp/library/2937/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzMyNjI5LCAyNzA3Nzc3Ml0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De8ub90guMX/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "ブランダジン",
+"landing": "https://creator.brandazine.com/jp/meta",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2581%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzIwMDQsIDI0ODg5MzQ3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De-yGYQsTUN/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
