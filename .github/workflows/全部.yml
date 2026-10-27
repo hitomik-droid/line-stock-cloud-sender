@@ -82,11 +82,27 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RUN: ${{ inputs.from_run }}
         run: |
-          T=$(mktemp -d)
-          gh run download "$RUN" -R "$GITHUB_REPOSITORY" -n 全部の記録 -D "$T"
-          [ -f "$T/cands.json" ] && [ -f "$T/results.jsonl" ] || { echo "dry $RUN に cands.json・results.jsonl が無い"; exit 1; }
-          mkdir -p "$W"; cp "$T/cands.json" "$T/results.jsonl" "$W/"
-          echo "dry $RUN の検品結果を使う：$(wc -l < "$W/results.jsonl") 件。検品しない（判定・番号はD1を読み直して決める）"
+          # 10/27 カンマ区切りで複数の dry をまとめて1回で登録できる。key は「dry番号-C001」にして重ならないようにする
+          mkdir -p "$W"; : > "$W/まとめたdry.txt"; : > "$W/取れなかったdry.txt"
+          for D in $(echo "$RUN" | tr ',' ' '); do
+            T=$(mktemp -d)
+            gh run download "$D" -R "$GITHUB_REPOSITORY" -n 全部の記録 -D "$T" >/dev/null 2>&1
+            if [ -f "$T/cands.json" ] && [ -f "$T/results.jsonl" ]; then mv "$T" "$W/dry_$D"; echo "$D" >> "$W/まとめたdry.txt"; else echo "$D" >> "$W/取れなかったdry.txt"; echo "dry $D に cands.json・results.jsonl が無い"; fi
+          done
+          [ -s "$W/まとめたdry.txt" ] || { echo "使える dry が無い"; exit 1; }
+          python3 - "$W" <<'PY'
+          import json, sys
+          from pathlib import Path
+          w = Path(sys.argv[1]); cands, res = [], []
+          for d in (w / 'まとめたdry.txt').read_text().split():
+              s = w / f'dry_{d}'
+              cands += [{**c, 'key': f"{d}-{c['key']}"} for c in json.loads((s / 'cands.json').read_text())]
+              res += [{**r, 'key': f"{d}-{r['key']}"} for r in map(json.loads, filter(str.strip, (s / 'results.jsonl').read_text().splitlines()))]
+          (w / 'cands.json').write_text(json.dumps(cands, ensure_ascii=False))
+          (w / 'results.jsonl').write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in res))
+          PY
+          mv "$W"/dry_* "$RUNNER_TEMP"/
+          echo "dry $(tr '\n' ' ' < "$W/まとめたdry.txt")の検品結果を使う：$(wc -l < "$W/results.jsonl") 件。検品しない（判定・番号はD1を読み直して決める。同じ会社は1回だけ）"
       - name: 候補を集める（meta）
         if: inputs.source == 'meta' && inputs.from_run == ''
         env:

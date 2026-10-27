@@ -137,6 +137,7 @@ def cmd_plan(W):
         c = {**c, 'name': clean_name(c['name'])}
         if c['industry'] not in V8: ng['業種が対象外'] += 1; continue
         if base(host(c['official_url'])) in dom or norm(c['name']) in nm: dup.append(c['name']); continue
+        dom.add(base(host(c['official_url']))); nm.add(norm(c['name']))  # 10/27 複数の dry をまとめて登録する時、同じ会社を2回入れない
         ex = r['ex']; top = r.get('top') or {}
         tl = top.get('line') or []; fl = ex.get('line') or []; has = bool(tl or fl)
         jr = f"公式サイトのトップに {tl[0][:60]} へのリンクあり。" if tl else (f"問い合わせページに {fl[0][:60]} へのリンクあり。" if fl else "公式サイトのトップと問い合わせページに lin.ee / line.me へのリンクや「LINEで相談」の表記なし。")
