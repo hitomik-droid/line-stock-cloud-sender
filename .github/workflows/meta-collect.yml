@@ -26,6 +26,10 @@ on:
         description: Googleの1語あたり開く広告主の数（1社に約50秒）
         required: false
         default: '5'
+      from_run:
+        description: 集めずに、この回（同じワークフロー）の集めた結果を在庫づくりへ渡し直す時の実行番号
+        required: false
+        default: ''
 permissions:
   contents: write
   actions: write
@@ -40,7 +44,7 @@ jobs:
     steps:
       - name: この回で集めるか
         id: on
-        run: echo ",${{ inputs.sources }}," | grep -q ",${{ matrix.src }}," && echo go=1 >> "$GITHUB_OUTPUT" || echo "${{ matrix.src }} は集めない"
+        run: '[ -z "${{ inputs.from_run }}" ] && echo ",${{ inputs.sources }}," | grep -q ",${{ matrix.src }}," && echo go=1 >> "$GITHUB_OUTPUT" || echo "${{ matrix.src }} は集めない"'
       - uses: actions/checkout@v4
         if: steps.on.outputs.go == '1'
       - uses: actions/setup-node@v4
@@ -86,6 +90,8 @@ jobs:
         with:
           pattern: 集め_*
           path: 記録/集め
+          run-id: ${{ inputs.from_run || github.run_id }}
+          github-token: ${{ github.token }}
       - name: まだ調べていない広告主を候補の元にして、在庫づくりへ渡す
         run: |
           NAME="広告候補集め/候補化/入力/$(TZ=Asia/Tokyo date +%Y%m%d_%H%M)_広告ライブラリ_$GITHUB_RUN_ID.json"
@@ -94,7 +100,7 @@ jobs:
           N=$(python3 -c "import json;print(len(json.load(open('$NAME'))))")
           { echo "### 広告ライブラリ集め"; cat 取り込み.txt; } >> "$GITHUB_STEP_SUMMARY"
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add 登録/調べた広告主_広告ライブラリ.txt 登録/調べた遷移先ドメイン_広告ライブラリ.txt
+          git add 登録/広告ライブラリ_調べた/
           if [ "$N" != 0 ]; then git add "$NAME"; else rm -f "$NAME"; fi
           git commit -q -m "広告ライブラリ集め：Meta・Google $GITHUB_RUN_ID の新しい広告主 $N 社" || true
           for i in $(seq 1 12); do git rebase --abort 2>/dev/null || true; git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done

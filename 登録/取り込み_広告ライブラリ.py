@@ -3,8 +3,8 @@
 # 判定は 登録/取り込み.py（動画広告Pro）と同じ：調べた広告主・既存社名・調べ済みのドメインと重なる会社を外す。D1との重複は登録の直前に 流れ.py が外す。
 # 対象は承認済みの本文がある業種だけ（不動産は動画広告Pro経由だけなので外す）。
 # 使い方：python3 登録/取り込み_広告ライブラリ.py <出力の候補の元.json> <meta_候補.json か google_候補.json> ...
-#   今回の広告主は 調べた広告主_広告ライブラリ.txt・調べた遷移先ドメイン_広告ライブラリ.txt に足す（動画広告Proの一覧とは分け、同時の push でぶつからないようにする）
-import json, os, re, sys
+#   今回の広告主は 登録/広告ライブラリ_調べた/<RUN_ID>.txt に1回ごとの別ファイルで書く（10/27 同時に回すと1つのファイルへの追記が push でぶつかったため）
+import glob, json, os, re, sys
 from urllib.parse import urlsplit
 HERE = os.path.dirname(os.path.abspath(__file__))
 TARGET = {'パーソナルジム', '住宅・リフォーム', '太陽光', '美容クリニック', 'オンラインスクール', '自動車学校', '結婚相談所', '自由診療歯科'}
@@ -17,9 +17,11 @@ def lines(f):
     return [l.strip() for l in open(p, encoding='utf-8') if l.strip() and not l.startswith('#')] if os.path.exists(p) else []
 
 out_p, srcs = sys.argv[1], sys.argv[2:]
-names = set(lines('調べた広告主.txt')) | set(lines('調べた広告主_広告ライブラリ.txt'))
+SEEN = os.path.join(HERE, '広告ライブラリ_調べた')
+seen = [l.split('\t') for f in glob.glob(SEEN + '/*.txt') for l in open(f, encoding='utf-8').read().splitlines() if '\t' in l]
+names = set(lines('調べた広告主.txt')) | set(lines('調べた広告主_広告ライブラリ.txt')) | {x[1] for x in seen if x[0] == 'name'}
 for f in ('既存社名.txt', '調べ済み社名.txt'): names |= {n(x) for x in lines(f)}
-doms = set(lines('調べた遷移先ドメイン.txt')) | set(lines('調べた遷移先ドメイン_広告ライブラリ.txt'))
+doms = set(lines('調べた遷移先ドメイン.txt')) | set(lines('調べた遷移先ドメイン_広告ライブラリ.txt')) | {x[1] for x in seen if x[0] == 'domain'}
 for f in ('検品済みドメイン.txt', '調べ済みドメイン.txt'): doms |= {base(x) for x in lines(f)}
 doms.discard('')
 out, new_names, new_doms, why = [], [], [], {}
@@ -38,8 +40,9 @@ for f in srcs:
                     'list_source': 'Google広告の透明性センター' if google else 'Meta広告ライブラリ',
                     'ad_media': (r.get('ad_media') or 'Google広告') if google else 'Facebook・Instagram（Meta）', 'ad_purpose': ''})
 json.dump(out, open(out_p, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
-with open(os.path.join(HERE, '調べた広告主_広告ライブラリ.txt'), 'a', encoding='utf-8') as f: f.write(''.join(x + '\n' for x in new_names))
-with open(os.path.join(HERE, '調べた遷移先ドメイン_広告ライブラリ.txt'), 'a', encoding='utf-8') as f: f.write(''.join(x + '\n' for x in new_doms))
+os.makedirs(SEEN, exist_ok=True)
+with open(os.path.join(SEEN, (os.environ.get('GITHUB_RUN_ID') or 'local') + '.txt'), 'w', encoding='utf-8') as f:
+    f.write(''.join(f'name\t{x}\n' for x in new_names) + ''.join(f'domain\t{x}\n' for x in new_doms))
 by = {}
 for r in out: by[r['list_source'][:4] + '・' + r['industry']] = by.get(r['list_source'][:4] + '・' + r['industry'], 0) + 1
 print(f'新しい広告主{len(out)}', json.dumps(by, ensure_ascii=False), '外した', json.dumps(why, ensure_ascii=False))
