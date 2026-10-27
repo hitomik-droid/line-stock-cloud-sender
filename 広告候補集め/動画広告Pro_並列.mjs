@@ -35,7 +35,7 @@ async function tab(k) {
     if (!cur || !r.url().startsWith('https://api.kashika-20mile.com/api/v1/items')) return;
     let j = null; try { j = await r.json(); } catch { return; }
     const items = (j?.items || []).map((i) => Object.fromEntries(KEEP.map((f) => [f, i[f]])));
-    cur.n += items.length; got.push({ word: cur.w, interval: cur.iv, industry: cur.ind || undefined, url: r.url(), data: { items, total_count: j?.total_count } });
+    cur.n += items.length; cur.res = (cur.res || 0) + 1; got.push({ word: cur.w, interval: cur.iv, industry: cur.ind || undefined, url: r.url(), data: { items, total_count: j?.total_count } });
   });
   await sleep(k * 7000);
   for (let t = k; t < tasks.length && !stop; t += TABS) {
@@ -61,7 +61,8 @@ async function tab(k) {
     const hit = txt.match(/.{0,40}(ロボット|captcha|アクセスが制限|利用を制限|しばらくしてから|アカウントが停止).{0,40}/is);
     // 10/27 何の文で止まったかを残す（広告の文に同じ語が入っているだけかを見分けるため。止める決まりは変えない）
     if (/login/.test(p.url()) || hit) stop = stop || `画面の表示（${w}・${iv}日・タブ${k + 1}）：${/login/.test(p.url()) ? p.url() : hit[0].replace(/\s+/g, ' ')}`;
-    empty = cur.n ? 0 : empty + 1;
+    // 10/27夜 地域名つきの語は0件が普通にある。応答が返って0件なら「返らない」に数えない（応答そのものが無い時だけ数える。止める決まりは同じ）
+    empty = (cur.n || cur.res) ? 0 : empty + 1;
     if (empty >= 4) stop = stop || `検索結果が4回続けて返らない（最後：${w}・${iv}日）`;
     summary.push({ tab: k + 1, w, iv, so, items: cur.n, pages, at: new Date().toISOString() });
     console.log(`タブ${k + 1}`, w, `${iv}日`, '読めた広告', cur.n, 'ページ', pages);
