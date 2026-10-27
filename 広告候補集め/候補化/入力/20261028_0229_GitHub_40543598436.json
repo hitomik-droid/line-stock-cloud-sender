@@ -1,0 +1,79 @@
+[
+{
+"industry": "予約制の飲食店",
+"name": "牛繁新小岩南口店",
+"landing": "https://www.hotpepper.jp/strJ000154091/yoyaku/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25BC%25E8%2582%2589&next=os%3AWzEsIDQwMjE5ODVd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De-3YL-MHwP/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ペット関連",
+"name": "M&N’s CBD",
+"landing": "https://shop.wellpharma.co.jp/campaign/2610kayupita_campaign.html",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258B%2595%25E7%2589%25A9%25E7%2597%2585%25E9%2599%25A2&next=os%3AWzYzMzIsIDI0NzgxODcxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De840nGAkE9/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "株式会社京コーポレーション",
+"landing": "https://js-seitai.com/lpreserve/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzMxOTQ0LCAyNDczNjkzMV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Deq5rL5gKih/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "整体院アイン",
+"landing": "https://sapporo.ain-seitai.com/youtsu",
+"ads": 6,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzIwMTM2LCAyNjkyODY4MV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeREBb3sOy3/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "BASE株式会社",
+"landing": "https://www.kojp.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzEzMjQsIDI1MjUwMjkwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/shorts/F6PpBzyMeBk/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "税理士・士業",
+"name": "司法書士エフアンドパートナーズ",
+"landing": "https://fandp-simulator.com/lp12/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258F%25B8%25E6%25B3%2595%25E6%259B%25B8%25E5%25A3%25AB&next=os%3AWzEzMCwgMjQ3Nzc3MzVd",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7471444569675058450.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "🔵トゥルクリメンズ🔵メンズ美容室✂️売れっ子美容師育成サロン",
+"landing": "https://www.truecreation.jp/recruit/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%25AE%25A4&next=os%3AWzEsIDE2MzU3NDMyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De6ag_4sykY/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
