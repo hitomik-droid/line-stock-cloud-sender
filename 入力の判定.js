@@ -38,6 +38,13 @@ export function planForm(d) {
     if (a !== e) t += ' ' + (a.innerText || '').slice(0, 60);
     const prev = a.previousElementSibling;
     if (prev && !prev.querySelector('input,textarea,select')) t += ' ' + (prev.innerText || '').slice(0, 40);
+    // 10/27 欄の見出しが「漢字」だけの時など、何の欄か分かる語が無い時だけ、表の行見出し（th）・定義の見出し（dt）を足す。
+    // 「お名前」の行に「漢字」「かな」の欄が並ぶ時、漢字の欄が氏名と分からず空のままだった（TMS加盟の結婚相談所ほか）
+    if (!/名前|氏名|メール|mail|電話|tel|会社|法人|団体|部署|役職|住所|郵便|件名|フリガナ|ふりがな|カナ|かな|セイ|メイ|姓|名|内容|相談|都道府県|市区町村|番地/i.test(t)) {
+      const tr = e.closest('tr'), dd = e.closest('dd');
+      const head = tr ? tr.querySelector('th') : (dd && dd.previousElementSibling && dd.previousElementSibling.tagName === 'DT' ? dd.previousElementSibling : null);
+      if (head && !head.contains(e)) t += ' ' + (head.innerText || '').slice(0, 30);
+    }
     return (t + ' ' + (e.placeholder || '') + ' ' + (e.name || '')).replace(/\s+/g, ' ');
   };
   const optText = (e) => {
@@ -142,7 +149,7 @@ export function planForm(d) {
     const reqMark = isReq(e) || /必須|[*＊※]/.test(L);
     if (v === null && ['text', 'search', ''].includes(t) && (reqMark || (ADDR.test(L) && !/任意/.test(L)))) {
       if (ADDR.test(L) && !NOT_ADDR.test(L)) v = ADDR_TXT;
-      else if (WISH.test(L) && !NOT_ADDR.test(L) && !/電話|tel|名前|氏名|会社/i.test(L)) v = MITEI;
+      else if (WISH.test(L) && !NOT_ADDR.test(L) && !/電話|tel|名前|氏名|会社/i.test(L) && !/日付|年月日|date|calendar|picker/i.test(ph + ' ' + e.className + ' ' + t)) v = MITEI; // 10/27 日付の欄（カレンダーで選ぶ欄）には入れない
     }
     if (v !== null) plan.push({ sel: mark(e), act: 'fill', value: v, what: L.slice(0, 20), el: e });
     else if (isReq(e)) unknown.push('input ' + L.slice(0, 40));
@@ -172,6 +179,8 @@ export function planForm(d) {
     // 10/26 必須の印が無くても、何も選ばれていない選択肢の並びで「業務提携」「その他」など事実どおりの選択肢があれば選ぶ（必須の印を出さずに送信時に弾くフォームがあるため）
     else if (i >= 0 && !rs.some((r) => r.checked) && /業務提携|ビジネス|お取引|取引の|事業提案|営業提案|営業窓口|その他/.test(optText(rs[i]))) plan.push({ sel: mark(rs[i]), act: 'check', what: '選択 ' + optText(rs[i]).slice(0, 20) });
     else if (req && !rs.some((r) => r.checked) && WISH.test(L) && rs.findIndex((r) => UNDECIDED.test(optText(r))) >= 0) { const r0 = rs[rs.findIndex((r) => UNDECIDED.test(optText(r)))]; plan.push({ sel: mark(r0), act: 'check', what: '選択 ' + optText(r0).slice(0, 20) }); }
+    // 10/27 「個人／法人」の選択は法人を選ぶ（ADNEXTとして送るので事実どおり）
+    else if (!rs.some((r) => r.checked) && rs.some((r) => /^\s*個人/.test(optText(r).replace(/^\S*\s/, ''))) && rs.findIndex((r) => /法人/.test(optText(r))) >= 0) { const r0 = rs[rs.findIndex((r) => /法人/.test(optText(r)))]; plan.push({ sel: mark(r0), act: 'check', what: '選択 ' + optText(r0).slice(0, 20) }); }
     else if (req && !rs.some((r) => r.checked)) unknown.push(k + ' ' + L.slice(0, 40));
   }
 
