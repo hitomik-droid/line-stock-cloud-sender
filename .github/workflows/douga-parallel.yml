@@ -124,6 +124,13 @@ jobs:
           name: 動画広告Pro_並列
           path: 記録/動画広告Pro_並列/
           retention-days: 14
+      # 10/27 この回が chain（GITHUB_TOKEN）で起動された時は、GitHubの決まりで 在庫づくり.yml の workflow_run が起きない（4時台から止まっていた原因）。
+      # その時だけ、ここで run_id を付けて起動する。人が起動した回は workflow_run で動くので起動しない（二重にしない）
+      - name: 在庫づくりへ渡す（chain で起動された回だけ）
+        if: always() && inputs.only_1password != 'true' && github.triggering_actor == 'github-actions[bot]' && steps.read.outcome != 'skipped'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run 在庫づくり.yml -R $GITHUB_REPOSITORY -f run_id=$GITHUB_RUN_ID && echo "在庫づくり $GITHUB_RUN_ID を起動した"
       - name: 次の回を起動する（止まった時は、2本とも止めて30分後に1本・タブ2枚で再開）
         if: always() && inputs.chain == 'true' && inputs.only_1password != 'true'
         env:

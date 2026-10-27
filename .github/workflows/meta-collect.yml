@@ -1,46 +1,101 @@
-# Metaの広告ライブラリ（ログイン不要）を検索語ごとに読み、公式サイトと問い合わせフォームを確かめて候補TSVにする。画面なし。2026-10-22 勝良さん指示「全部クラウドでやる」。
-# 読むだけ。フォームには入力・送信しない。ログイン要求・ロボット確認・利用制限が出たら止めて 止まった記録.tsv に書く。
+# Metaの広告ライブラリとGoogleの広告の透明性センター（どちらもログイン不要）を業種の語ごとに読み、広告主を 在庫づくり.yml に渡す。画面なし。
+# 2026-10-22 勝良さん指示「全部クラウドでやる」。10/27 勝良さん「入れる」：Meta・Googleの広告主も送り先に入れる → 動画広告Proと同じく在庫づくりへ流す形にした。
+# 1. 集める（Meta・Googleを同時に）：広告候補集め/meta/meta.mjs・google.mjs。業種と語は 広告候補集め/meta/共通.mjs（承認済みの本文がある業種。不動産は動画広告Pro経由だけなので入れない）
+# 2. まだ調べていない広告主だけを候補の元にして push（登録/取り込み_広告ライブラリ.py。list_source は「Meta広告ライブラリ」「Google広告の透明性センター」）
+# 3. 在庫づくり.yml を cand_file 付きで起動（公式サイト探し・点検・登録・追跡リンクは動画広告Proと同じ流れ）
+# 読むだけ。広告・リンクはクリックしない。フォームには入力・送信しない。ログイン要求・ロボット確認・利用制限が出たら止めて 止まった記録.tsv に書く（かわさない）。
 # 除外は 広告候補集め/meta/除外.json（Macの 作業/営業リスト20261022_広告経路/除外リスト作成.py で作り直してpushする）。
 name: Metaの広告主から候補を集める
+run-name: 広告ライブラリ集め ${{ inputs.sources }}
 on:
   workflow_dispatch:
     inputs:
-      q:
-        description: '検索語（業種:語|語;業種:語 の形。業種は パーソナルジム・美容クリニック・オンラインスクール・住宅・リフォーム・太陽光・自動車学校）'
-        required: true
-      scroll:
-        description: 1語あたり下へ送る回数
+      sources:
+        description: 集める先（meta・google をカンマ区切り）
         required: false
-        default: '6'
+        default: 'meta,google'
+      q:
+        description: Metaの検索語を直接渡す時（業種:語|語;業種:語 の形）。空なら 共通.mjs の業種と語を全部
+        required: false
+        default: ''
+      scroll:
+        description: Metaの1語あたり下へ送る回数
+        required: false
+        default: '10'
+      per:
+        description: Googleの1語あたり開く広告主の数（1社に約50秒）
+        required: false
+        default: '5'
+permissions:
+  contents: write
+  actions: write
 jobs:
   collect:
+    strategy:
+      fail-fast: false
+      matrix:
+        src: [meta, google]
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 150
     steps:
+      - name: この回で集めるか
+        id: on
+        run: echo ",${{ inputs.sources }}," | grep -q ",${{ matrix.src }}," && echo go=1 >> "$GITHUB_OUTPUT" || echo "${{ matrix.src }} は集めない"
       - uses: actions/checkout@v4
+        if: steps.on.outputs.go == '1'
       - uses: actions/setup-node@v4
+        if: steps.on.outputs.go == '1'
         with:
           node-version: 22
           check-latest: true
-      - run: npm ci
-      - run: npx playwright install --with-deps chromium
-      - name: 広告主を集める
+      - run: npm ci && npx playwright install --with-deps chromium
+        if: steps.on.outputs.go == '1'
+      - name: 広告主を集める（Meta）
+        if: steps.on.outputs.go == '1' && matrix.src == 'meta'
+        timeout-minutes: 130
         env:
           Q: ${{ inputs.q }}
           SCROLL: ${{ inputs.scroll }}
-        run: node 広告候補集め/meta/meta.mjs --scroll="$SCROLL" "--q=$Q" --out=記録/Meta集め/出力/meta_候補.json
-      - name: 公式サイトと問い合わせフォームを確かめる（4組に分けて同時に）
         run: |
-          for i in 0 1 2 3; do
-            node 広告候補集め/meta/公式サイト確定.mjs --skiplogged --per=999 --in=記録/Meta集め/出力/meta_候補.json --shard=$i/4 --out=記録/Meta集め/出力/広告候補_$i.tsv > 記録/Meta集め/出力/確定ログ_$i.txt 2>&1 &
-          done
-          wait
-          head -1 記録/Meta集め/出力/広告候補_0.tsv > 記録/Meta集め/出力/広告候補.tsv
-          for i in 0 1 2 3; do tail -n +2 記録/Meta集め/出力/広告候補_$i.tsv >> 記録/Meta集め/出力/広告候補.tsv; done
-          wc -l 記録/Meta集め/出力/広告候補.tsv
+          if [ -n "$Q" ]; then node 広告候補集め/meta/meta.mjs --scroll="$SCROLL" "--q=$Q" --out=記録/Meta集め/出力/meta_候補.json
+          else node 広告候補集め/meta/meta.mjs --scroll="$SCROLL" --out=記録/Meta集め/出力/meta_候補.json; fi
+      - name: 広告主を集める（Google）
+        if: steps.on.outputs.go == '1' && matrix.src == 'google'
+        timeout-minutes: 130
+        env:
+          PER: ${{ inputs.per }}
+        run: node 広告候補集め/meta/google.mjs --per="$PER" --out=記録/Meta集め/出力/google_候補.json
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && steps.on.outputs.go == '1'
         with:
-          name: Meta集め
-          path: 記録/Meta集め/
+          name: 集め_${{ matrix.src }}
+          path: 記録/Meta集め/出力/
           retention-days: 14
+  hand:
+    needs: collect
+    if: always()
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: 集め_*
+          path: 記録/集め
+      - name: まだ調べていない広告主を候補の元にして、在庫づくりへ渡す
+        run: |
+          NAME="広告候補集め/候補化/入力/$(TZ=Asia/Tokyo date +%Y%m%d_%H%M)_広告ライブラリ_$GITHUB_RUN_ID.json"
+          cat 記録/集め/*/止まった記録.tsv 2>/dev/null || true
+          python3 登録/取り込み_広告ライブラリ.py "$NAME" 記録/集め/集め_meta/meta_候補.json 記録/集め/集め_google/google_候補.json | tee 取り込み.txt
+          N=$(python3 -c "import json;print(len(json.load(open('$NAME'))))")
+          { echo "### 広告ライブラリ集め"; cat 取り込み.txt; } >> "$GITHUB_STEP_SUMMARY"
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 登録/調べた広告主_広告ライブラリ.txt 登録/調べた遷移先ドメイン_広告ライブラリ.txt
+          if [ "$N" != 0 ]; then git add "$NAME"; else rm -f "$NAME"; fi
+          git commit -q -m "広告ライブラリ集め：Meta・Google $GITHUB_RUN_ID の新しい広告主 $N 社" || true
+          for i in $(seq 1 12); do git rebase --abort 2>/dev/null || true; git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+          [ "$N" = 0 ] && { echo "新しい広告主が無いので在庫づくりは起動しない"; exit 0; }
+          git fetch -q origin main; git cat-file -e "origin/main:$NAME" || { echo "候補ファイルを push できなかった"; exit 1; }
+          gh workflow run 在庫づくり.yml -R "$GITHUB_REPOSITORY" -f run_id=0 -f cand_file="$NAME"
+          echo "在庫づくり（$NAME、$N 社）を起動した" | tee -a "$GITHUB_STEP_SUMMARY"
