@@ -39,9 +39,8 @@ jobs:
         run: |
           H=$(TZ=Asia/Tokyo date +%H)
           if [ "$H" -lt 8 ] || [ "$H" -ge 20 ]; then echo "ids=" >> "$GITHUB_OUTPUT"; echo "送付時間外（日本時間 $H 時）なので選ばない" >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
-          python3 登録/朝の送付対象.py 100000 > 記録_在庫.txt
-          echo "READY=$(tr ',' '\n' < 記録_在庫.txt | grep -c .)" >> "$GITHUB_ENV"
-          IDS=$(python3 登録/朝の送付対象.py "$LIMIT")
+          IDS=$(python3 登録/朝の送付対象.py "$LIMIT" 記録_在庫数.txt)
+          echo "READY=$(cat 記録_在庫数.txt)" >> "$GITHUB_ENV"
           echo "ids=$IDS" >> "$GITHUB_OUTPUT"
           echo "送る会社：$(echo "$IDS" | tr ',' '\n' | grep -c . ) 社" >> "$GITHUB_STEP_SUMMARY"
       - name: 在庫の数を D1 に残す

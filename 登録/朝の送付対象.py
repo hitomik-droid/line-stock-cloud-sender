@@ -2,7 +2,7 @@
 # GOを待たずに送ってよい範囲：承認済みの本文（v8・3業種v3）で、広告経路（動画広告Pro・Meta・Google）の「確認中」の会社だけ（10/27に Meta・Google を足した）。
 # 設計図リンクのある本文は、会社別追跡リンクが登録済みの会社だけ（未登録だと送信.mjsが止まるため）。
 import json, os, re, sys, urllib.request
-API = os.environ.get('LS_API_BASE', 'https://line-stock-product-plan.hitomi-k.workers.dev/api/sales')
+API = os.environ.get('LS_API_BASE', 'https://line-stock-product-plan.hitomi-k.workers.dev/api/sales') + '?lite=1'  # 10/27 夕：確認中の会社と本文だけの軽い一覧（D1の読み取りを減らす）
 APPROVED = {'MSG-ジム-v8', 'MSG-美容クリニック-v8', 'MSG-オンラインスクール-v8', 'MSG-太陽光住宅-v8', 'MSG-自動車学校-v8',
             'MSG-結婚相談所-v3', 'MSG-自由診療歯科-v3', 'MSG-不動産-v3', 'MSG-整体-v3', 'MSG-エステ-v3', 'MSG-学習塾-v3', 'MSG-士業-v3', 'MSG-飲食-v3', 'MSG-ペット-v3', 'MSG-美容室-v3', 'MSG-ホテル-v3'}
 # 10/27 9:4x 勝良さん「入れる」：Meta広告ライブラリ・Googleの広告主も送り先に入れる（業種の絞り・大手・FC・ロボット確認などの決まりはそのまま。不動産の例外は動画広告Pro経由だけのまま）
@@ -27,6 +27,7 @@ for c in sorted(d['companies'], key=lambda c: c['id']):
     if why: skip[why] = skip.get(why, 0) + 1; continue
     ids.append(c['id'])
 limit = int(sys.argv[1]) if len(sys.argv) > 1 else 1000
+if len(sys.argv) > 2: open(sys.argv[2], 'w').write(str(len(ids)))  # 10/27 夕：在庫の数を同じ読み取りで書き出す（2回読まない）
 ids = ids[:limit]
 print('送る', len(ids), '外した', skip, file=sys.stderr)
 print(','.join(ids))
