@@ -24,6 +24,10 @@ on:
         description: 送った担当（Claude／Codex など）。状態の履歴に残る
         required: false
         default: ''
+      retry_list:
+        description: 送り直す会社（送付失敗）のIDのJSON配列のファイル。指定した時だけ、一括送信.mjs の --retry-list で1社1回だけ送り直す（送れたか不明の会社は入れない）
+        required: false
+        default: ''
   # 10/24 「全部.yml」から呼べるようにした。ids に会社IDを直接渡す（ids_file は使わない）
   workflow_call:
     secrets:
@@ -79,6 +83,7 @@ jobs:
           EXECUTION: ${{ inputs.execution }}
           PART: ${{ matrix.part }}
           LS_SENDER: ${{ inputs.sender }}
+          RETRY_LIST: ${{ inputs.retry_list }}
         run: |
           set -euo pipefail
           mkdir -p 記録
@@ -103,7 +108,8 @@ jobs:
             console.log(`送付完了 ${count('送付完了')}／送付失敗 ${count('送付失敗')}／除外 ${count('除外')}／その他 ${rows.filter(r => !r.status).length}`);
           JS
           else
-            node 一括送信.mjs --mode="$MODE" --ids="$IDS" --part=${{ matrix.part }}/4 --limit=1000 2>&1 | tee "記録/actions_${{ matrix.part }}.log"
+            RL=""; if [ -n "${RETRY_LIST:-}" ]; then RL="--retry-list=$RETRY_LIST"; fi
+            node 一括送信.mjs --mode="$MODE" --ids="$IDS" --part=${{ matrix.part }}/4 --limit=1000 $RL 2>&1 | tee "記録/actions_${{ matrix.part }}.log"
           fi
       - uses: actions/upload-artifact@v4
         if: always()
