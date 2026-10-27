@@ -108,9 +108,14 @@ async function findSubmit(page) {
   for (const fr of page.frames()) {
     const b = await fr.evaluate(() => {
       const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+      // 10/27 MyASP の「登録する」と、リンクで作られた送信ボタン（A-Loop・toujours など）も拾う。リンクは「送信」「送る」「登録する」と書いた物だけ
+      const txt = (e) => ((e.value || '') + ' ' + (e.innerText || '') + ' ' + (e.alt || '')).trim();
+      const ng = /確認|修正|戻る|訂正/;
       const el = [...document.querySelectorAll('input[type=submit],input[type=button],input[type=image],button,[role=button]')]
         .filter((e) => vis(e) && e.type !== 'reset')
-        .find((e) => { const t = ((e.value || '') + ' ' + (e.innerText || '') + ' ' + (e.alt || '')).trim(); return /送信|送る|submit|send|申し?込|問い?合わ?せ|同意して/i.test(t) && !/確認|修正|戻る/.test(t); });
+        .find((e) => { const t = txt(e); return /送信|送る|submit|send|申し?込|問い?合わ?せ|同意して|登録する/i.test(t) && !ng.test(t); })
+        || [...document.querySelectorAll('a')].filter((e) => vis(e) && !/^https?:|^\/|^mailto:|^tel:/.test(e.getAttribute('href') || ''))
+          .find((e) => { const t = txt(e); return t.length <= 20 && /送信|送る|登録する/.test(t) && !ng.test(t); });
       if (!el) return null;
       el.dataset.lsFinal = '1';
       return { sel: '[data-ls-final="1"]', text: ((el.value || '') + ' ' + (el.innerText || '')).trim() };

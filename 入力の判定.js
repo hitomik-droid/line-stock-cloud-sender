@@ -213,7 +213,7 @@ export function readPage() {
   // 完了の文言がある行（送信前の画面にもある行は、送信.mjs 側で除く）
   const thanksLines = [...new Set(text.split('\n').map((l) => l.trim()).filter((l) => l && l.length <= 120 && THANKS.test(l)))].slice(0, 20);
   // 送信後の画面で、まだ確認画面にいる（送信ボタンをもう一度押す必要がある）ことを示す文言
-  const confirmPage = /以下の内容で|入力内容を(ご)?確認|内容をご確認|内容に間違いがなければ|よろしければ[^\n]{0,20}(送信|押して|クリック)|送信してよろしいですか|送信内容の確認|お問い合わせ（確認）|確認画面/.test(text);
+  const confirmPage = /以下の内容で|入力内容[をの]?(ご)?確認|内容をご確認|内容に間違いがなければ|よろしければ[^\n]{0,20}(送信|押して|クリック)|送信してよろしいですか|送信内容の?確認|お問い合わせ（確認）|確認画面/.test(text);
   const sending = /送信中です|送信しています|Sending/i.test(text);
   const errors = text.match(/[^\n]{0,20}((入力|選択|チェック)(して|され)?(下さい|ください)|必須項目です|必須入力項目|入力必須|が?未選択です|エラーがあります|誤りがあります|正しく入力|入力内容に誤り|入力内容に問題|未入力です|間違いがあります|エラーが発生|送信に失敗|失敗しました)[^\n]{0,10}/g) || [];
   return { url: location.href, refuse, captcha: [...new Set(captcha)], thanks, thanksLines, confirmPage, sending, errors: [...new Set(errors)].slice(0, 5), text: text.slice(0, 4000) };
