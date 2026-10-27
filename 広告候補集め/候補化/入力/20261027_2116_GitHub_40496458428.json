@@ -1,0 +1,46 @@
+[
+{
+"industry": "美容クリニック",
+"name": "ゆうか",
+"landing": "https://chignon.pw/tikta-lipodissolve/6065.php/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B0%258F%25E9%25A1%2594&next=os%3AWzEyNjAsIDI2MjYyMTM1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/tiktok/7630787613292498193/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "仲野直紀@著書『15秒! 集客革命』最小コストで爆益を出す動画マーケティング術",
+"landing": "https://www.instagram.com/nakano.marketing/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B0%258F%25E9%25A1%2594&next=os%3AWzEwNTQsIDI2MzA5NDQ4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DebuB04Mifc/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "株式会社AITECHCAMP",
+"landing": "https://sb.wartronask.site/ab/121061",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253AWeb%25E3%2583%2587%25E3%2582%25B6%25E3%2582%25A4%25E3%2583%25B3&next=os%3AWzIsIDI3MDA4NTcwXQ%3D%3D",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7478928624578514193.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "TiL株式会社",
+"landing": "https://www.tilcompany.co.jp/college/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AA%25E3%2583%25B3%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%25B3%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25BC%25E3%2583%25AB&next=os%3AWzYwMDAsIDE2NDQ4MzUxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/vc2GYM9Fzvo/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
