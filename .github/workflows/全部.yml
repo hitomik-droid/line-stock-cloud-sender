@@ -94,10 +94,16 @@ jobs:
           import json, sys
           from pathlib import Path
           w = Path(sys.argv[1]); cands, res = [], []
+          def rows(t):  # 10/27 途中で切れた行（dry が書き込み中に止まった）は読み飛ばす
+              for l in t.splitlines():
+                  try: yield json.loads(l)
+                  except ValueError: pass
           for d in (w / 'まとめたdry.txt').read_text().split():
               s = w / f'dry_{d}'
-              cands += [{**c, 'key': f"{d}-{c['key']}"} for c in json.loads((s / 'cands.json').read_text())]
-              res += [{**r, 'key': f"{d}-{r['key']}"} for r in map(json.loads, filter(str.strip, (s / 'results.jsonl').read_text().splitlines()))]
+              rs = [{**r, 'key': f"{d}-{r['key']}"} for r in rows((s / 'results.jsonl').read_text())]
+              have = {r['key'] for r in rs}
+              cands += [x for x in ({**c, 'key': f"{d}-{c['key']}"} for c in json.loads((s / 'cands.json').read_text())) if x['key'] in have]
+              res += rs
           (w / 'cands.json').write_text(json.dumps(cands, ensure_ascii=False))
           (w / 'results.jsonl').write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in res))
           PY
