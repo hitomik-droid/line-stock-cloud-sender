@@ -106,7 +106,8 @@ def form_note(r, c):
     bn = f"確認画面あり（ボタン「{conf[0].split(':', 1)[1][:20]}」）" if conf else f"確認画面なし（ボタン「{sub[0].split(':', 1)[1][:20]}」で送信）"
     ta = [f for f in ex['fields'] if f['kind'] == 'textarea']
     lim = f"本文欄の上限{ta[0]['maxlength']}字（本文{r['bodyLen']}字が入ることを確認）" if ta and ta[0].get('maxlength') else f"本文{r['bodyLen']}字が一字一句入ることを確認"
-    fn = '営業お断りの表記なし。' + capn + '。' + bn + '。' + lim + '。'
+    ref = any(judge.REF.search(x) for x in (ex.get('eigyo') or []) + (r.get('refuse') or []))  # 10/27 お断りの表記があっても送るので、記録には有無をそのまま書く
+    fn = ('営業お断りの表記あり（10/27から外さない）。' if ref else '営業お断りの表記なし。') + capn + '。' + bn + '。' + lim + '。'
     if judge.dom(r.get('final_url') or c['form_url']) != judge.dom(c['form_url']): fn += f"開くと {r['final_url'][:80]} に移る。"
     return fn
 

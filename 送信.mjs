@@ -242,7 +242,9 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
     out.plan = plan;
     if (!plan.fieldCount) return decide('送付失敗', `フォームが見つからない ${d.form_url}`, 'stop');
     const before = await readAll(page);
-    if (before.refuse.length) return decide('除外', `営業お断りの表記：「${before.refuse[0].trim()}」`, 'stop');
+    // 10/27 勝良さん「営業お断りの会社にも送ってよい」（期限なし）：お断りの表記だけでは止めない。「営業目的ではありません」と言う形の表記は、事実と違うので今までどおり止める
+    const notSales = (r) => r.filter((x) => /(で|では)(は)?(ありません|ない)/.test(x));
+    if (notSales(before.refuse).length) return decide('除外', `「営業目的ではない」の表記：「${notSales(before.refuse)[0].trim()}」`, 'stop');
 
     const filled = await applyPlan(frame, plan.plan);
     out.filled = filled.done;
@@ -274,7 +276,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
       }
       const errs = newOnes(state.errors, afterFill.errors);
       if (errs.length) return decide('送付失敗', `確認に進めない：${errs.join(' / ').slice(0, 200)} ${d.form_url}`, 'stop');
-      if (state.refuse.length) return decide('除外', `確認画面に営業お断りの表記：「${state.refuse[0].trim()}」`, 'stop');
+      if (notSales(state.refuse).length) return decide('除外', `確認画面に「営業目的ではない」の表記：「${notSales(state.refuse)[0].trim()}」`, 'stop');
       if (state.captcha.length) return decide('送付失敗', `${capWhy(state.captcha)} ${d.form_url}`, 'manual');
       // 確認画面の表示を待つ（最大15秒、送信ボタンが出るまで）
       for (let t = 0; t < 10 && !submitBtn; t++) {
@@ -349,7 +351,7 @@ export async function sendOne(id, mode = 'dry', { browser: shared, headed = fals
       const left = await submitLeft();
       if (left) {
         await shot('2_確認画面');
-        if (fin.refuse.length) return decide('除外', `確認画面に営業お断りの表記：「${fin.refuse[0].trim()}」`, 'stop');
+        if (notSales(fin.refuse).length) return decide('除外', `確認画面に「営業目的ではない」の表記：「${notSales(fin.refuse)[0].trim()}」`, 'stop');
         const again = retry ? await companyFromList(id) : await sendData(id);
         if (!again || again.status !== wantStatus) { out.result = 'skip'; out.note = `確認画面で送信直前にステータスが「${again && again.status}」に変わっていたので送らない`; return; }
         say('送信ボタンの後に確認画面が出たので、確認画面の送信ボタン「' + left.btn.text + '」を押す');

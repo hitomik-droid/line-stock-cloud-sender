@@ -15,7 +15,7 @@ const ex = loadExclusions();
 const read = f => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return []; } };
 const dpro = read(A.in).slice(+(A.from || 0), +(A.to || 99999)).map(r => ({ ...r, list_source: r.list_source || '動画広告Pro' })); // 10/27 Meta・Googleの候補は経路をそのまま残す
 
-const NG_SALES = /営業(目的|活動|行為|メール|電話|のご連絡|のご案内|のお問い合わせ|に関する)[^。\n]{0,30}(お断り|ご遠慮|控え|返信|対応|禁止|いたしかね|致しかね|できません)|セールス[^。\n]{0,20}(お断り|ご遠慮)|売り込み[^。\n]{0,20}(お断り|ご遠慮)|営業はお断り/;
+const NG_SALES = /a^/; // 10/27 勝良さん「営業お断りの会社にも送ってよい」（期限なし）：お断りの表記だけでは外さない（元の式はgitの履歴にある）
 const FC = /フランチャイズ(募集|加盟|本部|オーナー)|加盟店(募集|開発)|FC(加盟|募集|オーナー)|全国\s*\d{2,}\s*(店舗|院|校|拠点)|店舗数\s*\d{2,}|上場|証券コード|東証(プライム|スタンダード|グロース)/;
 const ONLY = /予約|資料請求|見積|お見積|カタログ|来場|見学|体験|カウンセリング|無料相談|採用|エントリー|応募|購入|注文|会員登録|ログイン|求人/;
 const CONTACT = /お問い?合わ?せ|問合せ|問い合せ|ご相談|contact|inquiry|toiawase|otoiawase/i;

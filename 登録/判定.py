@@ -30,7 +30,8 @@ def judge(r):
   if not fields: return ['フォームが無い（入力欄が見つからない）'],None
   if not any(f['kind']=='textarea' for f in fields): return ['本文を書く欄が無い'],None
   eig=[s for s in (ex.get('eigyo') or [])+(r.get('refuse') or []) if REF.search(s)]
-  if eig: why.append('営業お断りの表記：「'+eig[0].strip()[:60]+'」')
+  # 10/27 勝良さん「営業お断りの会社にも送ってよい」（期限なし）：お断りの表記だけでは落とさない
+  # if eig: why.append('営業お断りの表記：「'+eig[0].strip()[:60]+'」')
   caps=ex.get('captcha') or []
   bad=[c for c in caps if any(b in c for b in BADCAP)]+(r.get('capVisible') or [])+(r.get('capAfter') or [])
   if 'reCAPTCHA v3' in caps: bad=[c for c in bad if c!='reCAPTCHA v2スクリプト']
