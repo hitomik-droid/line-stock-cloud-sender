@@ -1,0 +1,46 @@
+[
+{
+"industry": "税理士・士業",
+"name": "OMUSUBI行政書士法人",
+"landing": "https://omusubi.eitch.jp/knowledge/manual/first_gear",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25A1%258C%25E6%2594%25BF%25E6%259B%25B8%25E5%25A3%25AB&next=os%3AWzQsIDE1ODkwNTEyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/zJJyXufM5Rs/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ペット関連",
+"name": "株式会社MJカンパニー",
+"landing": "https://business.google.com/v/_/AKsrIN0NFeVA7AF3k_jVtitj4a3RgOooRJ7gtA0q-ts2MGcIn5Is3Zh8UCqn/3af5/_",
+"ads": 21,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259A%25E3%2583%2583%25E3%2583%2588%25E3%2582%25B5%25E3%2583%25AD%25E3%2583%25B3",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/MFDNFlu65ps/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "grace by afloat 梅田店",
+"landing": "https://beauty.hotpepper.jp/slnH000052859/stylist/T000673092/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%25AE%25A4&next=os%3AWzE0LCAyNDEzOTM5MF0%3D",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/image/mRkwhqUgtfZ.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "株式会社vellgo",
+"landing": "https://www.vellgo.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2598%25E3%2582%25A2%25E3%2582%25B5%25E3%2583%25AD%25E3%2583%25B3&next=os%3AWzk2NiwgMjYyNTk3Nzdd",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7477096789691157768.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
