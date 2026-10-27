@@ -1,10 +1,12 @@
 # 2026-10-26 勝良さん指示：その日に届かなかった分は翌朝8:00から自動で送る。
-# GOを待たずに送ってよい範囲：承認済みの本文（v8・3業種v3）で、動画広告Pro経由（ターゲット業種）の「確認中」の会社だけ。
+# GOを待たずに送ってよい範囲：承認済みの本文（v8・3業種v3）で、広告経路（動画広告Pro・Meta・Google）の「確認中」の会社だけ（10/27に Meta・Google を足した）。
 # 設計図リンクのある本文は、会社別追跡リンクが登録済みの会社だけ（未登録だと送信.mjsが止まるため）。
 import json, os, re, sys, urllib.request
 API = os.environ.get('LS_API_BASE', 'https://line-stock-product-plan.hitomi-k.workers.dev/api/sales')
 APPROVED = {'MSG-ジム-v8', 'MSG-美容クリニック-v8', 'MSG-オンラインスクール-v8', 'MSG-太陽光住宅-v8', 'MSG-自動車学校-v8',
             'MSG-結婚相談所-v3', 'MSG-自由診療歯科-v3', 'MSG-不動産-v3'}
+# 10/27 9:4x 勝良さん「入れる」：Meta広告ライブラリ・Googleの広告主も送り先に入れる（業種の絞り・大手・FC・ロボット確認などの決まりはそのまま。不動産の例外は動画広告Pro経由だけのまま）
+SOURCES = ('動画広告Pro', 'Meta', 'Google')
 HERE = os.path.dirname(os.path.abspath(__file__))
 req = urllib.request.Request(API, headers={'User-Agent': 'Mozilla/5.0'})
 d = json.load(urllib.request.urlopen(req, timeout=120))
@@ -18,7 +20,8 @@ for c in sorted(d['companies'], key=lambda c: c['id']):
     if c['status'] != '確認中': continue
     why = None
     if c['id'] in man_ids or c.get('name') in man_names: why = '手で外した会社'
-    elif not (c.get('list_source') or '').startswith('動画広告Pro'): why = '動画広告Pro経由ではない'
+    elif not (c.get('list_source') or '').startswith(SOURCES): why = '広告経路（動画広告Pro・Meta・Google）ではない'
+    elif c.get('message_id') == 'MSG-不動産-v3' and not (c.get('list_source') or '').startswith('動画広告Pro'): why = '不動産は動画広告Pro経由だけ'
     elif c.get('message_id') not in APPROVED: why = '承認済みの本文ではない'
     elif 'line-stock-flow.hitomi-k.workers.dev' in msgs.get(c['message_id'], '') and c['id'] not in links: why = '会社別追跡リンクが未登録'
     if why: skip[why] = skip.get(why, 0) + 1; continue
