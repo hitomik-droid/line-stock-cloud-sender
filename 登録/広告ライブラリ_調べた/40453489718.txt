@@ -1,0 +1,16 @@
+name	ピラティスメソッドジャパン株式会社
+name	下北沢にいみクリニック形成外科美容外科皮膚科内分泌内科
+name	アサミ美容外科
+name	関本矯正歯科
+name	株式会社東京アカデミー
+name	株式会社水戸アカデミー
+name	株式会社英語アカデミー
+name	m2アカデミー
+domain	pilates-body.jp
+domain	shimokita-niimi.com
+domain	asami-shibuya.com
+domain	ortho-sekimoto.com
+domain	tokyo-ac.jp
+domain	mito-academy.com
+domain	hk-international.jp
+domain	m2-academy.com
