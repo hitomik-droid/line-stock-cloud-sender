@@ -1,0 +1,57 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "TRYANGLE EHIME(トライアングル エヒメ)",
+"landing": "https://dx-ehime.jp/archives/39650",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E7%259B%25B8%25E8%25AB%2587&next=os%3AWzIsIDIwNDA5MzQ2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De_vJqOAx4Z/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "さるがくこ｜気質×心理学で見つける「わが家の子育て」",
+"landing": "https://www.instagram.com/sarugakuko/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E7%259B%25B8%25E8%25AB%2587&next=os%3AWzIsIDIwNDA5MzQ2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De-ktTwA6Fb/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "RePro整体院",
+"landing": "https://repro-seitai.studio.site/",
+"ads": 3,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%25AA%25A8%25E7%259B%25A4%25E7%259F%25AF%25E6%25AD%25A3&next=os%3AWzI5ODcsIDEwMDIxMTg5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De8mwBRg1yV/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "エステ・脱毛",
+"name": "SAVVY編集部",
+"landing": "https://savvy.jp/post/pr/post-51952/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2595%25E3%2582%25A7%25E3%2582%25A4%25E3%2582%25B7%25E3%2583%25A3%25E3%2583%25AB&next=os%3AWzc5ODYsIDI2MDgyNjUyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De9B-j_g_36/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ペット関連",
+"name": "美ら技研株式会社",
+"landing": "https://www.churagiken.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259A%25E3%2583%2583%25E3%2583%2588%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzAsIDYxNjQzNzZd",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7488373125894147383.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
