@@ -1,0 +1,35 @@
+# 2026-10-27 23時台 作業管理の判断（勝良さん「任せる」）：名簿などから登録した確認中の会社の本文を承認済みのv8に付け替え、追跡リンクを発行して、送ってよい会社を 登録/名簿の送り先.txt に書く。送らない。
+# D1が読める時だけ動く（読めない時は何もせず終わる）。何度動かしても同じ結果になる。
+name: 名簿の会社の本文を付け替える
+on:
+  schedule:
+    - cron: '4,19,34 0 * * *'   # 日本時間 9:04・9:19・9:34（D1の上限が戻った後）。定時が飛んだ時の控えを兼ねる
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: meibo-tsukekae
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 付け替える
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python3 登録/名簿の付け替え.py | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: 送り先と追跡リンクを残す
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 登録/名簿の送り先.txt 追跡/会社別リンク.json 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -q -m "名簿の会社：本文をv8に付け替え、送り先と追跡リンクを残す"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin main && exit 0; sleep 5; done; exit 1

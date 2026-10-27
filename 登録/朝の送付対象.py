@@ -28,18 +28,21 @@ links = json.load(open(os.path.join(HERE, '..', '追跡', '会社別リンク.js
 # 10/27 登録済みでも 手で外した会社.json にある会社（番号か社名が一致）は送らない
 manual = json.load(open(os.path.join(HERE, '手で外した会社.json')))
 man_ids = {x['id'] for x in manual if x.get('id')}; man_names = {x['name'] for x in manual if x.get('name')}
+# 10/27 23時台 作業管理の判断（勝良さん「任せる」）：名簿などの会社も、名簿の付け替え.py で本文をv8にして選んだ分だけ送る。広告経路の会社を先に送る
+roster = set(x.strip() for x in open(os.path.join(HERE, '名簿の送り先.txt')) if x.strip()) if os.path.exists(os.path.join(HERE, '名簿の送り先.txt')) else set()
 ids, skip = [], {}
 for c in sorted(d['companies'], key=lambda c: c['id']):
     if c['status'] != '確認中': continue
     why = None
     if c['id'] in pending: why = '代わりの置き場で変更済み（D1への書き戻し待ち）'
     elif c['id'] in man_ids or c.get('name') in man_names: why = '手で外した会社'
-    elif not (c.get('list_source') or '').startswith(SOURCES): why = '広告経路（動画広告Pro・Meta・Google）ではない'
+    elif not (c.get('list_source') or '').startswith(SOURCES) and c['id'] not in roster: why = '広告経路（動画広告Pro・Meta・Google）ではない'
     elif c.get('message_id') == 'MSG-不動産-v3' and not (c.get('list_source') or '').startswith('動画広告Pro'): why = '不動産は動画広告Pro経由だけ'
     elif c.get('message_id') not in APPROVED: why = '承認済みの本文ではない'
     elif 'line-stock-flow.hitomi-k.workers.dev' in msgs.get(c['message_id'], '') and c['id'] not in links: why = '会社別追跡リンクが未登録'
     if why: skip[why] = skip.get(why, 0) + 1; continue
     ids.append(c['id'])
+ids.sort(key=lambda i: i in roster)  # 広告経路の会社が先、名簿の会社は後
 limit = int(sys.argv[1]) if len(sys.argv) > 1 else 1000
 if len(sys.argv) > 2: open(sys.argv[2], 'w').write(str(len(ids)))  # 10/27 夕：在庫の数を同じ読み取りで書き出す（2回読まない）
 ids = ids[:limit]
