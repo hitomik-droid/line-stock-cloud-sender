@@ -15,7 +15,7 @@ on:
         required: false
         default: 'meta,google'
       q:
-        description: Metaの検索語を直接渡す時（業種:語|語;業種:語 の形）。空なら 共通.mjs の業種と語を全部
+        description: 検索語を直接渡す時（Meta・Google共通）（業種:語|語;業種:語 の形）。空なら 共通.mjs の業種と語を全部
         required: false
         default: ''
       scroll:
@@ -64,7 +64,10 @@ jobs:
         timeout-minutes: 130
         env:
           PER: ${{ inputs.per }}
-        run: node 広告候補集め/meta/google.mjs --per="$PER" --out=記録/Meta集め/出力/google_候補.json
+          Q: ${{ inputs.q }}
+        run: |
+          if [ -n "$Q" ]; then node 広告候補集め/meta/google.mjs --per="$PER" "--q=$Q" --out=記録/Meta集め/出力/google_候補.json
+          else node 広告候補集め/meta/google.mjs --per="$PER" --out=記録/Meta集め/出力/google_候補.json; fi
       - uses: actions/upload-artifact@v4
         if: always() && steps.on.outputs.go == '1'
         with:

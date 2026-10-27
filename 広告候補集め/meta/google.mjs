@@ -13,6 +13,8 @@ const PER = +(A.per || 4);
 const MAXADS = +(A.maxads || 300);
 fs.mkdirSync(DIR + '/出力', { recursive: true });
 const ex = loadExclusions();
+// --q=業種:語|語;業種:語 で検索語を直接渡せる（meta.mjs と同じ形。10/27）
+if (A.q) { for (const k of Object.keys(WORDS)) delete WORDS[k]; for (const part of A.q.split(';')) { const [k, ws] = part.split(':'); WORDS[k] = ws.split('|'); } }
 const inds = A.industry ? A.industry.split(',') : Object.keys(WORDS);
 const FMT = { 1: 'テキスト', 2: '画像', 3: '動画' };
 
