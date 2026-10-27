@@ -1,0 +1,24 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社たみつ建匠舎",
+"landing": "http://www.tamitsu.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-26&interval=30&sort=cost-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A4%2596%25E6%25A7%258B&next=os%3AWzEwNTgxOCwgMTQ4MTUzNjBd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DOckWD5jL72/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "一般社団法人 礼恩会",
+"landing": "https://k-k-c.com/cp/2008_medicaldiet/index_cool_ig.php",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-26&interval=30&sort=cost-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258C%25BB%25E7%2599%2582%25E3%2583%2580%25E3%2582%25A4%25E3%2582%25A8%25E3%2583%2583%25E3%2583%2588&next=os%3AWzU2MTcwMCwgMjYzMzAwMDBd",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/instagram/image/js8GrNRAMdU.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
