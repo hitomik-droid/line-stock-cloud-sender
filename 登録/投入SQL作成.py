@@ -7,7 +7,7 @@ now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.0
 q = lambda v: "NULL" if v in (None, "") else "'" + str(v).replace("'", "''") + "'"
 REQ = {"必須", "任意", "不明"}
 MSG = {"MSG-自動車学校-v8", "MSG-ジム-v8", "MSG-美容クリニック-v8", "MSG-オンラインスクール-v8", "MSG-太陽光住宅-v8", "MSG-LINE導入-v2", "MSG-LINE見直し-v2", "MSG-ジム-v5", "MSG-美容クリニック-v5", "MSG-オンラインスクール-v5", "MSG-住宅リフォーム-v5", "MSG-太陽光-v5",
-       "MSG-結婚相談所-v3", "MSG-自由診療歯科-v3", "MSG-不動産-v3"} | {"MSG-エステ-v3案", "MSG-ペット-v3案", "MSG-ホテル-v3案", "MSG-士業-v3案", "MSG-学習塾-v3案", "MSG-整体-v3案", "MSG-美容室-v3案", "MSG-飲食-v3案"}  # 10/27 追加8業種（承認待ちの仮ID）  # 10/26 勝良さんOKの3業種（流れ.py の V8 と同じ）
+       "MSG-結婚相談所-v3", "MSG-自由診療歯科-v3", "MSG-不動産-v3"} | {"MSG-エステ-v3", "MSG-ペット-v3", "MSG-ホテル-v3", "MSG-士業-v3", "MSG-学習塾-v3", "MSG-整体-v3", "MSG-美容室-v3", "MSG-飲食-v3"}  # 10/27 追加8業種（承認待ちの仮ID）  # 10/26 勝良さんOKの3業種（流れ.py の V8 と同じ）
 START = int(sys.argv[2]) if len(sys.argv) > 2 else 100
 out = []
 for i, c in enumerate(data):

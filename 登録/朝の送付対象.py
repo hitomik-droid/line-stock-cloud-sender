@@ -4,7 +4,7 @@
 import json, os, re, sys, urllib.request
 API = os.environ.get('LS_API_BASE', 'https://line-stock-product-plan.hitomi-k.workers.dev/api/sales')
 APPROVED = {'MSG-ジム-v8', 'MSG-美容クリニック-v8', 'MSG-オンラインスクール-v8', 'MSG-太陽光住宅-v8', 'MSG-自動車学校-v8',
-            'MSG-結婚相談所-v3', 'MSG-自由診療歯科-v3', 'MSG-不動産-v3'}
+            'MSG-結婚相談所-v3', 'MSG-自由診療歯科-v3', 'MSG-不動産-v3', 'MSG-整体-v3', 'MSG-エステ-v3', 'MSG-学習塾-v3', 'MSG-士業-v3', 'MSG-飲食-v3', 'MSG-ペット-v3', 'MSG-美容室-v3', 'MSG-ホテル-v3'}
 # 10/27 9:4x 勝良さん「入れる」：Meta広告ライブラリ・Googleの広告主も送り先に入れる（業種の絞り・大手・FC・ロボット確認などの決まりはそのまま。不動産の例外は動画広告Pro経由だけのまま）
 SOURCES = ('動画広告Pro', 'Meta', 'Google')
 HERE = os.path.dirname(os.path.abspath(__file__))
