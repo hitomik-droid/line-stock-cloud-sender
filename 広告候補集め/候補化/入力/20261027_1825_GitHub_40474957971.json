@@ -1,0 +1,57 @@
+[
+{
+"industry": "パーソナルジム",
+"name": "株式会社Luv Links",
+"landing": "https://moonshot-baseball.jp/potential/start",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzE1OTkyLCAxNTg1OTc4MV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De29kcdshjg/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "太陽光",
+"name": "岡本住建【分譲住宅】",
+"landing": "https://okjk-b.com/estate/detail.php?id=26",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2588%2586%25E8%25AD%25B2%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzE0LCAyNTg1NzY2OV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De1ZDK8AaDM/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "東海ミライプロジェクト！byわくわくスイッチ",
+"landing": "https://waku.waku1.com/recruiters-salon4",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E7%259B%25B8%25E8%25AB%2587&next=os%3AWzAsIDI3MTYwNjEzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De0lYBKsUaD/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "ピラティスRAKU",
+"landing": "https://beauty.hotpepper.jp/kr/slnH000791848/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BD%2593%25E9%25A8%2593%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B9%25E3%2583%25B3&next=os%3AWzAsIDI3MTkwMzY2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/27240234328943498/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "スラッシュダンススタジオ",
+"landing": "https://dance-slash.com/studio/kizugawa",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-27&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BD%2593%25E9%25A8%2593%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B9%25E3%2583%25B3&next=os%3AWzAsIDI3MTkwMzY2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De3obb6gNwB/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
