@@ -30,8 +30,10 @@ except RuntimeError as e: print('D1が読めないので、今回は何もしな
 
 cs = d1("SELECT id,name,industry,official_url,list_source,message_id FROM companies WHERE status = '確認中'")
 bodies = {r['id']: r['body'] for r in d1("SELECT id,body FROM messages WHERE id LIKE '%-v8'")}
-ex_names = {norm(x) for x in open(os.path.join(ROOT, '広告候補集め', '候補化', '除外社名.txt')) if x.strip() and not x.startswith('#')}
-ex_doms = {x.strip().lower() for x in open(os.path.join(ROOT, '広告候補集め', '候補化', '除外ドメイン.txt')) if x.strip() and not x.startswith('#')}
+# 10/28 除外社名.txt・除外ドメイン.txt は「調べたことがある会社」の写し（流れ.py）で、名簿の会社も全部入っているので使わない。
+# 大手・FCは 共通.mjs の BIG（名前）と 流れ.py の NG_TYPE（展示場・仲介・団体・大手グループ）で外す
+sys.path.insert(0, HERE); from 流れ import NG_TYPE
+BIG = re.compile(re.search(r'export const BIG = /(.*)/i;', open(os.path.join(ROOT, '広告候補集め', '候補化', '共通.mjs')).read()).group(1), re.I)
 manual = json.load(open(os.path.join(HERE, '手で外した会社.json')))
 man = {x.get('id') for x in manual} | {x.get('name') for x in manual}
 
@@ -40,8 +42,8 @@ for c in cs:
     if (c.get('list_source') or '').startswith(SOURCES): continue
     why, mid = None, c.get('message_id')
     if c['id'] in man or c['name'] in man: why = '手で外した会社'
-    elif norm(c['name']) in ex_names: why = '大手・FC（除外社名）'
-    elif dom(c.get('official_url')) in ex_doms: why = '大手・FC（除外ドメイン）'
+    elif BIG.search(c['name']): why = '大手・FC（社名）'
+    elif NG_TYPE.search(' '.join([c['name'], c.get('official_url') or ''])): why = '業種違い（展示場・仲介・団体・大手など）'
     elif mid not in V8 and mid not in TO_V8: why = f'v8の無い本文（{mid}）'
     if why: skip[why] = skip.get(why, 0) + 1; continue
     if mid in TO_V8: move.setdefault(TO_V8[mid], []).append((c['id'], mid))
