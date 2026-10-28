@@ -30,6 +30,8 @@ manual = json.load(open(os.path.join(HERE, '手で外した会社.json')))
 man_ids = {x['id'] for x in manual if x.get('id')}; man_names = {x['name'] for x in manual if x.get('name')}
 # 10/27 23時台 作業管理の判断（勝良さん「任せる」）：名簿などの会社も、名簿の付け替え.py で本文をv8にして選んだ分だけ送る。広告経路の会社を先に送る
 roster = set(x.strip() for x in open(os.path.join(HERE, '名簿の送り先.txt')) if x.strip()) if os.path.exists(os.path.join(HERE, '名簿の送り先.txt')) else set()
+# 10/28 作業管理（勝良さん「実績の行は業種ごとに必ず変えて」）：登録/名簿の送付を止める.txt がある間は、名簿の会社を送らない
+if os.path.exists(os.path.join(HERE, '名簿の送付を止める.txt')): roster = set()
 ids, skip = [], {}
 for c in sorted(d['companies'], key=lambda c: c['id']):
     if c['status'] != '確認中': continue
