@@ -21,9 +21,16 @@ try:
 except Exception as e:
     if not (SB_URL and SB_KEY): raise
     print('D1が読めないので、代わりの置き場（Supabase）から選ぶ：', str(e)[:80], file=sys.stderr)
-    d = {'companies': sb('ls_companies?status=eq.%E7%A2%BA%E8%AA%8D%E4%B8%AD&select=id,name,industry,official_url,status,message_id,list_source'),
+    d = {'companies': sb('ls_companies?status=eq.%E7%A2%BA%E8%AA%8D%E4%B8%AD&select=id,name,industry,official_url,status,message_id,list_source,copied_at'),
          'messages': sb('ls_messages?select=id,body')}
     src = 'Supabase'
+    # 10/28 作業管理：写し直しが済むまで送らない。写しが90分より古い時や本文が空の時は、代わりの置き場からは選ばない（古い状態で二重に送る・本文が空で送るのを防ぐ）
+    import datetime
+    last = max((c.get('copied_at') or '' for c in d['companies']), default='')
+    age = (datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(last)).total_seconds() / 60 if last else 1e9
+    if age > 90 or not any((m.get('body') or '').strip() for m in d['messages']):
+        print(f'代わりの置き場の写しが使えないので選ばない（写しから {age:.0f} 分・本文 {len(d["messages"])} 本）', file=sys.stderr)
+        print(''); sys.exit(0)
 pending = {r['company_id'] for r in sb('ls_status_history?written_back_at=is.null&select=company_id')} if (SB_URL and SB_KEY) else set()
 msgs = {m['id']: m['body'] for m in d['messages']}
 links = json.load(open(os.path.join(HERE, '..', '追跡', '会社別リンク.json')))['links']
