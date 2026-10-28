@@ -1,0 +1,13 @@
+[
+{
+"industry": "パーソナルジム",
+"name": "合同会社メディアラボ",
+"landing": "https://startug-fit.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%258A%25E3%2583%25AB%25E3%2582%25B8%25E3%2583%25A0&next=os%3AWzYsIDI2MzY2Mzg0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De-4BSyAPdI/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
