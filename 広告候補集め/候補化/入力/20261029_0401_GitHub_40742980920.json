@@ -1,0 +1,101 @@
+[
+{
+"industry": "不動産",
+"name": "TOANET｜神戸・大阪のマンション",
+"landing": "https://www.instagram.com/toanet_official/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%2520%25E5%25A3%25B2%25E5%258D%25B4&next=os%3AWzQ4MDAsIDI3MDQwODI3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De7ACRRAnxN/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "アイピック株式会社",
+"landing": "https://majikiri.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzExMTMsIDI1MjA4MDU3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/chatgpt/EtQrNsN8jie/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "楽栄株式会社",
+"landing": "https://gakuei414.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzEwMDAsIDI2NDIzODcwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/8998195534029895956/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社ヒラヤマ｜水まわり・エネルギー・愛犬リフォーム",
+"landing": "https://www.instagram.com/hirayama_ecocute/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzEwMDAsIDEyNDkxNzIyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De1HkVQsUoE/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "大久保建築［古民家再生・漆と無垢の木の家｜福井］",
+"landing": "https://utage-system.com/page/3a4HpjzFoFoI",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzEwMDAsIDEyNDkxNzIyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De-mTsEATgx/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "伊勢丹ゴルフスクール スイング",
+"landing": "https://www.isetan-swing.co.jp/golf-lesson/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BD%2593%25E9%25A8%2593%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B9%25E3%2583%25B3&next=os%3AWzIsIDI0NzEwNzkxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dd0WmOIs7sd/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "かりそ",
+"landing": "https://www.instagram.com/lifullie.kariso/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BD%2593%25E9%25A8%2593%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B9%25E3%2583%25B3&next=os%3AWzAsIDI3MjI3NDI4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DagDchAgQMe/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "株式会社コールドクター",
+"landing": "https://calldoctor.jp/lp/diet_campaign_v4",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258C%25BB%25E7%2599%2582%25E7%2597%25A9%25E8%25BA%25AB&next=os%3AWzQ3OTYsIDI0MDE3NzE2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122095641687531619/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "高崎美容クリニック",
+"landing": "https://takasaki-beauty.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258C%25BB%25E7%2599%2582%25E8%2584%25B1%25E6%25AF%259B&next=os%3AWzEsIDE1OTA1ODVd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DdFqxa8AJLq/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
