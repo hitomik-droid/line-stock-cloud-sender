@@ -1,0 +1,46 @@
+[
+{
+"industry": "不動産",
+"name": "株式会社ゴールドファステート",
+"landing": "https://goldfastate.fastatevintage.com/",
+"ads": 7,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2596%25B0%25E7%25AF%2589%25E3%2583%259E%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzI2NjIsIDE2MzQyOTkwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122122822923304161/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社創樹 l 北海道旭川市 l 自由設計の家づくり",
+"landing": "https://www.instagram.com/soujuasahikawa/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzk1ODMyLCAyNjAyMDE3NV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeRC6f_AlEF/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "有限会社リバティラボ・アジア",
+"landing": "https://www.libertylab.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%258B%25B1%25E4%25BC%259A%25E8%25A9%25B1&next=os%3AWzU1MiwgMjcyNjA1NTld",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/NZY2QJloczs/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "ビニールハウス熊本 / わたしのへや / 村井眞一郎",
+"landing": "https://watashi-heya.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzczOTksIDI1ODU4MzE5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Del3WLTAz7-/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
