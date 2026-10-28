@@ -1,0 +1,24 @@
+[
+{
+"industry": "美容室",
+"name": "まえたえみ前田江美",
+"landing": "https://shop.tiktok.com/view/product/1738036950612673793",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%25AE%25A4&next=os%3AWzEsIDk4MDM0ODBd",
+"ad_evidence_url": "https://assets.douga-pro.com/tiktok/7697913134836780294/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "ティガリアルエステート株式会社",
+"landing": "https://keybox.tiga.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A9%25BA%25E3%2581%258D%25E5%25AE%25B6&next=os%3AWzQ4MCwgMjY0OTQ2MDNd",
+"ad_evidence_url": "https://assets.douga-pro.com/x/2115269069108646345/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
