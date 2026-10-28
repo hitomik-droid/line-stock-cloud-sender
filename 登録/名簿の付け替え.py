@@ -8,9 +8,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 SOURCES = ('動画広告Pro', 'Meta', 'Google')
 # 古い本文 → 承認済みのv8（同じ業種の本文）。ここに無い本文（LINE導入-v2 など）の会社は送らない
-TO_V8 = {'MSG-住宅リフォーム-v5': 'MSG-太陽光住宅-v8', 'MSG-太陽光-v5': 'MSG-太陽光住宅-v8', 'MSG-ジム-v5': 'MSG-ジム-v8',
+# 10/28 勝良さん「業種によって実績のところは必ず変えて」：太陽光は太陽光だけの v9 へ。住宅リフォーム-v5 は注文住宅・リフォーム・外構で実績が違うので、自動では付け替えず、会社ごとに確かめて v9 を選ぶ（ここに無い本文の会社は送らない）
+TO_V8 = {'MSG-太陽光-v5': 'MSG-太陽光-v9', 'MSG-ジム-v5': 'MSG-ジム-v8',
          'MSG-オンラインスクール-v5': 'MSG-オンラインスクール-v8', 'MSG-美容クリニック-v5': 'MSG-美容クリニック-v8'}
-V8 = {'MSG-ジム-v8', 'MSG-美容クリニック-v8', 'MSG-オンラインスクール-v8', 'MSG-太陽光住宅-v8', 'MSG-自動車学校-v8'}
+V8 = {'MSG-ジム-v8', 'MSG-美容クリニック-v8', 'MSG-オンラインスクール-v8', 'MSG-太陽光住宅-v8', 'MSG-自動車学校-v8',
+      'MSG-太陽光-v9', 'MSG-注文住宅-v9', 'MSG-リフォーム-v9', 'MSG-外構-v9', 'MSG-ジム-v9', 'MSG-学習塾-v3'}
 
 def d1(sql=None, file=None):
     cmd = ['npx', '-y', 'wrangler@4.150.0', 'd1', 'execute', 'line-stock-sales', '--remote', '--json'] + (['--file', file] if file else ['--command', sql])
