@@ -2,7 +2,7 @@
 # 条件：古い本文を承認済みのv8に付け替えてから送る／大手・FC（除外社名・除外ドメイン）と手で外した会社は外す／ロボット確認・住所必須は送る時に今までどおり止まる／広告経路の会社を先に送る（順番は 朝の送付対象.py）。
 # D1が読める時だけ動く。送らない。やること：1) 本文の付け替え（D1、履歴に理由を残す） 2) 設計図リンクのある本文の会社に追跡リンクを発行 3) 送ってよい会社を 登録/名簿の送り先.txt に書く。
 # 何度動かしても同じ結果になる（付け替え済み・発行済みの会社は飛ばす）。要る環境変数：CLOUDFLARE_API_TOKEN・CLOUDFLARE_ACCOUNT_ID・SUPABASE_URL・SUPABASE_SERVICE_ROLE_KEY
-import json, os, re, subprocess, sys, tempfile, urllib.request, datetime
+import json, os, re, ssl, subprocess, sys, tempfile, urllib.request, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -22,6 +22,21 @@ def d1(sql=None, file=None):
     except Exception: raise RuntimeError('D1を読めない：' + (p.stdout + p.stderr)[-300:])
     if isinstance(out, dict) and out.get('error'): raise RuntimeError('D1を読めない：' + json.dumps(out['error'], ensure_ascii=False)[:300])
     return out[0].get('results', [])
+
+# 10/28 作業管理（勝良さん「業種によって実績のところは必ず変えて」）：ジム-v8 の実績はパーソナルジムのもの。
+# 社名か、公式サイトの題名・説明文・見出しに「パーソナルジム」「パーソナルトレーニング」がある会社だけ ジム-v8 で送る。
+# 24時間ジムなどもサイトの本文には「パーソナル」と書くことがあるので、本文全体では見ない。サイトが読めない・書いていない会社は送らない
+_ctx = ssl.create_default_context(); _ctx.check_hostname = False; _ctx.verify_mode = ssl.CERT_NONE
+PERSONAL = re.compile(r'パーソナル(ジム|トレーニング)|ﾊﾟｰｿﾅﾙ|personal ?(gym|training)', re.I)
+# 10/28 公式サイトを見てパーソナルジムと確かめた会社（自動の判定では落ちる会社もあるので、ここにある会社は判定しない）
+PERSONAL_OK = {x.strip() for x in open(os.path.join(HERE, 'パーソナルジム確認済み.txt')) if x.strip() and not x.startswith('#')}
+def personal_gym(c):
+    if c['id'] in PERSONAL_OK or PERSONAL.search(c.get('name') or ''): return True
+    try:
+        h = urllib.request.urlopen(urllib.request.Request(c.get('official_url') or '', headers={'User-Agent': 'Mozilla/5.0'}), timeout=20, context=_ctx).read(400000).decode('utf-8', 'ignore')
+    except Exception: return False
+    head = ' '.join(m.group(0) for m in re.finditer(r'<title[^>]*>.*?</title>|<meta[^>]+(?:name|property)=["\'](?:description|og:description|og:title)["\'][^>]*>|<h1[^>]*>.*?</h1>', h, re.S | re.I))
+    return bool(PERSONAL.search(head))
 
 def norm(s): return re.sub(r'[\s　・（）()株式会社有限会社合同会社]', '', s or '').lower()
 def dom(u):
@@ -48,6 +63,7 @@ for c in cs:
     elif BIG.search(c['name']): why = '大手・FC（社名）'
     elif NG_TYPE.search(' '.join([c['name'], c.get('official_url') or ''])): why = '業種違い（展示場・仲介・団体・大手など）'
     elif mid not in V8 and mid not in TO_V8: why = f'v8の無い本文（{mid}）'
+    elif TO_V8.get(mid, mid) == 'MSG-ジム-v8' and not personal_gym(c): why = 'パーソナルジムと確かめられない（ジム-v8の実績が合わない）'
     if why: skip[why] = skip.get(why, 0) + 1; continue
     if mid in TO_V8: move.setdefault(TO_V8[mid], []).append((c['id'], mid))
     keep.append(c['id'])
