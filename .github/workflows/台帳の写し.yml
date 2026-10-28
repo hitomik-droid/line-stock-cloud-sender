@@ -1,0 +1,42 @@
+# 2026-10-28 作業管理の依頼：D1が無料枠の上限で Worker が 500（error code: 1101）の間に、代わりの置き場（Supabase）へ写し直し、dry で本文が空でないかを確かめる。
+# 送らない。自動送付と同じ concurrency にして、写し直しと dry の間に自動送付が割り込まないようにする。
+# wrangler の d1 execute（API経由）は Worker が止まっていても読めた（10/28 15時台に確認）ので、登録/台帳の写し.py をそのまま使う。
+name: 台帳の写しとdry（代わりの置き場）
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: dry で確かめる会社ID（カンマ区切り。空なら写し直しだけ）
+        required: false
+        default: ''
+concurrency:
+  group: line-stock-auto-send
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 台帳を写し直す
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python3 登録/台帳の写し.py | tee -a "$GITHUB_STEP_SUMMARY"
+  dry:
+    needs: copy
+    if: inputs.ids != ''
+    uses: ./.github/workflows/send.yml
+    secrets: inherit
+    with:
+      ids: ${{ inputs.ids }}
+      mode: dry
+      execution: single
+      sender: Claude
+      ledger: sb
