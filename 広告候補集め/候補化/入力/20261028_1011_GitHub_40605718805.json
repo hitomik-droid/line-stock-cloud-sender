@@ -1,0 +1,24 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "鳥取AIコミュニティ",
+"landing": "https://www.instagram.com/tottori_ai_community/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A9%259A%25E6%25B4%25BB&next=os%3AWzEsIDE2OTc5NDk5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De0VJQgMQFz/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "大庭工務店 | 大阪 | 新築・注文住宅・リフォーム",
+"landing": "https://obakoumuten.co.jp/soudan/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-28&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597&next=os%3AWzIsIDE4ODMzNTA3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DZw5dN4MpYF/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
