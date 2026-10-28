@@ -15,7 +15,8 @@ V8 = {'MSG-ジム-v8', 'MSG-美容クリニック-v8', 'MSG-オンラインス�
 def d1(sql=None, file=None):
     cmd = ['npx', '-y', 'wrangler@4.150.0', 'd1', 'execute', 'line-stock-sales', '--remote', '--json'] + (['--file', file] if file else ['--command', sql])
     p = subprocess.run(cmd, capture_output=True, text=True, cwd=HERE)
-    try: out = json.loads(p.stdout)
+    # 10/28 --file の時は先頭に進み具合の文字が付くので、JSONの始まり（行頭の [ ）から読む
+    try: out = json.loads(p.stdout[p.stdout.find('\n[') + 1:] if not p.stdout.lstrip().startswith('[') and '\n[' in p.stdout else p.stdout)
     except Exception: raise RuntimeError('D1を読めない：' + (p.stdout + p.stderr)[-300:])
     if isinstance(out, dict) and out.get('error'): raise RuntimeError('D1を読めない：' + json.dumps(out['error'], ensure_ascii=False)[:300])
     return out[0].get('results', [])
