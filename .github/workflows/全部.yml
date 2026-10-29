@@ -259,6 +259,24 @@ jobs:
             # 10/27 全件を数える問い合わせはD1の読み取り行数を使うので、dry では鍵の確認をしない
             echo "dry：登録・送付はしない（合格 $(echo "$IDS" | tr ',' '\n' | grep -c . ) 社）"
           fi
+      - name: 公開広告の参照情報を残す
+        if: always() && inputs.source == 'meta' && inputs.from_run == ''
+        run: |
+          python3 - <<'PYREF'
+          import json
+          from pathlib import Path
+          src = Path('記録/Meta集め/出力/meta_候補.json')
+          if src.exists():
+              rows = json.loads(src.read_text())
+              assert isinstance(rows, list) and all(isinstance(r, dict) for r in rows), '広告原本の形式が不正'
+              keys = ('industry', 'name', 'landing', 'source_url', 'ad_evidence_url', 'library_id', 'page_id', 'ads', 'words', 'skip')
+              dest = Path('記録/全部/Meta参照原本.json')
+              dest.parent.mkdir(parents=True, exist_ok=True)
+              dest.write_text(json.dumps([{k: r[k] for k in keys if k in r} for r in rows], ensure_ascii=False, indent=1))
+              print(f'公開広告の参照情報を保存：{len(rows)}行')
+          else:
+              print('広告原本なし：参照情報は未保存')
+          PYREF
       - uses: actions/upload-artifact@v4
         if: always()
         with:
