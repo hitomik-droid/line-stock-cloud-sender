@@ -10,6 +10,11 @@ run-name: 広告ライブラリ集め ${{ inputs.sources }}
 on:
   workflow_dispatch:
     inputs:
+      collect_only:
+        description: 広告原本の取得だけで止め、候補化・登録へ渡さない
+        type: boolean
+        required: false
+        default: false
       sources:
         description: 集める先（meta・google をカンマ区切り）
         required: false
@@ -80,7 +85,7 @@ jobs:
           retention-days: 14
   hand:
     needs: collect
-    if: always()
+    if: always() && inputs.collect_only != true
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
