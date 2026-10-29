@@ -206,7 +206,7 @@ jobs:
         run: |
           mkdir -p "$W"
           # 10/27 D1の無料枠（1日に読める行数）を越えた時、dry は D1 なしで進める（重複は登録の直前にD1を読み直して外す）。register・send は今までどおり止まる
-          if ! npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,legal_name,official_url,form_url,status FROM companies" --json > "$W/D1読取.json"; then
+          if ! npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --config=登録/wrangler.jsonc --command="SELECT id,name,legal_name,official_url,form_url,status,sent_at FROM companies" --json > "$W/D1読取.json"; then
             if [ "${{ inputs.mode }}" = dry ]; then echo "D1が読めない。dry なので D1 なしで進める（重複は登録の時に外す）"; echo '{"companies":[]}' > "$W/sales.json"; echo "LS_API=file://$PWD/$W/sales.json" >> "$GITHUB_ENV"; exit 0; fi
             echo "D1が読めない"; exit 1
           fi
@@ -251,7 +251,7 @@ jobs:
           IDS=$(cat "../$W/ids.txt")
           if [ "$MODE" != dry ] && [ -n "$IDS" ]; then
             npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --file="../$W/投入.sql" > "../$W/登録ログ.txt" 2>&1 || { tail -5 "../$W/登録ログ.txt"; exit 1; }
-            npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --command="SELECT id,name,legal_name,official_url,form_url,status FROM companies" --json > "../$W/D1読取.json"
+            npx --yes wrangler@4.150.0 d1 execute line-stock-sales --remote --command="SELECT id,name,legal_name,official_url,form_url,status,sent_at FROM companies" --json > "../$W/D1読取.json"
             python3 -c 'import json,sys; from pathlib import Path; w=Path(sys.argv[1]); chunks=json.loads((w/"D1読取.json").read_text()); assert chunks and all(c.get("success") for c in chunks); rows=[r for c in chunks for r in c["results"]]; assert rows; (w/"sales.json").write_text(json.dumps({"companies":rows},ensure_ascii=False))' "../$W"
             python3 流れ.py check "../$W"
             echo "ids=$IDS" >> "$GITHUB_OUTPUT"
