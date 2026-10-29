@@ -1,0 +1,68 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "遷移先エラー",
+"landing": "https://www.takumikobo-shinchiku.net/model-house/moriyamaarami/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25A2%25E3%2583%2587%25E3%2583%25AB%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9&next=os%3AWzIsIDIzOTYyODk5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1732522205549822/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "一斉住まいの見学",
+"landing": "https://chushin-jutaku2026.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25A2%25E3%2583%2587%25E3%2583%25AB%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9&next=os%3AWzIsIDIzOTYyODk5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dev1AU7Mv-J/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "Filter株式会社",
+"landing": "https://lp.the-filter.co.jp/dgranceayameike-lp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzEsIDE5OTUzNzg0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/3348549612003898/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社R-STYLE",
+"landing": "https://www.kaoku-saitaniya.com/catalog",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzEsIDE5OTUzNzg0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122242535498315190/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "マイトリーヨガ　静岡/浜松",
+"landing": "https://maitrii-yoga.com/taiken/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BD%2593%25E9%25A8%2593%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B9%25E3%2583%25B3&next=os%3AWzEsIDIzNzc4NzQ5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De0-tmBgufT/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "新井まい｜北区ベビーマッサージ・ベビーマッサージ資格講座・親子サロン",
+"landing": "https://littlehearty.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BD%2593%25E9%25A8%2593%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B9%25E3%2583%25B3&next=os%3AWzEsIDIzNzc4NzQ5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfCxl3RM4aT/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
