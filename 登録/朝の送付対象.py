@@ -10,6 +10,11 @@ APPROVED = {'MSG-ジム-v8', 'MSG-美容クリニック-v8', 'MSG-オンライ�
 # 10/27 9:4x 勝良さん「入れる」：Meta広告ライブラリ・Googleの広告主も送り先に入れる（業種の絞り・大手・FC・ロボット確認などの決まりはそのまま。不動産の例外は動画広告Pro経由だけのまま）
 SOURCES = ('動画広告Pro', 'Meta', 'Google')
 HERE = os.path.dirname(os.path.abspath(__file__))
+# 確認済みIDの一覧が読めない・不正なら停止する。未掲載の会社は自動便へ渡さない。
+reviewed = json.load(open(os.path.join(HERE, '送付確認済みID.json')))
+if not isinstance(reviewed, list) or any(not isinstance(i, str) or not re.fullmatch(r'LS-[0-9]{8}-[0-9]+', i) for i in reviewed):
+    raise ValueError('送付確認済みIDの一覧が不正')
+reviewed = set(reviewed)
 # 10/27 D1が無料枠の上限で読めない時は、代わりの置き場（Supabase）の写しから選ぶ。代わりの置き場に書き戻し待ちの履歴がある会社は、どちらで選ぶ時も外す
 SB_URL, SB_KEY = os.environ.get('SUPABASE_URL'), os.environ.get('SUPABASE_SERVICE_ROLE_KEY')
 def sb(path):
@@ -50,6 +55,7 @@ for c in sorted(d['companies'], key=lambda c: c['id']):
     elif not (c.get('list_source') or '').startswith(SOURCES) and c['id'] not in roster: why = '広告経路（動画広告Pro・Meta・Google）ではない'
     elif c.get('message_id') == 'MSG-不動産-v3' and not (c.get('list_source') or '').startswith('動画広告Pro'): why = '不動産は動画広告Pro経由だけ'
     elif c.get('message_id') not in APPROVED: why = '承認済みの本文ではない'
+    elif c['id'] not in reviewed: why = '業種・本文の個別確認が未完了'
     elif 'line-stock-flow.hitomi-k.workers.dev' in msgs.get(c['message_id'], '') and c['id'] not in links: why = '会社別追跡リンクが未登録'
     if why: skip[why] = skip.get(why, 0) + 1; continue
     ids.append(c['id'])
