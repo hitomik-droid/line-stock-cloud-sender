@@ -31,11 +31,21 @@ const tasks = process.env.COMBOS ? process.env.COMBOS.split(';').filter(Boolean)
 async function tab(k) {
   const p = k === 0 ? login : await ctx.newPage();
   let cur = null;
+  const requestTasks = new WeakMap();
+  p.on('request', (q) => {
+    if (cur && q.url().startsWith('https://api.kashika-20mile.com/api/v1/items')) requestTasks.set(q, cur);
+  });
   p.on('response', async (r) => {
-    if (!cur || !r.url().startsWith('https://api.kashika-20mile.com/api/v1/items')) return;
-    let j = null; try { j = await r.json(); } catch { return; }
-    const items = (j?.items || []).map((i) => Object.fromEntries(KEEP.map((f) => [f, i[f]])));
-    cur.n += items.length; cur.res = (cur.res || 0) + 1; got.push({ word: cur.w, interval: cur.iv, industry: cur.ind || undefined, url: r.url(), data: { items, total_count: j?.total_count } });
+    const task = requestTasks.get(r.request());
+    if (!task || stop) return;
+    const fail = (reason) => { stop = stop || `広告一覧取得失敗（${task.w}・${task.iv}日）：${reason}`; save(); };
+    if (!r.ok()) { fail(`HTTP ${r.status()}`); return; }
+    let j; try { j = await r.json(); } catch { fail('JSONを読めない'); return; }
+    if (stop) return;
+    if (cur !== task) { fail('応答の取得中に検索が切り替わった'); return; }
+    if (!Array.isArray(j?.items) || j.items.some((i) => !i || typeof i !== 'object' || Array.isArray(i))) { fail('itemsの形式が不正'); return; }
+    const items = j.items.map((i) => Object.fromEntries(KEEP.map((f) => [f, i[f]])));
+    task.n += items.length; task.res = (task.res || 0) + 1; got.push({ word: task.w, interval: task.iv, industry: task.ind || undefined, url: r.url(), data: { items, total_count: j.total_count } });
   });
   await sleep(k * 7000);
   for (let t = k; t < tasks.length && !stop; t += TABS) {
