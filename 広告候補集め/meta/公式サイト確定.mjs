@@ -31,6 +31,8 @@ const STRICT = {
   'オンラインスクール': /オンライン|講座|スクール|アカデミー|レッスン|養成|教室/,
   '住宅・リフォーム': /リフォーム|リノベ|塗装|工務店|住宅|新築|注文住宅|家づくり|外壁|屋根|建設|ホーム/,
   '太陽光': /太陽光|蓄電池|ソーラー|発電|エコキュート|省エネ/,
+  '結婚相談所': /結婚相談所|婚活|お見合い|成婚/,
+  '自由診療歯科': /歯科|デンタル|矯正|インプラント|ホワイトニング/,
 };
 const AGG = /合宿免許|比較|ランキング|一括見積|検索・予約|ポータル|まとめ/;
 const ADDR = new RegExp(`(${PREFS})([^\\s　、。,\\d０-９〒（(]{1,8}?[市区町村郡])([^\\s　、。,\\d０-９（(]{0,8}?[区町村])?`);
@@ -109,6 +111,7 @@ for (const c of pool) {
     if (NG_SALES.test(top.text)) throw new Error('営業お断りの表記（トップ）');
     if (FC.test(top.text)) throw new Error('フランチャイズ・チェーン・上場の表記');
     const head0 = `${top.title} ${top.desc} ${top.h1}`;
+    if (!Object.hasOwn(STRICT, c.industry)) throw new Error('判定未対応の業種');
     if (!STRICT[c.industry].test(head0)) throw new Error('トップのタイトル・説明に業種の語が無い：' + head0.slice(0, 40));
     if (AGG.test(top.title)) throw new Error('比較・予約サイトの恐れ：' + top.title.slice(0, 40));
     // 広告主名がサイトに出ているか（比較サイト・別会社のサイトへの誘導を外す）
