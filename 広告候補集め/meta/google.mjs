@@ -64,7 +64,7 @@ try {
       // 「社名 確認済み 日本 約 N 件の広告」の形だけ（ドメイン候補は除く）
       const advs = opts.map((t, i) => { const m = t.match(/^(.*?)\s*(?:確認済み\s*)?(日本|[^\s]+)\s*約\s*([\d,]+)\s*件の広告$/); return m ? { i, name: m[1].trim(), country: m[2], ads: +m[3].replace(/,/g, '') } : null; }).filter(Boolean);
       console.log(`${ind}／${w}：候補${advs.length}`);
-      let opened = 0;
+      let opened = 0, restoreSearch = false;
       for (const a of advs) {
         if (opened >= PER) break;
         let skip = '';
@@ -74,10 +74,11 @@ try {
         else if (a.country !== '日本') skip = '所在地が日本以外';
         if (skip) { out.push({ industry: ind, name: a.name, words: [w], google_ads: a.ads, skip }); continue; }
         // 候補を選ぶと広告主ページへ移る（検索語の入力からやり直す）
-        if (opened > 0) {
+        if (restoreSearch) {
           await page.goto('https://adstransparency.google.com/?region=JP', { waitUntil: 'domcontentloaded', timeout: 60000 });
           await human(3500, 5000);
           const bx = page.locator('input').first(); await bx.click(); await bx.type(w, { delay: 90 }); await sleep(4500);
+          restoreSearch = false;
         }
         const items = page.locator('material-select-item');
         const cnt = await items.count();
@@ -85,6 +86,7 @@ try {
         if (idx < 0) { out.push({ industry: ind, name: a.name, words: [w], google_ads: a.ads, skip: '候補を選べず' }); continue; }
         lastCreatives = [];
         await items.nth(idx).click();
+        restoreSearch = true;
         await sleep(7000);
         b = await blockCheck(page, 'Google'); if (b) { stopped = b; logStop(STOP, b); break outer; }
         const ar = (page.url().match(/advertiser\/(AR\d+)/) || [])[1];
