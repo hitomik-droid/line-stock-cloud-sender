@@ -1,0 +1,46 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "ママキャン 主婦らしい働き方を叶える場所",
+"landing": "https://letter.mamcamp.com/p/xksrKJHf5M9h",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25A1%25E6%2596%2599%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzIxNDgsIDI3MjY3OTgxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfBYF_hA2eR/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "三浦のりこ オンライン占いカレッジ",
+"landing": "https://sub.mask-telling.com/p/maL6NPYjA5yl",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25A1%25E6%2596%2599%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzQwLCAyNDk4NjE1MV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/pIBgA6ozels/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社ジーングロス",
+"landing": "https://jeengross.jp/lp_hotel02/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A9%25BA%25E3%2581%258D%25E5%25AE%25B6&next=os%3AWzIyNDQsIDI2OTkzMTM4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De9Zil3AcrW/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "結婚相談所",
+"name": "株式会社セーブユープラス",
+"landing": "https://enclover-marriage.com/start/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25B5%2590%25E5%25A9%259A%25E7%259B%25B8%25E8%25AB%2587%25E6%2589%2580&next=os%3AWzU3NTYsIDIzOTQ4MjE4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De-2rHiMBXs/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
