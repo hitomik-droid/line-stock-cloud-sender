@@ -1,0 +1,35 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "株式会社コトラス",
+"landing": "https://montessoriparents.jp/lp-3step/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AA%25E3%2583%25B3%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%25B3%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25BC%25E3%2583%25AB&next=os%3AWzUzMjQsIDI2MzIwNzI4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfAK9ZwAfYd/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "二宮 直樹",
+"landing": "https://mira-crea.co.jp/coaching3/",
+"ads": 4,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AA%25E3%2583%25B3%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%25B3%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzEsIDIzODY1MjE2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DPOFfmugPit/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "古堅辰明（ふるげん） | 仕事特化のコーチング",
+"landing": "https://career-forward.jp/lp-Chatbot05//",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2581%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzIzMjM4LCAyNjg1NDM3M10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Delyvm2syEa/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
