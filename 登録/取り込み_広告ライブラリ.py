@@ -16,6 +16,15 @@ def lines(f):
     p = os.path.join(HERE, f)
     return [l.strip() for l in open(p, encoding='utf-8') if l.strip() and not l.startswith('#')] if os.path.exists(p) else []
 
+def needs_google_lookup(r, google):
+    # 広告主は確認できたが公式ドメインだけ未取得の行を、既存の社名探索へ渡す。
+    if not google or r.get('skip') != '広告からドメインが読めず' or r.get('landing') or r.get('domain'):
+        return False
+    aid = r.get('advertiser_id') or ''
+    u = urlsplit(r.get('source_url') or '')
+    return bool(re.fullmatch(r'AR[0-9]+', aid) and u.scheme == 'https' and u.netloc == 'adstransparency.google.com'
+                and u.path == '/advertiser/' + aid and type(r.get('google_ads')) is int and r['google_ads'] > 0)
+
 out_p, srcs = sys.argv[1], sys.argv[2:]
 SEEN = os.path.join(HERE, '広告ライブラリ_調べた')
 seen = [l.split('\t') for f in glob.glob(SEEN + '/*.txt') for l in open(f, encoding='utf-8').read().splitlines() if '\t' in l]
@@ -25,17 +34,21 @@ doms = set(lines('調べた遷移先ドメイン.txt')) | set(lines('調べた�
 for f in ('検品済みドメイン.txt', '調べ済みドメイン.txt'): doms |= {base(x) for x in lines(f)}
 doms.discard('')
 out, new_names, new_doms, why = [], [], [], {}
+lookup_pending = 0
 for f in srcs:
     if not os.path.exists(f): print(f'{f} が無い（その経路は読めなかった）'); continue
     google = 'google' in os.path.basename(f)
     for r in json.load(open(f, encoding='utf-8')):
         k, d = n(r.get('name')), base(r.get('landing'))
-        w = (r.get('skip') or '').split('（')[0] or ('対象外の業種' if r.get('industry') not in TARGET else '') or ('リンク先なし' if not r.get('landing') else '') \
+        pending = needs_google_lookup(r, google)
+        w = ('' if pending else (r.get('skip') or '')).split('（')[0] or ('対象外の業種' if r.get('industry') not in TARGET else '') or ('リンク先なし' if not r.get('landing') and not pending else '') \
             or ('調べた広告主・既存社名' if not k or k in names else '') or ('調べ済みのドメイン' if d in doms else '')
         if w: why[w] = why.get(w, 0) + 1; continue
-        names.add(k); new_names.append(k)
+        names.add(k)
+        if pending: lookup_pending += 1
+        else: new_names.append(k)
         if d: doms.add(d); new_doms.append(d)
-        out.append({'industry': r['industry'], 'name': r['name'], 'landing': r['landing'], 'ads': r.get('google_ads') or r.get('ads') or 1,
+        out.append({'industry': r['industry'], 'name': r['name'], 'landing': r.get('landing') or '', 'ads': r.get('google_ads') or r.get('ads') or 1,
                     'source_url': r.get('source_url') or '', 'ad_evidence_url': r.get('ad_evidence_url') or '',
                     'list_source': 'Google広告の透明性センター' if google else 'Meta広告ライブラリ',
                     'ad_media': (r.get('ad_media') or 'Google広告') if google else 'Facebook・Instagram（Meta）', 'ad_purpose': ''})
@@ -45,4 +58,4 @@ with open(os.path.join(SEEN, (os.environ.get('GITHUB_RUN_ID') or 'local') + '.tx
     f.write(''.join(f'name\t{x}\n' for x in new_names) + ''.join(f'domain\t{x}\n' for x in new_doms))
 by = {}
 for r in out: by[r['list_source'][:4] + '・' + r['industry']] = by.get(r['list_source'][:4] + '・' + r['industry'], 0) + 1
-print(f'新しい広告主{len(out)}', json.dumps(by, ensure_ascii=False), '外した', json.dumps(why, ensure_ascii=False))
+print(f'新しい広告主{len(out)}', json.dumps(by, ensure_ascii=False), '外した', json.dumps(why, ensure_ascii=False), '公式サイト探索待ち', lookup_pending)
