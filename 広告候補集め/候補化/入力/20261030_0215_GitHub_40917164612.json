@@ -1,0 +1,35 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "株式会社Growbuddy",
+"landing": "https://growbuddy-play.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%258B%25B1%25E4%25BC%259A%25E8%25A9%25B1&next=os%3AWzI2NjIsIDI3MTI2MDA3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1122748320402442/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社UBIQS",
+"landing": "https://tranova.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzExODksIDI2NzY5MTY1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/4131555673783301160/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "🇲🇾マレーシア不動産| Karo Living",
+"landing": "https://karoliving.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzgwMCwgMjY4NDA3OTNd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfCFGLlgylH/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
