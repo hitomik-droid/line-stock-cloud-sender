@@ -4396,6 +4396,22 @@
     "LS-20261022-5788": {
       "token": "37153f3012414a10853c8ff8f4c6a992",
       "page": "solar-housing"
+    },
+    "LS-20261022-5789": {
+      "token": "6db731bc8a92431786c22bb896229a72",
+      "page": "personal-gym"
+    },
+    "LS-20261022-5790": {
+      "token": "c2a0f695916a437ab9821579680e7b09",
+      "page": "personal-gym"
+    },
+    "LS-20261022-5791": {
+      "token": "4e73c6c7ef3849e48be30d778b071b6d",
+      "page": "beauty-clinic"
+    },
+    "LS-20261022-5792": {
+      "token": "6a50f562e29449ea8cf216e0061919ce",
+      "page": "beauty-clinic"
     }
   }
 }
