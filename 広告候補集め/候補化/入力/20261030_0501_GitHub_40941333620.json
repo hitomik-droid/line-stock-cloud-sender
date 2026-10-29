@@ -1,0 +1,57 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "西日本新聞メディアラボ",
+"landing": "https://www.medialab.co.jp/event/seminar-2026/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E7%259B%25B8%25E8%25AB%2587&next=os%3AWzIwMjAsIDI1Njk4NjE2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1733053065491588/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "管理栄養士　たぐちゆうこ",
+"landing": "https://utage-system.com/p/3Vs97sNXgb0Y",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E7%259B%25B8%25E8%25AB%2587&next=os%3AWzIwMjAsIDI1Njk4NjE2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122139282579362858/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "リラクゼーションyu",
+"landing": "https://www.yuyu-relax.com/ninkatsu/",
+"ads": 4,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%258D%25BC%25E7%2581%25B8&next=os%3AWzAsIDI3MjUxMTEzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122181679598918864/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "エステ・脱毛",
+"name": "【八王子】YUKA｜フェイシャルエステ[Ekolu Hulu]",
+"landing": "https://www.instagram.com/ekolu.hulu_yuka/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2595%25E3%2582%25A7%25E3%2582%25A4%25E3%2582%25B7%25E3%2583%25A3%25E3%2583%25AB&next=os%3AWzM3MjY4LCAyNDMzOTgyNV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DcyZce3gs5B/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "エステ・脱毛",
+"name": "バストケア美容相談室",
+"landing": "https://miraeon.top/page1/bust-lp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-29&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2595%25E3%2582%25A7%25E3%2582%25A4%25E3%2582%25B7%25E3%2583%25A3%25E3%2583%25AB&next=os%3AWzUxMjIsIDI3MTIzODkyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfDzJn8sHB1/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
