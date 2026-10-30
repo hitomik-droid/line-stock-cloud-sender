@@ -1,0 +1,90 @@
+[
+{
+"industry": "美容クリニック",
+"name": "Nagi/  アートメイク/  山口市",
+"landing": "https://www.instagram.com/nagi_artmake/",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%258B%25E3%2583%2583%25E3%2582%25AF&next=os%3AWzMzMjkxLCAyNzI4MzQwOF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DY2A_O9jBE-/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "SOSOM clinic  GINZA Sakura",
+"landing": "https://sosom.jp/",
+"ads": 4,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%258B%25E3%2583%2583%25E3%2582%25AF&next=os%3AWzEyNTQyLCAyNTIyMzY4NV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeKNXH2sY6L/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "カーナビューティークリニック【広告】",
+"landing": "https://carnabeauty.com/treatment/botox",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E7%259A%25AE%25E8%2586%259A%25E7%25A7%2591&next=os%3AWzgyMDAsIDI2NTg4Nzk3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeBD20nsWc3/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "Contyえいご教室",
+"landing": "https://conty-lp.com/LPPage?id=P133846e",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%258B%25B1%25E4%25BC%259A%25E8%25A9%25B1&next=os%3AWzAsIDI3MzcwMjk1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122231909852493156/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社テンポイノベーション",
+"landing": "https://www.k-tenpo.com/campaign/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzExOTEsIDE2ODUwMjYxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/yFZTQNXpNpB/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "アーク株式会社",
+"landing": "https://www.sumunavi.net/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzEwMDAsIDI3MjMxMzkwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/991610213338143675/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "匠BUZZ T5",
+"landing": "https://www.ailandfudosan.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzYxMSwgMjU4ODUxNjZd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DdVPF06ghdv/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社ひなた不動産",
+"landing": "https://www.hinatafudosan.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzMzNCwgMjcwMTcwOTZd",
+"ad_evidence_url": "https://assets.douga-pro.com/shorts/I4UPJNm6Ak0/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
