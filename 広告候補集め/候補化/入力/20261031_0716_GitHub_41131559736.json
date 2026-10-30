@@ -1,0 +1,13 @@
+[
+{
+"industry": "ペット関連",
+"name": "文ちゃん厳選の逸品",
+"landing": "https://hmdjprt.com/detail/jAMBoJasSxnuSzQ3HD1p",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2588%25E3%2583%25AA%25E3%2583%259F%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzEsIDIyNTQyOTg5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/shorts/phZO_0P82A4/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
