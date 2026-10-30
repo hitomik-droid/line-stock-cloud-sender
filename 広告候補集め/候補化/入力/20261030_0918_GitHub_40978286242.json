@@ -1,0 +1,13 @@
+[
+{
+"industry": "美容クリニック",
+"name": "宋 貴彰｜東京脂肪吸引クリニック",
+"landing": "https://www.instagram.com/dr_so_lipo/",
+"ads": 3,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%258B%25E3%2583%2583%25E3%2582%25AF&next=os%3AWzIyNDIwLCAyNzIyNDEwNV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DbexhK6MYzP/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
