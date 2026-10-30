@@ -1,0 +1,46 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "マイホームコスト",
+"landing": "https://myhomecost.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25AB%25E3%2583%25BC&next=os%3AWzU5NDAsIDI3MDc5MjM1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De684SNsIIt/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "幡ヶ谷ベース",
+"landing": "https://hatagaya-base.com/baikyaku_1",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259E%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%2520%25E5%25A3%25B2%25E5%258D%25B4&next=os%3AWzI2NjIsIDI2MDczNTU2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122115499011490623/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "ケントホームズ グループ",
+"landing": "https://sites.google.com/kenthomes.co.jp/myodoevent/%E3%83%9B%E3%83%BC%E3%83%A0",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25A2%25E3%2583%2587%25E3%2583%25AB%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9&next=os%3AWzIxNDQsIDI1NTk3MzUxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122228297852519058/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "魔女の世界:アロマ・天然石・占星術・タロット",
+"landing": "https://www.mh2u.net/mhreiki",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25A8%25E3%2582%25AC&next=os%3AWzM5MjY4LCAyNjM4Njk1MV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/2XpUB6c-cgg/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
