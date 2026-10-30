@@ -1,0 +1,46 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "サポーターズCoLab",
+"landing": "https://supporterz-seminar.connpass.com/event/406430/",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzI3MTI4MCwgMjM1OTk4Nzhd",
+"ad_evidence_url": "https://assets.douga-pro.com/x/2109895967965323323/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "メーカー転職ならタイズ",
+"landing": "https://www.ee-ties.com/event/001/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzQwOTcxLCAyNDk4MDgyNF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1126108706612076/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "合同会社BeU",
+"landing": "https://beu.co.jp/ginzatsukiji/",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%258A%25E3%2583%25AB%25E3%2582%25B8%25E3%2583%25A0&next=os%3AWzE0NDk1LCAyMDQ3ODQ3Nl0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dd5qG5HMAcQ/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "逆転の就活・転職活動",
+"landing": "https://www.q-venture.com/tokucareer/lp/carerec/",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%258D%25BC%25E7%2581%25B8&next=os%3AWzAsIDI1NDY1OTUxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DddbYoBMIzt/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
