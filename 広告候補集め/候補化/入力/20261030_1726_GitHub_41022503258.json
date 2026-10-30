@@ -1,0 +1,46 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "上田千恵　集客コンサルタント",
+"landing": "https://aikouza.chies-ring.com/self-course",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AA%25E3%2583%25B3%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%25B3%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzY3MzQsIDI3MDc5MDIxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1095879919867284/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "ネットショップオーナー養成講座｜上山翔",
+"landing": "https://utage-system.com/p/5VWur0JoKFUg",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AA%25E3%2583%25B3%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%25B3%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzIsIDE0ODU2NDUzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dei8hXCs0qW/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "女性専用パーソナルジム&ピラティスLAIT GYM（ライトジム）",
+"landing": "https://lp.lait-gym.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%258A%25E3%2583%25AB%25E3%2582%25B8%25E3%2583%25A0&next=os%3AWzgsIDIzODY5NTI0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfByykHgoRe/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "ミサオケンチクラボ",
+"landing": "https://misaoarc.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzEsIDI0OTQwMDMzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De1CYeUsr2I/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
