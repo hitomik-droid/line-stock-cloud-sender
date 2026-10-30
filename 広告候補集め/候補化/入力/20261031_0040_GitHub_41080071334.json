@@ -1,0 +1,35 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "株式会社groove",
+"landing": "https://lp.grooveinc.jp/amazo-boob-camp-2026",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzEwNDg5LCAyNTQ3NTUyNl0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1580509117424784/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "ポーターズ株式会社【公式】",
+"landing": "https://lp.porters.jp/seminar/261111",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzc0NzcsIDI0MDgzOTQ3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De8qYyoA8uT/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "さりぃ ‖子育てコーチング/ママ在宅起業サポーター‖",
+"landing": "https://www.chitamaru.jp/art/11024/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-30&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2581%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzQ4NjYsIDI1ODk2OTU1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122224724252375254/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
