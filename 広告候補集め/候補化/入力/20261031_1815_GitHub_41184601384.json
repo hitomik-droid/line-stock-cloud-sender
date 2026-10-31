@@ -1,0 +1,24 @@
+[
+{
+"industry": "税理士・士業",
+"name": "タックスラボ｜税理士と学ぶ節税セミナー",
+"landing": "https://taxlabos.com/lp/25tax_saving_seminar7_meta/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A8%258E%25E7%2590%2586%25E5%25A3%25AB&next=os%3AWzI2NjIsIDI3MDY5NjExXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfDx0mlA9tx/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "株式会社ドール",
+"landing": "https://www.dole.co.jp/lp/jp/autumn-campaign-2026/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzE4MDQ0LCAyNTk2OTE5Ml0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/x/2116009095480144251/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
