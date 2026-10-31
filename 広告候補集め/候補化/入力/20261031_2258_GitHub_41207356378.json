@@ -1,0 +1,13 @@
+[
+{
+"industry": "税理士・士業",
+"name": "株式会社GNsi",
+"landing": "https://gns-tax.or.jp/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A8%258E%25E7%2590%2586%25E5%25A3%25AB&next=os%3AWzkyLCAyNjg2MDAwOV0%3D",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7454144098916715794.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
