@@ -1,0 +1,68 @@
+[
+{
+"industry": "整体・整骨院",
+"name": "一心整骨院　西大寺松崎院",
+"landing": "https://issin-seikotsu.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E9%25AA%25A8%25E9%2599%25A2&next=os%3AWzEsIDE5MTMyOTQ5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfG5jXfANKc/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "税理士・士業",
+"name": "税理士法人ストラテジー",
+"landing": "https://www.kumamoto-sogyoyushi.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A8%258E%25E7%2590%2586%25E5%25A3%25AB&next=os%3AWzEwNDgsIDI1MzY5NTgzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/s6uLQxeChPh/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "税理士・士業",
+"name": "弁護士法人アキバ法律事務所",
+"landing": "https://akiba-law.com/blog/lp04-gambling/",
+"ads": 3,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25BC%2581%25E8%25AD%25B7%25E5%25A3%25AB%2520%25E7%259B%25B8%25E8%25AB%2587",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/chghSWHymfE/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "アスカ",
+"landing": "https://shop.tiktok.com/jp/pdp/product/1737766267982153649",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzk2NzYsIDI2NTI1NTE2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/tiktok/7701270804566199573/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "Nelture ネルチャー | ぐっすり快眠",
+"landing": "https://nelture.com/f/e-seitai-hogurelax2",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzQ3MzIsIDI1ODUxMDM5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfGnyoQg3K4/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "エステ・脱毛",
+"name": "メンズ脱毛・VIO脱毛専門店＆SPA◆LuminaStella【心斎橋・難波・堀江】",
+"landing": "https://beauty.hotpepper.jp/kr/slnH000582976/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%2584%25B1%25E6%25AF%259B%25E3%2582%25B5%25E3%2583%25AD%25E3%2583%25B3&next=os%3AWzgzMTgsIDIzODYwMjYyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DezWeJ7A899/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
