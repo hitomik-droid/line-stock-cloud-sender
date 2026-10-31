@@ -1,0 +1,35 @@
+[
+{
+"industry": "パーソナルジム",
+"name": "SMART GOLF 【インドアゴルフ】",
+"landing": "https://sma-gol.com/shop/nokendai/",
+"ads": 4,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzEyNzg4LCAyNjg1MDQ4OV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122145455679250617/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社Martial Arts",
+"landing": "https://assetformation-qa.com/partner/",
+"ads": 3,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%2520%25E6%259F%25BB%25E5%25AE%259A&next=os%3AWzIzNDgsIDI2OTY3MTM0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122141318493029160/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社エクセレント",
+"landing": "https://excerent.jp/owner/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-10-31&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%25E6%258A%2595%25E8%25B3%2587&next=os%3AWzE0OTAsIDI2NzYyNDA1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/chatgpt/M35rEVMv626/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
