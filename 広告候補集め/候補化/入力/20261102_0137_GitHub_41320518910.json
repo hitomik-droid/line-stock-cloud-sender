@@ -1,0 +1,68 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "住まいと暮らしのぷらっとHOME (近鉄不動産)",
+"landing": "https://www.instagram.com/skplathome/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzEzNzg3LCAyNzMwMzg3Ml0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfL1WhPMjy9/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "加藤建築-storage-",
+"landing": "https://www.instagram.com/katokenchiku.storage/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzEsIDE5OTEyOTMwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De-x1fmAJ6t/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "KUTU-LOG ｸﾂﾛｸﾞ|  神戸北欧リノベーション",
+"landing": "https://www.instagram.com/kutu_log.official/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzEsIDE5OTEyOTMwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De3SP0yAand/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "UKEN｜堺市の夫婦建築士｜リノベ・注文住宅",
+"landing": "https://www.uken-r.com/co_navi/4df1b0282ba0cb77ee8b12b5384a8ade-248.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzEsIDE5OTEyOTMwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfHGbXMgTLc/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社DC.21",
+"landing": "https://www.dc21.co.jp/assess/edit/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%2520%25E5%25A3%25B2%25E5%258D%25B4&next=os%3AWzE2NDAsIDI3MDkzMDUzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/X8SL3JaDCqM/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "株式会社美手紙",
+"landing": "https://bitegami.net/",
+"ads": 29,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258B%2595%25E7%2594%25BB%25E7%25B7%25A8%25E9%259B%2586",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7488877032084901121.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
