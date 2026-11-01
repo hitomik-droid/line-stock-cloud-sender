@@ -1,0 +1,57 @@
+[
+{
+"industry": "美容室",
+"name": "rino_bob_",
+"landing": "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000593714",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2598%25E3%2582%25A2%25E3%2582%25B5%25E3%2583%25AD%25E3%2583%25B3&next=os%3AWzIwMDAsIDI3MjY4NDM3XQ%3D%3D",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7496501391729429768.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "株式会社あすなろわかさ",
+"landing": "https://insta-beauty.net/noireflet87-da-629/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%25AE%25A4&next=os%3AWzEsIDE4NzgyODczXQ%3D%3D",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7502443942986747137.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "BroTokyo合同会社",
+"landing": "http://bro-tokyo.com/recruit.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2598%25E3%2582%25A2%25E3%2582%25B5%25E3%2583%25AD%25E3%2583%25B3&next=os%3AWzI5MCwgMjcyMzYxODdd",
+"ad_evidence_url": "https://assets.douga-pro.com/tiktok/7480883134695836935/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "エミナル恵比寿",
+"landing": "https://beauty.hotpepper.jp/kr/slnH000546529/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2598%25E3%2582%25A2%25E3%2582%25B5%25E3%2583%25AD%25E3%2583%25B3&next=os%3AWzIxMiwgMjI5OTI4NTZd",
+"ad_evidence_url": "https://assets.douga-pro.com/tiktok/7491175196871625991/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "Senaka Oshitaru合同会社",
+"landing": "https://hitaru.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzc5MDgsIDIwODQ5NzczXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfG0QWQsGhK/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
