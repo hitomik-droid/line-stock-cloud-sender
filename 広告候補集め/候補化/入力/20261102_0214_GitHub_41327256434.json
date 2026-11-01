@@ -1,0 +1,57 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "ダイシン住宅販売 大阪営業所",
+"landing": "https://bukkenpage.jp/p/58289537e8c6",
+"ads": 31,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A4%25AA%25E9%2599%25BD%25E5%2585%2589%25E7%2599%25BA%25E9%259B%25BB&next=os%3AWzEwMTk2LCAyNzQ0Mjc5MF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfHeFKpAjja/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "キクザワ｜札幌・恵庭の注文住宅｜木の家の工務店",
+"landing": "https://www.instagram.com/kikuzawa_style/",
+"ads": 31,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfJqaGfA49E/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "クラス｜愛媛の女性工務店",
+"landing": "https://kurasu-ehime.com/about/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597&next=os%3AWzIsIDI1Mzg4MjI3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfHHRgsAkl6/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "結婚相談所",
+"name": "ハジマレ！恋愛初心者のための結婚相談所",
+"landing": "https://hajimare.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25B5%2590%25E5%25A9%259A%25E7%259B%25B8%25E8%25AB%2587%25E6%2589%2580&next=os%3AWzY5MjYsIDI3NDIwMDc3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfJ4JNeg2UY/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "ベンチャー・エージェンシー株式会社",
+"landing": "https://pdi-property.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzIwNzIsIDI3MjI2NDU0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfKh3Gigslh/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
