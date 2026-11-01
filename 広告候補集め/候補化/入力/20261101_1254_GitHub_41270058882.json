@@ -1,0 +1,24 @@
+[
+{
+"industry": "不動産",
+"name": "トプカプ不動産",
+"landing": "https://topukapu.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzM2NDcsIDI1OTI1MTA1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De-zh2vgGd5/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社札幌ヴェルディ",
+"landing": "https://sapporo-verdy.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzk5OSwgMTA1Nzc3NjVd",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/LsjjtvZ9Zjm/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
