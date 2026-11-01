@@ -1,0 +1,79 @@
+[
+{
+"industry": "美容クリニック",
+"name": "VERI-TENSION （旧：シャインビーム江南店）",
+"landing": "https://www.instagram.com/shinebeam_gangnam/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%258F%25E3%2582%25A4%25E3%2583%2595&next=os%3AWzI1NjAwNCwgMjY0MDc2NzBd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dd8vng7ARcg/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "立花　信一/Shinichi Tachibana",
+"landing": "https://active-play-class.neighbor.fit/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzM1NDA2NCwgMjY3ODQwNzFd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Da9ksuUgsF7/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "東洋ゴルフ",
+"landing": "https://www.instagram.com/toyogolf/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzIxNjAzNSwgMjY0OTkzNzVd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeRIM6Us-6b/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "株式会社ISM WORLD CONNECTION",
+"landing": "https://i-w-c.co.jp/fitness_business/joyfit24_mitaka_campaign/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzU5MTYwLCAyMzY4OTA1N10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeECoqVsOw7/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "Pilates Studio | THE EN",
+"landing": "https://www.theen.jp/lannding-trial",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259E%25E3%2582%25B7%25E3%2583%25B3%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzEsIDIzODYxODI1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfGSYh9AxPb/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "ＲＥＮＯ",
+"landing": "https://reno-mochizukigumi.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzIsIDIxMTQwNDg0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfCEvQpgfEh/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "センチュリー21  中央不動産",
+"landing": "https://www.c21-c.com/baikyaku/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%2520%25E5%25A3%25B2%25E5%258D%25B4&next=os%3AWzQ5NDk2LCAyMzQ3MDgwNF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeVo5vHM1dx/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
