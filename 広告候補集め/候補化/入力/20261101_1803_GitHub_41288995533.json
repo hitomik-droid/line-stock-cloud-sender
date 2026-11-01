@@ -1,0 +1,46 @@
+[
+{
+"industry": "不動産",
+"name": "Enity株式会社",
+"landing": "https://brand-enity.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%2520%25E5%25A3%25B2%25E5%258D%25B4&next=os%3AWzQ5ODYsIDI2MzcxNzM2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfHq2AisZqe/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "PropEasy Japan",
+"landing": "https://propeasyasia.jp/seminar_lp/seminar_20261114/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E7%259B%25B8%25E8%25AB%2587&next=os%3AWzM1MzAsIDI3Mjk5MzY3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122119282185325004/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "広島ウェルネスクリニック",
+"landing": "https://hiroshima-wellness.com/mounjaro_lp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258C%25BB%25E7%2599%2582%25E3%2583%2580%25E3%2582%25A4%25E3%2582%25A8%25E3%2583%2583%25E3%2583%2588&next=os%3AWzEsIDUzOTIwNjFd",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122246267948279621/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "結婚相談所",
+"name": "特定非営利活動法人 出会いサポートセンターJUNOALL",
+"landing": "https://junoall.org/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A9%259A%25E6%25B4%25BB&next=os%3AWzExNTUsIDI2NzcyNTQ5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/aTcgZqUWC4d/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
