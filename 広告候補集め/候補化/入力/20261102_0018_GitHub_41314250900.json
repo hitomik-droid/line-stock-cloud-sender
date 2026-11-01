@@ -1,0 +1,35 @@
+[
+{
+"industry": "不動産",
+"name": "株式会社アタエル",
+"landing": "https://lp.ataeru.ltd/akiya-baikyaku/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%259B%25A8%25E6%25BC%258F%25E3%2582%258A&next=os%3AWzUsIDI1MjQ4NTY1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfJw7ZHMtus/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "株式会社アーバンフィット",
+"landing": "https://urbanfit.jp/store/esakaekimae/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A24%25E6%2599%2582%25E9%2596%2593%25E3%2582%25B8%25E3%2583%25A0&next=os%3AWzQ1NjAsIDI3NDAzMzY2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfLreFtsBez/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "韓国美容整形外科 クレア🧑‍⚕️✨️",
+"landing": "https://www.instagram.com/clairps_jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-01&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%258F%25E3%2582%25A4%25E3%2583%2595&next=os%3AWzE1NzQyLCAyNzM3MTAwN10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfG_klAMNV5/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
