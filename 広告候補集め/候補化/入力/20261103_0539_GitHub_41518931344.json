@@ -1,0 +1,35 @@
+[
+{
+"industry": "美容クリニック",
+"name": "スカルプアートメディカ",
+"landing": "https://scalp.artmed.jp/lp/clinic001-l/",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%258B%25E3%2583%2583%25E3%2582%25AF&next=os%3AWzIyMDUwLCAyNjY5NjUzM10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/40020317830914811/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "太陽光",
+"name": "ダイレクトソーラー",
+"landing": "https://aer.enetrust.net/direct-solar/lp-q/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%2593%2584%25E9%259B%25BB%25E6%25B1%25A0&next=os%3AWzgwMCwgMjc2MTc1NjJd",
+"ad_evidence_url": "https://assets.douga-pro.com/x/2117169387467940168/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "よっかいち女性起業塾",
+"landing": "https://yokkaichi-josei.jp/",
+"ads": 7,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B5%25B7%25E6%25A5%25AD%2520%25E8%25AC%259B%25E5%25BA%25A7",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfD0nWTMHgW/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
