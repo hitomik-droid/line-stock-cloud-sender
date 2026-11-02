@@ -1,0 +1,57 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "株式会社読売エージェンシー",
+"landing": "https://es-seminar.go.jp/",
+"ads": 8,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzEzODg4MDAsIDI2NzYxNDU3XQ%3D%3D",
+"ad_evidence_url": "https://thumbnail.smartnews-ads.com/c/113404276/Xy9WjP6v2S6h2FJO/113444070.jpg?id=97c3bb258443942e93db93d83e76a1b7",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "有限会社進栄商興",
+"landing": "https://overthetop.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2583%259C%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDI3MDg0NTM2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1073886231681345/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "みちこうじ|麹づくりと発酵手しごと🌱菌を愛する発酵講師",
+"landing": "https://utage-system.com/p/nvyOhWh5rSMW",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AA%25E3%2583%25B3%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%25B3%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzIsIDg4NzE5Nzld",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DdX40sGMV5d/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "Autopilotacademy【オートパイロットアカデミー】",
+"landing": "https://program.autopilotacademy.jp/p/lab-live/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AA%25E3%2583%25B3%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%25B3%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzAsIDI1OTg0MTU3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1769175585216083/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "株式会社BCC",
+"landing": "https://www.sales-mastery-academy.com/lp/kata/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2581%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzI1ODQwLCAxOTA3MDU2M10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DegALibMgkt/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
