@@ -1,0 +1,24 @@
+[
+{
+"industry": "美容クリニック",
+"name": "カジュアルクリニック",
+"landing": "https://casual-clinic.jp/lp/lp_01/",
+"ads": 3,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%25A4%2596%25E7%25A7%2591&next=os%3AWzEzODQ0LCAyNzA4MDM5OF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeMMxF0AS-t/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社成家",
+"landing": "https://www.zerostartchintai.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzkyNywgMjcyMjM1OTNd",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/KCSpkDZJsva/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
