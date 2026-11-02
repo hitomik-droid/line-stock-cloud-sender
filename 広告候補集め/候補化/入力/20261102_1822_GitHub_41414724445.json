@@ -1,0 +1,79 @@
+[
+{
+"industry": "不動産",
+"name": "GreenWay不動産",
+"landing": "https://www.greenway3322.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25AB%25E3%2583%25BC&next=os%3AWzIsIDI1NTc4ODUwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/LkOg7EKvzUg/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "パーソナルマシンピラティスcoco",
+"landing": "https://pilates-coco.com/lp-nakamozu/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259E%25E3%2582%25B7%25E3%2583%25B3%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzU0NzYsIDI2MTA3Njg0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfKH3yBMlJ9/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "5tsubox (ゴツボックス)住まいの提案",
+"landing": "https://5tsubox.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzEwMDAwLCAyNjk2NDIzMF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfCI3xTsMBM/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "FPサービス大阪支社",
+"landing": "https://grandast.co.jp/seminar/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E7%259B%25B8%25E8%25AB%2587&next=os%3AWzI2NjIsIDI2MTE4MTQ3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122335085372010605/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "株式会社KEIアドバンス",
+"landing": "https://www.kals.jp/lp/clinical-psy/followup/",
+"ads": 4,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E7%259B%25B8%25E8%25AB%2587&next=os%3AWzEsIDI3MTk5NDc1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/7l5ndTbKZuE/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "一般社団法人新玄会",
+"landing": "https://mirai-medical.clinic/diet/lp007/meta/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258C%25BB%25E7%2599%2582%25E7%2597%25A9%25E8%25BA%25AB&next=os%3AWzMxNTg4LCAyNjE3NTYyMV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/2484594381946210/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "Medi5C メディファイブ 薬用入浴剤",
+"landing": "https://www.instagram.com/medi5c/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzExNTQ5NDYsIDI1ODQ1NzA1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfLqgvqAmjB/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
