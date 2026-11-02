@@ -1,0 +1,35 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "ミサワホーム甲信　長野エリア",
+"landing": "https://www.misawa-koushin.jp/reform/cp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzI4MjYsIDI3MDQ0NTI5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeJUvnAAYSk/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "ジャガー・ランドローバー・ジャパン株式会社",
+"landing": "https://retailers.landrover.co.jp/ehime",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzk3MSwgMjcxNTgzMzZd",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/n78rRbZvoeb/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社青山財産ネットワークス",
+"landing": "https://www.azn.co.jp/service-lp/real-estate-ma/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%2520%25E6%259F%25BB%25E5%25AE%259A&next=os%3AWzgzNTgsIDI3MjY5OTEzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122117203509506108/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
