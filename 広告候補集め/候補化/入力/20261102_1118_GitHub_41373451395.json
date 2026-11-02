@@ -1,0 +1,35 @@
+[
+{
+"industry": "エステ・脱毛",
+"name": "エステティックサロン Miel〈神戸店〉",
+"landing": "https://beauty.hotpepper.jp/kr/slnH000707201/coupon/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2595%25E3%2582%25A7%25E3%2582%25A4%25E3%2582%25B7%25E3%2583%25A3%25E3%2583%25AB&next=os%3AWzI1OTU4LCAyNjczNTAyMF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DdIuZnWjPGk/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "エステ・脱毛",
+"name": "𓊆            若草黄土     ・    若草販売代理店        𓊇📍山口県田布施町｜河原香菜恵｜",
+"landing": "https://www.instagram.com/wakayomogimushi_tabuse/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2595%25E3%2582%25A7%25E3%2582%25A4%25E3%2582%25B7%25E3%2583%25A3%25E3%2583%25AB&next=os%3AWzQ0MjYsIDI2MzE2NjY3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeRSTaBAGcs/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "学習塾・英会話",
+"name": "RIUNIONE株式会社",
+"landing": "https://lp.ec-market.net/shindan/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E6%258C%2587%25E5%25B0%258E&next=os%3AWzIsIDI1NTgwMDIzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/x/2067657301738303510/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
