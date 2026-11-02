@@ -1,0 +1,145 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "カジヒロ",
+"landing": "https://kajihiro.com/adlp02/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%25E6%258A%2595%25E8%25B3%2587&next=os%3AWzUwMDAsIDI1OTIwOTgwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfN-QhxAWh8/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "ピラティススタジオファーレ",
+"landing": "https://www.pilates-fare.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BD%2593%25E9%25A8%2593%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B9%25E3%2583%25B3&next=os%3AWzUzMjQsIDI2MDY3OTIzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1679103704229283/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "株式会社日本ヴォーグ社",
+"landing": "https://www.crafthearttokai.jp/static/lp/kuraimuki/",
+"ads": 3,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BD%2593%25E9%25A8%2593%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B9%25E3%2583%25B3&next=os%3AWzEwMTIsIDI2OTY2NDM1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/kgQxCkASjiU/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "外部空間デザイン・グラン株式会社",
+"landing": "https://granddesign.co.jp/",
+"ads": 30,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A4%2596%25E6%25A7%258B",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dd7mLtngBjf/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "合同会社ケーエイチエー",
+"landing": "https://www.kha-llc.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A4%2596%25E6%25A7%258B&next=os%3AWzEwMDAsIDI1MDY3MzczXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfB5hnUA6fS/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "カワサキグリーンテック株式会社",
+"landing": "https://green-tec-hiroshima.net/",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A4%2596%25E6%25A7%258B&next=os%3AWzAsIDI3NjU1MTEzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeGIKVFAF_3/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "空気清浄機Declean",
+"landing": "https://deport.hp.peraichi.com/declean",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E9%25AA%25A8%25E9%2599%25A2&next=os%3AWzUwNDksIDI2NDAwMzUzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122115557049507270/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "【東大阪】談 昌亮  鍼灸整体院[アユカ鍼灸整体院]",
+"landing": "https://www.instagram.com/masaaki.dan.ayuka.o.m/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%258D%25BC%25E7%2581%25B8&next=os%3AWzEsIDI0Njg1MjgwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De9AKIHsph2/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "結婚相談所",
+"name": "全但バス株式会社【公式】",
+"landing": "https://www.wakuwakukonkatu.com/202610102",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A9%259A%25E6%25B4%25BB&next=os%3AWzQ3MTAsIDI1NTUyNzI4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfO10Rtgs3r/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "ハート座浴®️",
+"landing": "https://www.instagram.com/hart_zayoku_yomogi/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzgzMDAwLCAyMjU4MTA3MF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfOC2dgALn6/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "藤田 みあ",
+"landing": "https://www.and-honey.com/lip/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzI2ODU2LCAyNjA4NDQ0MF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfDdgrjgieI/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "株式会社三杉里",
+"landing": "https://gottsuhand.jimdofree.com/腰痛改善集中コース/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzI1MTMyLCAyMDcxMzYyOV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfIAfsLMJ-5/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "横浜市中区「腰痛専門」整体院桜花｜佐野恵介",
+"landing": "https://seitaiin-ohka.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%25AA%25A8%25E7%259B%25A4%25E7%259F%25AF%25E6%25AD%25A3&next=os%3AWzE2OSwgMjY0NDYwMDFd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DbVIjfhg35x/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
