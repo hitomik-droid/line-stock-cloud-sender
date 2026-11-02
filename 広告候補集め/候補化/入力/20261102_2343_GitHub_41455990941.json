@@ -1,0 +1,24 @@
+[
+{
+"industry": "太陽光",
+"name": "東海すまいびより",
+"landing": "https://mirai-home.biz/lp/03/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%2593%2584%25E9%259B%25BB%25E6%25B1%25A0&next=os%3AWzI2NjIsIDI3NTUyNzQ2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfN92N2slNY/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社あらた",
+"landing": "https://www.glpjp.com/alfalink/ibaraki/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-02&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzIxNzAsIDI2ODUxOTYxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfOIyEusiF0/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
