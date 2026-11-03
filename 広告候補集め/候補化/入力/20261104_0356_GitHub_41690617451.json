@@ -1,0 +1,90 @@
+[
+{
+"industry": "エステ・脱毛",
+"name": "ホットトピックス",
+"landing": "https://beauty.hotpepper.jp/kr/slnH000730440/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2597%25A9%25E8%25BA%25AB%25E3%2582%25A8%25E3%2582%25B9%25E3%2583%2586&next=os%3AWzIsIDI2ODgwMTkwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfBZxz5gNBw/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "学校法人ホスピタリティ学園 エアライン・鉄道・ホテル・テーマパーク専門学校東京",
+"landing": "https://trajal.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzEzMDAwLCAyMTI0OTEwM10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/tiktok/7488199646880337153/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "株式会社カズチャンネル",
+"landing": "https://waku-terrace.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzczNzIsIDI2OTgwOTMxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfP8YPwMHwA/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "伊勢の一棟貸切宿 湊・稜",
+"landing": "https://kbc-llc.io/stay/kawasaki_minato.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzczNzIsIDI2OTgwOTMxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122104105839527794/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社ナカジマ建設",
+"landing": "https://n-techno.net/%e3%80%901%e6%a3%9f%e9%99%90%e5%ae%9a%e3%80%91%e6%96%b0%e3%83%a2%e3%83%87%e3%83%ab%e3%83%8f%e3%82%a6%e3%82%b9%e8%b2%a9%e5%a3%b2%e6%83%85%e5%a0%b1/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B9%25B3%25E5%25B1%258B&next=os%3AWzI0MDAsIDI3Mjc5ODgzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfRKdmHgD86/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "合同会社シックス・マン",
+"landing": "https://www.six-man.com/information/42641/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597&next=os%3AWzIyMDgsIDI0MjA3NDYwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfQup0aMtQZ/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "大和ハウスリアルエステート株式会社",
+"landing": "https://www.dh-realestate.co.jp/lp/kaigo2/index.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A9%25BA%25E3%2581%258D%25E5%25AE%25B6&next=os%3AWzQsIDI2NTI3MjM0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122196902948888656/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "アクセス株式会社",
+"landing": "https://www.accessjapan.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzgwMDAwLCAyNjk2MDIzNV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/DhsikNAV2xd/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
