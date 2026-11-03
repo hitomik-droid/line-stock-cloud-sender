@@ -1,0 +1,13 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "毎日ヒトフミ",
+"landing": "https://1day-1message.com/ja-jp/products/jpn-07-friends-english",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%258B%25B1%25E4%25BC%259A%25E8%25A9%25B1&next=os%3AWzI0MDAsIDI3NjQzMDg5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfNDodMHZUg/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
