@@ -1,0 +1,57 @@
+[
+{
+"industry": "不動産",
+"name": "株式会社ライフタイムサポート",
+"landing": "https://www.life-time-support.com/lp/interioroptions-3",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2596%25B0%25E7%25AF%2589%25E3%2583%259E%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzIwMDAsIDI3MTY3NTAzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/chatgpt/JKZ28gZjaqA/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "Yota Naruse シネマティック動画クリエイター",
+"landing": "https://utage-system.com/page/M9uIS2VOeOVq",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25A1%25E6%2596%2599%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzY2MzQ2LCAyNzIxOTM5NF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfFMP6esn7X/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "ハーブコンシェルジュ　小早川愛",
+"landing": "https://herbaldish.herbis.net/%E7%A7%8B%E5%86%ACver%E6%95%B4%E3%81%88%E6%96%B9%E8%AC%9B%E5%BA%A7/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25A1%25E6%2596%2599%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzgwMDAsIDI2MTIwOTgwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122150233461346536/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "西部ガス Smage(スマージュ) ｜マイホーム｜ 新築・中古",
+"landing": "https://www.instagram.com/smage_sumai.concierge/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzEzMzI4NTQsIDI2NzA0NTAwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfGqY1MAn0m/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "株式会社KNOXIA",
+"landing": "https://hiyori.knoxia.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B0%25B4%25E5%259B%259E%25E3%2582%258A&next=os%3AWzI2NjIsIDI1Mzc1Mzg0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfOoktUAgsA/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
