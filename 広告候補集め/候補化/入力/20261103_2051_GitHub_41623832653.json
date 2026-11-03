@@ -1,0 +1,68 @@
+[
+{
+"industry": "エステ・脱毛",
+"name": "株式会社イソップ",
+"landing": "https://aesopjpn.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2595%25E3%2582%25A7%25E3%2582%25A4%25E3%2582%25B7%25E3%2583%25A3%25E3%2583%25AB&next=os%3AWzQ2OTEsIDI0NDA0NTY0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfQ3fCsAHIb/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "はりきゅう整体サロン あき",
+"landing": "https://harikyu-seitai-aki.studio.site/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzQxNTIsIDI2OTg4NTc5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DY7kiqBjw3d/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "よろこび整体院",
+"landing": "https://yorokobi358.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzMyMDAsIDI3NTU2NTI1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/3eppVJhWuNw/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "株式会社インテルコスメシ・ジャパン",
+"landing": "https://www.icjonline.jp/shop/products/8809702220608",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzI0MDAsIDI2OTQzNTY3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfEXo4AMMKm/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "株式会社フルフリ",
+"landing": "https://furu-furi.com/products/bodycream_cat",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzIwMDAsIDI3NzIzMjg3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfQ2yT9g0Oj/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "NAMIHADAサーファー用アフターサーフスキンケア",
+"landing": "https://shop.namihada.jp/items/113600403",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzIwMDAsIDI3NzIzMjg3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfKdUDAg9GR/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
