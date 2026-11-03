@@ -1,0 +1,35 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "一般社団法人日本インテリアデコレーション協会",
+"landing": "https://www.adecco.com/ja-jp/client/lp/adecco-academy",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&next=os%3AWzE0MjA1MjcyNiwgMTQ1ODgxNjBd",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/ony539T074w/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "一般社団法人世界保健機関日本財団近畿総局",
+"landing": "https://kodomo.tnfportal.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&next=os%3AWzU4ODIzMTAwLCAxNjExNTI0NV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/ahED2bX16e4/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "結婚相談所",
+"name": "エンドフィールド·管理人",
+"landing": "https://23827177656.luvmatter.com/lp/come_play_with_gugugaga_online__1778296874559.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&next=os%3AWzQ3MDI5NzY0LCA5MDMwMjc3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/shorts/kkcMWWrsYKg/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
