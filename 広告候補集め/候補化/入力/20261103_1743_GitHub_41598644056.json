@@ -1,0 +1,35 @@
+[
+{
+"industry": "美容クリニック",
+"name": "ウメノマキ🤍アートメイク看護師/銀座",
+"landing": "https://www.instagram.com/maki_artmake.nurse/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%2584%2582%25E8%2582%25AA%25E5%2590%25B8%25E5%25BC%2595&next=os%3AWzE2NDAwLCAyNzQ0OTMyOF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Deg-7yMsjyU/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "ドクターズ皮膚科新沙店| 韓国美容皮膚科",
+"landing": "https://www.instagram.com/doctors_jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E7%259A%25AE%25E8%2586%259A%25E7%25A7%2591&next=os%3AWzczNjAsIDI2Nzg3NTUzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfETodJATWI/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "京都市住宅供給公社",
+"landing": "https://www.kyoto-jkosha.or.jp/borrow/family2.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-03&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzEwNTQsIDI3MDA3MzIzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/5524140215118898640/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
