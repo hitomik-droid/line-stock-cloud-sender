@@ -1,0 +1,68 @@
+[
+{
+"industry": "結婚相談所",
+"name": "松尾|徳島の結婚相談所Wellbeingハピマリ徳島婚活",
+"landing": "https://www.wellbeing-hapimari.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A9%259A%25E6%25B4%25BB&next=os%3AWzIsIDc5MzA5MTBd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfRaZ1ggmtD/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "三宮の美容クリニック| エマリアクリニック| 二重・クマ・肌治療",
+"landing": "https://emaria-clinic.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B0%258F%25E9%25A1%2594&next=os%3AWzQ5NDQsIDI3MTkwMDM2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfJdPsUgxPr/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社金田工務店",
+"landing": "https://kanada.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597&next=os%3AWzAsIDI3NzQ4NTk3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/17975722018836596942/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "正建株式会社 [ 宮城 石巻 仙台 注文住宅 ]",
+"landing": "https://www.seiken-miyagi.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzE3NDMyLCAyNzE4MDk2OV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfHLwBuA72F/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "空気科学住宅事務局",
+"landing": "https://www.air-science-house.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzEwNDA4LCAyNTgwNTI1MF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfPGTymAG5Q/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "EXVIZ エクスビズ｜パース制作",
+"landing": "https://ex-viz.gld-lab.co.jp/request",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzkzNjAsIDI3NzA0MzE1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/pinterest/997758492452245463/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
