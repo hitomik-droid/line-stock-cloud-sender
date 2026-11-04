@@ -4532,6 +4532,14 @@
     "LS-20261022-5867": {
       "token": "96fafafe440e40c19221f81f1318c3f9",
       "page": "solar-housing"
+    },
+    "LS-20261022-5873": {
+      "token": "38e7a5a9302f4679882f4f244f82dfa9",
+      "page": "personal-gym"
+    },
+    "LS-20261022-5874": {
+      "token": "408ec3b935ed44ecaaae08f535c06133",
+      "page": "online-school"
     }
   }
 }
