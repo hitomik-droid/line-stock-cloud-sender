@@ -1,0 +1,156 @@
+[
+{
+"industry": "不動産",
+"name": "おすすめマンション",
+"landing": "https://casa-society.jp/minami-asagaya/index.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2588%2586%25E8%25AD%25B2%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzI1LCAyNzIyMzU1NV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfUL0yrsxwH/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "茨城総合住宅展示場",
+"landing": "https://housing-navi-hitachi.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BD%258F%25E5%25AE%2585%25E5%25B1%2595%25E7%25A4%25BA%25E5%25A0%25B4&next=os%3AWzQsIDI2ODA5MTMxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfT7xris-JC/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "Buzzエンターテインメント",
+"landing": "https://school.cb-entertainment.jp/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258B%2595%25E7%2594%25BB%25E7%25B7%25A8%25E9%259B%2586&next=os%3AWzEsIDIyOTA5NjFd",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122104967427529849/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "創樹緑化工業 ｜新築デザイン外構｜外構リフォーム｜船橋・市川",
+"landing": "https://soujuryokka.com/new-exterior",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A4%2596%25E6%25A7%258B&next=os%3AWzAsIDI2NjkyNDYzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeRwqVEsk1J/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "武蔵野メディカルシステム株式会社",
+"landing": "https://butsuryokiki.jp/lp/jitankun-seminar/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E9%25AA%25A8%25E9%2599%25A2&next=os%3AWzIsIDIxNTEyODY3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1809525201173101/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "Doctors Oil｜ドクターズオイル・VIRGIN ME",
+"landing": "https://www.instagram.com/doctors_oil/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzQyMzQ2LCAxNDM2MzY4OV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfO7cPaM-3T/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "学習塾・英会話",
+"name": "株式会社Upa",
+"landing": "https://onbird.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E6%258C%2587%25E5%25B0%258E&next=os%3AWzEsIDI2NjUxNjc2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122103821037530519/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "予約制の飲食店",
+"name": "桂浜 ｜KATSURAHAMA",
+"landing": "https://www.instagram.com/katsurahama2020/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25BC%25E8%2582%2589&next=os%3AWzQwMDAsIDI3NTcyMDQzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfOhyJMsrGy/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "予約制の飲食店",
+"name": "焼肉オタクのキムさん / 大東ミラク",
+"landing": "https://www.instagram.com/daito_miraku/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25BC%25E8%2582%2589&next=os%3AWzEsIDIxNzAyMjk4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfQ-y-JgNo0/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "エステ・脱毛",
+"name": "歯のホワイトニング専門店　WHITE彦根店",
+"landing": "https://beauty.hotpepper.jp/kr/slnH000823184/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2595%25E3%2582%25A7%25E3%2582%25A4%25E3%2582%25B7%25E3%2583%25A3%25E3%2583%25AB&next=os%3AWzIxNDAsIDI2NTA1ODgzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfRgLqAsito/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "求人内製化ラボ",
+"landing": "https://joblisting.staffsolution.jp/p/kyujin-book-zero?ftid=vUcNRBNzBtMG",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%25AE%25A4&next=os%3AWzUxODAsIDI2MTc2OTE4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122130014517310694/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "治療家の右腕",
+"landing": "https://migiude.chiryo.pro/p/ccc_lp?ftid=2VavflDZzj7z&utm_source=meta&fbclid=PAZXh0bgNhZW0BMABwZG9mAmFkaWQBqzdCYgnTb3NydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABpw2oc8QYA4FZilhpSgn1BNoHPk8kA5ydxXbLNWuOJUcy6e5jCBt1U2ZvQgkc_aem_-X8XGW9V_mpTYDkE3_8UWA&utm_medium=paid&utm_id=120250573282290447&utm_content=120250573282310447&utm_term=120250573282300447&utm_campaign=120250573282290447",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzUxOTAsIDI3MDY1MDIwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfPKiLnMrjw/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "ブラックビズ",
+"landing": "http://www.blackbiz-akihabara.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%25AE%25A4&next=os%3AWzQ3OSwgMjY2MjMxMjld",
+"ad_evidence_url": "https://im.c.yimg.jp/res/ydnstorage-media/1001586185/14022065/d1ad510096429e168e9ce416f7cc9029.png",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "関西空港 / 大阪空港 / 神戸空港 【公式】",
+"landing": "https://www.instagram.com/kansaiairports/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzg2MjQ4OCwgMjYwMDg1Nzdd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfOyRtogafK/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
