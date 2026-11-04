@@ -1,0 +1,13 @@
+[
+{
+"industry": "学習塾・英会話",
+"name": "個別学習関川塾",
+"landing": "https://www.sekikawa-juku.com/contact/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E6%258C%2587%25E5%25B0%258E&next=os%3AWzI4MDAwLCAyNzU3NjgxNF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfPh5rLgb1w/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
