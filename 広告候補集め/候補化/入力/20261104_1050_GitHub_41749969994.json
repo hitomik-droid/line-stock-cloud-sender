@@ -1,0 +1,57 @@
+[
+{
+"industry": "パーソナルジム",
+"name": "Gym大興奮　宇都宮",
+"landing": "http://instagram.com/gym_dkf/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2583%259C%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDEyODgzMzUxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/meta/4311839495756646/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "あすと キックボクシング アカデミー",
+"landing": "https://www.instagram.com/nagamati.kick/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2583%259C%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDEyMzk5NTY5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/meta/1557239482384871/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "株式会社雅翔工業",
+"landing": "https://www.instagram.com/b.k_bodymakegym/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2583%259C%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDEyMDY5MzU4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/meta/1402278347998043/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "『KickTimes』キックボクシングの教科書 @Personal Kick Studio N",
+"landing": "https://personalkickstudio.com/?gad_source=2",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2583%259C%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDc0MjMzOTFd",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/Z56ZhZubraQ/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "株式会社スロームインターナショナル",
+"landing": "https://sun-gym.com/hommachi.html?utm_source=Fecebook&utm_medium=cpc&utm_campaign=%7B%7Bcampaign.name%7D%7D&utm_content=%7B%7Bad.name%7D%7D&utm_term=%7B%7Badset.name%7D%7D",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-04&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2583%259C%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDc0MjMzOTFd",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/instagram/image/bsKFx6j6EJY.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
