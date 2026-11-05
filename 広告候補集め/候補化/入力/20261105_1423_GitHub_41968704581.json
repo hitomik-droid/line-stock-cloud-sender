@@ -1,0 +1,24 @@
+[
+{
+"industry": "税理士・士業",
+"name": "大下社会保険労務士事務所",
+"landing": "https://www.kokorononenkin.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-05&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A4%25BE%25E5%258A%25B4%25E5%25A3%25AB&next=os%3AWzE1MTksIDI2ODExNDQwXQ%3D%3D",
+"ad_evidence_url": "https://im.c.yimg.jp/res/ydnstorage-media/1001864481/8817370/1ee4f65fd1ebf34c39c6260d733d3753.jpg",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "予約制の飲食店",
+"name": "レカン株式会社",
+"landing": "https://101.kosochazuke.jp/ab/nckxEohOCEWNwmJoDkDw",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-05&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25BC%25E8%2582%2589&next=os%3AWzEsIDIzNjQ1NTI0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1656063982532370/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
