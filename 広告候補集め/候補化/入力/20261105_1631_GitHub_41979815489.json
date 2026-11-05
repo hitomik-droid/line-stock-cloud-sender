@@ -1,0 +1,24 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "おうちランドリノベーション",
+"landing": "https://ouchiland-renovation.com/event/%e3%80%90%e3%81%a4%e3%81%84%e3%81%abgrand-open%f0%9f%8f%a0%f0%9f%8e%88%e3%80%91%e7%af%8955%e5%b9%b4-%e5%8f%a4%e6%b0%91%e5%ae%b6%e5%86%8d%e7%94%9f%e8%a6%8b%e5%ad%a6%e4%bc%9a%f0%9f%8e%89-%e6%b1%a0-3/",
+"ads": 3,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-05&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A9%25BA%25E3%2581%258D%25E5%25AE%25B6&next=os%3AWzIxMzcsIDI3MjY1NzI1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122237297798569810/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "結婚相談所",
+"name": "妹尾かなこ｜愛される紳士をつくるセラピスト",
+"landing": "https://happy-kanako.com/partnership-seminar",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-05&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25B5%2590%25E5%25A9%259A%25E7%259B%25B8%25E8%25AB%2587%25E6%2589%2580&next=os%3AWzMwMDAsIDEyNjIwMDkwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfUzG7YMr76/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
