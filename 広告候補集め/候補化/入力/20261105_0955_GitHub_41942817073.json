@@ -1,0 +1,35 @@
+[
+{
+"industry": "結婚相談所",
+"name": "ゆい婚sulting",
+"landing": "https://utage-system.com/p/A1BUojmYkBLA",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-05&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A9%259A%25E6%25B4%25BB&next=os%3AWzIsIDI2NTcwMjIxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122134456245411446/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "結婚相談所",
+"name": "岡田咲樹子",
+"landing": "https://utage-system.com/p/A1BUojmYkBLA",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-05&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A9%259A%25E6%25B4%25BB&next=os%3AWzIsIDI2NTcwMjIxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfMsPq8AbMT/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "LIFE X｜高性能デザイン規格住宅【公式】",
+"landing": "https://kakushin-kenkyukai.com/webinar/seminar-790/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-05&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597&next=os%3AWzAsIDI3ODU5MTA2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfOnBYGszhK/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
