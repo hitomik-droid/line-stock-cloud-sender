@@ -1,0 +1,13 @@
+[
+{
+"industry": "結婚相談所",
+"name": "株式会社ソフィアジャパン",
+"landing": "https://www.sophia-japan.net/lp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2581%258A%25E8%25A6%258B%25E5%2590%2588%25E3%2581%2584&next=os%3AWzM0MTQsIDI1OTMwMjE4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/16017271345224881105/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
