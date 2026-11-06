@@ -1,0 +1,68 @@
+[
+{
+"industry": "美容クリニック",
+"name": "高橋渉/わたるん先生 【二重整形&クマ治療】",
+"landing": "https://clinic-w.com/lp/kumatori01/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-05&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BA%258C%25E9%2587%258D%25E6%2595%25B4%25E5%25BD%25A2&next=os%3AWzAsIDI2NDcyMTg1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DRCB772gBV6/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "しん整骨院",
+"landing": "https://sinseikotu.com/baby-seitai",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E9%25AA%25A8%25E9%2599%25A2&next=os%3AWzQsIDI1NzQ2MzY0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/2556649501466508/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "子宝鍼灸師® みきと先生",
+"landing": "https://www.instagram.com/mikitotakenaga/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%258D%25BC%25E7%2581%25B8&next=os%3AWzEsIDE4Nzc3MzYxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfOXI3yMCSc/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "株式会社キーストーン・ジャパン",
+"landing": "https://www.masabi.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzI2NzM2LCA2MjY1NDU0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfTLqk2gJCF/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "【広島腰専門整体】岡崎達也/頑固な腰痛も諦めない治療家",
+"landing": "https://seitai-sai.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzE5ODc4LCAyNjczNTM0Nl0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Devr1yysP-H/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "Beauty salon   Pour toujours～プ",
+"landing": "https://beauty.hotpepper.jp/kr/slnH000373417/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzE5ODc4LCAyNjczNTM0Nl0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DbSFCRFMEfz/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
