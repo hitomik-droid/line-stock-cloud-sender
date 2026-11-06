@@ -1,0 +1,68 @@
+[
+{
+"industry": "税理士・士業",
+"name": "大人の脳トレ部",
+"landing": "https://funnel.iqtest.jp/start-test/?pt=gender&utm_source=facebook&utm_medium=cpc&utm_campaign=26OCT_IQTEST_GENDER_JP_META_CBO_AUTO_PURCH_TEST-077&utm_content=26OCT_IQTEST_GENDER_JP_META_AUTO_25-65_1D_FB_IG_TEST-077&utm_term=WWIQ_077_v2_RW_curiosity_careers_STAT_JP_META_VL_DM_1200x1200&utm_channel=meta&utm_mar=serhii&fbclid=PAaWdyZAVYIdxleHRuA2FlbQEwAHBkb2YEYWRpZAGrOLjAH4kqc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnhnGOxhUSr5_UNRjLTCp0lx0W-Q367rIUfWuRqDd5-st02BOOq7h87xIYLP0_aem_5EhsUqesJKEXUcFOsJcKag&utm_id=120252180390500234_v2_s11_e7841_af2_i97938871",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A8%258E%25E7%2590%2586%25E5%25A3%25AB&next=os%3AWzEsIDQ4MTQyNTJd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De9hJGzAiL9/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "予約制の飲食店",
+"name": "アサヒグループ食品株式会社",
+"landing": "https://www.asahi-gf.co.jp/special/ebios/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25BC%25E8%2582%2589&next=os%3AWzEsIDI0MTc0ODY0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZEbSDsLD3/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "NPO法人熊本県キャリアコンサルタント協会",
+"landing": "https://www.hapimon.jp/kiji0032953/index.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%25AE%25A4&next=os%3AWzEsIDE5OTcwNzNd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfWlVFmsnS8/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "ハーバー（HABA）",
+"landing": "https://lp.haba.co.jp/merg_question/ae482b6b/index.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%25AE%25A4&next=os%3AWzEsIDE5OTcwNzNd",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1613091970843258/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "Home Reception（ホームレセプション）",
+"landing": "https://homereception-design.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597&next=os%3AWzIwMDAsIDI2NzcxNjQ5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1839714534207511/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "カチタス",
+"landing": "https://katitas.jp/buyers/landing/zenkoku/",
+"ads": 4,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzE2MjE3NywgMjc4NTkxNzZd",
+"ad_evidence_url": "https://assets.douga-pro.com/shorts/O3zNeDySuM8/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
