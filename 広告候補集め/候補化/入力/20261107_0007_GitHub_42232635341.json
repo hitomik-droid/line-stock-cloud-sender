@@ -1,0 +1,68 @@
+[
+{
+"industry": "美容室",
+"name": "パイルツイスト/ホワイトメッシュ/極道パーマ/スペインカール/ギャングスパイラル大暉",
+"landing": "https://www.instagram.com/cipher._daiki/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2598%25E3%2582%25A2%25E3%2582%25B5%25E3%2583%25AD%25E3%2583%25B3&next=os%3AWzI0MjIsIDE5Nzg4NDMzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfRWDQWM9QM/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "杉田滉貴/京都河原町メンズ縮毛矯正曲がる縮毛矯正ニュアンスパーマフェザーパーマセンターパートメンズパーマ",
+"landing": "https://www.instagram.com/koki_sugita/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2598%25E3%2582%25A2%25E3%2582%25B5%25E3%2583%25AD%25E3%2583%25B3&next=os%3AWzQ4OCwgMjY5MTQzMDJd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfRvuWsgWLd/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "SEKAI HOTEL株式会社",
+"landing": "https://sekaihotel.jp/fuse_lp_f/family_newyear/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzE2MDAwLCAyMzY0OTUyOV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1002781482861976/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "日置浜ヴィラ",
+"landing": "https://villa-hiokihama.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzEwNjQ4LCAxOTIwMTk3MV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1624612129679955/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "ACCORD株式会社",
+"landing": "https://www.novotel-living-singapore-orchard.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzkwMDAsIDE4MDI3OTIzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/shorts/9UJhzz9m-ho/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "CampusTop オンライン英会話",
+"landing": "https://cpjp.campustop.net/lp/swipe/",
+"ads": 3,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%258B%25B1%25E4%25BC%259A%25E8%25A9%25B1&next=os%3AWzIwMTAwLCAyNTE2MjY5NF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/2203532504384941/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
