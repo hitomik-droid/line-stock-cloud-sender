@@ -1,0 +1,24 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "マエダハウジング公式｜広島｜リフォーム・リノベーション",
+"landing": "https://www.maedahousing.co.jp/request/",
+"ads": 19,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2596%25B0%25E7%25AF%2589%25E3%2583%259E%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzgwMCwgMjc4NDgxMzBd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dd3fMwqgVgD/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "ショールームミライエチャンネル",
+"landing": "https://miyoshitec.com/",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B0%25B4%25E5%259B%259E%25E3%2582%258A&next=os%3AWzM4OCwgMjYxNTMxNzZd",
+"ad_evidence_url": "https://assets.douga-pro.com/shorts/3LgQ_UyjO9c/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
