@@ -1,0 +1,35 @@
+[
+{
+"industry": "美容クリニック",
+"name": "切斯特張",
+"landing": "https://www.ortaclinic.com/zh-CN",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%258B%25E3%2583%2583%25E3%2582%25AF&next=os%3AWzM3NDY4LCAyNzI4MzQ2MF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DZrR9bjjLOS/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "カルー株式会社",
+"landing": "https://kijimaskinclinic.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E7%259A%25AE%25E8%2586%259A%25E7%25A7%2591&next=os%3AWzM3NDgsIDI2ODE5MTQyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfKautegnFx/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社ルーム",
+"landing": "https://www.vecs.co.jp/2026promotion-xmas/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzg5MCwgMjY1NjQxNjld",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/DX2J6gQJz8g/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
