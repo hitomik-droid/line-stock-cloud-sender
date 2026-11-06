@@ -1,0 +1,57 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "【木族の家】信州松本の注文住宅•リノベーション",
+"landing": "https://kizokunoie.com/news/open-house_2611_satoyamabe-5years/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzIsIDEyMjUzODIxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfPNvQ7Azro/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "小原正徳| お金と人生の攻略法",
+"landing": "https://koharamasanori.com/ac-1day-online/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%25E6%258A%2595%25E8%25B3%2587&next=os%3AWzI0MDAsIDI3MDc3Mzk5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfOuI-BstML/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "医療法人社団マザー・キー",
+"landing": "https://www.famil-biyo.com/service_w/medical_hair_removal/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258C%25BB%25E7%2599%2582%25E8%2584%25B1%25E6%25AF%259B&next=os%3AWzIwMDAsIDI2MzcxMTgyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/17325102697690057016/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社宇佐美組",
+"landing": "http://trailer-houses.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%259C%259F%25E5%259C%25B0%25E6%25B4%25BB%25E7%2594%25A8&next=os%3AWzQ3MCwgMjM1OTI2NzZd",
+"ad_evidence_url": "https://im.c.yimg.jp/res/ydnstorage-media/1001602879/1971197/d66dd6e501e603707ddeaf4d69c35aa6.jpg",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "解体費用無料診断",
+"landing": "https://ryoken-kaitai-support.com/tokyo01/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-06&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%259C%259F%25E5%259C%25B0%25E6%25B4%25BB%25E7%2594%25A8&next=os%3AWzQ3MCwgMjM1OTI2NzZd",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122129788539470871/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
