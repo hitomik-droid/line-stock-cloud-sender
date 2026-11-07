@@ -1,0 +1,57 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "【公式】ライフスタイルweek",
+"landing": "https://www.lifestyle-expo.jp/hub/ja-jp/lp/cp.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzQ2MjQwLCAyNzE2MDc5OF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfWUdXYMVn5/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "クオリス・イノーバ株式会社",
+"landing": "https://www.qualysinnova.com/event/tag/4874_4820/29.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzc5ODYsIDE5NTQxNzg3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfYV1ZCMJg1/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "有限会社スタージスコンサルタント",
+"landing": "https://sturgis.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2583%259C%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzEsIDI0MjE0MDg5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/kPdRwUAyJtF/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "株式会社ロハスの風",
+"landing": "https://hachioji-gp.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259E%25E3%2582%25B7%25E3%2583%25B3%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzI0MzQsIDI0NTY0NDM2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/13121657218713131165/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "ユリデザイン工房合同会社",
+"landing": "https://www.yuridesignkobo.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzAsIDI2Njc4OTM0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DcU8DnzjMgx/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
