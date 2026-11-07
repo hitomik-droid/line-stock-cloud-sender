@@ -1,0 +1,24 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "ウェルネストホーム大阪｜世界基準の高性能住宅",
+"landing": "https://lp.ishikawa-gumi.com/nishinomiya-modelhouse",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25A2%25E3%2583%2587%25E3%2583%25AB%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9&next=os%3AWzU3NTQsIDE4OTcxNjYzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZQrj9A1_p/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社沖拓建設",
+"landing": "https://okiken-j.co.jp/category/modelroom/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25A2%25E3%2583%2587%25E3%2583%25AB%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9&next=os%3AWzc0NiwgMjAxMzE1NDdd",
+"ad_evidence_url": "https://assets.douga-pro.com/lap/6-1563786258/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
