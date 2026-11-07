@@ -1,0 +1,57 @@
+[
+{
+"industry": "太陽光",
+"name": "エコ診断",
+"landing": "https://eco-shindan.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A4%25AA%25E9%2599%25BD%25E5%2585%2589%25E7%2599%25BA%25E9%259B%25BB&next=os%3AWzI0MDAsIDI3Nzg1MTk3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfWjT_NAdC9/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "チェックハウス｜注文住宅",
+"landing": "https://chplus-hamada.com/event/202611kengakukai/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B9%25B3%25E5%25B1%258B&next=os%3AWzIwLCAxODk5MjA3M10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfTm8xEM8xG/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "新日本住建販売株式会社",
+"landing": "https://www.tamaken.com/asagaya/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2596%25B0%25E7%25AF%2589%25E3%2583%259E%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzczMjQsIDI3NjU1NTk5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfYZleJAxdn/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "太陽光",
+"name": "東北くらしラボ",
+"landing": "https://new-energy-system.com/lp/03/",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%2593%2584%25E9%259B%25BB%25E6%25B1%25A0&next=os%3AWzEsIDI3MTY3Mjc0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfGjp7rMN-d/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "志組【じぐみ】リフォームTV",
+"landing": "https://www.google.com/share.google?q=F8hu4ST4NJmnFeZTU%3Ffbclid%3DPAZXh0bgNhZW0BMABwZG9mAmFkaWQBqzgVOeyrlXNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABp6fD79YS8FdCVhBD8yPCly3wsQ7vKd8YdM50ikIPFy0X7b5Du_SyrLIVL099_aem_gy0iRNgGYrOBO5IurMnXWg",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%259B%25A8%25E6%25BC%258F%25E3%2582%258A&next=os%3AWzg0NiwgMjIxODkyODdd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfUMOelMPSx/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
