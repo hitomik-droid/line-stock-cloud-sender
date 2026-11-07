@@ -1,0 +1,46 @@
+[
+{
+"industry": "パーソナルジム",
+"name": "株式会社CMerTV",
+"landing": "https://www.rizap.jp/lp/aff-260203",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%258A%25E3%2583%25AB%25E3%2582%25B8%25E3%2583%25A0&next=os%3AWzUwMCwgMjczMDc3NThd",
+"ad_evidence_url": "https://im.c.yimg.jp/res/ydnstorage-media/1002559431/18470520/a3d7c8dc1d00d10fe3d5203cbff4f398.jpg",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社B-wood",
+"landing": "https://b-wood.co.jp/lp1/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25AB%25E3%2583%25BC&next=os%3AWzQyLCA2MDIyODI4XQ%3D%3D",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7279479063863987457.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "株式会社フットサル大分2002",
+"landing": "https://futsal-oita-2002.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzY2MzM2LCAyNjM1MzgxOF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfY-awcMzAq/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社an cube（アンキューブ）リノベーション大阪",
+"landing": "https://www.instagram.com/reform_ancube28/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzAsIDI4MDM2MDUwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfR-XQKAl5l/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
