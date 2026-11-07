@@ -1,0 +1,35 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "藤田哲也｜一人起業家のためのMeta広告",
+"landing": "https://ad.c-side.net/p/PkdSl1EJ8aMO",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E7%259B%25B8%25E8%25AB%2587&next=os%3AWzIyNjQsIDI2NTkxNjExXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZ5EA7MbvF/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "ゼロから始める運用代行",
+"landing": "https://jp.smmfromzero.online/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258B%2595%25E7%2594%25BB%25E7%25B7%25A8%25E9%259B%2586&next=os%3AWzEsIDc4MDk3NTNd",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1917371799249185/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "合同会社HariBear",
+"landing": "https://beauty.hotpepper.jp/kr/slnH000705097/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%258D%25BC%25E7%2581%25B8&next=os%3AWzI2NjIsIDI2MTQyNzUwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/2020684129259216/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
