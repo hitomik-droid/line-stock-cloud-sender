@@ -1,0 +1,35 @@
+[
+{
+"industry": "税理士・士業",
+"name": "株式会社ラクスライトクラウド",
+"landing": "https://www.net-school.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A8%258E%25E7%2590%2586%25E5%25A3%25AB&next=os%3AWzAsIDI3OTkzMDMzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/jRkjg2fr6HH/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容室",
+"name": "株式会社B.VALANCE",
+"landing": "https://sb.valan-beauty.com/ab/vala-f3-05q-tk107",
+"ads": 27,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%25AE%25A4&next=os%3AWzE4MjksIDI0NDI5NjA0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/tiktok/7704592537448746292/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社T.S.Architects",
+"landing": "https://musica-tsa.net/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-07&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzIxMDAwLCA4NjkzMTUwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/6899160811105671222/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
