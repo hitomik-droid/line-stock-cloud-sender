@@ -1,0 +1,57 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "ワークホームズ【公式】|滋賀〈注文住宅〉",
+"landing": "https://workhomes.jp/since1977/estate_lp",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2588%2586%25E8%25AD%25B2%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzIwLCAyNzk5MjQ2M10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dd0hS7PsvNN/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "おはな整骨院グループ",
+"landing": "https://ohana-seikotsu.com/post-2936/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E9%25AA%25A8%25E9%2599%25A2&next=os%3AWzQsIDI3ODU5OTc4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfURm0aMRoJ/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "六甲 美容鍼 BEE PLUS｜リフトアップ・ニキビ特化",
+"landing": "https://www.instagram.com/rokkou.ikumou",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%258D%25BC%25E7%2581%25B8&next=os%3AWzIsIDIwNzI0MzY5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfXD1nQM2JL/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "からだととのう・Natura",
+"landing": "https://totonou-naturapremier.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzExNjA2NiwgMjI5NDYxNzRd",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1671719701137426/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "🌿赤土琉球ハーブ蒸し🌿",
+"landing": "https://ryukyuherb.com/consider/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzU1ODA0LCAyMjYzNTkwNV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfbI3Oagh4q/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
