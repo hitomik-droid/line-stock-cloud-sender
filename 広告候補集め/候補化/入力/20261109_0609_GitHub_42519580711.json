@@ -1,0 +1,35 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社ハイブリッドホーム",
+"landing": "https://www.hybridhome.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzIwMDAsIDIzNDAwNTkwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/165274962679572779/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社ワンラップコートジャパン",
+"landing": "https://coatjapan.com/works/example/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzEzMzEwLCAyNzQ3NDY2MF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/9012200605888050185/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "マナガーデン株式会社",
+"landing": "https://managarden.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A4%2596%25E6%25A7%258B&next=os%3AWzE2MSwgOTIyMDY3NF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeyrfEWA2EQ/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
