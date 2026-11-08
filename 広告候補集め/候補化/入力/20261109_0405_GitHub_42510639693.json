@@ -1,0 +1,57 @@
+[
+{
+"industry": "ペット関連",
+"name": "まろん@主婦のコスパ自分磨き",
+"landing": "https://www.tiktok.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2588%25E3%2583%25AA%25E3%2583%259F%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzIyLCAyNzYwMDQyMF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/tiktok/7621506435423538452/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ペット関連",
+"name": "APRE ネイル商材卸・サロン様専用",
+"landing": "https://item.rakuten.co.jp/emi-nal/1001-0079/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2588%25E3%2583%25AA%25E3%2583%259F%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzEsIDIyMTExOTBd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfWWvXoggN6/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "予約制の飲食店",
+"name": "ひろ",
+"landing": "https://www.tiktok.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25BC%25E8%2582%2589&next=os%3AWzgwMCwgMjYyNjM0ODFd",
+"ad_evidence_url": "https://assets.douga-pro.com/tiktok/7631480055792717076/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "予約制の飲食店",
+"name": "ニック🌝",
+"landing": "https://www.tiktok.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25BC%25E8%2582%2589&next=os%3AWzgwMCwgMjYyNjM0ODFd",
+"ad_evidence_url": "https://assets.douga-pro.com/tiktok/7631482534446058770/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "アースウォーカートレーディング株式会社",
+"landing": "https://www.ozonemart.jp/pages/hotel-ozone-cluster-1400",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2597%2585%25E9%25A4%25A8&next=os%3AWzE5ODAsIDM5NDExNTld",
+"ad_evidence_url": "https://assets.douga-pro.com/chatgpt/ui2phC2KHr2/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
