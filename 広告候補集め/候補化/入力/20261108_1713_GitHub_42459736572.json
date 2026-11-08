@@ -1,0 +1,35 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "ワンズホーム［浜松 静岡のデザイン住宅|注文住宅|工務店]",
+"landing": "https://www.oneshome-hamamatsu.jp/event/202611-komatsu-hanbaikai",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25A2%25E3%2583%2587%25E3%2583%25AB%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9&next=os%3AWzEsIDIwNzkwNzUzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfRWhB_AoWN/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "アイスタイルハウス｜注文住宅/新築/山口・福岡",
+"landing": "https://wnh9c.hp.peraichi.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25A2%25E3%2583%2587%25E3%2583%25AB%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9&next=os%3AWzEsIDIwNzkwNzUzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeGdyRBgI-y/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "結婚相談所",
+"name": "歩婚",
+"landing": "https://www.arukon.net/akashi/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A9%259A%25E6%25B4%25BB&next=os%3AWzgzODQsIDI0NTc3NjU0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1114979618189175/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
