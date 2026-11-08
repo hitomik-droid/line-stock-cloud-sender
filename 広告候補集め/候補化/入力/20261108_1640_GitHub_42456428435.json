@@ -1,0 +1,24 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "株式会社PORT",
+"landing": "https://bootcamp.portai.co.jp/seminar",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzM3MjY4LCAyNzQ3NjgxNF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZOq4ngVWq/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "特定非営利活動法人キャリア解放区",
+"landing": "https://outlaw.so/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzI2NjIwLCAyNzU1OTE0Ml0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/13265719887361226745/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
