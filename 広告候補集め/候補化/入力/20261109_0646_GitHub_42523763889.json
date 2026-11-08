@@ -1,0 +1,46 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "Note house",
+"landing": "https://notehouse.jp/estimate/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzE2MDAwLCAyNzkzODExM10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dfb4axvAfLp/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "英会話 めりーらんど",
+"landing": "https://merryland.dim.mobi/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%258B%25B1%25E4%25BC%259A%25E8%25A9%25B1&next=os%3AWzQ4NzAsIDI2ODIxMjAzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZdOAKA_Ty/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "太陽光",
+"name": "Comam｜太陽光・蓄電池と住まいの点検",
+"landing": "https://comam-check.com/water",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%2593%2584%25E9%259B%25BB%25E6%25B1%25A0&next=os%3AWzEsIDI0Nzk0MjQ0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122107666809521245/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社リズムライフ",
+"landing": "https://www.rizum.biz/lp-management-plan/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzIxNTgsIDI3OTA4Nzk1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122099657607540739/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
