@@ -1,0 +1,68 @@
+[
+{
+"industry": "結婚相談所",
+"name": "En MUSUBI NARA（エンムスビナラ）|  奈良の結婚相談所",
+"landing": "https://en-musubi-nara.jp/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A9%259A%25E6%25B4%25BB&next=os%3AWzIyMDAwLCAyNzg4NDg1Nl0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfbGq_osnAp/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "シークレット皮膚科【公式】| 江南皮膚科 | 韓国美容",
+"landing": "https://www.instagram.com/secretderma_jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B0%258F%25E9%25A1%2594&next=os%3AWzAsIDI4MDIyOTIxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Ddag1RvABT_/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "株式会社TSUKURU",
+"landing": "https://lp.businesslabo.org/p/lp_vision10",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25A1%25E6%2596%2599%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzQsIDQ4ODkyNjZd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZV5vCA_NP/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社アーバンステイズ",
+"landing": "https://492.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzIwOTgsIDI3MTY5ODgwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/5823011341897773948/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "朝次丸 碧楼 波音  HANOTO BLD.",
+"landing": "https://www.instagram.com/hanoto_okinawa/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzE5MzAsIDI2NjQ1MjY2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/De_njSFs2xK/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "積水ハウスシャーメゾンPM東京株式会社",
+"landing": "https://www.mastorage.jp/storage/shop/detail_00020/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-08&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzEwMTIsIDI1MzA4NTczXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/nyYyPu7NegN/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
