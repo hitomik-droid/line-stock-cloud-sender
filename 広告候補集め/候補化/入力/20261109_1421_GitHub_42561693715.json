@@ -1,0 +1,24 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "【 加古川 】タイピング×英語で学ぶ子ども英語教室",
+"landing": "https://www.instagram.com/actimethod_kakogawa/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%258B%25B1%25E4%25BC%259A%25E8%25A9%25B1&next=os%3AWzIwMSwgMjY1OTQ3OTdd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfD3TT3g4gQ/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "家買った独身ol - 29歳",
+"landing": "https://smuul.xyz/ab/zBRdgLmabOUOPvSDFGIA",
+"ads": 3,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzExMDAwLCAyMTc3MDM5OV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfXaKS_M-kS/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
