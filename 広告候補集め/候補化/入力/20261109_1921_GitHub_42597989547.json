@@ -1,0 +1,57 @@
+[
+{
+"industry": "エステ・脱毛",
+"name": "株式会社キュアボディジャパン",
+"landing": "https://curebody-japan.com/sendai-diet",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2597%25A9%25E8%25BA%25AB%25E3%2582%25A8%25E3%2582%25B9%25E3%2583%2586&next=os%3AWzIwMDAsIDI4MTE1MDIyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122097150981546852/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "エステ・脱毛",
+"name": "Marlo美容整体院",
+"landing": "https://lab684.wpcomstaging.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2597%25A9%25E8%25BA%25AB%25E3%2582%25A8%25E3%2582%25B9%25E3%2583%2586&next=os%3AWzIsIDE5NjIxMTI2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1151899814081003/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "税理士・士業",
+"name": "三宅法律事務所",
+"landing": "https://miyakelaw-souzoku.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A8%258E%25E7%2590%2586%25E5%25A3%25AB&next=os%3AWzEsIDIxMDM0NDA3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122113414743507285/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "春日Enjoy",
+"landing": "https://sennohi.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzEwMzk0LCAxNDczMTU5N10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfdxcPXApg4/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "フィッツコーポレーション公式",
+"landing": "https://laaveen-fits-japan.studio.site/download",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzg4MTgsIDIzOTQ2MDI3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfUs2YqgEdf/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
