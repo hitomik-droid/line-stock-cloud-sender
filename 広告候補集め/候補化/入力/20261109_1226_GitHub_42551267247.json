@@ -1,0 +1,68 @@
+[
+{
+"industry": "パーソナルジム",
+"name": "フィットネスジムo-style月寒西",
+"landing": "https://o-style.info/lp/tsukisamunishi/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25A8%25E3%2582%25AC&next=os%3AWzIyMTk2LCAyNzQwMzUxMV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1137473828731138/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "NBテニスガーデン｜ 広島市のテニススクール🎾",
+"landing": "https://nbtg.co.jp/news/autumn2026/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25A8%25E3%2582%25AC&next=os%3AWzE5MzcyLCAyNzAyNTA4Nl0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZEdyYMrJf/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "ヤナセバイエルンモーターズ株式会社",
+"landing": "https://yanase.bmw.jp/ja/news/weeklyevents_01",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzgwMDAsIDIzMDY4OTg4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122325822152036934/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社クレアンスメアード",
+"landing": "https://www.toyota-mobility-kanagawa.jp/u-car",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzEyNzgsIDI4MDc3ODQ3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/16362935304619698392/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社建和",
+"landing": "https://www.wasaki-renovation-tokyo.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzEwMDAsIDI4MDc4OTgyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/14896050668592272959/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社CLOUD SHARE",
+"landing": "https://reno-smile.com/leaseback/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%2520%25E5%25A3%25B2%25E5%258D%25B4&next=os%3AWzgxNTAsIDI3NDk0NjUzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122102143947457153/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
