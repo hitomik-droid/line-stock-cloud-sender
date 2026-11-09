@@ -1,0 +1,24 @@
+[
+{
+"industry": "学習塾・英会話",
+"name": "ＣＫＣ ネットワーク",
+"landing": "https://www.ckc.co.jp/recruit/graduate/open-company/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E6%258C%2587%25E5%25B0%258E&next=os%3AWzI2NjIsIDI2MDE2NTAzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122117692995326001/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "学習塾・英会話",
+"name": "株式会社水戸アカデミー",
+"landing": "https://mito-academy.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25AD%25A6%25E7%25BF%2592%25E5%25A1%25BE&next=os%3AWzE3ODgsIDIzMjE2NDld",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/nftT3T4zceL/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
