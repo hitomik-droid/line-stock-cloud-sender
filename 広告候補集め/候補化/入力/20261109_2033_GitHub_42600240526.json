@@ -1,0 +1,35 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "株式会社ライスカレーセミナー運営事務局",
+"landing": "https://secure-link.jp/wf/?c=wf21248345",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzE3OTk0LCAyNzEzNzAyM10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZQJtQg9M6/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "株式会社AIT",
+"landing": "https://ait-c.jp/course/ucshool2025/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzE1MzYwLCAyNzk0OTIyNV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfcaKKDgn-j/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "オリジナル商品開発",
+"landing": "https://u.padmin.net/p/TpeFqrn2nmtL",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AA%25E3%2583%25B3%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%25B3%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzIsIDI2MTE0MjcyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DewZpKoAYFc/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
