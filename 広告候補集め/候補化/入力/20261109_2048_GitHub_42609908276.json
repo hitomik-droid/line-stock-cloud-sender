@@ -1,0 +1,46 @@
+[
+{
+"industry": "パーソナルジム",
+"name": "ライフウェル浜松｜ジム・溶岩ホットヨガ・マシンピラティス",
+"landing": "https://www.life-well.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259E%25E3%2582%25B7%25E3%2583%25B3%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzAsIDI4MDk1MDIwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfKXsvUAUk4/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "GLAMDAY STYLE TEITAKU",
+"landing": "https://glamday.jp/ownership/firtree-lp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzIyNjQsIDI4MDc4NzIzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfgEa0bsCmR/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "中古アパート節税投資│藤和コーポレーション《公式》",
+"landing": "https://towa-corporation.jp/re-born_fudousan/setsuzei/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzIyNjQsIDI4MDc4NzIzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfbfcCCgJoK/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "一般社団法人 おかねの安心相談所",
+"landing": "https://mco-office.or.jp/lp/realestate/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%2520%25E5%25A3%25B2%25E5%258D%25B4&next=os%3AWzgwNDIsIDI2MzkzNzY2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122105101191535996/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
