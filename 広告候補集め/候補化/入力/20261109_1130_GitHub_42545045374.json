@@ -1,0 +1,57 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "仙台市産業振興事業団 / Sendai City Indus",
+"landing": "https://www.siip.city.sendai.jp/sckc/event/4694/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzI5MjgyLCAyNzQ3NjE3Ml0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfY7WbdMZl6/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "がくちょう | 起業家を育ててます",
+"landing": "https://4step-business.com/shindan/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2581%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzIwMjgsIDI2ODY0NTMzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfecT77MiPC/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "ひかる|パーソナルジムGOFLEX|板橋区東武練馬",
+"landing": "https://www.instagram.com/goflex_personal2/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%258A%25E3%2583%25AB%25E3%2582%25B8%25E3%2583%25A0&next=os%3AWzIsIDQ3NzUwMzBd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfeL-pdMvRJ/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "Lox.tokyo",
+"landing": "https://lp.loxtokyo.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%258A%25E3%2583%25AB%25E3%2583%2588%25E3%2583%25AC%25E3%2583%25BC%25E3%2583%258B%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzEyMiwgMjc5NDM0MTVd",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122133406887378532/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "HITORI WELLNESS 東加古川店",
+"landing": "https://hitoriwellness-higashikakogawa.com/preopen",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-09&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzE2NjQwMCwgMjcxMTc1Njdd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfVxaNign-V/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
