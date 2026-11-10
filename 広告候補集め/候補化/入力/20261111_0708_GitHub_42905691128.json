@@ -1,0 +1,57 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社いえ・VISION",
+"landing": "https://lp.a-sumai.com/kurashitaiken/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597&next=os%3AWzU4MDQsIDI3OTIwMTY1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dfi5rW5sPyg/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "TASLiE -タスリエ-",
+"landing": "https://taslie.jp/bukken/bukken1534",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B9%25B3%25E5%25B1%258B&next=os%3AWzgsIDE5NzUwNTI4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfO8NlvMg5s/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "自動車学校",
+"name": "セイコちゃん：CEICO-MS非公認キャラ",
+"landing": "https://ceico.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%2599%25E7%25BF%2592%25E6%2589%2580&next=os%3AWzI5OCwgMjc3ODk1OTld",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dfi5eHys9Jz/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社　宝永(ホウエイ)",
+"landing": "https://www.instagram.com/ayabe.houei/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A9%25BA%25E3%2581%258D%25E5%25AE%25B6&next=os%3AWzIsIDI3MzI4OTcwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfYeZ7dAfql/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社ビルバンク",
+"landing": "https://www.builbank-r.com/tokyo/search/br533/zb30/zc4/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzEwMDAsIDI2NjQ0MjM0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/chatgpt/TQs6Xw897ZM/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
