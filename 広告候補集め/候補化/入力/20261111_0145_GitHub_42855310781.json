@@ -1,0 +1,79 @@
+[
+{
+"industry": "結婚相談所",
+"name": "はるいろ結び@さいたまの結婚相談所【TMS】全国結婚相談事業者連盟正規加盟店",
+"landing": "https://www.haruiro-musubi.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25B5%2590%25E5%25A9%259A%25E7%259B%25B8%25E8%25AB%2587%25E6%2589%2580&next=os%3AWzEsIDE4ODQ5ODY3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DefxiMHASN8/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "UDS株式会社",
+"landing": "https://lights-apartment.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzEyMDAwLCAyNDMyOTI2MF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfeXSh-Agcg/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "株式会社関通",
+"landing": "https://www.kantsuhd.com/global-expansion/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzEyMDAwLCAyNDMyOTI2MF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1600851315403896/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "有限会社レグ",
+"landing": "https://monthly-fukui.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzMwMjIsIDI3NzI5NTM2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/tk2Hoo3KaZq/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "自然乾燥の木の家　森をつくる住まい",
+"landing": "https://xn--68jubxfz33wd9k9my.jp/lp/housing_seminar_autumn2026/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzIwMDAsIDI4MTQ0NjMwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfeTesRsxwh/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "オレンジルーム株式会社",
+"landing": "https://www.orangeroom.jp/rent/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzEwMDAsIDI1ODI1MTkyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/9986388943912969721/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "コーヨープランニング株式会社",
+"landing": "https://www.yokohama-koyo.jp/search/rent.php",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzgwMCwgMjgxNTc5NzBd",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/wgpWuvhJbDL/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
