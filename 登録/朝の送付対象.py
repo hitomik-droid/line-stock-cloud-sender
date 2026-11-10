@@ -63,5 +63,12 @@ ids.sort(key=lambda i: i in roster)  # 広告経路の会社が先、名簿の�
 limit = int(sys.argv[1]) if len(sys.argv) > 1 else 1000
 if len(sys.argv) > 2: open(sys.argv[2], 'w').write(str(len(ids)))  # 10/27 夕：在庫の数を同じ読み取りで書き出す（2回読まない）
 ids = ids[:limit]
+# 2026-11-10 19:17 ひとみ「9-18時の間でフォーム営業を進めて、それ以外の時間で翌日にフォーム営業する企業を収集する」：
+# 送るのは日本時間 9:00〜17:59 に選んだ回だけ。時間外は在庫の数だけ書き、会社は渡さない（WFの時間判定と二重の止め）
+import datetime as _dt
+_h = _dt.datetime.now(_dt.timezone(_dt.timedelta(hours=9))).hour
+if not (9 <= _h < 18) and os.environ.get('LS_IGNORE_HOURS') != '1':
+    print(f'送付の時間外（日本時間 {_h}時）なので渡さない（選べる数 {len(ids)}）', '外した', skip, file=sys.stderr)
+    print(''); sys.exit(0)
 print('送る', len(ids), '外した', skip, '（読んだ台帳：' + src + '）', file=sys.stderr)
 print(','.join(ids))
