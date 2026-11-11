@@ -9,6 +9,8 @@ APPROVED = {'MSG-ジム-v8', 'MSG-美容クリニック-v8', 'MSG-オンライ�
 # 10/28 v9の5本は、図のページ（solar-housing＝題名が「太陽光・注文住宅」、personal-gym＝「パーソナルジム」）に別の業種名が出るので、図のページの扱いが決まるまで送らない（承認済みから外している）
 # 10/27 9:4x 勝良さん「入れる」：Meta広告ライブラリ・Googleの広告主も送り先に入れる（業種の絞り・大手・FC・ロボット確認などの決まりはそのまま。不動産の例外は動画広告Pro経由だけのまま）
 SOURCES = ('動画広告Pro', 'Meta', 'Google')
+# 2026-11-11 10:0x レイチェル：10/28に中身の誤りで止めた本文（太陽光住宅v8＝太陽光とリフォームの実績が混在、v9の5本＝図のページに別の業種名）は、直るまで送らない。承認の話ではない
+BROKEN = {'MSG-太陽光住宅-v8', 'MSG-太陽光-v9', 'MSG-注文住宅-v9', 'MSG-リフォーム-v9', 'MSG-外構-v9', 'MSG-ジム-v9'}
 HERE = os.path.dirname(os.path.abspath(__file__))
 # 確認済みIDの一覧が読めない・不正なら停止する。未掲載の会社は自動便へ渡さない。
 reviewed = json.load(open(os.path.join(HERE, '送付確認済みID.json')))
@@ -56,6 +58,7 @@ for c in sorted(d['companies'], key=lambda c: c['id']):
     elif c.get('message_id') == 'MSG-不動産-v3' and not (c.get('list_source') or '').startswith('動画広告Pro'): why = '不動産は動画広告Pro経由だけ'
     # 2026-11-11 10:00 ひとみ「確認いらない、どこに何を送るとかを記録して俺がいつでも見れるようにできたらいい」：本文の承認待ちで止めない。本文が空の時だけ止める
     elif not (msgs.get(c.get('message_id')) or '').strip(): why = '本文が空'
+    elif c.get('message_id') in BROKEN: why = '本文の誤りで止めている（直るまで）'
     elif c['id'] not in reviewed: why = '業種・本文の個別確認が未完了'
     elif 'line-stock-flow.hitomi-k.workers.dev' in msgs.get(c['message_id'], '') and c['id'] not in links: why = '会社別追跡リンクが未登録'
     if why: skip[why] = skip.get(why, 0) + 1; continue
