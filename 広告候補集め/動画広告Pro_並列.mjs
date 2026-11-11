@@ -32,23 +32,44 @@ async function tab(k) {
   const p = k === 0 ? login : await ctx.newPage();
   let cur = null;
   const requestTasks = new WeakMap();
+  const pending = new Set();
+  const drain = async () => {
+    const end = Date.now() + 20000;
+    while (pending.size && Date.now() < end) await sleep(100);
+    if (pending.size) { stop = stop || '広告一覧の応答待ちがタイムアウト'; save(); return false; }
+    return true;
+  };
   p.on('request', (q) => {
-    if (cur && q.url().startsWith('https://api.kashika-20mile.com/api/v1/items')) requestTasks.set(q, cur);
+    if (cur && q.url().startsWith('https://api.kashika-20mile.com/api/v1/items')) { requestTasks.set(q, cur); pending.add(q); }
   });
+  p.on('requestfailed', (q) => { if (pending.delete(q) && !stop) { stop = '広告一覧の通信が失敗'; save(); } });
   p.on('response', async (r) => {
     const task = requestTasks.get(r.request());
-    if (!task || stop) return;
+    if (!task) return;
+    try {
+    if (stop) return;
     const fail = (reason) => { stop = stop || `広告一覧取得失敗（${task.w}・${task.iv}日）：${reason}`; save(); };
     if (!r.ok()) { fail(`HTTP ${r.status()}`); return; }
-    let j; try { j = await r.json(); } catch { fail('JSONを読めない'); return; }
+    let j;
+    try {
+      const body = await r.text();
+      try { j = JSON.parse(body); } catch {
+        const kind = /^\s*</.test(body) ? 'HTML形式' : body.trim() ? 'JSON以外' : '空';
+        const sign = /<input[^>]+type=[\"']?password/i.test(body) ? 'パスワード欄あり' : /captcha|アクセスが制限|利用を制限|しばらくしてから|アカウントが停止/i.test(body) ? '制限・認証の表示あり' : '判別できる表示なし';
+        console.log('広告一覧応答の診断', `HTTP ${r.status()}`, `形式 ${kind}`, `表示 ${sign}`, `長さ ${body.length}`, `パス ${new URL(r.url()).pathname}`);
+        fail('JSONを読めない'); return;
+      }
+    } catch { console.log('広告一覧応答の診断', `HTTP ${r.status()}`, '本文を取得できない', `パス ${new URL(r.url()).pathname}`); fail('応答本文を取得できない'); return; }
     if (stop) return;
     if (cur !== task) { fail('応答の取得中に検索が切り替わった'); return; }
     if (!Array.isArray(j?.items) || j.items.some((i) => !i || typeof i !== 'object' || Array.isArray(i))) { fail('itemsの形式が不正'); return; }
     const items = j.items.map((i) => Object.fromEntries(KEEP.map((f) => [f, i[f]])));
     task.n += items.length; task.res = (task.res || 0) + 1; got.push({ word: task.w, interval: task.iv, industry: task.ind || undefined, url: r.url(), data: { items, total_count: j.total_count } });
+    } finally { pending.delete(r.request()); }
   });
   await sleep(k * 7000);
   for (let t = k; t < tasks.length && !stop; t += TABS) {
+    if (!(await drain()) || stop) break;
     const { w, iv, so, ind } = tasks[t]; cur = null;
     const u = `https://dpro.kashika-20mile.com/search?to_date=${today}&interval=${iv}&sort=${so}&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=${OBJ}`;
     await p.goto(u, { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
@@ -65,8 +86,10 @@ async function tab(k) {
       const n0 = cur.n;
       await p.evaluate(() => { const v = document.querySelector('.ag-body-viewport'); if (v) v.scrollTop = v.scrollHeight; else window.scrollTo(0, document.body.scrollHeight); });
       await sleep(4000 + Math.random() * 2000);
+      if (!(await drain()) || stop) break;
       if (cur.n === n0) break;
     }
+    if (!(await drain()) || stop) break;
     const txt = await p.evaluate(() => document.body.innerText.slice(0, 3000)).catch(() => '');
     const hit = txt.match(/.{0,40}(ロボット|captcha|アクセスが制限|利用を制限|しばらくしてから|アカウントが停止).{0,40}/is);
     // 10/27 何の文で止まったかを残す（広告の文に同じ語が入っているだけかを見分けるため。止める決まりは変えない）
