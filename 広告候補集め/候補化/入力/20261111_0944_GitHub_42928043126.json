@@ -1,0 +1,35 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "有限会社ケイテック",
+"landing": "https://www.miwai-fudousan.jp/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-11&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25B8%25AD%25E5%258F%25A4%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzAsIDExNTg1MzQ1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/i4XocITeXVg/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "アクロバット教室　埼玉　イグナイト スタジオ",
+"landing": "https://www.instagram.com/ignite.studio2025/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-11&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BD%2593%25E9%25A8%2593%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B9%25E3%2583%25B3&next=os%3AWzIsIDI0MDA3NDM4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dbecp0ysHZX/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "株式会社プロダクション・アズール",
+"landing": "https://www.tams.tokyo/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-11&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E4%25BD%2593%25E9%25A8%2593%25E3%2583%25AC%25E3%2583%2583%25E3%2582%25B9%25E3%2583%25B3&next=os%3AWzIsIDI0MDA3NDM4XQ%3D%3D",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/x/image/VUodNM2fjfg.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
