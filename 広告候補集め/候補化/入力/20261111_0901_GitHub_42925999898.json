@@ -1,0 +1,24 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "株式会社レントラックス",
+"landing": "https://aidougalabo.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253AAI%2520%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25BC%25E3%2583%25AB&next=os%3AWzIwMDAsIDI3NTM4OTMxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1578569330703431/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "わたしのデザイン制作所",
+"landing": "https://web-al-pha.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-10&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253AWeb%25E3%2583%2587%25E3%2582%25B6%25E3%2582%25A4%25E3%2583%25B3&next=os%3AWzEsIDE0MTk3NzU1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZFz3cAOeE/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
