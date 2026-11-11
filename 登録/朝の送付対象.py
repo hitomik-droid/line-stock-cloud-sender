@@ -54,7 +54,8 @@ for c in sorted(d['companies'], key=lambda c: c['id']):
     elif c['id'] in man_ids or c.get('name') in man_names: why = '手で外した会社'
     elif not (c.get('list_source') or '').startswith(SOURCES) and c['id'] not in roster: why = '広告経路（動画広告Pro・Meta・Google）ではない'
     elif c.get('message_id') == 'MSG-不動産-v3' and not (c.get('list_source') or '').startswith('動画広告Pro'): why = '不動産は動画広告Pro経由だけ'
-    elif c.get('message_id') not in APPROVED: why = '承認済みの本文ではない'
+    # 2026-11-11 10:00 ひとみ「確認いらない、どこに何を送るとかを記録して俺がいつでも見れるようにできたらいい」：本文の承認待ちで止めない。本文が空の時だけ止める
+    elif not (msgs.get(c.get('message_id')) or '').strip(): why = '本文が空'
     elif c['id'] not in reviewed: why = '業種・本文の個別確認が未完了'
     elif 'line-stock-flow.hitomi-k.workers.dev' in msgs.get(c['message_id'], '') and c['id'] not in links: why = '会社別追跡リンクが未登録'
     if why: skip[why] = skip.get(why, 0) + 1; continue
