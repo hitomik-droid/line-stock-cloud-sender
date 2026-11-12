@@ -57,7 +57,7 @@ jobs:
         with:
           node-version: 22
           check-latest: true
-      - run: npm ci && npx playwright install --with-deps chromium
+      - run: npm ci && for i in 1 2 3; do npx playwright install --with-deps chromium && exit 0; echo "playwrightの準備に失敗（${i}回目）。60秒後にやり直す"; sleep 60; done; exit 1
         if: steps.on.outputs.go == '1'
       - name: 広告主を集める（Meta）
         if: steps.on.outputs.go == '1' && matrix.src == 'meta'

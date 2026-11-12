@@ -83,7 +83,7 @@ jobs:
           H=$(TZ=Asia/Tokyo date +%-H)
           if [ "$MODE" = send ] && { [ "$H" -lt 8 ] || [ "$H" -ge 20 ]; }; then echo "送付時間外（日本時間 ${H}時）なので送らない"; exit 1; fi
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - run: for i in 1 2 3; do npx playwright install --with-deps chromium && exit 0; echo "playwrightの準備に失敗（${i}回目）。60秒後にやり直す"; sleep 60; done; exit 1
       - name: 送る（4組のうち1組）
         env:
           IDS_FILE: ${{ inputs.ids_file }}

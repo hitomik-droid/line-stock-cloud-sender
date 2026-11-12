@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - run: for i in 1 2 3; do npx playwright install --with-deps chromium && exit 0; echo "playwrightの準備に失敗（${i}回目）。60秒後にやり直す"; sleep 60; done; exit 1
       - name: 公式サイト探し
         if: inputs.step == 'kakutei'
         timeout-minutes: 80
