@@ -5,6 +5,7 @@
 #   送付時の「業種と本文が一致しません」の判定は緩めない。表とJSONの page を本文に合わせるだけ。
 # 11/12 直し2：直す会社は JSON と本文の比較だけでなく、Supabase の非テスト行の page も読んで決める（表だけ違う会社も直す）。
 #   PATCH が1行にも当たらない／読み直しで対象が返らない・本文の page になっていない時は、エラーを出して終了コード1にする。
+# 11/12 直し3：JSON にあって本文に設計図がある会社で、表に非テスト行が無い会社（JSON は本文どおりでも）はエラーにして終了コード1（表の欠落を「待ち：0社」で見落とさない）。
 #   環境変数 SUPABASE_URL・SUPABASE_SERVICE_ROLE_KEY が無い時は、発行せずに待ちの会社を出すだけ（終了コード0。表は読めないので JSON と本文の比較だけ）
 import json, os, re, sys, urllib.parse, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -43,8 +44,9 @@ def read_rows(ids):
 # 表を読み、JSON か表のどちらかで page が本文と違う会社を直す対象にする
 table = read_rows([i for i in body_page if i in links])
 fix = [i for i in body_page if i in links and (links[i].get('page') != body_page[i] or (i in table and table[i]['page'] != body_page[i]))]
-if not want and not fix: print('追跡リンクの待ち：0社／page直しの待ち：0社'); sys.exit()
-errors = []
+# JSON は本文どおりでも表に非テスト行が無い会社は、表の欠落としてエラーにする（JSON が違う会社は下の PATCH で同じくエラーになる）
+errors = [f'{i}：表に非テスト行が無い（JSON の page は本文どおり）' for i in body_page if i in links and i not in table and i not in fix]
+if not want and not fix and not errors: print('追跡リンクの待ち：0社／page直しの待ち：0社'); sys.exit()
 if want:
     call('?on_conflict=company_id&select=company_id,token,page', want, 'POST', 'resolution=ignore-duplicates,return=representation')
 # 既にある会社の page を本文に合わせる（token はそのまま。テスト行は触らない）

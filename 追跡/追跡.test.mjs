@@ -158,6 +158,19 @@ test('PATCHが表の行に当たらない・読み直しで返らない時はエ
   assert.match(r.stderr, /A：PATCH が表の行に1件も当たらなかった/);
   assert.deepEqual(r.links.A, { token, page: 'solar-housing' });
 });
+test('JSONは本文どおりで表に非テスト行が無い会社は、待ち0社で終わらずエラーで終了コード1', () => {
+  const r = runRegister({
+    links: { A: { token, page: 'custom-home' }, C: { token, page: 'custom-home' } },
+    rows: [{ company_id: 'A', token, page: 'custom-home', is_test: true }, { company_id: 'C', token, page: 'custom-home', is_test: false }],
+    companies: [['A', 'MSG-注文住宅-v9'], ['C', 'MSG-注文住宅-v9']],
+  });
+  assert.equal(r.status, 1);
+  assert.match(r.stderr, /A：表に非テスト行が無い/);
+  assert.doesNotMatch(r.stderr, /C：/);
+  assert.doesNotMatch(r.stdout, /待ち：0社/);
+  assert.deepEqual(r.state.calls, ['GET']);
+  assert.deepEqual(r.links, { A: { token, page: 'custom-home' }, C: { token, page: 'custom-home' } });
+});
 test('新しく発行した会社が読み直しで表の非テスト行として返らない時もエラーで終了コード1', () => {
   const r = runRegister({ links: {}, rows: [{ company_id: 'B', token, page: 'custom-home', is_test: true }], companies: [['B', 'MSG-注文住宅-v9', 'Meta広告']] });
   assert.equal(r.status, 1);
