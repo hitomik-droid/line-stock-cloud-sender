@@ -1,5 +1,5 @@
 export const FLOW_ORIGIN = 'https://line-stock-flow.hitomi-k.workers.dev';
-export const FLOW_PAGES = new Set(['driving-school', 'personal-gym', 'beauty-clinic', 'online-school', 'solar-housing']);
+export const FLOW_PAGES = new Set(['driving-school', 'personal-gym', 'beauty-clinic', 'online-school', 'solar-housing', 'custom-home', 'solar', 'reform', 'exterior']);
 export const TOKEN_PATTERN = /^[a-f0-9]{32}$/;
 const AUTOMATION_UA = /bot|spider|crawler|preview|curl|wget|python|node|undici|headless|slack|discord|facebookexternalhit|telegram|whatsapp|safelinks|proofpoint|barracuda|mimecast/i;
 
@@ -22,7 +22,7 @@ export async function handleTrackingRequest(req, { findLink, recordClick, finger
   let link;
   try { link = await findLink(token); }
   catch (error) { onError('lookup', error); return new Response('Temporarily unavailable', { status: 503, headers }); }
-  // ランダムな識別子の一致を確認してから記録する。転送先は既存の5ページだけ。
+  // ランダムな識別子の一致を確認してから記録する。転送先は許可した設計図ページだけ。
   if (!link || !FLOW_PAGES.has(link.page)) return new Response('Not found', { status: 404, headers });
   const ua = req.headers.get('user-agent') || '';
   const purpose = [req.headers.get('purpose'), req.headers.get('sec-purpose'), req.headers.get('x-purpose')].filter(Boolean).join(' ');

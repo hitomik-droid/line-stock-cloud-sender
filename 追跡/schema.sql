@@ -2,7 +2,7 @@ create table public.line_stock_tracking_links (
   company_id text primary key,
   company_name text not null,
   industry text not null,
-  page text not null check (page in ('driving-school','personal-gym','beauty-clinic','online-school','solar-housing')),
+  page text not null check (page in ('driving-school','personal-gym','beauty-clinic','online-school','solar-housing','custom-home','solar','reform','exterior')),
   token text not null unique default replace(gen_random_uuid()::text, '-', '') check (token ~ '^[a-f0-9]{32}$'),
   is_test boolean not null default false,
   created_at timestamptz not null default now()

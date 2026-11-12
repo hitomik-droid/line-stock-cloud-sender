@@ -67,3 +67,17 @@ test('リンク未登録や業種不一致では送付前に止まり、共通�
   assert.throws(() => prepareCompanyTracking(body.replace('personal-gym', 'beauty-clinic'), 'LS-20261022-9999', config), /一致しません/);
   assert.equal(prepareCompanyTracking('設計図URLがない旧本文', 'missing', config).body, '設計図URLがない旧本文');
 });
+
+
+test('新しい4種類も本文と一致する時だけ追跡し正しい図へ転送する', async () => {
+  for (const page of ['custom-home', 'solar', 'reform', 'exterior']) {
+    const cfg = { base_url: base, links: { 'LS-20261022-9999': { token, page } } };
+    const body = `https://line-stock-flow.hitomi-k.workers.dev/${page}/`;
+    assert.equal(prepareCompanyTracking(body, 'LS-20261022-9999', cfg).body, url);
+    assert.throws(() => prepareCompanyTracking(body.replace(page, 'personal-gym'), 'LS-20261022-9999', cfg), /一致しません/);
+    const { options } = setup({ findLink: async () => ({ company_id: 'LS-20261022-9999', page }) });
+    const response = await handleTrackingRequest(new Request(url, { method: 'HEAD' }), options);
+    assert.equal(response.status, 302);
+    assert.equal(response.headers.get('location'), `https://line-stock-flow.hitomi-k.workers.dev/${page}/`);
+  }
+});
