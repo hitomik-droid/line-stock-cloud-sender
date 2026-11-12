@@ -1,0 +1,90 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "株式会社クロト",
+"landing": "https://trekuro.org/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-12&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AA%25E3%2583%25B3%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%25B3%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25BC%25E3%2583%25AB&next=os%3AWzI1MDYsIDI3NTI4OTc5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dfg8cj1sPUV/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "英治出版（Eiji Press, Inc.）",
+"landing": "https://www.amazon.co.jp/%E5%B2%A1%E7%94%B0%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E2%80%95%E2%80%95%E8%87%AA%E7%AB%8B%E3%81%99%E3%82%8B%E9%81%B8%E6%89%8B%E3%80%81%E8%87%AA%E5%BE%8B%E3%81%99%E3%82%8B%E7%B5%84%E7%B9%94%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B16%E6%AD%B3%E3%81%BE%E3%81%A7%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E6%8C%87%E5%B0%8E%E4%BD%93%E7%B3%BB-%E5%B2%A1%E7%94%B0%E6%AD%A6%E5%8F%B2/dp/4862762913",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-12&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2581%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzE2ODkwLCAyNDY3NjI5MF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1626013632872455/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "なるみ | ママ向けインスタコンサル",
+"landing": "https://www.instagram.com/narumi_instamama/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-12&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2581%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzE0MDAwLCAxMTQyMTU5MF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Deenn7egv7m/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "アクア株式会社",
+"landing": "https://aqua-design.co/lp-3/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-12&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25AB%25E3%2583%25BC&next=os%3AWzIsIDI0ODEwNDUzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122219936774484264/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "株式会社シュトルツ",
+"landing": "https://personalgym-stolz.com/kitasando-lp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-12&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%258A%25E3%2583%25AB%25E3%2583%2588%25E3%2583%25AC%25E3%2583%25BC%25E3%2583%258B%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDE3ODE0MzAwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DXLLKhqAJqo/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "アースボディケア -ピラティス×パーソナルジム-",
+"landing": "https://www.instagram.com/earth_body_care_pilates",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-12&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%258A%25E3%2583%25AB%25E3%2583%2588%25E3%2583%25AC%25E3%2583%25BC%25E3%2583%258B%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDE3ODE0MzAwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DUcYAibgKI0/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "DH Aile group【歯科衛生士コミュニティ】",
+"landing": "https://www.instagram.com/dh_aile_group/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-12&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%25AF%25E3%2582%25A4%25E3%2583%2588%25E3%2583%258B%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzg0ODAwLCAyNzU2NDQ2OF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfjBG4qAsAr/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "CLUB PILATES 熊本駅前",
+"landing": "https://www.instagram.com/clubpilates_kumamotoekimae/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-12&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzMzNTc2LCAyNjc0MTE1Ml0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeQNrCnMPYC/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
