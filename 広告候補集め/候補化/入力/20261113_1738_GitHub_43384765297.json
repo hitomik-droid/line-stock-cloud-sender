@@ -1,0 +1,46 @@
+[
+{
+"industry": "整体・整骨院",
+"name": "山本 愛｜わたしが止まっても回る1人サロンのつくり方",
+"landing": "https://ai-shindan.totonoe-lab.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%258D%25BC%25E7%2581%25B8&next=os%3AWzEsIDE1MjY0ODg1XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfkD6tcMByq/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "いしだ ちひろ",
+"landing": "https://www.instagram.com/sabon_japan/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzI1NTI4OSwgMjU5MTkwMTBd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfhX_1JsD4z/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "てあつい整体院",
+"landing": "https://lp.teatsui-seitai.com/inokuchidai/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzEwMTgzOCwgMjc4NDEwMDBd",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1360209905999556/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "アビサルジャパン Abyssal Japan",
+"landing": "https://abyssal.jp/karadakirei/kaigo.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzE4NjM0LCAxNzUwMzIyOV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1782446460555337/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
