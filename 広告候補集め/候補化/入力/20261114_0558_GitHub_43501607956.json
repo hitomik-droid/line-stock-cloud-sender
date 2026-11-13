@@ -1,0 +1,68 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "高木工業 /福知山/ 丹波/こどもの笑顔を創造する工務店",
+"landing": "https://www.instagram.com/takagikougyou1111/",
+"ads": 30,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25A4%2596%25E6%25A7%258B",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfmKHk8gkSE/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "エステ・脱毛",
+"name": "みみちゃん",
+"landing": "https://twincle.schanbeauty.com/ab/sbh_tt_ank",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2597%25A9%25E8%25BA%25AB%25E3%2582%25A8%25E3%2582%25B9%25E3%2583%2586&next=os%3AWzIwMiwgMjcwNzg2NzVd",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7481621409488260353.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "株式会社コラントッテ",
+"landing": "https://lierrey.colantotte.jp/product/chain-necklace/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2595%25B4%25E4%25BD%2593&next=os%3AWzE2NDkzLCAyNjQ0MDExMV0%3D",
+"ad_evidence_url": "https://im.c.yimg.jp/res/ydnstorage-media/1002733432/18380846/491d3f27d9f6612286a236564456781b.jpg",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "エステ・脱毛",
+"name": "兵庫三田｜子宮筋腫×妊活サポート 自然派サロンminori*  ｜中南真理",
+"landing": "http://instagram.com/hyogo_sanda_fujinka.salon/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2595%25E3%2582%25A7%25E3%2582%25A4%25E3%2582%25B7%25E3%2583%25A3%25E3%2583%25AB&next=os%3AWzU4Njg0LCAyMzgwMzUxOF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfpR51VACJE/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "学習塾・英会話",
+"name": "株式会社湘南ゼミナール",
+"landing": "https://www.shozemi.com/lp/winter/",
+"ads": 3,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E6%258C%2587%25E5%25B0%258E&next=os%3AWzAsIDI4MzI2MjEyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1625578256247122/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "ホテル・旅館",
+"name": "るるぶ&more.",
+"landing": "https://rurubu.jp/andmore/article/25053",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2597%2585%25E9%25A4%25A8&next=os%3AWzEyMTYzLCAyNjE2MDYwOV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1435682742109563/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
