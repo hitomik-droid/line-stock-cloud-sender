@@ -1,0 +1,68 @@
+[
+{
+"industry": "美容クリニック",
+"name": "【公式】VERA CLINIC｜小顔専門クリニック",
+"landing": "https://www.instagram.com/veraclinic_osaka/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B0%258F%25E9%25A1%2594&next=os%3AWzEsIDE4NTcwNjU0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZhEa7M3ow/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社中井総合建築",
+"landing": "https://www.nakaisogo.com/",
+"ads": 31,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZILfVskmA/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "佐藤建築工房｜庄内の工務店",
+"landing": "https://www.instagram.com/sato_k_kobo/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597&next=os%3AWzAsIDI4Mjg5NTY4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DflRIuNMEmg/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "菊地社寺利休【公式】~千葉県茂原市の注文住宅なら工務店の利休~",
+"landing": "http://instagram.com/rikyu.u/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B7%25A5%25E5%258B%2599%25E5%25BA%2597&next=os%3AWzAsIDI4MjQ1NjcxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfhO32jMBAs/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "タケウチ住建株式会社",
+"landing": "https://takeuti-jyuken.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzIwMTgwLCAyODI1OTY3Nl0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfeZVyMMhtl/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社東宝ハウス国分寺",
+"landing": "https://www.toho-house.co.jp/lp4/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzEwMTQ0LCAyODEyOTQ0NF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/pinterest/1120411213572807261/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
