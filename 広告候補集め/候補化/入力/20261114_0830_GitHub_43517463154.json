@@ -1,0 +1,24 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "株式会社LYZON",
+"landing": "https://www.lyzon.co.jp/news/2026/1001_webinar1119/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzc5ODYsIDI3NTU5MTQxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfoUw4jMIKI/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "一般社団法人Lucks",
+"landing": "https://hoistle.co.jp/lp/ad-lp-08/",
+"ads": 6,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzEzNTQ2LCAyNDYxNzc3Nl0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/lap/6-1564735351/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
