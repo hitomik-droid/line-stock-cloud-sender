@@ -1,0 +1,35 @@
+[
+{
+"industry": "不動産",
+"name": "合同会社smario",
+"landing": "https://zakkuri-ai-satei.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A9%25BA%25E3%2581%258D%25E5%25AE%25B6&next=os%3AWzU1MiwgMjcyMTQ5MjZd",
+"ad_evidence_url": "https://assets.douga-pro.com/x/2120734855772393496/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "カイゲンファーマ公式 美活gram",
+"landing": "http://instagram.com/kaigen_biyou/",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%258C%25BB%25E7%2599%2582&next=os%3AWzc3MDkyLCAyNTI3NDcwOF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dfk-a-igtge/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "タシピウム整形外科 | 切開リフト・Extended Deep Plane",
+"landing": "https://www.instagram.com/dasipiumjp/",
+"ads": 4,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%258B%25E3%2583%2583%25E3%2582%25AF&next=os%3AWzc0NzM2LCAyNzgzMzg5Nl0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfgNM1rMHRD/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
