@@ -1,0 +1,24 @@
+[
+{
+"industry": "美容クリニック",
+"name": "AELLE Clinic",
+"landing": "https://aelleclinic.jp/4d_kumatori_02/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%258F%25E3%2582%25A4%25E3%2583%2595&next=os%3AWzEzMzc1NCwgMjgwNzc0Mjld",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeKJPlmAfq0/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "名古屋の『綺麗』を創るよこっくま",
+"landing": "https://www.aichibeautyclinic.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25B7%25E3%2583%259F%25E5%258F%2596%25E3%2582%258A&next=os%3AWzk4NiwgMjczMzM5MzBd",
+"ad_evidence_url": "https://assets.douga-pro.com/youtube/9Q3vfPuDm9s/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
