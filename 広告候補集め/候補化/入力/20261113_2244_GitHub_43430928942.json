@@ -1,0 +1,24 @@
+[
+{
+"industry": "不動産",
+"name": "株式会社 結柳エステート つなぎエステート",
+"landing": "https://tsunagi-e.com/lp/lp-sale/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259E%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%2520%25E5%25A3%25B2%25E5%258D%25B4&next=os%3AWzI5OCwgMjc4MjMzMzBd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dfdt3cnMg8x/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社さなだ瓦店",
+"landing": "https://www.instagram.com/sanadakawara/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-13&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25A0&next=os%3AWzQ3NjQ5OCwgMjUyNDk4OThd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfLUtnAMwmz/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
