@@ -1,0 +1,46 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "Bright Choice",
+"landing": "https://brightchoice.jp/lessonandactivity/lessons/20250919001841",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%258B%25B1%25E4%25BC%259A%25E8%25A9%25B1&next=os%3AWzIsIDE0MzMyODMzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1682629376668253/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "Katachi clinic",
+"landing": "https://katachi-clinic.reserve.ne.jp/mobile2/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B1%258A%25E8%2583%25B8&next=os%3AWzEyNjQ4LCAyODMwMTk3M10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/2254127655169017/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "北海道大家塾",
+"landing": "https://hokkaido-ooyajuku.ownersvision.com/hokkaido-ooyajuku-01/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzI3OTIsIDIzMDg4Nzg2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1617999676992972/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社リログループ",
+"landing": "https://www.recrea.co.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzEwMjAsIDI2NTUyMjEyXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/mzSwZVg77iA/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
