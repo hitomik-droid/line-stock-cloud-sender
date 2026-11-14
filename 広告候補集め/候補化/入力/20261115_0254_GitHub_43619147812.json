@@ -1,0 +1,13 @@
+[
+{
+"industry": "ホテル・旅館",
+"name": "福井工業大学",
+"landing": "https://www.fukui-ut.ac.jp/news/event/entry-12899.html",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%2586%25E3%2583%25AB&next=os%3AWzc1MDIsIDI4MTYwNjU2XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfpQDyIgTmL/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
