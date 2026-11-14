@@ -1,0 +1,24 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "学校法人北浜学園",
+"landing": "https://www.hamagakuen.co.jp/special/pool/26/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%2580%258B%25E5%2588%25A5%25E7%259B%25B8%25E8%25AB%2587&next=os%3AWzEwOTAsIDI4MDk3NTU5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/qTDqBfLsiH7/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "整体・整骨院",
+"name": "アロエ鍼灸整体院 心斎橋 | 南森町 | 堺筋本町 | 本町【整体/美容鍼/パーソナルジム/マットピラティス】",
+"landing": "https://beauty.hotpepper.jp/kr/slnH000769577/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%258D%25BC%25E7%2581%25B8&next=os%3AWzMsIDE5MjUxMzg3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dfky_iigHEO/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
