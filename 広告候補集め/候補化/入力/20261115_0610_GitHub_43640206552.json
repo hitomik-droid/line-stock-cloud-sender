@@ -1,0 +1,13 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "財務のチカラ　伊藤亜紋",
+"landing": "https://www.instagram.com/zaimunochikara_ito_amon/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25A6%25E3%2582%25A7%25E3%2583%2593%25E3%2583%258A%25E3%2583%25BC&next=os%3AWzM3MjY4LCAyNzYyMTU0MF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dft5yXEs_5U/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
