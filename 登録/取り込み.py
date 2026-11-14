@@ -6,6 +6,9 @@
 import json, os, re, sys, glob, collections
 from urllib.parse import urlsplit
 HERE = os.path.dirname(os.path.abspath(__file__))
+# 2026-11-14 業種の絞り込み（集める業種・業種の言葉・業種違いの言葉）。中身は 登録/業種の絞り込み.py
+import importlib.util as _u
+_sp = _u.spec_from_file_location('業種の絞り込み', os.path.join(HERE, '業種の絞り込み.py')); 絞り = _u.module_from_spec(_sp); _sp.loader.exec_module(絞り)
 G = {'注文住宅': '住宅・リフォーム', '中古物件・リフォーム': '住宅・リフォーム', '不動産設備': '住宅・リフォーム',
      '賃貸情報': '不動産', '分譲マンション': '不動産', '不動産査定': '不動産',
      '美容医療': '美容クリニック', '医療脱毛': '美容クリニック', '医療痩身': '美容クリニック',
@@ -41,6 +44,7 @@ for f in ('検品済みドメイン.txt', '調べ済みドメイン.txt'): doms 
 doms -= SHARED | {''}
 
 by = collections.defaultdict(lambda: {'n': 0})
+skipped = collections.Counter()
 files = glob.glob(os.path.join(src, '**', '広告一覧データ*.json'), recursive=True)
 for f in files:
     for x in json.load(open(f)):
@@ -50,6 +54,10 @@ for f in files:
             # 10/27 集める担当が検索ごとに業種（industry）を付けた（追加8業種）。あればそれを使う
             ind = x.get('industry') or industry(i)
             if not name or not ind or name == 'None' or not ok(name, i.get('transition_url')): continue
+            # 11/14：集める業種で、広告の文字にその業種の言葉があり、業種違いの言葉が無い物だけ（朝の個別確認で外される分を、取り込みの時点で外す）
+            t = ' '.join(str(i.get(k) or '') for k in ('advertiser_name', 'product_name', 'account_name', 'ad_all_sentence', 'transition_url'))
+            go, why = 絞り.check(ind, t)
+            if not go: skipped[why] += 1; continue
             r = by[(ind, name)]; r['n'] += 1
             if not r.get('landing') and (i.get('transition_url') or 'None') != 'None':
                 r.update(landing=i['transition_url'], source_url=x.get('url'), ad_evidence_url=i.get('thumbnail_url') or i.get('production_url'))
@@ -65,3 +73,4 @@ json.dump(out, open(out_p, 'w'), ensure_ascii=False, indent=0)
 with open(os.path.join(HERE, '調べた広告主.txt'), 'a', encoding='utf-8') as f: f.write(''.join(x + '\n' for x in new_names))
 with open(os.path.join(HERE, '調べた遷移先ドメイン.txt'), 'a', encoding='utf-8') as f: f.write(''.join(x + '\n' for x in new_doms))
 print(f'読んだファイル{len(files)}・広告主{len(by)}・新しい広告主{len(out)}')
+print('業種の絞り込みで外した広告：' + ('、'.join(f'{k} {v}' for k, v in skipped.most_common()) or 'なし') + '（集める業種：' + '・'.join(sorted(絞り.TARGET)) + '）')
