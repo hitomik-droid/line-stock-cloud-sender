@@ -1,0 +1,68 @@
+[
+{
+"industry": "結婚相談所",
+"name": "デイリエ【日韓結婚相談所】",
+"landing": "https://www.instagram.com/dayrie_nikkan/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25B5%2590%25E5%25A9%259A%25E7%259B%25B8%25E8%25AB%2587%25E6%2589%2580&next=os%3AWzEyLCAyODI3MDAxNF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfZS4MZgnYB/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "結婚相談所",
+"name": "婚活オタクえり｜結婚に迷う人のための相談室",
+"landing": "https://mamecon-bridal.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25B5%2590%25E5%25A9%259A%25E7%259B%25B8%25E8%25AB%2587%25E6%2589%2580&next=os%3AWzEyLCAyODI3MDAxNF0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfrEk-OAkJa/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "今井和樹　東大医学部卒   ティファクリニック新宿東口院長     解剖と注入のプロ",
+"landing": "https://tifaclinic-shinjukuhigashi.com/lp/hyaluronic/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E7%259A%25AE%25E8%2586%259A%25E7%25A7%2591&next=os%3AWzIwMTIsIDI4MjgyNzIxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfrUQKnsjzr/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "大森史也",
+"landing": "https://www.two-native.com/working-holiday",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%258B%25B1%25E4%25BC%259A%25E8%25A9%25B1&next=os%3AWzYwMDAsIDI4MzA0MjEzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1157957830221205/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社グローリア・ライフ・クリエイト",
+"landing": "https://sublease-glc.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzI0NTgsIDI3NjcxMTgzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/GUrfK3TdwAN/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社ベストサポートシステムズ",
+"landing": "https://best-tokyo.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B3%2583%25E8%25B2%25B8&next=os%3AWzg2OCwgMjgzMDUwMjhd",
+"ad_evidence_url": "https://assets.douga-pro.com/yahoo/Lny34QqpZRG/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
