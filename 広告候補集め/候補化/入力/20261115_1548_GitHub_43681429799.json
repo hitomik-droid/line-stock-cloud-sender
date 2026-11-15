@@ -1,0 +1,46 @@
+[
+{
+"industry": "不動産",
+"name": "あなぶき興産 新築マンション情報",
+"landing": "https://www.instagram.com/alpha.mansion.anabuki/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%2596%25B0%25E7%25AF%2589%25E3%2583%259E%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzE2OCwgMjc4MTQwNTJd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfTp9gcAWsc/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "オンラインスクール",
+"name": "株式会社トレジャープロモート",
+"landing": "https://optimism-sigotohack.com/a/1211087706",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2584%25A1%25E6%2596%2599%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzEsIDE4MDM5NjMzXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dfonrzug_mS/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "クマ取り｜二重埋没｜糸リフト｜ 岡山 ｜井上紘基",
+"landing": "https://www.instagram.com/dr.hiroki_inoue/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25B3%25B8%25E3%2583%25AA%25E3%2583%2595%25E3%2583%2588&next=os%3AWzE4ODgsIDI2ODcyMDU0XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DftK0ilMBpD/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "アマリラビューティークリニック大阪心斎橋院 | 美容外科皮膚科",
+"landing": "https://amalila.com/lp/thread-lift/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25B3%25B8%25E3%2583%25AA%25E3%2583%2595%25E3%2583%2588&next=os%3AWzYsIDI3MDgwODM5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/Dfl1-f9ArfG/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
