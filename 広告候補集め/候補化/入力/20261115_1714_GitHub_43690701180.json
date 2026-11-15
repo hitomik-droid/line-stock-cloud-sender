@@ -1,0 +1,35 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社Ozaki",
+"landing": "https://www.o-zaki-home.com/s-projects-side-by-side",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%25B9%25B3%25E5%25B1%258B&next=os%3AWzQsIDI0MDUyMDEwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfoYHgSAFm7/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "㈱一級建築士事務所CONTAINER DESIGN",
+"landing": "https://cd-aa.com/%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a%e3%83%8e%e3%83%8f%e3%82%b3-vol-3-%e5%88%b6%e7%b4%84%e3%81%ae%e3%81%82%e3%82%8b%e5%9c%9f%e5%9c%b0%e3%81%ab%e5%bb%ba%e3%81%a4%e5%ae%b6%e3%80%80-%e5%af%86%e9%9b%86/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E6%25B3%25A8%25E6%2596%2587%25E4%25BD%258F%25E5%25AE%2585&next=os%3AWzEyMDAwLCAxODAzNTUxNV0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfqeXLMgFvW/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "渋谷スクランブル皮膚科公式",
+"landing": "https://shibuyaderm.com/cosmetic/aviclear/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E8%25B1%258A%25E8%2583%25B8&next=os%3AWzE0NDg2LCAyODAzNzQ2Nl0%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfmSmt8Av26/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
