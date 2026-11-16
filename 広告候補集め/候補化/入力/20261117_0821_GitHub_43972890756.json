@@ -1,0 +1,57 @@
+[
+{
+"industry": "オンラインスクール",
+"name": "スピリチュアルビジネス革命",
+"landing": "https://miorm.com/el/otf01/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-16&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AA%25E3%2583%25B3%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%25B3%25E8%25AC%259B%25E5%25BA%25A7&next=os%3AWzIsIDI0OTg2NTczXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfxPRYJAng2/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "スマイルクリニック新宿/official",
+"landing": "https://3016clinic.com/scar_2",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-16&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2580%25E3%2583%25BC%25E3%2583%259E%25E3%2583%259A%25E3%2583%25B3&next=os%3AWzAsIDI3ODg2ODA5XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1438136001632468/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社赤鹿地所",
+"landing": "https://www.akashika-jisho.co.jp/project/higashifujie/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-16&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%258F%25E3%2582%25A6%25E3%2582%25B9%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25AB%25E3%2583%25BC&next=os%3AWzQsIDIxMDk3MjU3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1764052512397314/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "【ピラティス/天六/天神橋筋六丁目/マシンピラティス/トレーニング/パーソナル/グループ】",
+"landing": "https://www.instagram.com/pilates.one.t/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-16&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259E%25E3%2582%25B7%25E3%2583%25B3%25E3%2583%2594%25E3%2583%25A9%25E3%2583%2586%25E3%2582%25A3%25E3%2582%25B9&next=os%3AWzIsIDIzMjU4NTc3XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DfyI9hcAlbH/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "太陽光",
+"name": "株式会社クリプトンホールディングス",
+"landing": "https://roofman.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-16&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%25AA%25E3%2583%258E%25E3%2583%2599%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3&next=os%3AWzI2ODIsIDI3OTI3MTExXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/4192961874174141/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
