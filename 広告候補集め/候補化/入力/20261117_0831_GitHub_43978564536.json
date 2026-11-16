@@ -1,0 +1,13 @@
+[
+{
+"industry": "美容クリニック",
+"name": "本田ヒルズタワークリニック| 男性/女性の性の悩み|",
+"landing": "https://honda-hills.jp/lp/meiki_ad/",
+"ads": 5,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-16&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E5%258C%2585%25E8%258C%258E&next=os%3AWzEzMzEwLCAyNzY5ODgwN10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DdYPGnkM-DH/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
