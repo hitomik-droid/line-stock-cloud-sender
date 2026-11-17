@@ -37,7 +37,8 @@ if [ "$IGNORE_HOURS" != 1 ] && { [ "$H" -lt 8 ] || [ "$H" -ge 20 ]; }; then say 
 # 準備：npm と Chromium（無い時だけ入れる）
 if [ ! -d node_modules/playwright ]; then npm ci --no-audit --no-fund >/dev/null 2>&1 || { say "npm ci 失敗"; exit 4; }; fi
 if ! node -e "const {chromium}=require('playwright');require('fs').accessSync(chromium.executablePath())" 2>/dev/null; then
-  for i in 1 2 3; do npx playwright install --with-deps chromium >/dev/null 2>&1 && break; say "playwrightの準備に失敗（${i}回目）"; sleep 30; done
+  # 箱は apt が通らない時がある（2026-11-17 deb.debian.org が500）。箱にはChromeの部品が入っているので、まずブラウザだけ入れる
+  for i in 1 2 3; do npx playwright install chromium >/dev/null 2>&1 && break; npx playwright install --with-deps chromium >/dev/null 2>&1 && break; say "playwrightの準備に失敗（${i}回目）"; sleep 30; done
 fi
 if ! node -e "import('playwright').then(async({chromium})=>{const b=await chromium.launch({headless:true});const p=await b.newPage();await p.goto('about:blank');await b.close();})" 2>"$LOGDIR/box-send/${STAMP}_browser.err"; then
   say "Chromiumが起動しない（$LOGDIR/box-send/${STAMP}_browser.err）"; exit 4; fi
