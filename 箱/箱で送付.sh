@@ -44,6 +44,16 @@ if ! node -e "import('playwright').then(async({chromium})=>{const b=await chromi
   say "Chromiumが起動しない（$LOGDIR/box-send/${STAMP}_browser.err）"; exit 4; fi
 say "Chromium 起動OK"
 
+# 0) 接続の確認（読むだけ）：台帳そろえ・在庫の数の記録が飛ばされずに動けるか
+CONN_OK=1
+if have SUPABASE_URL && have SUPABASE_SERVICE_ROLE_KEY; then
+  c=$(curl -s -o /dev/null -w '%{http_code}' -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" "$SUPABASE_URL/rest/v1/ls_status_history?select=company_id&limit=1")
+  [ "$c" = 200 ] && say "Supabase 読めた" || { say "Supabase に届かない（HTTP $c）"; CONN_OK=0; }
+else CONN_OK=0; fi
+if have CLOUDFLARE_API_TOKEN && have CLOUDFLARE_ACCOUNT_ID; then
+  if (cd 登録 && npx -y wrangler@4.150.0 d1 execute line-stock-sales --remote --json --command "SELECT COUNT(*) AS n FROM inventory_snapshots" 2>/dev/null | grep -q '"success": *true'); then say "D1 読めた（台帳そろえ・在庫の数の記録が動ける）"; else say "D1 に届かない（台帳そろえ・在庫の数の記録は飛ばされる）"; CONN_OK=0; fi
+else CONN_OK=0; fi
+
 # 1) 台帳をそろえる（送る時だけ。D1への書き戻しを含むので dry ではやらない）
 if [ "$MODE" = send ] && have CLOUDFLARE_API_TOKEN && have CLOUDFLARE_ACCOUNT_ID; then
   python3 登録/台帳の写し.py > "$LOGDIR/box-send/${STAMP}_ledger.log" 2>&1 || say "台帳をそろえるのに失敗（続ける）"
