@@ -27,6 +27,16 @@ def industry(i):
 def ok(name, url):  # 海外・名前の無い動画チャンネルを外す（日本語の名前か、.jp の遷移先だけ残す）
     if re.search(r'Video ad upload channel', name, re.I): return False
     return bool(JP.search(name)) or '.jp/' in (str(url) + '/').split('?')[0]
+# 11/17 狙う業種（ひとみのチェックシート→対象業種.json）。無ければ今まで通り全部の業種
+_T = os.path.join(HERE, '対象業種.json')
+TARGET = set(json.load(open(_T, encoding='utf-8'))['industries']) if os.path.exists(_T) else None
+# 11/17 検索語→業種（動画広告Pro_組み合わせ_元.txt）。語に業種が付いていない古い結果も、ジャンルでなく語で業種を決める
+WORD_IND = {}
+_W = os.path.join(os.path.dirname(HERE), '広告候補集め', '動画広告Pro_組み合わせ_元.txt')
+if os.path.exists(_W):
+    for _l in open(_W, encoding='utf-8'):
+        _p = _l.rstrip('\n').split('|')
+        if len(_p) == 4 and not _l.startswith('#') and _p[3] != '未分類': WORD_IND.setdefault(_p[0], _p[3])
 def lines(f):
     p = os.path.join(HERE, f)
     return [l.strip() for l in open(p, encoding='utf-8') if l.strip() and not l.startswith('#')] if os.path.exists(p) else []
@@ -41,6 +51,7 @@ for f in ('検品済みドメイン.txt', '調べ済みドメイン.txt'): doms 
 doms -= SHARED | {''}
 
 by = collections.defaultdict(lambda: {'n': 0})
+off = collections.Counter()  # 対象外の業種で外した広告の数
 files = glob.glob(os.path.join(src, '**', '広告一覧データ*.json'), recursive=True)
 for f in files:
     for x in json.load(open(f)):
@@ -48,7 +59,9 @@ for f in files:
             name = (i.get('advertiser_name') or '').strip()
             if not name or name in ('更新中', 'None', '-'): name = (i.get('account_name') or '').strip()
             # 10/27 集める担当が検索ごとに業種（industry）を付けた（追加8業種）。あればそれを使う
-            ind = x.get('industry') or industry(i)
+            # 11/17 語に付いた業種 → 元表の語の業種 → （語が表に無い時だけ）広告のジャンル
+            ind = x.get('industry') or WORD_IND.get(x.get('word') or '') or industry(i)
+            if TARGET is not None and ind not in TARGET: off[ind] += 1; continue
             if not name or not ind or name == 'None' or not ok(name, i.get('transition_url')): continue
             r = by[(ind, name)]; r['n'] += 1
             if not r.get('landing') and (i.get('transition_url') or 'None') != 'None':
@@ -64,4 +77,4 @@ for (ind, name), r in by.items():
 json.dump(out, open(out_p, 'w'), ensure_ascii=False, indent=0)
 with open(os.path.join(HERE, '調べた広告主.txt'), 'a', encoding='utf-8') as f: f.write(''.join(x + '\n' for x in new_names))
 with open(os.path.join(HERE, '調べた遷移先ドメイン.txt'), 'a', encoding='utf-8') as f: f.write(''.join(x + '\n' for x in new_doms))
-print(f'読んだファイル{len(files)}・広告主{len(by)}・新しい広告主{len(out)}')
+print(f'読んだファイル{len(files)}・広告主{len(by)}・新しい広告主{len(out)}' + (f'・対象外の業種で外した広告{sum(off.values())}' if off else ''))

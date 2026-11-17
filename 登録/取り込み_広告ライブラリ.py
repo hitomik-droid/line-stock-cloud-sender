@@ -8,6 +8,8 @@ import glob, json, os, re, sys
 from urllib.parse import urlsplit
 HERE = os.path.dirname(os.path.abspath(__file__))
 TARGET = {'パーソナルジム', '住宅・リフォーム', '太陽光', '美容クリニック', 'オンラインスクール', '自動車学校', '結婚相談所', '自由診療歯科'}
+# 11/17 狙う業種はひとみのチェックシート（対象業種.json）で決める。あればそれを使う
+if os.path.exists(os.path.join(HERE, '対象業種.json')): TARGET = set(json.load(open(os.path.join(HERE, '対象業種.json'), encoding='utf-8'))['industries'])
 def n(s): return re.sub(r'[\s\W_]+', '', s or '').lower()
 def base(u):
     h = (urlsplit(u if '://' in (u or '') else 'https://' + (u or '')).hostname or '').lower().removeprefix('www.'); p = h.split('.')
