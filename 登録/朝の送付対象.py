@@ -19,6 +19,14 @@ reviewed = json.load(open(os.path.join(HERE, '送付確認済みID.json')))
 if not isinstance(reviewed, list) or any(not isinstance(i, str) or not re.fullmatch(r'LS-[0-9]{8}-[0-9]+', i) for i in reviewed):
     raise ValueError('送付確認済みIDの一覧が不正')
 reviewed = set(reviewed)
+# 2026-11-17 12:37 ひとみ「⑥（人の個別チェック）はいらん」／12:56「業種のチェックシート作って、俺のチェック入れたやつにフォーム営業する」：
+# 対象業種.json の業種で、比較用・承認済みの版（AUTO_MSGS）の会社は、送付確認済みID.json に無くても送る。
+# 自動の除外（営業お断り・認証・大手/FC/展示場/仲介などの NG_TYPE は登録時、手で外した会社・広告経路・不動産の例外・本文空・追跡リンク未登録は下）はそのまま。
+# これまでの人の確認で「外す」とした会社（確認で外したID.json：同業・宛名違い・業種違いなど）も外したまま。
+TARGET = set(json.load(open(os.path.join(HERE, '対象業種.json')))['industries'])
+_ab = json.load(open(os.path.join(HERE, '文面の比較.json')))
+AUTO_MSGS = {v for p in _ab['pairs'].values() for v in p.values()} | {'MSG-不動産-v3', 'MSG-自由診療歯科-v3'}
+rejected = set(json.load(open(os.path.join(HERE, '確認で外したID.json'))))
 # 10/27 D1が無料枠の上限で読めない時は、代わりの置き場（Supabase）の写しから選ぶ。代わりの置き場に書き戻し待ちの履歴がある会社は、どちらで選ぶ時も外す
 SB_URL, SB_KEY = os.environ.get('SUPABASE_URL'), os.environ.get('SUPABASE_SERVICE_ROLE_KEY')
 def sb(path):
@@ -61,7 +69,8 @@ for c in sorted(d['companies'], key=lambda c: c['id']):
     # 2026-11-11 10:00 ひとみ「確認いらない、どこに何を送るとかを記録して俺がいつでも見れるようにできたらいい」：本文の承認待ちで止めない。本文が空の時だけ止める
     elif not (msgs.get(c.get('message_id')) or '').strip(): why = '本文が空'
     elif c.get('message_id') in BROKEN: why = '本文の誤りで止めている（直るまで）'
-    elif c['id'] not in reviewed: why = '業種・本文の個別確認が未完了'
+    elif c['id'] in rejected and c['id'] not in reviewed: why = '人の確認で外した会社'
+    elif c['id'] not in reviewed and not (c.get('industry') in TARGET and c.get('message_id') in AUTO_MSGS): why = '業種・本文の個別確認が未完了（対象業種・比較の版でない）'
     elif 'line-stock-flow.hitomi-k.workers.dev' in msgs.get(c['message_id'], '') and c['id'] not in links: why = '会社別追跡リンクが未登録'
     if why: skip[why] = skip.get(why, 0) + 1; continue
     ids.append(c['id'])

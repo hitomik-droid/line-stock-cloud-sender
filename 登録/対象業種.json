@@ -1,0 +1,6 @@
+{
+ "説明": "狙う業種（ひとみのチェックシートで✅の業種）。収集（動画広告Pro・Meta・Google）と候補化はこの業種だけ。シートから /workspace/line-stock-handoff/ops/scripts/対象業種を反映.py で書き出す。手で直さない",
+ "シート": "https://docs.google.com/spreadsheets/d/1Hl2Uxl7Ld-ttE5BXpsROOq2k1AnZRylvIF5fljntZ9g/edit",
+ "更新": "2026-11-17T13:20:00+09:00",
+ "industries": ["住宅・リフォーム", "太陽光", "不動産", "自由診療歯科", "美容クリニック"]
+}

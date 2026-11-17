@@ -16,6 +16,13 @@ V8 = {'パーソナルジム': 'MSG-ジム-v8', '住宅・リフォーム': 'MSG
 V8.update({'結婚相談所': 'MSG-結婚相談所-v3', '自由診療歯科': 'MSG-自由診療歯科-v3', '不動産': 'MSG-不動産-v3'})
 # 10/27 勝良さんOKの追加8業種。本文は承認待ちの仮ID（-v3案）で登録する。送付（朝の送付対象.py・送信.mjs）は -v3案 を選ばない・送らない
 V8.update({"整体・整骨院": "MSG-整体-v3", "エステ・脱毛": "MSG-エステ-v3", "学習塾・英会話": "MSG-学習塾-v3", "税理士・士業": "MSG-士業-v3", "予約制の飲食店": "MSG-飲食-v3", "ペット関連": "MSG-ペット-v3", "美容室": "MSG-美容室-v3", "ホテル・旅館": "MSG-ホテル-v3"})
+# 2026-11-17 12:56 ひとみ「俺と堀田さんの営業文でどちらの方がクリックされるの、問い合わせが来るの、を検証したい」：
+# 文面の比較.json の業種だけ、会社番号の末尾が偶数→堀田さんの版（v8）、奇数→ひとみの版（v5t）にする
+AB = json.load(open(os.path.join(HERE, '文面の比較.json')))['pairs']
+def pick_msg(industry, cid):
+    p = AB.get(industry)
+    if not p: return V8[industry]
+    return p['odd'] if int(cid.rsplit('-', 1)[1]) % 2 else p['even']
 IDP = 'LS-20261022-'  # 10/22から続けている番号の頭。動画広告Proなどは1000〜1999、Metaは3000〜3999
 FORMSVC = {'formrun.com', 'form.run', 'formzu.net', 'google.com', 'forms.gle', 'tayori.com', 'hubspot.com', 'jotform.com', 'formmailer.jp', 'ssl-form.com', 'form-mailer.jp', 'synergy-marketing.co.jp', 'cuenote.jp', 'typeform.com', 'wixsite.com', 'jimdofree.com', 'jimdosite.com', 'studio.site', 'fc2.com', 'blogspot.com', 'ameblo.jp', 'wpcomstaging.com'}
 # 10/22〜23に手で外した理由のうち、社名・説明・URLで分かるもの（住宅展示場、不動産の仲介・販売、写真検索・比較サイト、団体、大手グループ）
@@ -149,7 +156,7 @@ def cmd_plan(W):
         if obs.startswith(('貴校', '貴社', '貴院')): obs = c['name']
         adopt.append({'id': IDP + str(i), 'cand_no': k, 'industry': c['industry'], 'name': c['name'], 'legal_name': c['name'], 'addressee': c['name'],
                       'official_url': c['official_url'], 'form_url': c['form_url'], 'line_status': 'あり' if has else 'サイトに見当たらない',
-                      'offer': '公式LINE運用コンサル（見直し）' if has else '公式LINE運用コンサル（導入）', 'message_id': V8[c['industry']], 'observation': obs,
+                      'offer': '公式LINE運用コンサル（見直し）' if has else '公式LINE運用コンサル（導入）', 'message_id': pick_msg(c['industry'], IDP + str(i)), 'observation': obs,
                       'list_source': c.get('list_source') or '動画広告Pro', 'source_url': c.get('source_url') or None, 'judge_reason': jr, 'form_note': form_note(r, c),
                       'fields': fields, 'ad_evidence_url': c.get('ad_evidence_url') or None, 'ad_media': c.get('ad_media') or None, 'ad_purpose': c.get('ad_purpose') or None})
     assert not ({x['id'] for x in adopt} & have), '同じIDがD1にある'
