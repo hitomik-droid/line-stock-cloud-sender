@@ -59,7 +59,7 @@ permissions:
   actions: read
 jobs:
   prepare:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 300
     outputs:
       ids: ${{ steps.reg.outputs.ids }}

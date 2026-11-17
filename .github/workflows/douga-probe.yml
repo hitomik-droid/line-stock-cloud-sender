@@ -3,7 +3,7 @@ name: 動画広告Proの下見
 on: workflow_dispatch
 jobs:
   probe:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4

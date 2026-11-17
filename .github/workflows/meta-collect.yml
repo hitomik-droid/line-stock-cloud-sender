@@ -44,7 +44,7 @@ jobs:
       fail-fast: false
       matrix:
         src: [meta, google]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 150
     steps:
       - name: この回で集めるか
@@ -86,7 +86,7 @@ jobs:
   hand:
     needs: collect
     if: always() && inputs.collect_only != true
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       GH_TOKEN: ${{ github.token }}
     steps:

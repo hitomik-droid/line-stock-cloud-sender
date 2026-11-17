@@ -28,7 +28,7 @@ permissions:
   actions: write
 jobs:
   zaiko:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 180
     env:
       GH_TOKEN: ${{ github.token }}
