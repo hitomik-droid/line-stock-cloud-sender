@@ -1,0 +1,57 @@
+[
+{
+"industry": "パーソナルジム",
+"name": "株式会社JAPAN SOLUTIONS",
+"landing": "https://item.rakuten.co.jp/js-jewelry/aliceleg001/",
+"ads": 7,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%2594%25A3%25E5%25BE%258C%25E3%2583%2580%25E3%2582%25A4%25E3%2582%25A8%25E3%2583%2583%25E3%2583%2588",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7477573047755525384.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "不動産",
+"name": "株式会社BS朝日",
+"landing": "https://www.bs-asahi.co.jp/akiya/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25A9%25BA%25E3%2581%258D%25E5%25AE%25B6&next=os%3AWzIyLCA3OTQzMjE2XQ%3D%3D",
+"ad_evidence_url": "https://cdn.kashika-20mile.com/dpro-analytics/tiktok/7481575291463142663.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "自由診療歯科",
+"name": "大谷歯科矯正歯科",
+"landing": "https://ohtani-dental-kids.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%259F%25AF%25E6%25AD%25A3%25E6%25AD%25AF%25E7%25A7%2591&next=os%3AWzQ3MTIsIDIwNDIwNzc4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DeJXw_PsjXo/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "自由診療歯科",
+"name": "五反田駅前ルミリア矯正歯科オーラルビューティー",
+"landing": "https://gotanda-kyousei-shika.com/",
+"ads": 2,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-14&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%259F%25AF%25E6%25AD%25A3%25E6%25AD%25AF%25E7%25A7%2591&next=os%3AWzI1MzAsIDI2OTI4Nzc4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122119310265501107/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "自由診療歯科",
+"name": "美肌王子@正直レビュー",
+"landing": "https://shop.tiktok.com/jp/pdp/product/1734201189124507556",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%259B%25E3%2583%25AF%25E3%2582%25A4%25E3%2583%2588%25E3%2583%258B%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzIwOTAsIDI3NjE4ODk4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/tiktok/7707942556029439252/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
