@@ -1,0 +1,57 @@
+[
+{
+"industry": "パーソナルジム",
+"name": "株式会社ジェイワンズ",
+"landing": "https://akiba.pugnusmma.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2583%259C%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDkwMjk5MzFd",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122144009084789940/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "株式会社パレス",
+"landing": "https://www.palesgym.jp/toyosu-shop/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2583%259C%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDkwMjk5MzFd",
+"ad_evidence_url": "https://ad.line-scdn.net/0hmP1gqNLZMn8MHiwn6u5NKF9OOQ4_cyV8bGYvQihbE01GZgpiVyYuQkJDEiZVLQlhWzMcf2hYExdKLxRPUCQofChXPDlVLQorUz0vRSBVEzpRaA51anABaQ/m600x400?id=4-1147203412761&streamingApp=NEWS",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "Akiari（アキアリ）公式",
+"landing": "https://akiari.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2582%25AD%25E3%2583%2583%25E3%2582%25AF%25E3%2583%259C%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDkwMjk5MzFd",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122133312524830497/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "All Day Gym 世田谷区のレンタルジム",
+"landing": "https://www.all-day-gym.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%258A%25E3%2583%25AB%25E3%2583%2588%25E3%2583%25AC%25E3%2583%25BC%25E3%2583%258B%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDE3NjYwMDQwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/988632637451964/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "株式会社アローズ",
+"landing": "https://uriage-up.jp/lp/boost-up-002",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=30&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%258A%25E3%2583%25AB%25E3%2583%2588%25E3%2583%25AC%25E3%2583%25BC%25E3%2583%258B%25E3%2583%25B3%25E3%2582%25B0&next=os%3AWzAsIDE3NjYwMDQwXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122202768446377375/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
