@@ -1,0 +1,57 @@
+[
+{
+"industry": "美容クリニック",
+"name": "小木曽クリニック",
+"landing": "https://kogiso-clinic.net/fc_lp/index04.php",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%258C%25BB%25E7%2599%2582&next=os%3AWzE4NzUwLCAyODE4MDQ0M10%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DenmNFfM8aO/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "斎藤 糧三",
+"landing": "https://www.mdfood.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E7%259A%25AE%25E8%2586%259A%25E7%25A7%2591&next=os%3AWzU0MTQsIDI3MjE3NzQ4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/1877343476590846/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "スケールマーケティング株式会社",
+"landing": "https://theallinone.jp/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E7%259A%25AE%25E8%2586%259A%25E7%25A7%2591&next=os%3AWzExMjQsIDI3NzA5MTM4XQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/google/dctqVM2fsyY/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "株式会社TYシステムサービス",
+"landing": "https://kanto-shutter.info/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%259B%25A8%25E6%25BC%258F%25E3%2582%258A&next=os%3AWzAsIDYxODc2MjNd",
+"ad_evidence_url": "https://assets.douga-pro.com/facebook/122203262762248445/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "雨漏り調査専門会社アイアシスト【公式色水調査】",
+"landing": "https://amamori-i.com/",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-15&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E9%259B%25A8%25E6%25BC%258F%25E3%2582%258A&next=os%3AWzAsIDYxODc2MjNd",
+"ad_evidence_url": "https://assets.douga-pro.com/instagram/DJZYw0oAHKG/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
