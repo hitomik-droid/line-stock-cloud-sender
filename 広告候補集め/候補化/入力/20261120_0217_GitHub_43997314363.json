@@ -1,0 +1,24 @@
+[
+{
+"industry": "美容クリニック",
+"name": "DINETTE株式会社",
+"landing": "https://sb.myhitcosme.com/ab/els_gdm2",
+"ads": 39,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-17&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E5%258C%25BB%25E7%2599%2582",
+"ad_evidence_url": "https://assets.douga-pro.com/shorts/f3Ub32Pb_nU/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+},
+{
+"industry": "美容クリニック",
+"name": "株式会社FRED",
+"landing": "https://sb.mellow-rich.com/ab/JvCtrAAowaMSEJdDQ?utm_=a_6",
+"ads": 1,
+"source_url": "https://api.kashika-20mile.com/api/v1/items?to_date=2026-11-17&interval=7&sort=cost_difference-desc&media_type=video%2Cbanner%2Ccarousel&version=1&ad_objective=ACQUISITION%2CAWARENESS&keyword=in%253A%25E7%25BE%258E%25E5%25AE%25B9%25E7%259A%25AE%25E8%2586%259A%25E7%25A7%2591&next=os%3AWzQ1MTAsIDI3ODA0MDgxXQ%3D%3D",
+"ad_evidence_url": "https://assets.douga-pro.com/shorts/JwZt4LiXktU/thumbnail.webp",
+"list_source": "動画広告Pro",
+"ad_media": "動画広告Pro",
+"ad_purpose": ""
+}
+]
