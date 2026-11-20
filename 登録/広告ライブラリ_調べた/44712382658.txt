@@ -1,0 +1,6 @@
+name	ブレスデザインデンタルオフィス審美歯科予防歯科口臭外来歯科相談
+name	ぱど編集部京阪エリア
+name	株式会社ワンズリノベーション
+domain	breath-design.com
+domain	mishima-corp.co.jp
+domain	onesrenovation.co.jp
