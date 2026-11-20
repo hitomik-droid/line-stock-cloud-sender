@@ -1,0 +1,6 @@
+name	ibishome100
+name	ヤマタホーム鳥取倉吉米子工務店新築注文住宅
+name	40歳からの女性専用筋トレスタジオサーコススタディオン
+domain	ibis-home.com
+domain	yamatahome.com
+domain	sarcous-s.com

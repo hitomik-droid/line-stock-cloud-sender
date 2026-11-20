@@ -1,0 +1,35 @@
+[
+{
+"industry": "住宅・リフォーム",
+"name": "Ibishome100",
+"landing": "https://ibis-home.com/lp/hiraya-01/",
+"ads": 1,
+"source_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=JP&media_type=all&search_type=page&view_all_page_id=61582934320087",
+"ad_evidence_url": "https://www.facebook.com/ads/library/?id=1592643818898043",
+"list_source": "Meta広告ライブラリ",
+"ad_media": "Facebook・Instagram（Meta）",
+"ad_purpose": ""
+},
+{
+"industry": "住宅・リフォーム",
+"name": "ヤマタホーム［鳥取 倉吉 米子/工務店/新築/注文住宅］",
+"landing": "https://yamatahome.com/supporter/",
+"ads": 4,
+"source_url": "",
+"ad_evidence_url": "https://www.facebook.com/ads/library/?id=2118998042060987",
+"list_source": "Meta広告ライブラリ",
+"ad_media": "Facebook・Instagram（Meta）",
+"ad_purpose": ""
+},
+{
+"industry": "パーソナルジム",
+"name": "40歳からの女性専用 筋トレスタジオ「サーコス・スタディオン」",
+"landing": "https://www.sarcous-s.com/m-lp_status-shiru/",
+"ads": 3,
+"source_url": "",
+"ad_evidence_url": "https://www.facebook.com/ads/library/?id=4495697737411946",
+"list_source": "Meta広告ライブラリ",
+"ad_media": "Facebook・Instagram（Meta）",
+"ad_purpose": ""
+}
+]
