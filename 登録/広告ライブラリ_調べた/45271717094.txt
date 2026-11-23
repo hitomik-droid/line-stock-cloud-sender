@@ -1,0 +1,6 @@
+name	矯正歯科モガワクリニック
+name	小西デンタルクリニック
+name	テラスモール松戸プランス歯科
+domain	ortho-mogawa.com
+domain	konishi-dental-clinic.com
+domain	prince-dental.jp
